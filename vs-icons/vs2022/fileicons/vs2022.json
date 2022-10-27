@@ -1,0 +1,41 @@
+{
+    "iconDefinitions": {
+        "_folder": { "iconPath": "./images/FolderGrey.svg" },
+        "_folder_open": { "iconPath": "./images/FolderOpenedNoColor.svg" },
+        "_root_folder": { "iconPath": "./images/SpecialFolderClosed.svg" },
+        "_root_folder_open": { "iconPath": "./images/SpecialFolderOpened.svg" },
+        "_file": { "iconPath": "./images/Document.svg" },
+        "_css": { "iconPath": "./images/StyleSheet.svg" },
+        "_html": { "iconPath": "./images/HTMLFile.svg" },
+        "_js": { "iconPath": "./images/JSScript.svg" },
+        "_json": { "iconPath": "./images/JsonFile.svg" },
+        "_md": { "iconPath": "./images/MarkdownFile.svg" },
+        "_pwsh": { "iconPath": "./images/PowershellFile.svg" },
+        "_rust": { "iconPath": "./images/rust-logo-blk.svg" },
+        "_txt": { "iconPath": "./images/TextFile.svg" },
+        "_ts": { "iconPath": "./images/TSFileNode.svg" },
+        "_yaml": { "iconPath": "./images/YamlFile.svg" }
+    },
+    "folderExpanded": "_folder_open",
+    "folder": "_folder",
+    "file": "_file",
+    "rootFolderExpanded": "_root_folder_open",
+    "rootFolder": "_root_folder",
+    "fileExtensions": {
+        "txt": "_txt"
+    },
+    "fileNames": {},
+    "languageIds": {
+        "css": "_css",
+        "html": "_html",
+        "javascript": "_js",
+        "json": "_json",
+        "markdown": "_md",
+        "powershell": "_pwsh",
+        "rust": "_rust",
+        "typescript": "_ts",
+        "yaml": "_yml"
+    },
+    "light": {},
+    "highContrast": {}
+}

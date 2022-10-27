@@ -1,0 +1,29 @@
+{
+    "name": "vs2022",
+    "displayName": "VS2022 File Icons",
+    "description": "VS2022 File Icons",
+    "categories": [
+        "Themes"
+    ],
+    "version": "1.0.0",
+    "publisher": "mthierman",
+    "license": "MIT",
+    "engines": {
+        "vscode": "*"
+    },
+    "contributes": {
+        "iconThemes": [
+            {
+                "id": "vs2022",
+                "label": "vs2022",
+                "path": "./fileicons/vs2022.json"
+            }
+        ]
+    },
+    "scripts": {
+        "build": "vsce package"
+    },
+    "devDependencies": {
+        "vsce": "^2.11.0"
+    }
+}
