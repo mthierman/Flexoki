@@ -1,6 +1,7 @@
 {
     "$schema": "vscode://schemas/color-theme",
     "type": "dark",
+    "semanticHighlighting": true,
     "colors": {
         // "activityBar.activeBorder": "#FFFFFF",
         // "activityBar.background": "#FFFFFF",
@@ -675,58 +676,6 @@
         // "window.activeBorder": "#FFFFFF",
         // "window.inactiveBorder": "#FFFFFF"
     },
-    "tokenColors": [
-        {
-            "scope": [
-                "entity.name.function.powershell",
-                "entity.name.function.js",
-                "support.function.powershell"
-            ],
-            "settings": {
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "scope": ["entity.name.function.sqf", "support.function.sqf"],
-            "settings": {
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "scope": ["meta.function-call.sqf"],
-            "settings": {
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "scope": ["variable.language.reserved.sqf"],
-            "settings": {
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "scope": "token.info-token",
-            "settings": {
-                "foreground": "#316BCD"
-            }
-        },
-        {
-            "scope": "token.warn-token",
-            "settings": {
-                "foreground": "#CD9731"
-            }
-        },
-        {
-            "scope": "token.error-token",
-            "settings": {
-                "foreground": "#CD3131"
-            }
-        },
-        {
-            "scope": "token.debug-token",
-            "settings": {
-                "foreground": "#800080"
-            }
-        }
-    ]
+    "tokenColors": [],
+    "semanticTokenColors": {}
 }
