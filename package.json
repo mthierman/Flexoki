@@ -1,6 +1,6 @@
 {
     "name": "theme-custom",
-    "displayName": "%displayName",
+    "displayName": "%displayName%",
     "description": "%description%",
     "categories": [
         "Themes"
@@ -14,16 +14,16 @@
     "contributes": {
         "themes": [
             {
-                "id": "%darkLabel%",
-                "label": "%darkLabel%",
-                "uiTheme": "vs-dark",
-                "path": "./themes/dark-color-theme.json"
-            },
-            {
                 "id": "%lightLabel%",
                 "label": "%lightLabel%",
                 "uiTheme": "vs",
                 "path": "./themes/light-color-theme.json"
+            },
+            {
+                "id": "%darkLabel%",
+                "label": "%darkLabel%",
+                "uiTheme": "vs-dark",
+                "path": "./themes/dark-color-theme.json"
             }
         ]
     },
