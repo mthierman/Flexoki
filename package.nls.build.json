@@ -1,0 +1,6 @@
+{
+    "displayName": "Custom Themes",
+    "description": "Custom Themes for VS Code",
+    "lightLabel": "Custom Light",
+    "darkLabel": "Custom Dark"
+}
