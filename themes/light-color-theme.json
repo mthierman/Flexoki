@@ -84,7 +84,8 @@
         {
             "scope": "comment",
             "settings": {
-                "foreground": "#008000"
+                "foreground": "#36B",
+                "fontStyle": "bold"
             }
         },
         {
