@@ -294,7 +294,7 @@
         {
             "scope": ["string", "meta.embedded.assembly"],
             "settings": {
-                "foreground": "#ce9178"
+                "foreground": "#C66"
             }
         },
         {
@@ -343,7 +343,7 @@
                 "source.coffee.embedded"
             ],
             "settings": {
-                "foreground": "#9cdcfe"
+                "foreground": "#09C"
             }
         },
         {
