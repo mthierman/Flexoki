@@ -63,7 +63,7 @@
         "terminal.ansiMagenta": "#639",
         "terminal.ansiRed": "#A35",
         "terminal.ansiWhite": "#DDD",
-        "terminal.ansiYellow": "#E94"
+        "terminal.ansiYellow": "#E94",
         "terminal.background": "#0A0A0A",
         "terminal.border": "#222",
         "terminal.foreground": "#FFF",
@@ -71,7 +71,7 @@
         "terminalCursor.foreground": "#FFF",
         "titleBar.activeBackground": "#1A1A1A",
         "titleBar.activeForeground": "#DDD",
-        "titleBar.border": "#222",
+        "titleBar.border": "#222"
     },
     "tokenColors": [
         {
