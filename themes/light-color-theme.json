@@ -12,7 +12,15 @@
         "activityBar.inactiveForeground": "#222",
         "activityBarBadge.background": "#091",
         "activityBarBadge.foreground": "#FFF",
-        "editor.background": "#ebebeb",
+        "breadcrumb.activeSelectionForeground": "#091",
+        "breadcrumb.background": "#ebebeb",
+        "breadcrumb.focusForeground": "#091",
+        "breadcrumb.foreground": "#000",
+        "breadcrumbPicker.background": "#ebebeb",
+        "button.background": "#091",
+        "button.border": "#091",
+        "button.foreground": "#000",
+        "editor.background": "#F5F5F5",
         "editor.lineHighlightBorder": "#00991140",
         "editorGroupHeader.border": "#D3D3D3",
         "editorGroupHeader.noTabsBackground": "#f5f5f5",
@@ -23,17 +31,23 @@
         "gitDecoration.ignoredResourceForeground": "#888",
         "gitDecoration.modifiedResourceForeground": "#C60",
         "icon.foreground": "#091",
+        "input.border": "#D3D3D3",
         "list.activeSelectionBackground": "#00991140",
         "list.activeSelectionForeground": "#000",
         "list.activeSelectionIconForeground": "#091",
         "list.inactiveSelectionBackground": "#0099111A",
         "list.inactiveSelectionForeground": "#000",
+        "menu.background": "#FFF",
+        "menu.border": "#D3D3D3",
+        "menu.separatorBackground": "#D3D3D3",
         "panel.border": "#D3D3D3",
         "sideBar.background": "#f5f5f5",
         "sideBar.border": "#D3D3D3",
         "sideBar.foreground": "#444",
         "sideBarSectionHeader.background": "#ebebeb",
+        "sideBarSectionHeader.foreground": "#444",
         "statusBar.background": "#DADADA",
+        "statusBar.border": "#D3D3D3",
         "statusBar.debuggingBackground": "#091",
         "statusBar.debuggingForeground": "#000",
         "statusBar.focusBorder": "#FFFFFF00",
@@ -65,7 +79,7 @@
         "terminal.ansiRed": "#A35",
         "terminal.ansiWhite": "#DDD",
         "terminal.ansiYellow": "#E94",
-        "terminal.background": "#DDD",
+        "terminal.background": "#F5F5F5",
         "terminal.border": "#D3D3D3",
         "terminal.foreground": "#000",
         "terminal.selectionBackground": "#EEDD00",
@@ -106,8 +120,7 @@
         {
             "scope": "comment",
             "settings": {
-                "foreground": "#A35",
-                "fontStyle": "bold"
+                "foreground": "#A35"
             }
         },
         {
@@ -290,7 +303,7 @@
         {
             "scope": ["string", "meta.embedded.assembly"],
             "settings": {
-                "foreground": "#a31515"
+                "foreground": "#091"
             }
         },
         {
@@ -312,7 +325,7 @@
                 "string.quoted.double.handlebars"
             ],
             "settings": {
-                "foreground": "#0000ff"
+                "foreground": "#36B"
             }
         },
         {
@@ -369,7 +382,7 @@
         {
             "scope": ["support.type.property-name.json"],
             "settings": {
-                "foreground": "#0451a5"
+                "foreground": "#36B"
             }
         },
         {
