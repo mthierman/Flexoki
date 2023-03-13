@@ -1,6 +1,6 @@
 {
     "name": "theme-custom",
-    "displayName": "%displayName%",
+    "displayName": "%display%",
     "description": "%description%",
     "categories": [
         "Themes"
@@ -14,14 +14,14 @@
     "contributes": {
         "themes": [
             {
-                "id": "%lightLabel%",
-                "label": "%lightLabel%",
+                "id": "%light%",
+                "label": "%light%",
                 "uiTheme": "vs",
                 "path": "./themes/light-color-theme.json"
             },
             {
-                "id": "%darkLabel%",
-                "label": "%darkLabel%",
+                "id": "%dark%",
+                "label": "%dark%",
                 "uiTheme": "vs-dark",
                 "path": "./themes/dark-color-theme.json"
             }

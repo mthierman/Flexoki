@@ -1,19 +1,9 @@
-$Repo = $PSScriptRoot
-$Build = Join-Path -Path $Repo -ChildPath "build"
-$ThemesFrom = Join-Path -Path $Repo -ChildPath "themes"
-$ThemesTo = Join-Path -Path $Build -ChildPath "themes"
-$PackageFrom = Join-Path -Path $Repo -ChildPath "package.json"
-$PackageTo = Join-Path -Path $Build -ChildPath "package.json"
-$PackageNlsFrom = Join-Path -Path $Repo -ChildPath "package.nls.build.json"
-$PackageNlsTo = Join-Path -Path $Build -ChildPath "package.nls.json"
+if (!(Test-Path -Path "build")) { New-Item -ItemType Directory "build" }
 
-if (!(Test-Path -Path $Build)) { New-Item -ItemType Directory $Build }
+Copy-Item -Path "package.json" -Destination "build/package.json" -Force
+Copy-Item -Path "package.nls.json" -Destination "build/package.nls.json" -Force
 
-if (Test-Path -Path $PackageTo) { Remove-Item -Path $PackageTo }
-Copy-Item -Path $PackageFrom -Destination $Build
-
-if (Test-Path -Path $PackageNlsTo) { Remove-Item -Path $PackageNlsTo }
-Copy-Item -Path $PackageNlsFrom -Destination $Build\package.nls.json
-
-if (Test-Path -Path $ThemesTo) { Remove-Item -Path $ThemesTo -Recurse }
-Copy-Item -Path $ThemesFrom -Destination $Build -Recurse
+Push-Location
+Set-Location build
+New-Item -ItemType SymbolicLink -Path "themes" -Target ".\..\themes" -Force
+Pop-Location
