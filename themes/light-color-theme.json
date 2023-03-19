@@ -30,7 +30,6 @@
         "gitDecoration.deletedResourceForeground": "#A35",
         "gitDecoration.ignoredResourceForeground": "#888",
         "gitDecoration.modifiedResourceForeground": "#C60",
-        "icon.foreground": "#091",
         "input.border": "#D3D3D3",
         "list.activeSelectionBackground": "#00991140",
         "list.activeSelectionForeground": "#000",
