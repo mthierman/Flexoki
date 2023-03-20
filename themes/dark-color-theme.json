@@ -10,7 +10,10 @@
         "activityBar.background": "#00000000",
         "activityBarBadge.background": "#00000000",
         "breadcrumb.background": "#00000000",
-        "editor.background": "#252526"
+        "editor.background": "#252526",
+        // "titleBar.border": "#00000000",
+        // "activityBar.border": "#00000000",
+        // "statusBar.border": "#00000000"
         // "titleBar.border": "#00000000",
         // "statusBar.border": "#00000000",
         // "activityBar.activeBorder": "#edcf4f",
