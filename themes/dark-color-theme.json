@@ -4,6 +4,7 @@
     "semanticHighlighting": true,
     "include": "./dark_plus_experimental.json",
     "colors": {
+        "focusBorder": "#00000000",
         "titleBar.activeBackground": "#00000000",
         "statusBar.background": "#00000000",
         "activityBar.activeBackground": "#00000000",
