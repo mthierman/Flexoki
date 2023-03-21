@@ -4,14 +4,16 @@
     "semanticHighlighting": true,
     "include": "./light_plus_experimental.json",
     "colors": {
-        "focusBorder": "#00000000",
-        "titleBar.activeBackground": "#00000000",
-        "statusBar.background": "#00000000",
         "activityBar.activeBackground": "#00000000",
         "activityBar.background": "#00000000",
         "activityBarBadge.background": "#00000000",
-        "breadcrumb.background": "#00000000",
-        "editor.background": "#f3f3f3"
+        "breadcrumb.background": "#f3f3f3",
+        "editor.background": "#f3f3f3",
+        "editorGroupHeader.tabsBackground": "#00000000",
+        "focusBorder": "#00000000",
+        "statusBar.background": "#00000000",
+        "tab.activeBackground": "#00000000",
+        "titleBar.activeBackground": "#00000000"
         // "titleBar.border": "#00000000",
         // "activityBar.border": "#00000000",
         // "statusBar.border": "#00000000"
