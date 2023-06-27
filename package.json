@@ -17,13 +17,13 @@
                 "id": "%light%",
                 "label": "%light%",
                 "uiTheme": "vs",
-                "path": "./themes/light-color-theme.json"
+                "path": "./themes/modern-light-color-theme.json"
             },
             {
                 "id": "%dark%",
                 "label": "%dark%",
                 "uiTheme": "vs-dark",
-                "path": "./themes/dark-color-theme.json"
+                "path": "./themes/modern-dark-color-theme.json"
             }
         ]
     },

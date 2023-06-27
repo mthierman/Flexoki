@@ -1,6 +1,6 @@
 {
-    "display": "Custom Themes",
-    "description": "Custom Themes for VS Code",
-    "light": "Custom Light",
-    "dark": "Custom Dark"
+    "display": "Modern Themes",
+    "description": "Modern Themes for VS Code",
+    "light": "Modern Light",
+    "dark": "Modern Dark"
 }
