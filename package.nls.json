@@ -3,5 +3,6 @@
     "description": "Modern Themes for VS Code",
     "light": "Modern Light",
     "dark": "Modern Dark",
-    "blank": "Blank"
+    "blank-light": "Blank Light",
+    "blank-dark": "Blank Dark"
 }

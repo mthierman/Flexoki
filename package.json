@@ -26,10 +26,16 @@
                 "path": "./themes/modern-dark-color-theme.json"
             },
             {
-                "id": "%blank%",
-                "label": "%blank%",
+                "id": "%blank-light%",
+                "label": "%blank-light%",
+                "uiTheme": "vs",
+                "path": "./themes/blank-light-color-theme.json"
+            },
+            {
+                "id": "%blank-dark%",
+                "label": "%blank-dark%",
                 "uiTheme": "vs-dark",
-                "path": "./themes/blank-color-theme.json"
+                "path": "./themes/blank-dark-color-theme.json"
             }
         ]
     },
