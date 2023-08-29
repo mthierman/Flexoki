@@ -2,5 +2,6 @@
     "display": "Modern Themes",
     "description": "Modern Themes for VS Code",
     "light": "Modern Light",
-    "dark": "Modern Dark"
+    "dark": "Modern Dark",
+    "blank": "Blank"
 }

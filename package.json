@@ -24,6 +24,12 @@
                 "label": "%dark%",
                 "uiTheme": "vs-dark",
                 "path": "./themes/modern-dark-color-theme.json"
+            },
+            {
+                "id": "%blank%",
+                "label": "%blank%",
+                "uiTheme": "vs-dark",
+                "path": "./themes/blank-color-theme.json"
             }
         ]
     },
