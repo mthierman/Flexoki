@@ -50,7 +50,7 @@
         "commandCenter.debuggingBackground": "#205EA640",
 
         "quickInput.background": "#1C1B1A",
-        "quickInput.foreground": "#878580",
+        "quickInput.foreground": "#B7B5AC",
         "quickInputList.focusBackground": "#205EA6",
         "quickInputList.focusForeground": "#FFFCF0",
         "quickInputList.focusIconForeground": "#FFFCF0",
