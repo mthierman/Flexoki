@@ -17,13 +17,13 @@
                 "id": "%dark%",
                 "label": "%dark%",
                 "uiTheme": "vs-dark",
-                "path": "./themes/modern-dark-color-theme.json"
+                "path": "./themes/flexoki-dark-color-theme.json"
             },
             {
                 "id": "%light%",
                 "label": "%light%",
                 "uiTheme": "vs",
-                "path": "./themes/modern-light-color-theme.json"
+                "path": "./themes/flexoki-light-color-theme.json"
             }
         ]
     },
