@@ -1,8 +1,6 @@
 {
-    "display": "Modern Themes",
-    "description": "Modern Themes for VS Code",
-    "light": "Modern Light",
-    "dark": "Modern Dark",
-    "blank-light": "Blank Light",
-    "blank-dark": "Blank Dark"
+    "display": "Flexoki",
+    "description": "Flexoki light & dark themes",
+    "light": "Flexoki Light",
+    "dark": "Flexoki Dark"
 }

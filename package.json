@@ -5,7 +5,7 @@
     "categories": [
         "Themes"
     ],
-    "version": "1.0.0",
+    "version": "0.0.1",
     "publisher": "Mike Thierman",
     "license": "MIT",
     "engines": {
@@ -14,30 +14,22 @@
     "contributes": {
         "themes": [
             {
-                "id": "%light%",
-                "label": "%light%",
-                "uiTheme": "vs",
-                "path": "./themes/modern-light-color-theme.json"
-            },
-            {
                 "id": "%dark%",
                 "label": "%dark%",
                 "uiTheme": "vs-dark",
                 "path": "./themes/modern-dark-color-theme.json"
             },
             {
-                "id": "%blank-light%",
-                "label": "%blank-light%",
+                "id": "%light%",
+                "label": "%light%",
                 "uiTheme": "vs",
-                "path": "./themes/blank-light-color-theme.json"
-            },
-            {
-                "id": "%blank-dark%",
-                "label": "%blank-dark%",
-                "uiTheme": "vs-dark",
-                "path": "./themes/blank-dark-color-theme.json"
+                "path": "./themes/modern-light-color-theme.json"
             }
         ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mthierman/vscode-themes.git"
     },
     "devDependencies": {
         "generator-code": "latest",
