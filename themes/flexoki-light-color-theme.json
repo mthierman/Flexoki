@@ -98,6 +98,12 @@
         "tab.hoverBackground": "#E6E4D9",
         "tab.border": "#E6E4D9",
 
+        "settings.focusedRowBorder": "#8B7EC8",
+        "focusBorder": "#8B7EC8",
+
+        "settings.focusedRowBackground": "#E6E4D9",
+        "settings.rowHoverBackground": "#F2F0E5",
+
         "terminal.border": "#E6E4D9",
         "terminal.background": "#F2F0E5",
         "terminal.ansiBlack": "#100F0F",
