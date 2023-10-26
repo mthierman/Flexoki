@@ -4,7 +4,7 @@
     "semanticHighlighting": true,
     "colors": {
         "titleBar.activeBackground": "#FFFCF0",
-        "titleBar.inactiveBackground": "#f2f0e5",
+        "titleBar.inactiveBackground": "#F2F0E5",
         "titleBar.border": "#E6E4D9",
         "titleBar.activeForeground": "#575653",
         "titleBar.inactiveForeground": "#6F6E69",
@@ -14,16 +14,16 @@
 
         "statusBar.background": "#FFFCF0",
         "statusBar.noFolderBackground": "#FFFCF0",
-        "statusBar.debuggingBackground": "#4385BE40",
+        "statusBar.debuggingBackground": "#8B7EC840",
 
         "statusBar.border": "#E6E4D9",
         "statusBar.noFolderBorder": "#E6E4D9",
         "statusBar.debuggingBorder": "#E6E4D9",
         "statusBar.focusBorder": "#E6E4D9",
 
-        "statusBar.foreground": "#B7B5AC",
-        "statusBar.debuggingForeground": "#B7B5AC",
-        "statusBar.noFolderForeground": "#B7B5AC",
+        "statusBar.foreground": "#575653",
+        "statusBar.debuggingForeground": "#575653",
+        "statusBar.noFolderForeground": "#575653",
 
         "sideBar.background": "#F2F0E5",
         "sideBar.border": "#E6E4D9",
@@ -32,12 +32,12 @@
         "activityBar.background": "#FFFCF0",
         "activityBar.border": "#E6E4D9",
         "activityBar.activeBackground": "#E6E4D9",
-        "activityBar.activeBorder": "#4385BE",
-        "activityBar.activeFocusBorder": "#4385BE",
-        "activityBar.dropBorder": "#4385BE",
+        "activityBar.activeBorder": "#8B7EC8",
+        "activityBar.activeFocusBorder": "#8B7EC8",
+        "activityBar.dropBorder": "#8B7EC8",
         "activityBar.foreground": "#575653",
         "activityBar.inactiveForeground": "#6F6E69",
-        "activityBarBadge.background": "#4385BE",
+        "activityBarBadge.background": "#8B7EC8",
         "activityBarBadge.foreground": "#FFFCF0",
 
         "commandCenter.background": "#FFFCF0",
@@ -48,11 +48,11 @@
         "commandCenter.activeBorder": "#E6E4D9",
         "commandCenter.activeBackground": "#E6E4D9",
         "commandCenter.activeForeground": "#575653",
-        "commandCenter.debuggingBackground": "#4385BE40",
+        "commandCenter.debuggingBackground": "#8B7EC840",
 
         "quickInput.background": "#F2F0E5",
         "quickInput.foreground": "#575653",
-        "quickInputList.focusBackground": "#4385BE",
+        "quickInputList.focusBackground": "#8B7EC8",
         "quickInputList.focusForeground": "#100F0F",
         "quickInputList.focusIconForeground": "#100F0F",
 
@@ -64,21 +64,39 @@
         "menu.background": "#F2F0E5",
         "menu.border": "#E6E4D9",
         "menu.foreground": "#575653",
-        "menu.selectionBackground": "#4385BE",
+        "menu.selectionBackground": "#8B7EC8",
         "menu.selectionBorder": "#4385BE00",
         "menu.selectionForeground": "#100F0F",
         "menu.separatorBackground": "#DAD8CE",
 
-        "menubar.selectionBackground": "#4385BE",
+        "menubar.selectionBackground": "#8B7EC8",
         "menubar.selectionBorder": "#4385BE00",
         "menubar.selectionForeground": "#100F0F",
 
-        "editorGroupHeader.tabsBackground": "#FFFCF0",
-        "tab.activeBackground": "#F2F0E5",
-        "tab.inactiveBackground": "#FFFCF0",
-
         "panel.background": "#F2F0E5",
         "panel.border": "#E6E4D9",
+
+        "button.background": "#8B7EC8",
+        "button.border": "#4385BE00",
+        "button.foreground": "#E6E4D9",
+        "button.hoverBackground": "#5E409D",
+
+        "dropdown.background": "#F2F0E5",
+        "dropdown.border": "#E6E4D9",
+        "dropdown.foreground": "#575653",
+        "dropdown.listBackground": "#F2F0E5",
+
+        "editorCursor.background": "#8B7EC8",
+        "editorCursor.foreground": "#8B7EC8",
+
+        "editorGroupHeader.tabsBackground": "#FFFCF0",
+        "editorGroup.border": "#E6E4D9",
+        "editorGroupHeader.border": "#E6E4D9",
+        "tab.activeForeground": "#575653",
+        "tab.activeBackground": "#F2F0E5",
+        "tab.inactiveBackground": "#FFFCF0",
+        "tab.hoverBackground": "#E6E4D9",
+        "tab.border": "#E6E4D9",
 
         "terminal.border": "#E6E4D9",
         "terminal.background": "#F2F0E5",
