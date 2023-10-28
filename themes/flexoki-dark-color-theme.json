@@ -194,7 +194,7 @@
                 "keyword",
                 "keyword.control",
                 "keyword.other",
-                "string.json.comments"
+                "string.json"
             ],
             "settings": {
                 "foreground": "#879a39"
