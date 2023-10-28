@@ -1,7 +1,7 @@
 import * as fs from "node:fs/promises";
 import getTheme from "./theme.js";
 
-const themes = "./themes-new";
+const themes = "./themes";
 
 const light = {
     name: "Flexoki Light",

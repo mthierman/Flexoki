@@ -1,24 +1,26 @@
-import getColor from "./color.js";
+import getColors from "./colors.js";
+import getMappings from "./mappings.js";
 
-const getTheme = (themeName: string) => {
-    let color = getColor(themeName);
+const getTheme = (name: string) => {
+    let color = getColors(name);
+    let mapping = getMappings(name);
     return {
         $schema: "vscode://schemas/color-theme",
-        name: themeName,
+        name: name,
         semanticHighlighting: true,
         colors: {
-            "titleBar.activeBackground": color.background,
-            "titleBar.inactiveBackground": "#1C1B1A",
-            "titleBar.border": "#282726",
-            "titleBar.activeForeground": "#B7B5AC",
-            "titleBar.inactiveForeground": "#878580",
+            "titleBar.activeBackground": mapping.main_bg,
+            "titleBar.inactiveBackground": mapping.secondary_bg,
+            "titleBar.border": mapping.borders,
+            "titleBar.activeForeground": mapping.primary_text,
+            "titleBar.inactiveForeground": mapping.faint_text,
 
-            "editor.background": color.background,
-            "editor.foreground": color.foreground,
+            "editor.background": mapping.main_bg,
+            "editor.foreground": mapping.primary_text,
 
-            "statusBar.background": color.background,
-            "statusBar.noFolderBackground": color.background,
-            "statusBar.debuggingBackground": "#5E409D40",
+            "statusBar.background": mapping.main_bg,
+            "statusBar.noFolderBackground": mapping.main_bg,
+            "statusBar.debuggingBackground": color.bl,
 
             "statusBar.border": "#282726",
             "statusBar.noFolderBorder": "#282726",
@@ -33,7 +35,7 @@ const getTheme = (themeName: string) => {
             "sideBar.border": "#282726",
             "sideBar.foreground": "#B7B5AC",
 
-            "activityBar.background": color.background,
+            "activityBar.background": mapping.main_bg,
             "activityBar.border": "#282726",
             "activityBar.activeBackground": "#282726",
             "activityBar.activeBorder": "#5E409D",
@@ -44,7 +46,7 @@ const getTheme = (themeName: string) => {
             "activityBarBadge.background": "#5E409D",
             "activityBarBadge.foreground": "#FFFCF0",
 
-            "commandCenter.background": color.background,
+            "commandCenter.background": mapping.main_bg,
             "commandCenter.border": "#282726",
             "commandCenter.foreground": "#878580",
             "commandCenter.inactiveForeground": "#878580",
@@ -82,7 +84,7 @@ const getTheme = (themeName: string) => {
 
             "button.background": "#5E409D",
             "button.border": "#205EA600",
-            "button.foreground": color.foreground,
+            "button.foreground": color.tx,
             "button.hoverBackground": "#8B7EC8",
 
             "dropdown.background": "#1C1B1A",
@@ -93,12 +95,12 @@ const getTheme = (themeName: string) => {
             "editorCursor.background": "#5E409D",
             "editorCursor.foreground": "#5E409D",
 
-            "editorGroupHeader.tabsBackground": color.background,
+            "editorGroupHeader.tabsBackground": mapping.main_bg,
             "editorGroup.border": "#282726",
             "editorGroupHeader.border": "#282726",
             "tab.activeForeground": "#B7B5AC",
             "tab.activeBackground": "#1C1B1A",
-            "tab.inactiveBackground": color.background,
+            "tab.inactiveBackground": mapping.main_bg,
             "tab.hoverBackground": "#282726",
             "tab.border": "#282726",
 
@@ -108,9 +110,9 @@ const getTheme = (themeName: string) => {
             "settings.focusedRowBackground": "#282726",
             "settings.rowHoverBackground": "#1C1B1A",
 
-            "terminal.border": "#282726",
-            "terminal.background": "#1C1B1A",
-            "terminal.ansiBlack": color.background,
+            "terminal.border": mapping.borders,
+            "terminal.background": mapping.main_bg,
+            "terminal.ansiBlack": mapping.main_bg,
             "terminal.ansiBlue": "#205EA6",
             "terminal.ansiBrightBlack": "#575653",
             "terminal.ansiBrightBlue": "#4385BE",
@@ -120,9 +122,9 @@ const getTheme = (themeName: string) => {
             "terminal.ansiBrightRed": "#D14D41",
             "terminal.ansiBrightWhite": "#FFFCF0",
             "terminal.ansiBrightYellow": "#D0A215",
-            "terminalCursor.foreground": color.foreground,
+            "terminalCursor.foreground": color.tx,
             "terminal.ansiCyan": "#24837B",
-            "terminal.foreground": color.foreground,
+            "terminal.foreground": color.tx,
             "terminal.ansiGreen": "#66800B",
             "terminal.ansiMagenta": "#A02F6F",
             "terminal.ansiRed": "#AF3029",
