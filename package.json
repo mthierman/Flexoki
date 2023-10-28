@@ -1,5 +1,6 @@
 {
     "name": "theme-flexoki",
+    "type": "module",
     "displayName": "%display%",
     "description": "%description%",
     "categories": [
@@ -32,6 +33,9 @@
         "url": "https://github.com/mthierman/vscode-themes.git"
     },
     "devDependencies": {
+        "prettier": "latest",
+        "@types/node": "latest",
+        "typescript": "latest",
         "generator-code": "latest",
         "yo": "latest"
     }
