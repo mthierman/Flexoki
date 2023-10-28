@@ -1,4 +1,23 @@
-const getColors = (name: string): any => {
+export const getBaseColors = () => {
+    return {
+        black: "#100F0F",
+        base950: "#1C1B1A",
+        base900: "#282726",
+        base850: "#343331",
+        base800: "#403E3C",
+        base700: "#575653",
+        base600: "#6F6E69",
+        base500: "#878580",
+        base300: "#B7B5AC",
+        base200: "#CECDC3",
+        base150: "#DAD8CE",
+        base100: "#E6E4D9",
+        base50: "#F2F0E5",
+        paper: "#FFFCF0",
+    };
+};
+
+export const getColors = (name: string): any => {
     switch (name) {
         case "Flexoki Dark":
             return {
@@ -56,5 +75,3 @@ const getColors = (name: string): any => {
             };
     }
 };
-
-export default getColors;

@@ -1,16 +1,86 @@
-import getColors from "./colors.js";
-import getMappings from "./mappings.js";
+import { getBaseColors, getColors } from "./colors.js";
+import { getMappings } from "./mappings.js";
 
-const getTheme = (name: string) => {
+const getTheme = (name: string, accentColor: String) => {
+    let base = getBaseColors();
     let color = getColors(name);
     let mapping = getMappings(name);
+
+    let accent;
+    let accentLight;
+    let transparent = "#FFFFFF00";
+
+    if (name === "Flexoki Dark") {
+        accent = color.bl2;
+        accentLight = color.bl;
+
+        switch (accentColor) {
+            case "red":
+                accent = color.re2;
+                accentLight = color.re;
+            case "orange":
+                accent = color.or2;
+                accentLight = color.or;
+            case "yellow":
+                accent = color.ye2;
+                accentLight = color.ye;
+            case "green":
+                accent = color.gr2;
+                accentLight = color.gr;
+            case "cyan":
+                accent = color.cy2;
+                accentLight = color.cy;
+            case "blue":
+                accent = color.bl2;
+                accentLight = color.bl;
+            case "purple":
+                accent = color.pu2;
+                accentLight = color.pu;
+            case "magenta":
+                accent = color.ma2;
+                accentLight = color.ma;
+        }
+    }
+
+    if (name === "Flexoki Light") {
+        accent = color.bl;
+        accentLight = color.bl2;
+
+        switch (accentColor) {
+            case "red":
+                accent = color.re;
+                accentLight = color.re2;
+            case "orange":
+                accent = color.or;
+                accentLight = color.or2;
+            case "yellow":
+                accent = color.ye;
+                accentLight = color.ye2;
+            case "green":
+                accent = color.gr;
+                accentLight = color.gr2;
+            case "cyan":
+                accent = color.cy;
+                accentLight = color.cy2;
+            case "blue":
+                accent = color.bl;
+                accentLight = color.bl2;
+            case "purple":
+                accent = color.pu;
+                accentLight = color.pu2;
+            case "magenta":
+                accent = color.ma;
+                accentLight = color.ma2;
+        }
+    }
+
     return {
         $schema: "vscode://schemas/color-theme",
         name: name,
         semanticHighlighting: true,
         colors: {
-            "titleBar.activeBackground": mapping.main_bg,
-            "titleBar.inactiveBackground": mapping.secondary_bg,
+            "titleBar.activeBackground": mapping.secondary_bg,
+            "titleBar.inactiveBackground": mapping.main_bg,
             "titleBar.border": mapping.borders,
             "titleBar.activeForeground": mapping.primary_text,
             "titleBar.inactiveForeground": mapping.faint_text,
@@ -20,117 +90,117 @@ const getTheme = (name: string) => {
 
             "statusBar.background": mapping.main_bg,
             "statusBar.noFolderBackground": mapping.main_bg,
-            "statusBar.debuggingBackground": color.bl,
+            "statusBar.debuggingBackground": accent,
 
-            "statusBar.border": "#282726",
-            "statusBar.noFolderBorder": "#282726",
-            "statusBar.debuggingBorder": "#282726",
-            "statusBar.focusBorder": "#282726",
+            "statusBar.border": mapping.borders,
+            "statusBar.noFolderBorder": mapping.borders,
+            "statusBar.debuggingBorder": mapping.borders,
+            "statusBar.focusBorder": mapping.borders,
 
-            "statusBar.foreground": "#B7B5AC",
-            "statusBar.debuggingForeground": "#B7B5AC",
-            "statusBar.noFolderForeground": "#B7B5AC",
+            "statusBar.foreground": mapping.primary_text,
+            "statusBar.debuggingForeground": mapping.primary_text,
+            "statusBar.noFolderForeground": mapping.primary_text,
 
-            "sideBar.background": "#1C1B1A",
-            "sideBar.border": "#282726",
-            "sideBar.foreground": "#B7B5AC",
+            "sideBar.background": mapping.secondary_bg,
+            "sideBar.border": mapping.borders,
+            "sideBar.foreground": mapping.primary_text,
 
             "activityBar.background": mapping.main_bg,
-            "activityBar.border": "#282726",
-            "activityBar.activeBackground": "#282726",
-            "activityBar.activeBorder": "#5E409D",
-            "activityBar.activeFocusBorder": "#5E409D",
-            "activityBar.dropBorder": "#5E409D",
-            "activityBar.foreground": "#B7B5AC",
-            "activityBar.inactiveForeground": "#878580",
-            "activityBarBadge.background": "#5E409D",
-            "activityBarBadge.foreground": "#FFFCF0",
+            "activityBar.border": mapping.borders,
+            "activityBar.activeBackground": mapping.borders,
+            "activityBar.activeBorder": accent,
+            "activityBar.activeFocusBorder": accent,
+            "activityBar.dropBorder": accent,
+            "activityBar.foreground": mapping.primary_text,
+            "activityBar.inactiveForeground": mapping.muted_text,
+            "activityBarBadge.background": accent,
+            "activityBarBadge.foreground": mapping.primary_text,
 
             "commandCenter.background": mapping.main_bg,
-            "commandCenter.border": "#282726",
-            "commandCenter.foreground": "#878580",
-            "commandCenter.inactiveForeground": "#878580",
-            "commandCenter.inactiveBorder": "#282726",
-            "commandCenter.activeBorder": "#282726",
-            "commandCenter.activeBackground": "#282726",
-            "commandCenter.activeForeground": "#B7B5AC",
-            "commandCenter.debuggingBackground": "#5E409D40",
+            "commandCenter.border": mapping.borders,
+            "commandCenter.foreground": mapping.muted_text,
+            "commandCenter.inactiveForeground": mapping.faint_text,
+            "commandCenter.inactiveBorder": mapping.borders,
+            "commandCenter.activeBorder": mapping.borders,
+            "commandCenter.activeBackground": mapping.main_bg,
+            "commandCenter.activeForeground": mapping.primary_text,
+            "commandCenter.debuggingBackground": mapping.main_bg,
 
-            "quickInput.background": "#1C1B1A",
-            "quickInput.foreground": "#B7B5AC",
-            "quickInputList.focusBackground": "#5E409D",
-            "quickInputList.focusForeground": "#FFFCF0",
-            "quickInputList.focusIconForeground": "#FFFCF0",
+            "quickInput.background": mapping.main_bg,
+            "quickInput.foreground": mapping.primary_text,
+            "quickInputList.focusBackground": accent,
+            "quickInputList.focusForeground": mapping.primary_text,
+            "quickInputList.focusIconForeground": mapping.primary_text,
 
-            "input.background": "#1C1B1A",
-            "input.border": "#282726",
-            "input.foreground": "#B7B5AC",
-            "input.placeholderForeground": "#878580",
+            "input.background": mapping.main_bg,
+            "input.border": mapping.borders,
+            "input.foreground": mapping.primary_text,
+            "input.placeholderForeground": mapping.muted_text,
 
-            "menu.background": "#1C1B1A",
-            "menu.border": "#282726",
-            "menu.foreground": "#B7B5AC",
-            "menu.selectionBackground": "#5E409D",
-            "menu.selectionBorder": "#5E409D00",
-            "menu.selectionForeground": "#FFFCF0",
-            "menu.separatorBackground": "#343331",
+            "menu.background": mapping.main_bg,
+            "menu.border": transparent,
+            "menu.foreground": mapping.primary_text,
+            "menu.selectionBackground": accent,
+            "menu.selectionBorder": accent,
+            "menu.selectionForeground": mapping.primary_text,
+            "menu.separatorBackground": mapping.borders,
 
-            "menubar.selectionBackground": "#5E409D",
-            "menubar.selectionBorder": "#205EA600",
-            "menubar.selectionForeground": "#FFFCF0",
+            "menubar.selectionBackground": accent,
+            "menubar.selectionBorder": transparent,
+            "menubar.selectionForeground": mapping.primary_text,
 
-            "panel.background": "#1C1B1A",
-            "panel.border": "#282726",
+            "panel.background": mapping.secondary_bg,
+            "panel.border": mapping.borders,
 
-            "button.background": "#5E409D",
-            "button.border": "#205EA600",
-            "button.foreground": color.tx,
-            "button.hoverBackground": "#8B7EC8",
+            "button.background": accent,
+            "button.border": mapping.borders,
+            "button.foreground": mapping.primary_text,
+            "button.hoverBackground": accentLight,
 
-            "dropdown.background": "#1C1B1A",
-            "dropdown.border": "#282726",
-            "dropdown.foreground": "#B7B5AC",
-            "dropdown.listBackground": "#1C1B1A",
+            "dropdown.background": mapping.main_bg,
+            "dropdown.border": mapping.borders,
+            "dropdown.foreground": mapping.primary_text,
+            "dropdown.listBackground": mapping.main_bg,
 
-            "editorCursor.background": "#5E409D",
-            "editorCursor.foreground": "#5E409D",
+            "editorCursor.background": accent,
+            "editorCursor.foreground": accent,
 
             "editorGroupHeader.tabsBackground": mapping.main_bg,
-            "editorGroup.border": "#282726",
-            "editorGroupHeader.border": "#282726",
-            "tab.activeForeground": "#B7B5AC",
-            "tab.activeBackground": "#1C1B1A",
+            "editorGroup.border": mapping.borders,
+            "editorGroupHeader.border": mapping.borders,
+            "tab.activeForeground": mapping.primary_text,
+            "tab.activeBackground": mapping.secondary_bg,
             "tab.inactiveBackground": mapping.main_bg,
-            "tab.hoverBackground": "#282726",
-            "tab.border": "#282726",
+            "tab.hoverBackground": mapping.borders,
+            "tab.border": mapping.borders,
 
-            "settings.focusedRowBorder": "#5E409D",
-            "focusBorder": "#5E409D",
+            "settings.focusedRowBorder": accent,
+            "focusBorder": accent,
 
-            "settings.focusedRowBackground": "#282726",
-            "settings.rowHoverBackground": "#1C1B1A",
+            "settings.focusedRowBackground": mapping.secondary_bg,
+            "settings.rowHoverBackground": mapping.secondary_bg,
 
             "terminal.border": mapping.borders,
-            "terminal.background": mapping.main_bg,
-            "terminal.ansiBlack": mapping.main_bg,
-            "terminal.ansiBlue": "#205EA6",
-            "terminal.ansiBrightBlack": "#575653",
-            "terminal.ansiBrightBlue": "#4385BE",
-            "terminal.ansiBrightCyan": "#3AA99F",
-            "terminal.ansiBrightGreen": "#879A39",
-            "terminal.ansiBrightMagenta": "#CE5D97",
-            "terminal.ansiBrightRed": "#D14D41",
-            "terminal.ansiBrightWhite": "#FFFCF0",
-            "terminal.ansiBrightYellow": "#D0A215",
-            "terminalCursor.foreground": color.tx,
-            "terminal.ansiCyan": "#24837B",
-            "terminal.foreground": color.tx,
-            "terminal.ansiGreen": "#66800B",
-            "terminal.ansiMagenta": "#A02F6F",
-            "terminal.ansiRed": "#AF3029",
-            "terminal.selectionBackground": "#DA702C",
-            "terminal.ansiWhite": "#B7B5AC",
-            "terminal.ansiYellow": "#C19C00",
+            "terminal.background": mapping.secondary_bg,
+            "terminal.ansiBlack": base.black,
+            "terminal.ansiBlue": color.bl2,
+            "terminal.ansiBrightBlack": base.base700,
+            "terminal.ansiBrightBlue": color.bl,
+            "terminal.ansiBrightCyan": color.cy,
+            "terminal.ansiBrightGreen": color.gr,
+            "terminal.ansiBrightMagenta": color.ma,
+            "terminal.ansiBrightRed": color.re,
+            "terminal.ansiBrightWhite": base.paper,
+            "terminal.ansiBrightYellow": color.ye,
+            "terminalCursor.foreground": mapping.primary_text,
+            "terminal.ansiCyan": color.cy2,
+            "terminal.foreground": mapping.primary_text,
+            "terminal.ansiGreen": color.gr2,
+            "terminal.ansiMagenta": color.ma2,
+            "terminal.ansiRed": color.re2,
+            "terminal.selectionBackground": color.or2,
+            "terminal.ansiWhite": base.base300,
+            "terminal.ansiYellow": color.ye2,
         },
         tokenColors: [
             {
@@ -141,7 +211,7 @@ const getTheme = (name: string) => {
                     "comment.line",
                 ],
                 settings: {
-                    foreground: "#575653",
+                    foreground: mapping.comments,
                 },
             },
             {
@@ -155,7 +225,7 @@ const getTheme = (name: string) => {
                     "support.constant",
                 ],
                 settings: {
-                    foreground: "#D0A215",
+                    foreground: mapping.constants,
                 },
             },
             {
@@ -167,7 +237,7 @@ const getTheme = (name: string) => {
                     "constant.numeric.octal",
                 ],
                 settings: {
-                    foreground: "#8b7ec8",
+                    foreground: mapping.numbers,
                 },
             },
             {
@@ -186,13 +256,13 @@ const getTheme = (name: string) => {
                     "entity.other.inherited-class",
                 ],
                 settings: {
-                    foreground: "#da702c",
+                    foreground: mapping.functions,
                 },
             },
             {
                 scope: ["invalid", "invalid.deprecated", "invalid.illegal"],
                 settings: {
-                    foreground: "#d14d41",
+                    foreground: mapping.invalid_imports,
                 },
             },
             {
@@ -203,7 +273,7 @@ const getTheme = (name: string) => {
                     "string.json",
                 ],
                 settings: {
-                    foreground: "#879a39",
+                    foreground: mapping.keywords,
                 },
             },
             {
@@ -215,7 +285,7 @@ const getTheme = (name: string) => {
                     "keyword.operator.new",
                 ],
                 settings: {
-                    foreground: "#878580",
+                    foreground: mapping.punctuation_operators,
                 },
             },
             {
@@ -234,7 +304,7 @@ const getTheme = (name: string) => {
                     "meta.type.annotation",
                 ],
                 settings: {
-                    foreground: "#ce5d97",
+                    foreground: mapping.language_features,
                 },
             },
             {
@@ -246,13 +316,13 @@ const getTheme = (name: string) => {
                     "punctuation.terminator",
                 ],
                 settings: {
-                    foreground: "#878580",
+                    foreground: mapping.punctuation_operators,
                 },
             },
             {
                 scope: ["storage", "storage.modifier", "storage.type"],
                 settings: {
-                    foreground: "#879a39",
+                    foreground: mapping.keywords,
                 },
             },
             {
@@ -269,7 +339,7 @@ const getTheme = (name: string) => {
                     "string.unquoted",
                 ],
                 settings: {
-                    foreground: "#3aa99f",
+                    foreground: mapping.strings,
                 },
             },
             {
@@ -282,7 +352,7 @@ const getTheme = (name: string) => {
                     "variable.parameter",
                 ],
                 settings: {
-                    foreground: "#4385be",
+                    foreground: mapping.variables_attributes,
                 },
             },
         ],

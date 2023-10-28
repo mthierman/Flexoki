@@ -18,11 +18,11 @@ fs.mkdir(themes, { recursive: true })
         Promise.all([
             fs.writeFile(
                 dark.file,
-                JSON.stringify(getTheme(dark.name), null, 4),
+                JSON.stringify(getTheme(dark.name, "red"), null, 4),
             ),
             fs.writeFile(
                 light.file,
-                JSON.stringify(getTheme(light.name), null, 4),
+                JSON.stringify(getTheme(light.name, "red"), null, 4),
             ),
         ]),
     )

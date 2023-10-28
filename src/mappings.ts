@@ -1,6 +1,6 @@
-import getColors from "./colors.js";
+import { getBaseColors, getColors } from "./colors.js";
 
-const getMappings = (name: string) => {
+export const getMappings = (name: string) => {
     let color = getColors(name);
     return {
         // UI
@@ -30,5 +30,3 @@ const getMappings = (name: string) => {
         language_features: color.ma,
     };
 };
-
-export default getMappings;
