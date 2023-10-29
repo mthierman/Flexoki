@@ -3,6 +3,19 @@ import getMappings from "./mappings.js";
 const getTheme = (theme: string, color: string) => {
     let colors = getMappings(theme, color);
 
+    let accent;
+    let accentHover;
+
+    if (theme === "Dark") {
+        accent = colors.accentDark;
+        accentHover = colors.accentLight;
+    }
+
+    if (theme === "Light") {
+        accent = colors.accentLight;
+        accentHover = colors.accentDark;
+    }
+
     return {
         $schema: "vscode://schemas/color-theme",
         name: `Flexoki ${theme} ${color}`,
@@ -16,20 +29,20 @@ const getTheme = (theme: string, color: string) => {
             "activityBar.dropBorder": colors.transparent,
             "activityBar.foreground": colors.primary_text,
             "activityBar.inactiveForeground": colors.muted_text,
-            "activityBarBadge.background": colors.accentDark,
-            "activityBarBadge.foreground": colors.primary_text,
-            "button.background": colors.borders,
+            "activityBarBadge.background": accent,
+            "activityBarBadge.foreground": colors.paper,
+            "button.background": accent,
             "button.border": colors.transparent,
-            "button.foreground": colors.primary_text,
-            "button.hoverBackground": colors.hovered_borders,
+            "button.foreground": colors.paper,
+            "button.hoverBackground": accentHover,
             "commandCenter.activeBackground": colors.main_bg,
-            "commandCenter.activeBorder": colors.borders,
+            "commandCenter.activeBorder": colors.transparent,
             "commandCenter.activeForeground": colors.primary_text,
-            "commandCenter.background": colors.secondary_bg,
-            "commandCenter.border": colors.borders,
+            "commandCenter.background": colors.main_bg,
+            "commandCenter.border": colors.transparent,
             "commandCenter.debuggingBackground": colors.main_bg,
             "commandCenter.foreground": colors.muted_text,
-            "commandCenter.inactiveBorder": colors.borders,
+            "commandCenter.inactiveBorder": colors.transparent,
             "commandCenter.inactiveForeground": colors.faint_text,
             "dropdown.background": colors.main_bg,
             "dropdown.border": colors.borders,
@@ -37,8 +50,8 @@ const getTheme = (theme: string, color: string) => {
             "dropdown.listBackground": colors.main_bg,
             "editor.background": colors.main_bg,
             "editor.foreground": colors.primary_text,
-            "editorCursor.background": colors.accentDark,
-            "editorCursor.foreground": colors.accentDark,
+            "editorCursor.background": accent,
+            "editorCursor.foreground": accent,
             "editorGroup.border": colors.borders,
             "editorGroupHeader.border": colors.borders,
             "editorGroupHeader.tabsBackground": colors.main_bg,
@@ -82,9 +95,9 @@ const getTheme = (theme: string, color: string) => {
             "sideBar.foreground": colors.primary_text,
             "statusBar.background": colors.secondary_bg,
             "statusBar.border": colors.borders,
-            "statusBar.debuggingBackground": colors.active_borders,
+            "statusBar.debuggingBackground": accent,
             "statusBar.debuggingBorder": colors.borders,
-            "statusBar.debuggingForeground": colors.primary_text,
+            "statusBar.debuggingForeground": colors.paper,
             "statusBar.focusBorder": colors.borders,
             "statusBar.foreground": colors.primary_text,
             "statusBar.noFolderBackground": colors.secondary_bg,
