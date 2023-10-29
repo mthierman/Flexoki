@@ -1,6 +1,22 @@
 {
     "display": "Flexoki",
     "description": "Flexoki light & dark themes",
+    "dark": "Flexoki Dark",
     "light": "Flexoki Light",
-    "dark": "Flexoki Dark"
+    "darkred": "Flexoki Dark Red",
+    "darkorange": "Flexoki Dark Orange",
+    "darkyellow": "Flexoki Dark Yellow",
+    "darkgreen": "Flexoki Dark Green",
+    "darkcyan": "Flexoki Dark Cyan",
+    "darkblue": "Flexoki Dark Blue",
+    "darkpurple": "Flexoki Dark Purple",
+    "darkmagenta": "Flexoki Dark Magenta",
+    "lightred": "Flexoki Light Red",
+    "lightorange": "Flexoki Light Orange",
+    "lightyellow": "Flexoki Light Yellow",
+    "lightgreen": "Flexoki Light Green",
+    "lightcyan": "Flexoki Light Cyan",
+    "lightblue": "Flexoki Light Blue",
+    "lightpurple": "Flexoki Light Purple",
+    "lightmagenta": "Flexoki Light Magenta"
 }

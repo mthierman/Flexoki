@@ -15,16 +15,100 @@
     "contributes": {
         "themes": [
             {
-                "id": "%dark%",
-                "label": "%dark%",
+                "id": "%darkred%",
+                "label": "%darkred%",
                 "uiTheme": "vs-dark",
-                "path": "./themes/flexoki-dark-color-theme.json"
+                "path": "./themes/flexoki-dark-red-color-theme.json"
             },
             {
-                "id": "%light%",
-                "label": "%light%",
+                "id": "%darkorange%",
+                "label": "%darkorange%",
+                "uiTheme": "vs-dark",
+                "path": "./themes/flexoki-dark-orange-color-theme.json"
+            },
+            {
+                "id": "%darkyellow%",
+                "label": "%darkyellow%",
+                "uiTheme": "vs-dark",
+                "path": "./themes/flexoki-dark-yellow-color-theme.json"
+            },
+            {
+                "id": "%darkgreen%",
+                "label": "%darkgreen%",
+                "uiTheme": "vs-dark",
+                "path": "./themes/flexoki-dark-green-color-theme.json"
+            },
+            {
+                "id": "%darkcyan%",
+                "label": "%darkcyan%",
+                "uiTheme": "vs-dark",
+                "path": "./themes/flexoki-dark-cyan-color-theme.json"
+            },
+            {
+                "id": "%darkblue%",
+                "label": "%darkblue%",
+                "uiTheme": "vs-dark",
+                "path": "./themes/flexoki-dark-blue-color-theme.json"
+            },
+            {
+                "id": "%darkpurple%",
+                "label": "%darkpurple%",
+                "uiTheme": "vs-dark",
+                "path": "./themes/flexoki-dark-purple-color-theme.json"
+            },
+            {
+                "id": "%darkmagenta%",
+                "label": "%darkmagenta%",
+                "uiTheme": "vs-dark",
+                "path": "./themes/flexoki-dark-magenta-color-theme.json"
+            },
+            {
+                "id": "%lightred%",
+                "label": "%lightred%",
                 "uiTheme": "vs",
-                "path": "./themes/flexoki-light-color-theme.json"
+                "path": "./themes/flexoki-light-red-color-theme.json"
+            },
+            {
+                "id": "%lightorange%",
+                "label": "%lightorange%",
+                "uiTheme": "vs",
+                "path": "./themes/flexoki-light-orange-color-theme.json"
+            },
+            {
+                "id": "%lightyellow%",
+                "label": "%lightyellow%",
+                "uiTheme": "vs",
+                "path": "./themes/flexoki-light-yellow-color-theme.json"
+            },
+            {
+                "id": "%lightgreen%",
+                "label": "%lightgreen%",
+                "uiTheme": "vs",
+                "path": "./themes/flexoki-light-green-color-theme.json"
+            },
+            {
+                "id": "%lightcyan%",
+                "label": "%lightcyan%",
+                "uiTheme": "vs",
+                "path": "./themes/flexoki-light-cyan-color-theme.json"
+            },
+            {
+                "id": "%lightblue%",
+                "label": "%lightblue%",
+                "uiTheme": "vs",
+                "path": "./themes/flexoki-light-blue-color-theme.json"
+            },
+            {
+                "id": "%lightpurple%",
+                "label": "%lightpurple%",
+                "uiTheme": "vs",
+                "path": "./themes/flexoki-light-purple-color-theme.json"
+            },
+            {
+                "id": "%lightmagenta%",
+                "label": "%lightmagenta%",
+                "uiTheme": "vs",
+                "path": "./themes/flexoki-light-magenta-color-theme.json"
             }
         ]
     },
@@ -33,10 +117,10 @@
         "url": "https://github.com/mthierman/vscode-themes.git"
     },
     "devDependencies": {
-        "prettier": "latest",
         "@types/node": "latest",
-        "typescript": "latest",
         "generator-code": "latest",
+        "prettier": "latest",
+        "typescript": "latest",
         "yo": "latest"
     }
 }

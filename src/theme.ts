@@ -1,218 +1,126 @@
-import { getBaseColors, getColors } from "./colors.js";
-import { getMappings } from "./mappings.js";
+import getMappings from "./mappings.js";
 
-const getTheme = (name: string, accentColor: String) => {
-    let base = getBaseColors();
-    let color = getColors(name);
-    let mapping = getMappings(name);
-
-    let accent;
-    let accentLight;
-    let transparent = "#FFFFFF00";
-
-    if (name === "Flexoki Dark") {
-        accent = color.bl2;
-        accentLight = color.bl;
-
-        switch (accentColor) {
-            case "red":
-                accent = color.re2;
-                accentLight = color.re;
-            case "orange":
-                accent = color.or2;
-                accentLight = color.or;
-            case "yellow":
-                accent = color.ye2;
-                accentLight = color.ye;
-            case "green":
-                accent = color.gr2;
-                accentLight = color.gr;
-            case "cyan":
-                accent = color.cy2;
-                accentLight = color.cy;
-            case "blue":
-                accent = color.bl2;
-                accentLight = color.bl;
-            case "purple":
-                accent = color.pu2;
-                accentLight = color.pu;
-            case "magenta":
-                accent = color.ma2;
-                accentLight = color.ma;
-        }
-    }
-
-    if (name === "Flexoki Light") {
-        accent = color.bl;
-        accentLight = color.bl2;
-
-        switch (accentColor) {
-            case "red":
-                accent = color.re;
-                accentLight = color.re2;
-            case "orange":
-                accent = color.or;
-                accentLight = color.or2;
-            case "yellow":
-                accent = color.ye;
-                accentLight = color.ye2;
-            case "green":
-                accent = color.gr;
-                accentLight = color.gr2;
-            case "cyan":
-                accent = color.cy;
-                accentLight = color.cy2;
-            case "blue":
-                accent = color.bl;
-                accentLight = color.bl2;
-            case "purple":
-                accent = color.pu;
-                accentLight = color.pu2;
-            case "magenta":
-                accent = color.ma;
-                accentLight = color.ma2;
-        }
-    }
+const getTheme = (theme: string, color: string) => {
+    let colors = getMappings(theme, color);
 
     return {
         $schema: "vscode://schemas/color-theme",
-        name: name,
+        name: `Flexoki ${theme} ${color}`,
         semanticHighlighting: true,
         colors: {
-            "titleBar.activeBackground": mapping.secondary_bg,
-            "titleBar.inactiveBackground": mapping.main_bg,
-            "titleBar.border": mapping.borders,
-            "titleBar.activeForeground": mapping.primary_text,
-            "titleBar.inactiveForeground": mapping.faint_text,
-
-            "editor.background": mapping.main_bg,
-            "editor.foreground": mapping.primary_text,
-
-            "statusBar.background": mapping.secondary_bg,
-            "statusBar.noFolderBackground": mapping.secondary_bg,
-            "statusBar.debuggingBackground": mapping.active_borders,
-
-            "statusBar.border": mapping.borders,
-            "statusBar.noFolderBorder": mapping.borders,
-            "statusBar.debuggingBorder": mapping.borders,
-            "statusBar.focusBorder": mapping.borders,
-
-            "statusBar.foreground": mapping.primary_text,
-            "statusBar.debuggingForeground": mapping.primary_text,
-            "statusBar.noFolderForeground": mapping.primary_text,
-
-            "sideBar.background": mapping.secondary_bg,
-            "sideBar.border": mapping.borders,
-            "sideBar.foreground": mapping.primary_text,
-
-            "activityBar.background": mapping.secondary_bg,
-            "activityBar.border": mapping.borders,
-            "activityBar.activeBackground": mapping.borders,
-            "activityBar.activeBorder": transparent,
-            "activityBar.activeFocusBorder": transparent,
-            "activityBar.dropBorder": transparent,
-            "activityBar.foreground": mapping.primary_text,
-            "activityBar.inactiveForeground": mapping.muted_text,
-            "activityBarBadge.background": accentLight,
-            "activityBarBadge.foreground": mapping.primary_text,
-
-            "commandCenter.background": mapping.secondary_bg,
-            "commandCenter.border": mapping.borders,
-            "commandCenter.foreground": mapping.muted_text,
-            "commandCenter.inactiveForeground": mapping.faint_text,
-            "commandCenter.inactiveBorder": mapping.borders,
-            "commandCenter.activeBorder": mapping.borders,
-            "commandCenter.activeBackground": mapping.main_bg,
-            "commandCenter.activeForeground": mapping.primary_text,
-            "commandCenter.debuggingBackground": mapping.main_bg,
-
-            "quickInput.background": mapping.main_bg,
-            "quickInput.foreground": mapping.primary_text,
-            "quickInputList.focusBackground": mapping.active_borders,
-            "quickInputList.focusForeground": mapping.primary_text,
-            "quickInputList.focusIconForeground": mapping.primary_text,
-            "list.hoverBackground": mapping.hovered_borders,
-
-            "input.background": mapping.main_bg,
-            "input.border": mapping.borders,
-            "input.foreground": mapping.primary_text,
-            "input.placeholderForeground": mapping.muted_text,
-
-            "menu.background": mapping.secondary_bg,
-            "menu.border": transparent,
-            "menu.foreground": mapping.primary_text,
-            "menu.selectionBackground": mapping.hovered_borders,
-            "menu.selectionBorder": transparent,
-            "menu.selectionForeground": mapping.primary_text,
-            "menu.separatorBackground": mapping.borders,
-
-            "menubar.selectionBackground": mapping.hovered_borders,
-            "menubar.selectionBorder": transparent,
-            "menubar.selectionForeground": mapping.primary_text,
-
-            "panel.background": mapping.secondary_bg,
-            "panel.border": mapping.borders,
-
-            "button.background": mapping.borders,
-            "button.border": transparent,
-            "button.foreground": mapping.primary_text,
-            "button.hoverBackground": mapping.hovered_borders,
-
-            "dropdown.background": mapping.main_bg,
-            "dropdown.border": mapping.borders,
-            "dropdown.foreground": mapping.primary_text,
-            "dropdown.listBackground": mapping.main_bg,
-
-            "editorCursor.background": accentLight,
-            "editorCursor.foreground": accentLight,
-
-            "editorGroupHeader.tabsBackground": mapping.main_bg,
-            "editorGroup.border": mapping.borders,
-            "editorGroupHeader.border": mapping.borders,
-            "tab.activeForeground": mapping.primary_text,
-            "tab.activeBackground": mapping.secondary_bg,
-            "tab.inactiveBackground": mapping.main_bg,
-            "tab.hoverBackground": mapping.borders,
-            "tab.border": mapping.borders,
-
-            "settings.focusedRowBorder": transparent,
-            "focusBorder": transparent,
-            "list.activeSelectionBackground": mapping.active_borders,
-            "list.inactiveSelectionBackground": mapping.borders,
-            "list.activeSelectionForeground": mapping.primary_text,
-            "list.inactiveSelectionForeground": mapping.primary_text,
-
-            "settings.focusedRowBackground": mapping.secondary_bg,
-            "settings.rowHoverBackground": mapping.secondary_bg,
-
-            "editorWidget.background": mapping.borders,
-            "editorWidget.foreground": mapping.primary_text,
-            "editorWidget.border": mapping.borders,
-            "editorSuggestWidget.background": mapping.secondary_bg,
-
-            "icon.foreground": mapping.primary_text,
-
-            "terminal.border": mapping.borders,
-            "terminal.background": mapping.secondary_bg,
-            "terminal.ansiBlack": base.black,
-            "terminal.ansiBlue": color.bl2,
-            "terminal.ansiBrightBlack": base.base700,
-            "terminal.ansiBrightBlue": color.bl,
-            "terminal.ansiBrightCyan": color.cy,
-            "terminal.ansiBrightGreen": color.gr,
-            "terminal.ansiBrightMagenta": color.ma,
-            "terminal.ansiBrightRed": color.re,
-            "terminal.ansiBrightWhite": base.paper,
-            "terminal.ansiBrightYellow": color.ye,
-            "terminalCursor.foreground": mapping.primary_text,
-            "terminal.ansiCyan": color.cy2,
-            "terminal.foreground": mapping.primary_text,
-            "terminal.ansiGreen": color.gr2,
-            "terminal.ansiMagenta": color.ma2,
-            "terminal.ansiRed": color.re2,
-            "terminal.selectionBackground": color.or2,
-            "terminal.ansiWhite": base.base300,
-            "terminal.ansiYellow": color.ye2,
+            "activityBar.activeBackground": colors.borders,
+            "activityBar.activeBorder": colors.transparent,
+            "activityBar.activeFocusBorder": colors.transparent,
+            "activityBar.background": colors.secondary_bg,
+            "activityBar.border": colors.borders,
+            "activityBar.dropBorder": colors.transparent,
+            "activityBar.foreground": colors.primary_text,
+            "activityBar.inactiveForeground": colors.muted_text,
+            "activityBarBadge.background": colors.accentDark,
+            "activityBarBadge.foreground": colors.primary_text,
+            "button.background": colors.borders,
+            "button.border": colors.transparent,
+            "button.foreground": colors.primary_text,
+            "button.hoverBackground": colors.hovered_borders,
+            "commandCenter.activeBackground": colors.main_bg,
+            "commandCenter.activeBorder": colors.borders,
+            "commandCenter.activeForeground": colors.primary_text,
+            "commandCenter.background": colors.secondary_bg,
+            "commandCenter.border": colors.borders,
+            "commandCenter.debuggingBackground": colors.main_bg,
+            "commandCenter.foreground": colors.muted_text,
+            "commandCenter.inactiveBorder": colors.borders,
+            "commandCenter.inactiveForeground": colors.faint_text,
+            "dropdown.background": colors.main_bg,
+            "dropdown.border": colors.borders,
+            "dropdown.foreground": colors.primary_text,
+            "dropdown.listBackground": colors.main_bg,
+            "editor.background": colors.main_bg,
+            "editor.foreground": colors.primary_text,
+            "editorCursor.background": colors.accentDark,
+            "editorCursor.foreground": colors.accentDark,
+            "editorGroup.border": colors.borders,
+            "editorGroupHeader.border": colors.borders,
+            "editorGroupHeader.tabsBackground": colors.main_bg,
+            "editorSuggestWidget.background": colors.secondary_bg,
+            "editorWidget.background": colors.borders,
+            "editorWidget.border": colors.borders,
+            "editorWidget.foreground": colors.primary_text,
+            "focusBorder": colors.transparent,
+            "icon.foreground": colors.primary_text,
+            "input.background": colors.main_bg,
+            "input.border": colors.borders,
+            "input.foreground": colors.primary_text,
+            "input.placeholderForeground": colors.muted_text,
+            "list.activeSelectionBackground": colors.active_borders,
+            "list.activeSelectionForeground": colors.primary_text,
+            "list.hoverBackground": colors.hovered_borders,
+            "list.inactiveSelectionBackground": colors.borders,
+            "list.inactiveSelectionForeground": colors.primary_text,
+            "menu.background": colors.secondary_bg,
+            "menu.border": colors.transparent,
+            "menu.foreground": colors.primary_text,
+            "menu.selectionBackground": colors.hovered_borders,
+            "menu.selectionBorder": colors.transparent,
+            "menu.selectionForeground": colors.primary_text,
+            "menu.separatorBackground": colors.borders,
+            "menubar.selectionBackground": colors.hovered_borders,
+            "menubar.selectionBorder": colors.transparent,
+            "menubar.selectionForeground": colors.primary_text,
+            "panel.background": colors.secondary_bg,
+            "panel.border": colors.borders,
+            "quickInput.background": colors.main_bg,
+            "quickInput.foreground": colors.primary_text,
+            "quickInputList.focusBackground": colors.active_borders,
+            "quickInputList.focusForeground": colors.primary_text,
+            "quickInputList.focusIconForeground": colors.primary_text,
+            "settings.focusedRowBackground": colors.secondary_bg,
+            "settings.focusedRowBorder": colors.transparent,
+            "settings.rowHoverBackground": colors.secondary_bg,
+            "sideBar.background": colors.secondary_bg,
+            "sideBar.border": colors.borders,
+            "sideBar.foreground": colors.primary_text,
+            "statusBar.background": colors.secondary_bg,
+            "statusBar.border": colors.borders,
+            "statusBar.debuggingBackground": colors.active_borders,
+            "statusBar.debuggingBorder": colors.borders,
+            "statusBar.debuggingForeground": colors.primary_text,
+            "statusBar.focusBorder": colors.borders,
+            "statusBar.foreground": colors.primary_text,
+            "statusBar.noFolderBackground": colors.secondary_bg,
+            "statusBar.noFolderBorder": colors.borders,
+            "statusBar.noFolderForeground": colors.primary_text,
+            "tab.activeBackground": colors.secondary_bg,
+            "tab.activeForeground": colors.primary_text,
+            "tab.border": colors.borders,
+            "tab.hoverBackground": colors.borders,
+            "tab.inactiveBackground": colors.main_bg,
+            "terminal.ansiBlack": colors.black,
+            "terminal.ansiBlue": colors.bl2,
+            "terminal.ansiBrightBlack": colors.base700,
+            "terminal.ansiBrightBlue": colors.bl,
+            "terminal.ansiBrightCyan": colors.cy,
+            "terminal.ansiBrightGreen": colors.gr,
+            "terminal.ansiBrightMagenta": colors.ma,
+            "terminal.ansiBrightRed": colors.re,
+            "terminal.ansiBrightWhite": colors.paper,
+            "terminal.ansiBrightYellow": colors.ye,
+            "terminal.ansiCyan": colors.cy2,
+            "terminal.ansiGreen": colors.gr2,
+            "terminal.ansiMagenta": colors.ma2,
+            "terminal.ansiRed": colors.re2,
+            "terminal.ansiWhite": colors.base300,
+            "terminal.ansiYellow": colors.ye2,
+            "terminal.background": colors.secondary_bg,
+            "terminal.border": colors.borders,
+            "terminal.foreground": colors.primary_text,
+            "terminal.selectionBackground": colors.or2,
+            "terminalCursor.foreground": colors.primary_text,
+            "titleBar.activeBackground": colors.secondary_bg,
+            "titleBar.activeForeground": colors.primary_text,
+            "titleBar.border": colors.borders,
+            "titleBar.inactiveBackground": colors.main_bg,
+            "titleBar.inactiveForeground": colors.faint_text,
         },
         tokenColors: [
             {
@@ -223,7 +131,7 @@ const getTheme = (name: string, accentColor: String) => {
                     "comment.line",
                 ],
                 settings: {
-                    foreground: mapping.comments,
+                    foreground: colors.comments,
                 },
             },
             {
@@ -237,7 +145,7 @@ const getTheme = (name: string, accentColor: String) => {
                     "support.constant",
                 ],
                 settings: {
-                    foreground: mapping.constants,
+                    foreground: colors.constants,
                 },
             },
             {
@@ -249,7 +157,7 @@ const getTheme = (name: string, accentColor: String) => {
                     "constant.numeric.octal",
                 ],
                 settings: {
-                    foreground: mapping.numbers,
+                    foreground: colors.numbers,
                 },
             },
             {
@@ -268,13 +176,13 @@ const getTheme = (name: string, accentColor: String) => {
                     "entity.other.inherited-class",
                 ],
                 settings: {
-                    foreground: mapping.functions,
+                    foreground: colors.functions,
                 },
             },
             {
                 scope: ["invalid", "invalid.deprecated", "invalid.illegal"],
                 settings: {
-                    foreground: mapping.invalid_imports,
+                    foreground: colors.invalid_imports,
                 },
             },
             {
@@ -285,7 +193,7 @@ const getTheme = (name: string, accentColor: String) => {
                     "string.json",
                 ],
                 settings: {
-                    foreground: mapping.keywords,
+                    foreground: colors.keywords,
                 },
             },
             {
@@ -297,7 +205,7 @@ const getTheme = (name: string, accentColor: String) => {
                     "keyword.operator.new",
                 ],
                 settings: {
-                    foreground: mapping.punctuation_operators,
+                    foreground: colors.punctuation_operators,
                 },
             },
             {
@@ -316,7 +224,7 @@ const getTheme = (name: string, accentColor: String) => {
                     "meta.type.annotation",
                 ],
                 settings: {
-                    foreground: mapping.language_features,
+                    foreground: colors.language_features,
                 },
             },
             {
@@ -328,13 +236,13 @@ const getTheme = (name: string, accentColor: String) => {
                     "punctuation.terminator",
                 ],
                 settings: {
-                    foreground: mapping.punctuation_operators,
+                    foreground: colors.punctuation_operators,
                 },
             },
             {
                 scope: ["storage", "storage.modifier", "storage.type"],
                 settings: {
-                    foreground: mapping.keywords,
+                    foreground: colors.keywords,
                 },
             },
             {
@@ -351,7 +259,7 @@ const getTheme = (name: string, accentColor: String) => {
                     "string.unquoted",
                 ],
                 settings: {
-                    foreground: mapping.strings,
+                    foreground: colors.strings,
                 },
             },
             {
@@ -364,7 +272,7 @@ const getTheme = (name: string, accentColor: String) => {
                     "variable.parameter",
                 ],
                 settings: {
-                    foreground: mapping.variables_attributes,
+                    foreground: colors.variables_attributes,
                 },
             },
         ],

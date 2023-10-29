@@ -1,28 +1,72 @@
 import * as fs from "node:fs/promises";
 import getTheme from "./theme.js";
 
-const themes = "./themes";
-
-const light = {
-    name: "Flexoki Light",
-    file: `${themes}/flexoki-light-color-theme.json`,
-};
-
-const dark = {
-    name: "Flexoki Dark",
-    file: `${themes}/flexoki-dark-color-theme.json`,
-};
-
-fs.mkdir(themes, { recursive: true })
+fs.mkdir("./themes", { recursive: true })
     .then(() =>
         Promise.all([
             fs.writeFile(
-                dark.file,
-                JSON.stringify(getTheme(dark.name, "red"), null, 4),
+                "themes/flexoki-dark-red-color-theme.json",
+                JSON.stringify(getTheme("Dark", "Red"), null, 4),
             ),
             fs.writeFile(
-                light.file,
-                JSON.stringify(getTheme(light.name, "red"), null, 4),
+                "themes/flexoki-dark-orange-color-theme.json",
+                JSON.stringify(getTheme("Dark", "Orange"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-yellow-color-theme.json",
+                JSON.stringify(getTheme("Dark", "Yellow"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-green-color-theme.json",
+                JSON.stringify(getTheme("Dark", "Green"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-cyan-color-theme.json",
+                JSON.stringify(getTheme("Dark", "Cyan"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-blue-color-theme.json",
+                JSON.stringify(getTheme("Dark", "Blue"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-purple-color-theme.json",
+                JSON.stringify(getTheme("Dark", "Purple"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-magenta-color-theme.json",
+                JSON.stringify(getTheme("Dark", "Magenta"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-red-color-theme.json",
+                JSON.stringify(getTheme("Light", "Red"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-orange-color-theme.json",
+                JSON.stringify(getTheme("Light", "Orange"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-yellow-color-theme.json",
+                JSON.stringify(getTheme("Light", "Yellow"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-green-color-theme.json",
+                JSON.stringify(getTheme("Light", "Green"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-cyan-color-theme.json",
+                JSON.stringify(getTheme("Light", "Cyan"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-blue-color-theme.json",
+                JSON.stringify(getTheme("Light", "Blue"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-purple-color-theme.json",
+                JSON.stringify(getTheme("Light", "Purple"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-magenta-color-theme.json",
+                JSON.stringify(getTheme("Light", "Magenta"), null, 4),
             ),
         ]),
     )
