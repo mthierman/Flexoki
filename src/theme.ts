@@ -90,7 +90,7 @@ const getTheme = (name: string, accentColor: String) => {
 
             "statusBar.background": mapping.secondary_bg,
             "statusBar.noFolderBackground": mapping.secondary_bg,
-            "statusBar.debuggingBackground": accent,
+            "statusBar.debuggingBackground": mapping.active_borders,
 
             "statusBar.border": mapping.borders,
             "statusBar.noFolderBorder": mapping.borders,
@@ -108,12 +108,12 @@ const getTheme = (name: string, accentColor: String) => {
             "activityBar.background": mapping.secondary_bg,
             "activityBar.border": mapping.borders,
             "activityBar.activeBackground": mapping.borders,
-            "activityBar.activeBorder": accent,
-            "activityBar.activeFocusBorder": accent,
-            "activityBar.dropBorder": accent,
+            "activityBar.activeBorder": transparent,
+            "activityBar.activeFocusBorder": transparent,
+            "activityBar.dropBorder": transparent,
             "activityBar.foreground": mapping.primary_text,
             "activityBar.inactiveForeground": mapping.muted_text,
-            "activityBarBadge.background": accent,
+            "activityBarBadge.background": accentLight,
             "activityBarBadge.foreground": mapping.primary_text,
 
             "commandCenter.background": mapping.secondary_bg,
@@ -128,9 +128,10 @@ const getTheme = (name: string, accentColor: String) => {
 
             "quickInput.background": mapping.main_bg,
             "quickInput.foreground": mapping.primary_text,
-            "quickInputList.focusBackground": accent,
+            "quickInputList.focusBackground": mapping.active_borders,
             "quickInputList.focusForeground": mapping.primary_text,
             "quickInputList.focusIconForeground": mapping.primary_text,
+            "list.hoverBackground": mapping.hovered_borders,
 
             "input.background": mapping.main_bg,
             "input.border": mapping.borders,
@@ -140,30 +141,30 @@ const getTheme = (name: string, accentColor: String) => {
             "menu.background": mapping.secondary_bg,
             "menu.border": transparent,
             "menu.foreground": mapping.primary_text,
-            "menu.selectionBackground": accent,
-            "menu.selectionBorder": accent,
+            "menu.selectionBackground": mapping.hovered_borders,
+            "menu.selectionBorder": transparent,
             "menu.selectionForeground": mapping.primary_text,
             "menu.separatorBackground": mapping.borders,
 
-            "menubar.selectionBackground": accent,
+            "menubar.selectionBackground": mapping.hovered_borders,
             "menubar.selectionBorder": transparent,
             "menubar.selectionForeground": mapping.primary_text,
 
             "panel.background": mapping.secondary_bg,
             "panel.border": mapping.borders,
 
-            "button.background": accent,
-            "button.border": mapping.borders,
+            "button.background": mapping.borders,
+            "button.border": transparent,
             "button.foreground": mapping.primary_text,
-            "button.hoverBackground": accentLight,
+            "button.hoverBackground": mapping.hovered_borders,
 
             "dropdown.background": mapping.main_bg,
             "dropdown.border": mapping.borders,
             "dropdown.foreground": mapping.primary_text,
             "dropdown.listBackground": mapping.main_bg,
 
-            "editorCursor.background": accent,
-            "editorCursor.foreground": accent,
+            "editorCursor.background": accentLight,
+            "editorCursor.foreground": accentLight,
 
             "editorGroupHeader.tabsBackground": mapping.main_bg,
             "editorGroup.border": mapping.borders,
@@ -174,9 +175,12 @@ const getTheme = (name: string, accentColor: String) => {
             "tab.hoverBackground": mapping.borders,
             "tab.border": mapping.borders,
 
-            "settings.focusedRowBorder": accent,
+            "settings.focusedRowBorder": transparent,
             "focusBorder": transparent,
-            "list.activeSelectionBackground": accent,
+            "list.activeSelectionBackground": mapping.active_borders,
+            "list.inactiveSelectionBackground": mapping.borders,
+            "list.activeSelectionForeground": mapping.primary_text,
+            "list.inactiveSelectionForeground": mapping.primary_text,
 
             "settings.focusedRowBackground": mapping.secondary_bg,
             "settings.rowHoverBackground": mapping.secondary_bg,
