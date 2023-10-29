@@ -185,6 +185,13 @@ const getTheme = (name: string, accentColor: String) => {
             "settings.focusedRowBackground": mapping.secondary_bg,
             "settings.rowHoverBackground": mapping.secondary_bg,
 
+            "editorWidget.background": mapping.borders,
+            "editorWidget.foreground": mapping.primary_text,
+            "editorWidget.border": mapping.borders,
+            "editorSuggestWidget.background": mapping.secondary_bg,
+
+            "icon.foreground": mapping.primary_text,
+
             "terminal.border": mapping.borders,
             "terminal.background": mapping.secondary_bg,
             "terminal.ansiBlack": base.black,
