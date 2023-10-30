@@ -2,6 +2,8 @@
 
 ## VS Code themes based on [Flexoki](https://stephango.com/flexoki) by [Steph Ango](https://stephango.com/)
 
+*Also includes dark & light themes for Windows terminal*
+
 ![Screenshot of dark & light themes](data/screenshot.png)
 
 > "Flexoki is an inky color scheme for prose and code. Flexoki is designed for reading and writing on digital screens. It is inspired by analog printing inks and warm shades of paper.
