@@ -1,8 +1,8 @@
-# Flexoki Theme for VS Code
+# Flexoki Theme for VS Code & Windows Terminal
 
 ## VS Code themes based on [Flexoki](https://stephango.com/flexoki) by [Steph Ango](https://stephango.com/)
 
-*Also includes dark & light themes for Windows terminal*
+### Dark & light themes for VS Code & Windows terminal. VS Code themes include choice of accent color.
 
 ![Screenshot of dark & light themes](data/screenshot.png)
 
