@@ -134,6 +134,7 @@
     },
     "devDependencies": {
         "@types/node": "latest",
+        "@vscode/vsce": "^2.22.0",
         "generator-code": "latest",
         "prettier": "latest",
         "typescript": "latest",
