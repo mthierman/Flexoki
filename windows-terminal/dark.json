@@ -1,0 +1,23 @@
+{
+    "background": "#100F0F",
+    "black": "#1C1B1A",
+    "blue": "#205EA6",
+    "brightBlack": "#282726",
+    "brightBlue": "#4385BE",
+    "brightCyan": "#3AA99F",
+    "brightGreen": "#879A39",
+    "brightPurple": "#CE5D97",
+    "brightRed": "#D14D41",
+    "brightWhite": "#F2F0E5",
+    "brightYellow": "#D0A215",
+    "cursorColor": "#CECDC3",
+    "cyan": "#24837B",
+    "foreground": "#CECDC3",
+    "green": "#66800B",
+    "name": "Flexoki Dark",
+    "purple": "#A02F6F",
+    "red": "#AF3029",
+    "selectionBackground": "#205EA6",
+    "white": "#E6E4D9",
+    "yellow": "#AD8301"
+}

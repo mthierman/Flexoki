@@ -1,16 +1,25 @@
 {
-    "name": "theme-flexoki",
-    "type": "module",
+    "name": "flexoki",
+    "version": "0.0.1",
+    "publisher": "mthierman",
+    "engines": {
+        "vscode": "*"
+    },
+    "license": "MIT",
     "displayName": "%display%",
     "description": "%description%",
     "categories": [
         "Themes"
     ],
-    "version": "0.0.1",
-    "publisher": "Mike Thierman",
-    "license": "MIT",
-    "engines": {
-        "vscode": "*"
+    "keywords": [
+        "theme",
+        "flexoki",
+        "dark",
+        "light"
+    ],
+    "galleryBanner": {
+        "color": "#FFFCF0",
+        "theme": "light"
     },
     "contributes": {
         "themes": [
@@ -112,9 +121,16 @@
             }
         ]
     },
+    "icon": "data/icon.png",
+    "type": "module",
+    "homepage": "https://github.com/mthierman/Flexoki/blob/main/README.md",
+    "bugs": {
+        "email": "mthierman@gmail.com",
+        "url": "https://github.com/mthierman/Flexoki/issues"
+    },
     "repository": {
         "type": "git",
-        "url": "https://github.com/mthierman/vscode-themes.git"
+        "url": "https://github.com/mthierman/Flexoki.git"
     },
     "devDependencies": {
         "@types/node": "latest",
