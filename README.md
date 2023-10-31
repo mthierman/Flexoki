@@ -1,4 +1,4 @@
-# Flexoki Theme for VS Code & Windows Terminal
+# [Flexoki Theme](https://marketplace.visualstudio.com/items?itemName=mthierman.theme-flexoki) for VS Code & Windows Terminal
 
 ## VS Code themes based on [Flexoki](https://stephango.com/flexoki) by [Steph Ango](https://stephango.com/)
 
