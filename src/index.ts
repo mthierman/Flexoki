@@ -1,7 +1,8 @@
 import * as fs from "node:fs/promises";
 import getTheme from "./theme.js";
+import getTerminal from "./terminal.js";
 
-fs.mkdir("./themes", { recursive: true })
+fs.mkdir("themes", { recursive: true })
     .then(() =>
         Promise.all([
             fs.writeFile(
@@ -67,6 +68,21 @@ fs.mkdir("./themes", { recursive: true })
             fs.writeFile(
                 "themes/flexoki-light-magenta-color-theme.json",
                 JSON.stringify(getTheme("Light", "Magenta"), null, 4),
+            ),
+        ]),
+    )
+    .catch(() => process.exit(1));
+
+fs.mkdir("terminal", { recursive: true })
+    .then(() =>
+        Promise.all([
+            fs.writeFile(
+                "terminal/dark.json",
+                JSON.stringify(getTerminal("Dark", "Blue"), null, 4),
+            ),
+            fs.writeFile(
+                "terminal/light.json",
+                JSON.stringify(getTerminal("Light", "Blue"), null, 4),
             ),
         ]),
     )
