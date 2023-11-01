@@ -187,6 +187,7 @@ const getTheme = (theme: string, color: string) => {
                     "entity.other",
                     "entity.other.attribute-name",
                     "entity.other.inherited-class",
+                    "markup.heading",
                 ],
                 settings: {
                     foreground: colors.functions,

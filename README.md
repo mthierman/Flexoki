@@ -1,4 +1,4 @@
-# Flexoki themes for [VS Code]((https://marketplace.visualstudio.com/items?itemName=mthierman.theme-flexoki)) & [Windows Terminal](https://github.com/mthierman/Flexoki/tree/main/terminal)
+# Flexoki themes for [VS Code](https://marketplace.visualstudio.com/items?itemName=mthierman.theme-flexoki) & Windows Terminal
 
 ![Screenshot of dark & light themes](data/screenshot.png)
 
