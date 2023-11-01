@@ -1,6 +1,6 @@
 /** @type {import('prettier').Config} */
 
-const config = {
+export default {
     tabWidth: 4,
     bracketSameLine: true,
     quoteProps: "consistent",
@@ -13,5 +13,3 @@ const config = {
         },
     ],
 };
-
-export default config;
