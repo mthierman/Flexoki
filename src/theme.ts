@@ -5,15 +5,18 @@ const getTheme = (theme: string, color: string) => {
 
     let accent;
     let accentHover;
+    let menuBg;
 
     if (theme === "Dark") {
         accent = colors.accentDark;
         accentHover = colors.accentLight;
+        menuBg = colors.base900;
     }
 
     if (theme === "Light") {
         accent = colors.accentLight;
         accentHover = colors.accentDark;
+        menuBg = colors.base100;
     }
 
     return {
@@ -70,13 +73,13 @@ const getTheme = (theme: string, color: string) => {
             "list.hoverBackground": colors.hovered_borders,
             "list.inactiveSelectionBackground": colors.borders,
             "list.inactiveSelectionForeground": colors.primary_text,
-            "menu.background": colors.secondary_bg,
+            "menu.background": menuBg,
             "menu.border": colors.transparent,
             "menu.foreground": colors.primary_text,
             "menu.selectionBackground": colors.hovered_borders,
             "menu.selectionBorder": colors.transparent,
             "menu.selectionForeground": colors.primary_text,
-            "menu.separatorBackground": colors.borders,
+            "menu.separatorBackground": colors.hovered_borders,
             "menubar.selectionBackground": colors.hovered_borders,
             "menubar.selectionBorder": colors.transparent,
             "menubar.selectionForeground": colors.primary_text,
