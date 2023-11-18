@@ -1,6 +1,7 @@
 {
     "name": "theme-flexoki",
     "version": "0.0.3",
+    "private": true,
     "publisher": "mthierman",
     "engines": {
         "vscode": "*"
