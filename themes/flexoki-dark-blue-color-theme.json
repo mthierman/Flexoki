@@ -279,5 +279,11 @@
                 "foreground": "#4385BE"
             }
         }
-    ]
+    ],
+    "semanticTokenColors": {
+        "newOperator": "#205EA6",
+        "stringLiteral": "#3AA99F",
+        "customLiteral": "#CECDC3",
+        "numberLiteral": "#8B7EC8"
+    }
 }

@@ -293,6 +293,12 @@ const getTheme = (theme: string, color: string) => {
                 },
             },
         ],
+        semanticTokenColors: {
+            newOperator: accent,
+            stringLiteral: colors.strings,
+            customLiteral: colors.primary_text,
+            numberLiteral: colors.numbers,
+        },
     };
 };
 
