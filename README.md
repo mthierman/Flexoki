@@ -1,6 +1,6 @@
 # Flexoki themes for [VS Code](https://marketplace.visualstudio.com/items?itemName=mthierman.theme-flexoki) & Windows Terminal
 
-![Screenshot of dark & light themes](data/screenshot.png)
+![Screenshot of dark & light themes](https://raw.githubusercontent.com/mthierman/Flexoki/main/data/screenshot.png)
 
 Based on [Flexoki](https://stephango.com/flexoki) by [Steph Ango](https://stephango.com/)
 
@@ -12,9 +12,9 @@ Based on [Flexoki](https://stephango.com/flexoki) by [Steph Ango](https://stepha
 
 ## Screenshots
 
-![Screenshot of dark & light themes](data/screenshot-dark.png)
+![Screenshot of dark & light themes](https://raw.githubusercontent.com/mthierman/Flexoki/main/data/screenshot-dark.png)
 
-![Screenshot of dark & light themes](data/screenshot-light.png)
+![Screenshot of dark & light themes](https://raw.githubusercontent.com/mthierman/Flexoki/main/data/screenshot-light.png)
 
 ## Other resources:
 
