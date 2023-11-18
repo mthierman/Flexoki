@@ -137,7 +137,7 @@
         "build": "tsx src/index.ts",
         "watch": "tsx --watch src/index.ts",
         "tsc": "tsc --watch",
-        "publish": "vsce publish"
+        "vsce": "vsce publish"
     },
     "devDependencies": {
         "@types/node": "latest",
