@@ -141,12 +141,7 @@ const getTheme = (theme: string, color: string) => {
         },
         tokenColors: [
             {
-                scope: [
-                    "comment",
-                    "comment.block",
-                    "comment.block.documentation",
-                    "comment.line",
-                ],
+                scope: ["comment", "comment.block", "comment.block.documentation", "comment.line"],
                 settings: {
                     foreground: colors.comments,
                 },
@@ -192,6 +187,7 @@ const getTheme = (theme: string, color: string) => {
                     "entity.other.attribute-name",
                     "entity.other.inherited-class",
                     "markup.heading",
+                    "support.function",
                 ],
                 settings: {
                     foreground: colors.functions,
@@ -204,12 +200,7 @@ const getTheme = (theme: string, color: string) => {
                 },
             },
             {
-                scope: [
-                    "keyword",
-                    "keyword.control",
-                    "keyword.other",
-                    "string.json",
-                ],
+                scope: ["keyword", "keyword.control", "keyword.other", "string.json"],
                 settings: {
                     foreground: colors.keywords,
                 },
@@ -247,6 +238,7 @@ const getTheme = (theme: string, color: string) => {
             },
             {
                 scope: [
+                    "punctuation.definition.tag",
                     "punctuation.definition.string.begin",
                     "punctuation.definition.string.end",
                     "punctuation.separator",

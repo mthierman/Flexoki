@@ -170,7 +170,8 @@
                 "entity.other",
                 "entity.other.attribute-name",
                 "entity.other.inherited-class",
-                "markup.heading"
+                "markup.heading",
+                "support.function"
             ],
             "settings": {
                 "foreground": "#DA702C"
@@ -230,6 +231,7 @@
         },
         {
             "scope": [
+                "punctuation.definition.tag",
                 "punctuation.definition.string.begin",
                 "punctuation.definition.string.end",
                 "punctuation.separator",
