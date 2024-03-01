@@ -99,6 +99,8 @@ export const getLightMappings = (): Mappings => {
     };
 };
 
+const test = "#ff00dd";
+
 export const getTheme = (dark: boolean, color: string) => {
     const mappings = dark ? getDarkMappings() : getLightMappings();
 
@@ -107,36 +109,36 @@ export const getTheme = (dark: boolean, color: string) => {
 
     switch (color) {
         case "Red":
-            accent = mappings["re2"];
-            accentHover = mappings["re"];
+            accent = dark ? mappings["re2"] : mappings["re"];
+            accentHover = dark ? mappings["re"] : mappings["re2"];
             break;
         case "Orange":
-            accent = mappings["or2"];
-            accentHover = mappings["or"];
+            accent = dark ? mappings["or2"] : mappings["or"];
+            accentHover = dark ? mappings["or"] : mappings["or2"];
             break;
         case "Yellow":
-            accent = mappings["ye2"];
-            accentHover = mappings["ye"];
+            accent = dark ? mappings["ye2"] : mappings["ye"];
+            accentHover = dark ? mappings["ye"] : mappings["ye2"];
             break;
         case "Green":
-            accent = mappings["gr2"];
-            accentHover = mappings["gr"];
+            accent = dark ? mappings["gr2"] : mappings["gr"];
+            accentHover = dark ? mappings["gr"] : mappings["gr2"];
             break;
         case "Cyan":
-            accent = mappings["cy2"];
-            accentHover = mappings["cy"];
+            accent = dark ? mappings["cy2"] : mappings["cy"];
+            accentHover = dark ? mappings["cy"] : mappings["cy2"];
             break;
         case "Blue":
-            accent = mappings["bl2"];
-            accentHover = mappings["bl"];
+            accent = dark ? mappings["bl2"] : mappings["bl"];
+            accentHover = dark ? mappings["bl"] : mappings["bl2"];
             break;
         case "Purple":
-            accent = mappings["pu2"];
-            accentHover = mappings["pu"];
+            accent = dark ? mappings["pu2"] : mappings["pu"];
+            accentHover = dark ? mappings["pu"] : mappings["pu2"];
             break;
         case "Magenta":
-            accent = mappings["ma2"];
-            accentHover = mappings["ma"];
+            accent = dark ? mappings["ma2"] : mappings["ma"];
+            accentHover = dark ? mappings["ma"] : mappings["ma2"];
             break;
     }
 
@@ -159,12 +161,12 @@ export const getTheme = (dark: boolean, color: string) => {
             "button.border": mappings["transparent"],
             "button.foreground": baseTones.paper,
             "button.hoverBackground": accentHover,
-            "commandCenter.activeBackground": mappings["bg"],
+            "commandCenter.activeBackground": mappings["bg-2"],
             "commandCenter.activeBorder": mappings["transparent"],
             "commandCenter.activeForeground": mappings["tx"],
-            "commandCenter.background": mappings["bg"],
+            "commandCenter.background": mappings["bg-2"],
             "commandCenter.border": mappings["transparent"],
-            "commandCenter.debuggingBackground": mappings["bg"],
+            "commandCenter.debuggingBackground": mappings["bg-2"],
             "commandCenter.foreground": mappings["tx-2"],
             "commandCenter.inactiveBorder": mappings["transparent"],
             "commandCenter.inactiveForeground": mappings["tx-3"],
@@ -177,8 +179,9 @@ export const getTheme = (dark: boolean, color: string) => {
             "editorCursor.background": accent,
             "editorCursor.foreground": accent,
             "editorGroup.border": mappings["ui"],
-            "editorGroupHeader.border": mappings["ui"],
-            "editorGroupHeader.tabsBackground": mappings["bg-2"],
+            "editorGroupHeader.border": mappings["ui-2"],
+            "editorGroupHeader.tabsBorder": mappings["ui-2"],
+            "editorGroupHeader.tabsBackground": dark ? mappings["ui"] : mappings["bg"],
             "editorSuggestWidget.background": mappings["bg-2"],
             "editorWidget.background": mappings["ui"],
             "editorWidget.border": mappings["ui"],
@@ -230,9 +233,11 @@ export const getTheme = (dark: boolean, color: string) => {
             "statusBar.noFolderForeground": mappings["tx"],
             "tab.activeBackground": mappings["bg"],
             "tab.activeForeground": mappings["tx"],
-            "tab.border": mappings["ui"],
-            "tab.hoverBackground": mappings["ui"],
-            "tab.inactiveBackground": mappings["bg-2"],
+            "tab.border": mappings["ui-2"],
+            "tab.activeBorder": mappings["transparent"],
+            "tab.activeBorderTop": accent,
+            "tab.hoverBackground": mappings["ui-2"],
+            "tab.inactiveBackground": dark ? mappings["ui"] : mappings["bg"],
             "terminal.ansiBlack": baseTones["base-950"],
             "terminal.ansiBlue": mappings["bl2"],
             "terminal.ansiBrightBlack": baseTones["base-900"],
@@ -254,7 +259,6 @@ export const getTheme = (dark: boolean, color: string) => {
             "terminal.foreground": mappings["tx"],
             "terminal.selectionBackground": accent,
             "terminalCursor.foreground": mappings["tx"],
-            // "titleBar.activeBackground": mappings["bg-2"],
             "titleBar.activeBackground": dark ? mappings["ui"] : mappings["bg"],
             "titleBar.activeForeground": mappings["tx"],
             "titleBar.border": mappings["ui"],
