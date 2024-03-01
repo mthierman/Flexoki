@@ -112,7 +112,7 @@
         "terminal.foreground": "#100F0F",
         "terminal.selectionBackground": "#8B7EC8",
         "terminalCursor.foreground": "#100F0F",
-        "titleBar.activeBackground": "#F2F0E5",
+        "titleBar.activeBackground": "#FFFCF0",
         "titleBar.activeForeground": "#100F0F",
         "titleBar.border": "#E6E4D9",
         "titleBar.inactiveBackground": "#F2F0E5",
