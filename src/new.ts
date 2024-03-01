@@ -105,41 +105,6 @@ export const getTheme = (dark: boolean, color: string) => {
     let accent;
     let accentHover;
 
-    // switch (color) {
-    //     case "Red":
-    //         accent = mappings["re2"] : mappings["re"];
-    //         accentHover = mappings["re"] : mappings["re2"];
-    //         break;
-    //     case "Orange":
-    //         accent = mappings["or2"] : mappings["or"];
-    //         accentHover = mappings["or"] : mappings["or2"];
-    //         break;
-    //     case "Yellow":
-    //         accent = mappings["ye2"] : mappings["ye"];
-    //         accentHover = mappings["ye"] : mappings["ye2"];
-    //         break;
-    //     case "Green":
-    //         accent = mappings["gr2"] : mappings["gr"];
-    //         accentHover = mappings["gr"] : mappings["gr2"];
-    //         break;
-    //     case "Cyan":
-    //         accent = mappings["cy2"] : mappings["cy"];
-    //         accentHover = mappings["cy"] : mappings["cy2"];
-    //         break;
-    //     case "Blue":
-    //         accent = mappings["bl2"] : mappings["bl"];
-    //         accentHover = mappings["bl"] : mappings["bl2"];
-    //         break;
-    //     case "Purple":
-    //         accent = mappings["pu2"] : mappings["pu"];
-    //         accentHover = mappings["pu"] : mappings["pu2"];
-    //         break;
-    //     case "Magenta":
-    //         accent = mappings["ma2"] : mappings["ma"];
-    //         accentHover = mappings["ma"] : mappings["ma2"];
-    //         break;
-    // }
-
     switch (color) {
         case "Red":
             accent = mappings["re2"];
@@ -451,6 +416,34 @@ export const getTheme = (dark: boolean, color: string) => {
     };
 };
 
+export const getTerminalTheme = (dark: boolean) => {
+    const mappings = dark ? getDarkMappings() : getLightMappings();
+
+    return {
+        background: mappings["bg"],
+        black: baseTones["base-950"],
+        blue: mappings["bl2"],
+        brightBlack: baseTones["base-900"],
+        brightBlue: mappings["bl"],
+        brightCyan: mappings["cy"],
+        brightGreen: mappings["gr"],
+        brightPurple: mappings["ma"],
+        brightRed: mappings["re"],
+        brightWhite: baseTones["base-50"],
+        brightYellow: mappings["ye"],
+        cursorColor: mappings["tx"],
+        cyan: mappings["cy2"],
+        foreground: mappings["tx"],
+        green: mappings["gr2"],
+        name: `Flexoki ${dark ? "Dark" : "Light"}`,
+        purple: mappings["ma2"],
+        red: mappings["re2"],
+        selectionBackground: mappings["bl2"],
+        white: baseTones["base-100"],
+        yellow: mappings["ye2"],
+    };
+};
+
 fs.mkdir("themes", { recursive: true })
     .then(() =>
         Promise.all([
@@ -518,6 +511,15 @@ fs.mkdir("themes", { recursive: true })
                 "themes/flexoki-light-magenta-color-theme.json",
                 JSON.stringify(getTheme(false, "Magenta"), null, 4),
             ),
+        ]),
+    )
+    .catch(() => process.exit(1));
+
+fs.mkdir("terminal", { recursive: true })
+    .then(() =>
+        Promise.all([
+            fs.writeFile("terminal/dark.json", JSON.stringify(getTerminalTheme(true), null, 4)),
+            fs.writeFile("terminal/light.json", JSON.stringify(getTerminalTheme(false), null, 4)),
         ]),
     )
     .catch(() => process.exit(1));
