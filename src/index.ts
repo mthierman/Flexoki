@@ -198,7 +198,7 @@ export const getTheme = (dark: boolean, color: string) => {
             "list.inactiveSelectionBackground": mappings["ui"],
             "list.inactiveSelectionForeground": mappings["tx"],
             "menu.background": mappings["bg"],
-            "menu.border": mappings["transparent"],
+            "menu.border": mappings["ui"],
             "menu.foreground": mappings["tx"],
             "menu.selectionBackground": mappings["ui-2"],
             "menu.selectionBorder": mappings["transparent"],

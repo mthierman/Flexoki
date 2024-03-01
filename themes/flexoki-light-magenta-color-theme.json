@@ -54,7 +54,7 @@
         "list.inactiveSelectionBackground": "#E6E4D9",
         "list.inactiveSelectionForeground": "#100F0F",
         "menu.background": "#FFFCF0",
-        "menu.border": "#FFFFFF00",
+        "menu.border": "#E6E4D9",
         "menu.foreground": "#100F0F",
         "menu.selectionBackground": "#DAD8CE",
         "menu.selectionBorder": "#FFFFFF00",
