@@ -1,6 +1,5 @@
 export declare global {
     interface BaseTones {
-        "transparent": string;
         "black": string;
         "base-950": string;
         "base-900": string;
@@ -64,5 +63,6 @@ export declare global {
         "pu2": string;
         "ma": string;
         "ma2": string;
+        "transparent": string;
     }
 }

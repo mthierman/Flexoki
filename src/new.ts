@@ -1,5 +1,4 @@
 export const baseTones: BaseTones = {
-    "transparent": "#00000000",
     "black": "#100F0F",
     "base-950": "#1C1B1A",
     "base-900": "#282726",
@@ -64,6 +63,7 @@ export const getDarkMappings = (): Mappings => {
         "pu2": darkTones["purple-600"],
         "ma": lightTones["magenta-400"],
         "ma2": darkTones["magenta-600"],
+        "transparent": "#00000000",
     };
 };
 
@@ -93,5 +93,315 @@ export const getLightMappings = (): Mappings => {
         "pu2": lightTones["purple-400"],
         "ma": darkTones["magenta-600"],
         "ma2": lightTones["magenta-400"],
+        "transparent": "#FFFFFF00",
+    };
+};
+
+export const getTheme = (dark: boolean, color: string) => {
+    const mappings = dark ? getDarkMappings() : getLightMappings();
+
+    let accent;
+    let accentHover;
+
+    switch (color) {
+        case "Red":
+            accent = dark ? mappings["re2"] : mappings["re"];
+            accentHover = dark ? mappings["re"] : mappings["re2"];
+        case "Orange":
+            accent = dark ? mappings["or2"] : mappings["or"];
+            accentHover = dark ? mappings["or"] : mappings["or2"];
+        case "Yellow":
+            accent = dark ? mappings["ye2"] : mappings["ye"];
+            accentHover = dark ? mappings["ye"] : mappings["ye2"];
+        case "Green":
+            accent = dark ? mappings["gr2"] : mappings["gr"];
+            accentHover = dark ? mappings["gr"] : mappings["gr2"];
+        case "Cyan":
+            accent = dark ? mappings["cy2"] : mappings["cy"];
+            accentHover = dark ? mappings["cy"] : mappings["cy2"];
+        case "Blue":
+            accent = dark ? mappings["bl2"] : mappings["bl"];
+            accentHover = dark ? mappings["bl"] : mappings["bl2"];
+        case "Purple":
+            accent = dark ? mappings["pu2"] : mappings["pu"];
+            accentHover = dark ? mappings["pu"] : mappings["pu2"];
+        case "Magenta":
+            accent = dark ? mappings["ma2"] : mappings["ma"];
+            accentHover = dark ? mappings["ma"] : mappings["ma2"];
+    }
+
+    return {
+        $schema: "vscode://schemas/color-theme",
+        name: `Flexoki ${dark ? "Dark" : "Light"} ${color}`,
+        semanticHighlighting: true,
+        colors: {
+            "activityBar.activeBackground": mappings["ui"],
+            "activityBar.activeBorder": mappings["transparent"],
+            "activityBar.activeFocusBorder": mappings["transparent"],
+            "activityBar.background": mappings["bg-2"],
+            "activityBar.border": mappings["ui"],
+            "activityBar.dropBorder": mappings["transparent"],
+            "activityBar.foreground": mappings["tx"],
+            "activityBar.inactiveForeground": mappings["tx-2"],
+            "activityBarBadge.background": accent,
+            "activityBarBadge.foreground": baseTones.paper,
+            "button.background": accent,
+            "button.border": mappings["transparent"],
+            "button.foreground": baseTones.paper,
+            "button.hoverBackground": accentHover,
+            "commandCenter.activeBackground": mappings["bg"],
+            "commandCenter.activeBorder": mappings["transparent"],
+            "commandCenter.activeForeground": mappings["tx"],
+            "commandCenter.background": mappings["bg"],
+            "commandCenter.border": mappings["transparent"],
+            "commandCenter.debuggingBackground": mappings["bg"],
+            "commandCenter.foreground": mappings["tx-2"],
+            "commandCenter.inactiveBorder": mappings["transparent"],
+            "commandCenter.inactiveForeground": mappings["tx-3"],
+            "dropdown.background": mappings["bg"],
+            "dropdown.border": mappings["ui"],
+            "dropdown.foreground": mappings["tx"],
+            "dropdown.listBackground": mappings["bg"],
+            "editor.background": mappings["bg"],
+            "editor.foreground": mappings["tx"],
+            "editorCursor.background": accent,
+            "editorCursor.foreground": accent,
+            "editorGroup.border": mappings["ui"],
+            "editorGroupHeader.border": mappings["ui"],
+            "editorGroupHeader.tabsBackground": mappings["bg-2"],
+            "editorSuggestWidget.background": mappings["bg-2"],
+            "editorWidget.background": mappings["ui"],
+            "editorWidget.border": mappings["ui"],
+            "editorWidget.foreground": mappings["tx"],
+            "focusBorder": mappings["transparent"],
+            "icon.foreground": mappings["tx"],
+            "input.background": mappings["bg-2"],
+            "input.border": mappings["ui"],
+            "input.foreground": mappings["tx"],
+            "input.placeholderForeground": mappings["tx-2"],
+            "list.activeSelectionBackground": mappings["ui-3"],
+            "list.activeSelectionForeground": mappings["tx"],
+            "list.hoverBackground": mappings["ui-2"],
+            "list.inactiveSelectionBackground": mappings["ui"],
+            "list.inactiveSelectionForeground": mappings["tx"],
+            "menu.background": dark ? baseTones["base-900"] : baseTones["base-100"],
+            "menu.border": mappings["transparent"],
+            "menu.foreground": mappings["tx"],
+            "menu.selectionBackground": mappings["ui-2"],
+            "menu.selectionBorder": mappings["transparent"],
+            "menu.selectionForeground": mappings["tx"],
+            "menu.separatorBackground": mappings["ui-2"],
+            "menubar.selectionBackground": mappings["ui-2"],
+            "menubar.selectionBorder": mappings["transparent"],
+            "menubar.selectionForeground": mappings["tx"],
+            "panel.background": mappings["bg"],
+            "panel.border": mappings["ui"],
+            "quickInput.background": mappings["bg-2"],
+            "quickInput.foreground": mappings["tx"],
+            "quickInputList.focusBackground": mappings["ui-3"],
+            "quickInputList.focusForeground": mappings["tx"],
+            "quickInputList.focusIconForeground": mappings["tx"],
+            "selection.background": accent,
+            "settings.focusedRowBackground": mappings["bg-2"],
+            "settings.focusedRowBorder": mappings["transparent"],
+            "settings.rowHoverBackground": mappings["bg-2"],
+            "sideBar.background": mappings["bg-2"],
+            "sideBar.border": mappings["ui"],
+            "sideBar.foreground": mappings["tx"],
+            "statusBar.background": mappings["bg-2"],
+            "statusBar.border": mappings["ui"],
+            "statusBar.debuggingBackground": accent,
+            "statusBar.debuggingBorder": mappings["ui"],
+            "statusBar.debuggingForeground": baseTones.paper,
+            "statusBar.focusBorder": mappings["ui"],
+            "statusBar.foreground": mappings["tx"],
+            "statusBar.noFolderBackground": mappings["bg-2"],
+            "statusBar.noFolderBorder": mappings["ui"],
+            "statusBar.noFolderForeground": mappings["tx"],
+            "tab.activeBackground": mappings["bg"],
+            "tab.activeForeground": mappings["tx"],
+            "tab.border": mappings["ui"],
+            "tab.hoverBackground": mappings["ui"],
+            "tab.inactiveBackground": mappings["bg-2"],
+            "terminal.ansiBlack": baseTones["base-950"],
+            "terminal.ansiBlue": mappings["bl2"],
+            "terminal.ansiBrightBlack": baseTones["base-900"],
+            "terminal.ansiBrightBlue": mappings["bl"],
+            "terminal.ansiBrightCyan": mappings["cy"],
+            "terminal.ansiBrightGreen": mappings["gr"],
+            "terminal.ansiBrightMagenta": mappings["ma"],
+            "terminal.ansiBrightRed": mappings["re"],
+            "terminal.ansiBrightWhite": baseTones["base-50"],
+            "terminal.ansiBrightYellow": mappings["ye"],
+            "terminal.ansiCyan": mappings["cy2"],
+            "terminal.ansiGreen": mappings["gr2"],
+            "terminal.ansiMagenta": mappings["ma2"],
+            "terminal.ansiRed": mappings["re2"],
+            "terminal.ansiWhite": baseTones["base-100"],
+            "terminal.ansiYellow": mappings["ye2"],
+            "terminal.background": mappings["bg"],
+            "terminal.border": mappings["ui"],
+            "terminal.foreground": mappings["tx"],
+            "terminal.selectionBackground": accent,
+            "terminalCursor.foreground": mappings["tx"],
+            "titleBar.activeBackground": mappings["bg-2"],
+            "titleBar.activeForeground": mappings["tx"],
+            "titleBar.border": mappings["ui"],
+            "titleBar.inactiveBackground": mappings["bg-2"],
+            "titleBar.inactiveForeground": mappings["tx-3"],
+        },
+        tokenColors: [
+            {
+                scope: ["comment", "comment.block", "comment.block.documentation", "comment.line"],
+                settings: {
+                    foreground: mappings["tx-3"],
+                },
+            },
+            {
+                scope: [
+                    "constant",
+                    "constant.character",
+                    "constant.character.escape",
+                    "constant.other",
+                    "constant.regexp",
+                    "constant.rgb-value",
+                    "support.constant",
+                ],
+                settings: {
+                    foreground: mappings["ye"],
+                },
+            },
+            {
+                scope: [
+                    "constant.numeric",
+                    "constant.numeric.float",
+                    "constant.numeric.hex",
+                    "constant.numeric.integer",
+                    "constant.numeric.octal",
+                ],
+                settings: {
+                    foreground: mappings["pu"],
+                },
+            },
+            {
+                scope: [
+                    "entity",
+                    "entity.name",
+                    "entity.name.class",
+                    "entity.name.function",
+                    "entity.name.method",
+                    "entity.name.section",
+                    "entity.name.selector",
+                    "entity.name.tag",
+                    "entity.name.type",
+                    "entity.other",
+                    "entity.other.attribute-name",
+                    "entity.other.inherited-class",
+                    "markup.heading",
+                    "support.function",
+                ],
+                settings: {
+                    foreground: mappings["or"],
+                },
+            },
+            {
+                scope: ["invalid", "invalid.deprecated", "invalid.illegal"],
+                settings: {
+                    foreground: mappings["re"],
+                },
+            },
+            {
+                scope: ["keyword", "keyword.control", "keyword.other", "string.json"],
+                settings: {
+                    foreground: mappings["gr"],
+                },
+            },
+            {
+                scope: [
+                    "keyword.operator",
+                    "keyword.operator.arithmetic",
+                    "keyword.operator.assignment",
+                    "keyword.operator.logical",
+                    "keyword.operator.new",
+                ],
+                settings: {
+                    foreground: mappings["tx-2"],
+                },
+            },
+            {
+                scope: [
+                    "meta",
+                    "meta.block",
+                    "meta.cast",
+                    "meta.class",
+                    "meta.function",
+                    "meta.function-call",
+                    "meta.preprocessor",
+                    "meta.return-type",
+                    "meta.selector",
+                    "meta.tag",
+                    "meta.type",
+                    "meta.type.annotation",
+                ],
+                settings: {
+                    foreground: mappings["ma"],
+                },
+            },
+            {
+                scope: [
+                    "punctuation.definition.tag",
+                    "punctuation.definition.string.begin",
+                    "punctuation.definition.string.end",
+                    "punctuation.separator",
+                    "punctuation.separator.continuation",
+                    "punctuation.terminator",
+                ],
+                settings: {
+                    foreground: mappings["tx-2"],
+                },
+            },
+            {
+                scope: ["storage", "storage.modifier", "storage.type"],
+                settings: {
+                    foreground: mappings["gr"],
+                },
+            },
+            {
+                scope: [
+                    "string",
+                    "string.interpolated",
+                    "string.other",
+                    "string.regexp",
+                    "string.quoted",
+                    "string.quoted.double",
+                    "string.quoted.other",
+                    "string.quoted.single",
+                    "string.quoted.triple",
+                    "string.unquoted",
+                ],
+                settings: {
+                    foreground: mappings["cy"],
+                },
+            },
+            {
+                scope: [
+                    "variable",
+                    "variable.language",
+                    "variable.name",
+                    "variable.other",
+                    "variable.other.readwrite",
+                    "variable.parameter",
+                ],
+                settings: {
+                    foreground: mappings["bl"],
+                },
+            },
+        ],
+        semanticTokenColors: {
+            newOperator: accent,
+            stringLiteral: mappings["cy"],
+            customLiteral: mappings["tx"],
+            numberLiteral: mappings["pu"],
+        },
     };
 };
