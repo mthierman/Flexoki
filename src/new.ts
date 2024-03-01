@@ -1,0 +1,97 @@
+export const baseTones: BaseTones = {
+    "transparent": "#00000000",
+    "black": "#100F0F",
+    "base-950": "#1C1B1A",
+    "base-900": "#282726",
+    "base-850": "#343331",
+    "base-800": "#403E3C",
+    "base-700": "#575653",
+    "base-600": "#6F6E69",
+    "base-500": "#878580",
+    "base-300": "#B7B5AC",
+    "base-200": "#CECDC3",
+    "base-150": "#DAD8CE",
+    "base-100": "#E6E4D9",
+    "base-50": "#F2F0E5",
+    "paper": "#FFFCF0",
+};
+
+export const darkTones: DarkTones = {
+    "red-600": "#AF3029",
+    "orange-600": "#BC5215",
+    "yellow-600": "#AD8301",
+    "green-600": "#66800B",
+    "cyan-600": "#24837B",
+    "blue-600": "#205EA6",
+    "purple-600": "#5E409D",
+    "magenta-600": "#A02F6F",
+};
+
+export const lightTones: LightTones = {
+    "red-400": "#D14D41",
+    "orange-400": "#DA702C",
+    "yellow-400": "#D0A215",
+    "green-400": "#879A39",
+    "cyan-400": "#3AA99F",
+    "blue-400": "#4385BE",
+    "purple-400": "#8B7EC8",
+    "magenta-400": "#CE5D97",
+};
+
+export const getDarkMappings = (): Mappings => {
+    return {
+        "bg": baseTones["black"],
+        "bg-2": baseTones["base-950"],
+        "ui": baseTones["base-900"],
+        "ui-2": baseTones["base-850"],
+        "ui-3": baseTones["base-800"],
+        "tx-3": baseTones["base-700"],
+        "tx-2": baseTones["base-500"],
+        "tx": baseTones["base-200"],
+        "re": lightTones["red-400"],
+        "re2": darkTones["red-600"],
+        "or": lightTones["orange-400"],
+        "or2": darkTones["orange-600"],
+        "ye": lightTones["yellow-400"],
+        "ye2": darkTones["yellow-600"],
+        "gr": lightTones["green-400"],
+        "gr2": darkTones["green-600"],
+        "cy": lightTones["cyan-400"],
+        "cy2": darkTones["cyan-600"],
+        "bl": lightTones["blue-400"],
+        "bl2": darkTones["blue-600"],
+        "pu": lightTones["purple-400"],
+        "pu2": darkTones["purple-600"],
+        "ma": lightTones["magenta-400"],
+        "ma2": darkTones["magenta-600"],
+    };
+};
+
+export const getLightMappings = (): Mappings => {
+    return {
+        "bg": baseTones["paper"],
+        "bg-2": baseTones["base-50"],
+        "ui": baseTones["base-100"],
+        "ui-2": baseTones["base-150"],
+        "ui-3": baseTones["base-200"],
+        "tx-3": baseTones["base-300"],
+        "tx-2": baseTones["base-600"],
+        "tx": baseTones["black"],
+        "re": darkTones["red-600"],
+        "re2": lightTones["red-400"],
+        "or": darkTones["orange-600"],
+        "or2": lightTones["orange-400"],
+        "ye": darkTones["yellow-600"],
+        "ye2": lightTones["yellow-400"],
+        "gr": darkTones["green-600"],
+        "gr2": lightTones["green-400"],
+        "cy": darkTones["cyan-600"],
+        "cy2": lightTones["cyan-400"],
+        "bl": darkTones["blue-600"],
+        "bl2": lightTones["blue-400"],
+        "pu": darkTones["purple-600"],
+        "pu2": lightTones["purple-400"],
+        "ma": darkTones["magenta-600"],
+        "ma2": lightTones["magenta-400"],
+    };
+};
