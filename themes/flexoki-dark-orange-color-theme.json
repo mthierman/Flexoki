@@ -44,7 +44,7 @@
         "editorWidget.foreground": "#CECDC3",
         "focusBorder": "#00000000",
         "icon.foreground": "#CECDC3",
-        "input.background": "#1C1B1A",
+        "input.background": "#100F0F",
         "input.border": "#282726",
         "input.foreground": "#CECDC3",
         "input.placeholderForeground": "#878580",
@@ -53,7 +53,7 @@
         "list.hoverBackground": "#343331",
         "list.inactiveSelectionBackground": "#282726",
         "list.inactiveSelectionForeground": "#CECDC3",
-        "menu.background": "#282726",
+        "menu.background": "#100F0F",
         "menu.border": "#00000000",
         "menu.foreground": "#CECDC3",
         "menu.selectionBackground": "#343331",
@@ -65,7 +65,7 @@
         "menubar.selectionForeground": "#CECDC3",
         "panel.background": "#100F0F",
         "panel.border": "#282726",
-        "quickInput.background": "#1C1B1A",
+        "quickInput.background": "#100F0F",
         "quickInput.foreground": "#CECDC3",
         "quickInputList.focusBackground": "#403E3C",
         "quickInputList.focusForeground": "#CECDC3",
@@ -119,7 +119,8 @@
         "titleBar.activeForeground": "#CECDC3",
         "titleBar.border": "#282726",
         "titleBar.inactiveBackground": "#1C1B1A",
-        "titleBar.inactiveForeground": "#575653"
+        "titleBar.inactiveForeground": "#575653",
+        "widget.border": "#282726"
     },
     "tokenColors": [
         {
