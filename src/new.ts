@@ -95,7 +95,7 @@ export const getLightMappings = (): Mappings => {
         "pu2": lightTones["purple-400"],
         "ma": darkTones["magenta-600"],
         "ma2": lightTones["magenta-400"],
-        "transparent": "#00000000",
+        "transparent": "#FFFFFF00",
     };
 };
 
