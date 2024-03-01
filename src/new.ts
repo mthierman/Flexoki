@@ -1,3 +1,5 @@
+import * as fs from "node:fs/promises";
+
 export const baseTones: BaseTones = {
     "black": "#100F0F",
     "base-950": "#1C1B1A",
@@ -93,7 +95,7 @@ export const getLightMappings = (): Mappings => {
         "pu2": lightTones["purple-400"],
         "ma": darkTones["magenta-600"],
         "ma2": lightTones["magenta-400"],
-        "transparent": "#FFFFFF00",
+        "transparent": "#00000000",
     };
 };
 
@@ -103,31 +105,74 @@ export const getTheme = (dark: boolean, color: string) => {
     let accent;
     let accentHover;
 
+    // switch (color) {
+    //     case "Red":
+    //         accent = mappings["re2"] : mappings["re"];
+    //         accentHover = mappings["re"] : mappings["re2"];
+    //         break;
+    //     case "Orange":
+    //         accent = mappings["or2"] : mappings["or"];
+    //         accentHover = mappings["or"] : mappings["or2"];
+    //         break;
+    //     case "Yellow":
+    //         accent = mappings["ye2"] : mappings["ye"];
+    //         accentHover = mappings["ye"] : mappings["ye2"];
+    //         break;
+    //     case "Green":
+    //         accent = mappings["gr2"] : mappings["gr"];
+    //         accentHover = mappings["gr"] : mappings["gr2"];
+    //         break;
+    //     case "Cyan":
+    //         accent = mappings["cy2"] : mappings["cy"];
+    //         accentHover = mappings["cy"] : mappings["cy2"];
+    //         break;
+    //     case "Blue":
+    //         accent = mappings["bl2"] : mappings["bl"];
+    //         accentHover = mappings["bl"] : mappings["bl2"];
+    //         break;
+    //     case "Purple":
+    //         accent = mappings["pu2"] : mappings["pu"];
+    //         accentHover = mappings["pu"] : mappings["pu2"];
+    //         break;
+    //     case "Magenta":
+    //         accent = mappings["ma2"] : mappings["ma"];
+    //         accentHover = mappings["ma"] : mappings["ma2"];
+    //         break;
+    // }
+
     switch (color) {
         case "Red":
-            accent = dark ? mappings["re2"] : mappings["re"];
-            accentHover = dark ? mappings["re"] : mappings["re2"];
+            accent = mappings["re2"];
+            accentHover = mappings["re"];
+            break;
         case "Orange":
-            accent = dark ? mappings["or2"] : mappings["or"];
-            accentHover = dark ? mappings["or"] : mappings["or2"];
+            accent = mappings["or2"];
+            accentHover = mappings["or"];
+            break;
         case "Yellow":
-            accent = dark ? mappings["ye2"] : mappings["ye"];
-            accentHover = dark ? mappings["ye"] : mappings["ye2"];
+            accent = mappings["ye2"];
+            accentHover = mappings["ye"];
+            break;
         case "Green":
-            accent = dark ? mappings["gr2"] : mappings["gr"];
-            accentHover = dark ? mappings["gr"] : mappings["gr2"];
+            accent = mappings["gr2"];
+            accentHover = mappings["gr"];
+            break;
         case "Cyan":
-            accent = dark ? mappings["cy2"] : mappings["cy"];
-            accentHover = dark ? mappings["cy"] : mappings["cy2"];
+            accent = mappings["cy2"];
+            accentHover = mappings["cy"];
+            break;
         case "Blue":
-            accent = dark ? mappings["bl2"] : mappings["bl"];
-            accentHover = dark ? mappings["bl"] : mappings["bl2"];
+            accent = mappings["bl2"];
+            accentHover = mappings["bl"];
+            break;
         case "Purple":
-            accent = dark ? mappings["pu2"] : mappings["pu"];
-            accentHover = dark ? mappings["pu"] : mappings["pu2"];
+            accent = mappings["pu2"];
+            accentHover = mappings["pu"];
+            break;
         case "Magenta":
-            accent = dark ? mappings["ma2"] : mappings["ma"];
-            accentHover = dark ? mappings["ma"] : mappings["ma2"];
+            accent = mappings["ma2"];
+            accentHover = mappings["ma"];
+            break;
     }
 
     return {
@@ -405,3 +450,74 @@ export const getTheme = (dark: boolean, color: string) => {
         },
     };
 };
+
+fs.mkdir("themes", { recursive: true })
+    .then(() =>
+        Promise.all([
+            fs.writeFile(
+                "themes/flexoki-dark-red-color-theme.json",
+                JSON.stringify(getTheme(true, "Red"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-orange-color-theme.json",
+                JSON.stringify(getTheme(true, "Orange"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-yellow-color-theme.json",
+                JSON.stringify(getTheme(true, "Yellow"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-green-color-theme.json",
+                JSON.stringify(getTheme(true, "Green"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-cyan-color-theme.json",
+                JSON.stringify(getTheme(true, "Cyan"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-blue-color-theme.json",
+                JSON.stringify(getTheme(true, "Blue"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-purple-color-theme.json",
+                JSON.stringify(getTheme(true, "Purple"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-dark-magenta-color-theme.json",
+                JSON.stringify(getTheme(true, "Magenta"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-red-color-theme.json",
+                JSON.stringify(getTheme(false, "Red"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-orange-color-theme.json",
+                JSON.stringify(getTheme(false, "Orange"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-yellow-color-theme.json",
+                JSON.stringify(getTheme(false, "Yellow"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-green-color-theme.json",
+                JSON.stringify(getTheme(false, "Green"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-cyan-color-theme.json",
+                JSON.stringify(getTheme(false, "Cyan"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-blue-color-theme.json",
+                JSON.stringify(getTheme(false, "Blue"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-purple-color-theme.json",
+                JSON.stringify(getTheme(false, "Purple"), null, 4),
+            ),
+            fs.writeFile(
+                "themes/flexoki-light-magenta-color-theme.json",
+                JSON.stringify(getTheme(false, "Magenta"), null, 4),
+            ),
+        ]),
+    )
+    .catch(() => process.exit(1));

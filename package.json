@@ -134,7 +134,7 @@
         "url": "https://github.com/mthierman/Flexoki.git"
     },
     "scripts": {
-        "build": "tsx src/index.ts",
+        "build": "tsx src/new.ts",
         "watch": "tsx --watch src/index.ts",
         "tsc": "tsc --watch",
         "vsce": "vsce publish"
