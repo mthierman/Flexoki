@@ -2,6 +2,7 @@
     "name": "theme-flexoki",
     "version": "0.0.6",
     "private": true,
+    "type": "module",
     "publisher": "mthierman",
     "engines": {
         "vscode": "*"
@@ -123,7 +124,6 @@
         ]
     },
     "icon": "data/icon.png",
-    "type": "module",
     "homepage": "https://github.com/mthierman/Flexoki/blob/main/README.md",
     "bugs": {
         "email": "mthierman@gmail.com",
@@ -140,11 +140,11 @@
         "vsce": "vsce publish"
     },
     "devDependencies": {
-        "@types/node": "latest",
-        "@vscode/vsce": "latest",
-        "generator-code": "latest",
-        "prettier": "latest",
-        "typescript": "latest",
-        "yo": "latest"
+        "@types/node": "^20.11.24",
+        "@vscode/vsce": "^2.24.0",
+        "generator-code": "^1.8.4",
+        "prettier": "^3.2.5",
+        "typescript": "^5.3.3",
+        "yo": "^5.0.0"
     }
 }

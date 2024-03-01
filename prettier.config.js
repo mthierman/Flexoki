@@ -7,7 +7,7 @@ export default {
     quoteProps: "consistent",
     overrides: [
         {
-            files: ["*.yml", "*.yaml"],
+            files: ["*.yml", "*.yaml", ".clang-*"],
             options: {
                 tabWidth: 2,
             },
