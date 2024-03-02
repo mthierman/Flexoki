@@ -1,21 +1,21 @@
-import * as process from "node:child_process";
-import * as fs from "node:fs/promises";
-import * as path from "node:path";
+import { exec } from "node:child_process";
+import { watch } from "node:fs/promises";
+import { dirname, resolve } from "node:path";
 
-export const srcDir = path.resolve(path.dirname(import.meta.dirname), "src");
+const src = resolve(dirname(import.meta.dirname), "src");
 
 const runBuild = () => {
-    const dev = process.exec(
+    const dev = exec(
         "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=build/index.js && node build/index.js",
     );
 };
 
-runBuild();
+const watchBuild = async () => {
+    runBuild();
 
-(async () => {
     try {
         let watching;
-        const watcher = fs.watch(srcDir, { persistent: true, recursive: true });
+        const watcher = watch(src, { persistent: true, recursive: true });
 
         for await (const event of watcher) {
             if (!watching) {
@@ -32,4 +32,6 @@ runBuild();
     } catch (err: any) {
         throw err;
     }
-})();
+};
+
+watchBuild();
