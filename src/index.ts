@@ -461,7 +461,7 @@ fs.mkdir(themesDir, { recursive: true })
                 JSON.stringify(getTheme(true, "Red"), null, 4),
             ),
             fs.writeFile(
-                `${themesDir}themes/flexoki-dark-orange-color-theme.json`,
+                `${themesDir}/flexoki-dark-orange-color-theme.json`,
                 JSON.stringify(getTheme(true, "Orange"), null, 4),
             ),
             fs.writeFile(
