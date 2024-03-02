@@ -5,7 +5,7 @@ import { dirname, resolve } from "node:path";
 const src = resolve(dirname(import.meta.dirname), "src");
 
 const runBuild = () => {
-    const dev = exec(
+    exec(
         "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=build/index.js && node build/index.js",
     );
 };
