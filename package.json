@@ -134,17 +134,15 @@
         "url": "https://github.com/mthierman/Flexoki.git"
     },
     "scripts": {
-        "build": "tsx src/index.ts",
-        "watch": "tsx --watch src/index.ts",
-        "tsc": "tsc --watch",
+        "check": "tsc",
+        "dev": "tsc && esbuild src/watch.ts --bundle --platform=node --format=esm --outfile=build/watch.js && node build/watch.js",
+        "build": "tsc && esbuild src/index.ts --bundle --platform=node --format=esm --outfile=build/index.js && node build/index.js",
         "vsce": "vsce publish"
     },
     "devDependencies": {
         "@types/node": "^20.11.24",
         "@vscode/vsce": "^2.24.0",
-        "generator-code": "^1.8.4",
         "prettier": "^3.2.5",
-        "typescript": "^5.3.3",
-        "yo": "^5.0.0"
+        "typescript": "^5.3.3"
     }
 }
