@@ -3,6 +3,7 @@
     "name": "Flexoki Light Cyan",
     "semanticHighlighting": true,
     "colors": {
+        "foreground": "#100F0F",
         "activityBar.activeBackground": "#F2F0E5",
         "activityBar.activeBorder": "#24837B",
         "activityBar.activeFocusBorder": "#FFFFFF00",

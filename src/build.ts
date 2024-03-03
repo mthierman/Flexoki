@@ -154,6 +154,7 @@ const theme = (theme: Theme, color: Color) => {
         name: `Flexoki ${Theme[theme]} ${Color[color]}`,
         semanticHighlighting: true,
         colors: {
+            "foreground": mappings["tx"],
             "activityBar.activeBackground": mappings["bg-2"],
             "activityBar.activeBorder": accent,
             "activityBar.activeFocusBorder": mappings["transparent"],

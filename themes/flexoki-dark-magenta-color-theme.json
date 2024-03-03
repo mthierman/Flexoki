@@ -3,6 +3,7 @@
     "name": "Flexoki Dark Magenta",
     "semanticHighlighting": true,
     "colors": {
+        "foreground": "#CECDC3",
         "activityBar.activeBackground": "#1C1B1A",
         "activityBar.activeBorder": "#A02F6F",
         "activityBar.activeFocusBorder": "#00000000",

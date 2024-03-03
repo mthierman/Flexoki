@@ -3,6 +3,7 @@
     "name": "Flexoki Light Magenta",
     "semanticHighlighting": true,
     "colors": {
+        "foreground": "#100F0F",
         "activityBar.activeBackground": "#F2F0E5",
         "activityBar.activeBorder": "#A02F6F",
         "activityBar.activeFocusBorder": "#FFFFFF00",

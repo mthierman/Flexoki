@@ -3,6 +3,7 @@
     "name": "Flexoki Light Orange",
     "semanticHighlighting": true,
     "colors": {
+        "foreground": "#100F0F",
         "activityBar.activeBackground": "#F2F0E5",
         "activityBar.activeBorder": "#BC5215",
         "activityBar.activeFocusBorder": "#FFFFFF00",

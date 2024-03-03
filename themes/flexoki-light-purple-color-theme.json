@@ -3,6 +3,7 @@
     "name": "Flexoki Light Purple",
     "semanticHighlighting": true,
     "colors": {
+        "foreground": "#100F0F",
         "activityBar.activeBackground": "#F2F0E5",
         "activityBar.activeBorder": "#5E409D",
         "activityBar.activeFocusBorder": "#FFFFFF00",
