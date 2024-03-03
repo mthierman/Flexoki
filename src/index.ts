@@ -34,73 +34,69 @@ const tones: Tones = {
     "magenta-400": "#CE5D97",
 };
 
-const darkMappings = (): Mappings => {
-    return {
-        "bg": tones["black"],
-        "bg-2": tones["base-950"],
-        "ui": tones["base-900"],
-        "ui-2": tones["base-850"],
-        "ui-3": tones["base-800"],
-        "tx-3": tones["base-700"],
-        "tx-2": tones["base-500"],
-        "tx": tones["base-200"],
-        "re": tones["red-400"],
-        "re2": tones["red-600"],
-        "or": tones["orange-400"],
-        "or2": tones["orange-600"],
-        "ye": tones["yellow-400"],
-        "ye2": tones["yellow-600"],
-        "gr": tones["green-400"],
-        "gr2": tones["green-600"],
-        "cy": tones["cyan-400"],
-        "cy2": tones["cyan-600"],
-        "bl": tones["blue-400"],
-        "bl2": tones["blue-600"],
-        "pu": tones["purple-400"],
-        "pu2": tones["purple-600"],
-        "ma": tones["magenta-400"],
-        "ma2": tones["magenta-600"],
-        "transparent": "#00000000",
-    };
+const darkMappings: Mappings = {
+    "bg": tones["black"],
+    "bg-2": tones["base-950"],
+    "ui": tones["base-900"],
+    "ui-2": tones["base-850"],
+    "ui-3": tones["base-800"],
+    "tx-3": tones["base-700"],
+    "tx-2": tones["base-500"],
+    "tx": tones["base-200"],
+    "re": tones["red-400"],
+    "re2": tones["red-600"],
+    "or": tones["orange-400"],
+    "or2": tones["orange-600"],
+    "ye": tones["yellow-400"],
+    "ye2": tones["yellow-600"],
+    "gr": tones["green-400"],
+    "gr2": tones["green-600"],
+    "cy": tones["cyan-400"],
+    "cy2": tones["cyan-600"],
+    "bl": tones["blue-400"],
+    "bl2": tones["blue-600"],
+    "pu": tones["purple-400"],
+    "pu2": tones["purple-600"],
+    "ma": tones["magenta-400"],
+    "ma2": tones["magenta-600"],
+    "transparent": "#00000000",
 };
 
-const lightMappings = (): Mappings => {
-    return {
-        "bg": tones["paper"],
-        "bg-2": tones["base-50"],
-        "ui": tones["base-100"],
-        "ui-2": tones["base-150"],
-        "ui-3": tones["base-200"],
-        "tx-3": tones["base-300"],
-        "tx-2": tones["base-600"],
-        "tx": tones["black"],
-        "re": tones["red-600"],
-        "re2": tones["red-400"],
-        "or": tones["orange-600"],
-        "or2": tones["orange-400"],
-        "ye": tones["yellow-600"],
-        "ye2": tones["yellow-400"],
-        "gr": tones["green-600"],
-        "gr2": tones["green-400"],
-        "cy": tones["cyan-600"],
-        "cy2": tones["cyan-400"],
-        "bl": tones["blue-600"],
-        "bl2": tones["blue-400"],
-        "pu": tones["purple-600"],
-        "pu2": tones["purple-400"],
-        "ma": tones["magenta-600"],
-        "ma2": tones["magenta-400"],
-        "transparent": "#FFFFFF00",
-    };
+const lightMappings: Mappings = {
+    "bg": tones["paper"],
+    "bg-2": tones["base-50"],
+    "ui": tones["base-100"],
+    "ui-2": tones["base-150"],
+    "ui-3": tones["base-200"],
+    "tx-3": tones["base-300"],
+    "tx-2": tones["base-600"],
+    "tx": tones["black"],
+    "re": tones["red-600"],
+    "re2": tones["red-400"],
+    "or": tones["orange-600"],
+    "or2": tones["orange-400"],
+    "ye": tones["yellow-600"],
+    "ye2": tones["yellow-400"],
+    "gr": tones["green-600"],
+    "gr2": tones["green-400"],
+    "cy": tones["cyan-600"],
+    "cy2": tones["cyan-400"],
+    "bl": tones["blue-600"],
+    "bl2": tones["blue-400"],
+    "pu": tones["purple-600"],
+    "pu2": tones["purple-400"],
+    "ma": tones["magenta-600"],
+    "ma2": tones["magenta-400"],
+    "transparent": "#FFFFFF00",
 };
 
 const test = "#ff00dd";
 
 export const getTheme = (dark: boolean, color: string) => {
-    const mappings = dark ? darkMappings() : lightMappings();
+    const mappings = dark ? darkMappings : lightMappings;
 
-    let accent;
-    let accentHover;
+    let accent: string | undefined = undefined;
+    let accentHover: string | undefined = undefined;
 
     switch (color) {
         case "Red":
@@ -425,7 +421,7 @@ export const getTheme = (dark: boolean, color: string) => {
 };
 
 export const getTerminalTheme = (dark: boolean) => {
-    const mappings = dark ? darkMappings() : lightMappings();
+    const mappings = dark ? darkMappings : lightMappings;
 
     return {
         background: mappings["bg"],
