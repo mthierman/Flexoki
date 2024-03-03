@@ -224,6 +224,7 @@ export const getTheme = (dark: boolean, color: string) => {
             "sideBar.border": mappings["ui"],
             "sideBar.foreground": mappings["tx"],
             "sideBarSectionHeader.background": mappings["bg"],
+            "sideBarTitle.foreground": accent,
             "statusBar.background": dark ? mappings["ui"] : mappings["bg"],
             "statusBar.border": mappings["ui"],
             "statusBar.debuggingBackground": accent,
