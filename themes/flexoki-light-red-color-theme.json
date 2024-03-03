@@ -1,6 +1,6 @@
 {
     "$schema": "vscode://schemas/color-theme",
-    "name": "Flexoki Light 0",
+    "name": "Flexoki Light Red",
     "semanticHighlighting": true,
     "colors": {
         "activityBar.activeBackground": "#F2F0E5",

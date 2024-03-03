@@ -145,7 +145,7 @@ const getTheme = (dark: boolean, color: Color) => {
 
     return {
         $schema: "vscode://schemas/color-theme",
-        name: `Flexoki ${dark ? "Dark" : "Light"} ${color}`,
+        name: `Flexoki ${dark ? "Dark" : "Light"} ${Color[color]}`,
         semanticHighlighting: true,
         colors: {
             "activityBar.activeBackground": mappings["bg-2"],
