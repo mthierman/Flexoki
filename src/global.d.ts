@@ -1,5 +1,5 @@
 export declare global {
-    interface BaseTones {
+    interface Tones {
         "black": string;
         "base-950": string;
         "base-900": string;
@@ -14,28 +14,22 @@ export declare global {
         "base-100": string;
         "base-50": string;
         "paper": string;
-    }
-
-    interface DarkTones {
-        "red-600": string;
-        "orange-600": string;
-        "yellow-600": string;
-        "green-600": string;
-        "cyan-600": string;
-        "blue-600": string;
-        "purple-600": string;
-        "magenta-600": string;
-    }
-
-    interface LightTones {
-        "red-400": string;
-        "orange-400": string;
-        "yellow-400": string;
-        "green-400": string;
-        "cyan-400": string;
         "blue-400": string;
-        "purple-400": string;
+        "blue-600": string;
+        "cyan-400": string;
+        "cyan-600": string;
+        "green-400": string;
+        "green-600": string;
         "magenta-400": string;
+        "magenta-600": string;
+        "orange-400": string;
+        "orange-600": string;
+        "purple-400": string;
+        "purple-600": string;
+        "red-400": string;
+        "red-600": string;
+        "yellow-400": string;
+        "yellow-600": string;
     }
 
     interface Mappings {

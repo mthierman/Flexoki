@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 
-export const baseTones: BaseTones = {
+const tones: Tones = {
     "black": "#100F0F",
     "base-950": "#1C1B1A",
     "base-900": "#282726",
@@ -16,9 +16,6 @@ export const baseTones: BaseTones = {
     "base-100": "#E6E4D9",
     "base-50": "#F2F0E5",
     "paper": "#FFFCF0",
-};
-
-export const darkTones: DarkTones = {
     "red-600": "#AF3029",
     "orange-600": "#BC5215",
     "yellow-600": "#AD8301",
@@ -27,9 +24,6 @@ export const darkTones: DarkTones = {
     "blue-600": "#205EA6",
     "purple-600": "#5E409D",
     "magenta-600": "#A02F6F",
-};
-
-export const lightTones: LightTones = {
     "red-400": "#D14D41",
     "orange-400": "#DA702C",
     "yellow-400": "#D0A215",
@@ -40,62 +34,62 @@ export const lightTones: LightTones = {
     "magenta-400": "#CE5D97",
 };
 
-export const getDarkMappings = (): Mappings => {
+const darkMappings = (): Mappings => {
     return {
-        "bg": baseTones["black"],
-        "bg-2": baseTones["base-950"],
-        "ui": baseTones["base-900"],
-        "ui-2": baseTones["base-850"],
-        "ui-3": baseTones["base-800"],
-        "tx-3": baseTones["base-700"],
-        "tx-2": baseTones["base-500"],
-        "tx": baseTones["base-200"],
-        "re": lightTones["red-400"],
-        "re2": darkTones["red-600"],
-        "or": lightTones["orange-400"],
-        "or2": darkTones["orange-600"],
-        "ye": lightTones["yellow-400"],
-        "ye2": darkTones["yellow-600"],
-        "gr": lightTones["green-400"],
-        "gr2": darkTones["green-600"],
-        "cy": lightTones["cyan-400"],
-        "cy2": darkTones["cyan-600"],
-        "bl": lightTones["blue-400"],
-        "bl2": darkTones["blue-600"],
-        "pu": lightTones["purple-400"],
-        "pu2": darkTones["purple-600"],
-        "ma": lightTones["magenta-400"],
-        "ma2": darkTones["magenta-600"],
+        "bg": tones["black"],
+        "bg-2": tones["base-950"],
+        "ui": tones["base-900"],
+        "ui-2": tones["base-850"],
+        "ui-3": tones["base-800"],
+        "tx-3": tones["base-700"],
+        "tx-2": tones["base-500"],
+        "tx": tones["base-200"],
+        "re": tones["red-400"],
+        "re2": tones["red-600"],
+        "or": tones["orange-400"],
+        "or2": tones["orange-600"],
+        "ye": tones["yellow-400"],
+        "ye2": tones["yellow-600"],
+        "gr": tones["green-400"],
+        "gr2": tones["green-600"],
+        "cy": tones["cyan-400"],
+        "cy2": tones["cyan-600"],
+        "bl": tones["blue-400"],
+        "bl2": tones["blue-600"],
+        "pu": tones["purple-400"],
+        "pu2": tones["purple-600"],
+        "ma": tones["magenta-400"],
+        "ma2": tones["magenta-600"],
         "transparent": "#00000000",
     };
 };
 
-export const getLightMappings = (): Mappings => {
+const lightMappings = (): Mappings => {
     return {
-        "bg": baseTones["paper"],
-        "bg-2": baseTones["base-50"],
-        "ui": baseTones["base-100"],
-        "ui-2": baseTones["base-150"],
-        "ui-3": baseTones["base-200"],
-        "tx-3": baseTones["base-300"],
-        "tx-2": baseTones["base-600"],
-        "tx": baseTones["black"],
-        "re": darkTones["red-600"],
-        "re2": lightTones["red-400"],
-        "or": darkTones["orange-600"],
-        "or2": lightTones["orange-400"],
-        "ye": darkTones["yellow-600"],
-        "ye2": lightTones["yellow-400"],
-        "gr": darkTones["green-600"],
-        "gr2": lightTones["green-400"],
-        "cy": darkTones["cyan-600"],
-        "cy2": lightTones["cyan-400"],
-        "bl": darkTones["blue-600"],
-        "bl2": lightTones["blue-400"],
-        "pu": darkTones["purple-600"],
-        "pu2": lightTones["purple-400"],
-        "ma": darkTones["magenta-600"],
-        "ma2": lightTones["magenta-400"],
+        "bg": tones["paper"],
+        "bg-2": tones["base-50"],
+        "ui": tones["base-100"],
+        "ui-2": tones["base-150"],
+        "ui-3": tones["base-200"],
+        "tx-3": tones["base-300"],
+        "tx-2": tones["base-600"],
+        "tx": tones["black"],
+        "re": tones["red-600"],
+        "re2": tones["red-400"],
+        "or": tones["orange-600"],
+        "or2": tones["orange-400"],
+        "ye": tones["yellow-600"],
+        "ye2": tones["yellow-400"],
+        "gr": tones["green-600"],
+        "gr2": tones["green-400"],
+        "cy": tones["cyan-600"],
+        "cy2": tones["cyan-400"],
+        "bl": tones["blue-600"],
+        "bl2": tones["blue-400"],
+        "pu": tones["purple-600"],
+        "pu2": tones["purple-400"],
+        "ma": tones["magenta-600"],
+        "ma2": tones["magenta-400"],
         "transparent": "#FFFFFF00",
     };
 };
@@ -103,7 +97,7 @@ export const getLightMappings = (): Mappings => {
 const test = "#ff00dd";
 
 export const getTheme = (dark: boolean, color: string) => {
-    const mappings = dark ? getDarkMappings() : getLightMappings();
+    const mappings = dark ? darkMappings() : lightMappings();
 
     let accent;
     let accentHover;
@@ -157,14 +151,14 @@ export const getTheme = (dark: boolean, color: string) => {
             "activityBar.foreground": mappings["tx"],
             "activityBar.inactiveForeground": mappings["tx-2"],
             "activityBarBadge.background": accent,
-            "activityBarBadge.foreground": baseTones.paper,
+            "activityBarBadge.foreground": tones.paper,
             "breadcrumb.activeSelectionForeground": accent,
             "breadcrumb.background": dark ? mappings["ui"] : mappings["bg"],
             "breadcrumb.focusForeground": accent,
             "breadcrumbPicker.background": mappings["bg"],
             "button.background": accent,
             "button.border": mappings["transparent"],
-            "button.foreground": baseTones.paper,
+            "button.foreground": tones.paper,
             "button.hoverBackground": accentHover,
             "commandCenter.activeBackground": mappings["ui-2"],
             "commandCenter.activeBorder": mappings["transparent"],
@@ -233,7 +227,7 @@ export const getTheme = (dark: boolean, color: string) => {
             "statusBar.border": mappings["ui"],
             "statusBar.debuggingBackground": accent,
             "statusBar.debuggingBorder": mappings["ui"],
-            "statusBar.debuggingForeground": baseTones.paper,
+            "statusBar.debuggingForeground": tones.paper,
             "statusBar.focusBorder": mappings["ui"],
             "statusBar.foreground": mappings["tx"],
             "statusBar.noFolderBackground": mappings["bg-2"],
@@ -246,21 +240,21 @@ export const getTheme = (dark: boolean, color: string) => {
             "tab.border": dark ? mappings["ui-2"] : mappings["ui"],
             "tab.hoverBackground": mappings["ui-2"],
             "tab.inactiveBackground": dark ? mappings["ui"] : mappings["bg"],
-            "terminal.ansiBlack": baseTones["base-950"],
+            "terminal.ansiBlack": tones["base-950"],
             "terminal.ansiBlue": mappings["bl2"],
-            "terminal.ansiBrightBlack": baseTones["base-900"],
+            "terminal.ansiBrightBlack": tones["base-900"],
             "terminal.ansiBrightBlue": mappings["bl"],
             "terminal.ansiBrightCyan": mappings["cy"],
             "terminal.ansiBrightGreen": mappings["gr"],
             "terminal.ansiBrightMagenta": mappings["ma"],
             "terminal.ansiBrightRed": mappings["re"],
-            "terminal.ansiBrightWhite": baseTones["base-50"],
+            "terminal.ansiBrightWhite": tones["base-50"],
             "terminal.ansiBrightYellow": mappings["ye"],
             "terminal.ansiCyan": mappings["cy2"],
             "terminal.ansiGreen": mappings["gr2"],
             "terminal.ansiMagenta": mappings["ma2"],
             "terminal.ansiRed": mappings["re2"],
-            "terminal.ansiWhite": baseTones["base-100"],
+            "terminal.ansiWhite": tones["base-100"],
             "terminal.ansiYellow": mappings["ye2"],
             "terminal.background": mappings["bg"],
             "terminal.border": mappings["ui"],
@@ -431,19 +425,19 @@ export const getTheme = (dark: boolean, color: string) => {
 };
 
 export const getTerminalTheme = (dark: boolean) => {
-    const mappings = dark ? getDarkMappings() : getLightMappings();
+    const mappings = dark ? darkMappings() : lightMappings();
 
     return {
         background: mappings["bg"],
-        black: baseTones["base-950"],
+        black: tones["base-950"],
         blue: mappings["bl2"],
-        brightBlack: baseTones["base-900"],
+        brightBlack: tones["base-900"],
         brightBlue: mappings["bl"],
         brightCyan: mappings["cy"],
         brightGreen: mappings["gr"],
         brightPurple: mappings["ma"],
         brightRed: mappings["re"],
-        brightWhite: baseTones["base-50"],
+        brightWhite: tones["base-50"],
         brightYellow: mappings["ye"],
         cursorColor: mappings["tx"],
         cyan: mappings["cy2"],
@@ -453,7 +447,7 @@ export const getTerminalTheme = (dark: boolean) => {
         purple: mappings["ma2"],
         red: mappings["re2"],
         selectionBackground: mappings["bl2"],
-        white: baseTones["base-100"],
+        white: tones["base-100"],
         yellow: mappings["ye2"],
     };
 };
