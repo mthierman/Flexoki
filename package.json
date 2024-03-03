@@ -119,8 +119,8 @@
     },
     "scripts": {
         "check": "tsc",
-        "dev": "tsc && esbuild src/esbuild.ts --bundle --outdir=build --platform=node --format=esm --packages=external && node build/esbuild.js",
-        "build": "tsc && esbuild src/index.ts --bundle --outdir=build --platform=node --format=esm --packages=external && node build/index.js",
+        "dev": "tsc && esbuild src/main.ts --bundle --outdir=build --platform=node --format=esm --packages=external && node build/main.js",
+        "build": "tsc && esbuild src/main.ts src/build.ts src/watch.ts --bundle --outdir=build --platform=node --format=esm --packages=external && node build/build.js",
         "vsce": "vsce publish"
     },
     "devDependencies": {
