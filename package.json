@@ -26,98 +26,98 @@
     "contributes": {
         "themes": [
             {
-                "id": "%darkred%",
-                "label": "%darkred%",
+                "id": "%id%",
+                "label": "%darkRed%",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-red-color-theme.json"
             },
             {
-                "id": "%darkorange%",
-                "label": "%darkorange%",
+                "id": "%id%",
+                "label": "%darkOrange%",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-orange-color-theme.json"
             },
             {
-                "id": "%darkyellow%",
-                "label": "%darkyellow%",
+                "id": "%id%",
+                "label": "%darkYellow%",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-yellow-color-theme.json"
             },
             {
-                "id": "%darkgreen%",
-                "label": "%darkgreen%",
+                "id": "%id%",
+                "label": "%darkGreen%",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-green-color-theme.json"
             },
             {
-                "id": "%darkcyan%",
-                "label": "%darkcyan%",
+                "id": "%id%",
+                "label": "%darkCyan%",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-cyan-color-theme.json"
             },
             {
-                "id": "%darkblue%",
-                "label": "%darkblue%",
+                "id": "%id%",
+                "label": "%darkBlue%",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-blue-color-theme.json"
             },
             {
-                "id": "%darkpurple%",
-                "label": "%darkpurple%",
+                "id": "%id%",
+                "label": "%darkPurple%",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-purple-color-theme.json"
             },
             {
-                "id": "%darkmagenta%",
-                "label": "%darkmagenta%",
+                "id": "%id%",
+                "label": "%darkMagenta%",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-magenta-color-theme.json"
             },
             {
-                "id": "%lightred%",
-                "label": "%lightred%",
+                "id": "%id%",
+                "label": "%lightRed%",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-red-color-theme.json"
             },
             {
-                "id": "%lightorange%",
-                "label": "%lightorange%",
+                "id": "%id%",
+                "label": "%lightOrange%",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-orange-color-theme.json"
             },
             {
-                "id": "%lightyellow%",
-                "label": "%lightyellow%",
+                "id": "%id%",
+                "label": "%lightYellow%",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-yellow-color-theme.json"
             },
             {
-                "id": "%lightgreen%",
-                "label": "%lightgreen%",
+                "id": "%id%",
+                "label": "%lightGreen%",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-green-color-theme.json"
             },
             {
-                "id": "%lightcyan%",
-                "label": "%lightcyan%",
+                "id": "%id%",
+                "label": "%lightCyan%",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-cyan-color-theme.json"
             },
             {
-                "id": "%lightblue%",
-                "label": "%lightblue%",
+                "id": "%id%",
+                "label": "%lightBlue%",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-blue-color-theme.json"
             },
             {
-                "id": "%lightpurple%",
-                "label": "%lightpurple%",
+                "id": "%id%",
+                "label": "%lightPurple%",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-purple-color-theme.json"
             },
             {
-                "id": "%lightmagenta%",
-                "label": "%lightmagenta%",
+                "id": "%id%",
+                "label": "%lightMagenta%",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-magenta-color-theme.json"
             }
