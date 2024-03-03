@@ -59,4 +59,15 @@ export declare global {
         "ma2": string;
         "transparent": string;
     }
+
+    // enum Color {
+    //     Red,
+    //     Orange,
+    //     Yellow,
+    //     Green,
+    //     Cyan,
+    //     Blue,
+    //     Purple,
+    //     Magenta,
+    // }
 }

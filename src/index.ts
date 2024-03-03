@@ -90,44 +90,54 @@ const lightMappings: Mappings = {
     "transparent": "#FFFFFF00",
 };
 
-const test = "#ff00dd";
+enum Color {
+    Red,
+    Orange,
+    Yellow,
+    Green,
+    Cyan,
+    Blue,
+    Purple,
+    Magenta,
+}
 
-export const getTheme = (dark: boolean, color: string) => {
+const getTheme = (dark: boolean, color: Color) => {
     const mappings = dark ? darkMappings : lightMappings;
 
     let accent: string | undefined = undefined;
     let accentHover: string | undefined = undefined;
+    const test = "#ff00dd";
 
     switch (color) {
-        case "Red":
+        case Color.Red:
             accent = dark ? mappings["re2"] : mappings["re"];
             accentHover = dark ? mappings["re"] : mappings["re2"];
             break;
-        case "Orange":
+        case Color.Orange:
             accent = dark ? mappings["or2"] : mappings["or"];
             accentHover = dark ? mappings["or"] : mappings["or2"];
             break;
-        case "Yellow":
+        case Color.Yellow:
             accent = dark ? mappings["ye2"] : mappings["ye"];
             accentHover = dark ? mappings["ye"] : mappings["ye2"];
             break;
-        case "Green":
+        case Color.Green:
             accent = dark ? mappings["gr2"] : mappings["gr"];
             accentHover = dark ? mappings["gr"] : mappings["gr2"];
             break;
-        case "Cyan":
+        case Color.Cyan:
             accent = dark ? mappings["cy2"] : mappings["cy"];
             accentHover = dark ? mappings["cy"] : mappings["cy2"];
             break;
-        case "Blue":
+        case Color.Blue:
             accent = dark ? mappings["bl2"] : mappings["bl"];
             accentHover = dark ? mappings["bl"] : mappings["bl2"];
             break;
-        case "Purple":
+        case Color.Purple:
             accent = dark ? mappings["pu2"] : mappings["pu"];
             accentHover = dark ? mappings["pu"] : mappings["pu2"];
             break;
-        case "Magenta":
+        case Color.Magenta:
             accent = dark ? mappings["ma2"] : mappings["ma"];
             accentHover = dark ? mappings["ma"] : mappings["ma2"];
             break;
@@ -455,67 +465,67 @@ mkdir(themesDir, { recursive: true })
         Promise.all([
             writeFile(
                 `${themesDir}/flexoki-dark-red-color-theme.json`,
-                JSON.stringify(getTheme(true, "Red"), null, 4),
+                JSON.stringify(getTheme(true, Color.Red), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-dark-orange-color-theme.json`,
-                JSON.stringify(getTheme(true, "Orange"), null, 4),
+                JSON.stringify(getTheme(true, Color.Orange), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-dark-yellow-color-theme.json`,
-                JSON.stringify(getTheme(true, "Yellow"), null, 4),
+                JSON.stringify(getTheme(true, Color.Yellow), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-dark-green-color-theme.json`,
-                JSON.stringify(getTheme(true, "Green"), null, 4),
+                JSON.stringify(getTheme(true, Color.Green), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-dark-cyan-color-theme.json`,
-                JSON.stringify(getTheme(true, "Cyan"), null, 4),
+                JSON.stringify(getTheme(true, Color.Cyan), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-dark-blue-color-theme.json`,
-                JSON.stringify(getTheme(true, "Blue"), null, 4),
+                JSON.stringify(getTheme(true, Color.Blue), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-dark-purple-color-theme.json`,
-                JSON.stringify(getTheme(true, "Purple"), null, 4),
+                JSON.stringify(getTheme(true, Color.Purple), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-dark-magenta-color-theme.json`,
-                JSON.stringify(getTheme(true, "Magenta"), null, 4),
+                JSON.stringify(getTheme(true, Color.Magenta), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-light-red-color-theme.json`,
-                JSON.stringify(getTheme(false, "Red"), null, 4),
+                JSON.stringify(getTheme(false, Color.Red), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-light-orange-color-theme.json`,
-                JSON.stringify(getTheme(false, "Orange"), null, 4),
+                JSON.stringify(getTheme(false, Color.Orange), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-light-yellow-color-theme.json`,
-                JSON.stringify(getTheme(false, "Yellow"), null, 4),
+                JSON.stringify(getTheme(false, Color.Yellow), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-light-green-color-theme.json`,
-                JSON.stringify(getTheme(false, "Green"), null, 4),
+                JSON.stringify(getTheme(false, Color.Green), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-light-cyan-color-theme.json`,
-                JSON.stringify(getTheme(false, "Cyan"), null, 4),
+                JSON.stringify(getTheme(false, Color.Cyan), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-light-blue-color-theme.json`,
-                JSON.stringify(getTheme(false, "Blue"), null, 4),
+                JSON.stringify(getTheme(false, Color.Blue), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-light-purple-color-theme.json`,
-                JSON.stringify(getTheme(false, "Purple"), null, 4),
+                JSON.stringify(getTheme(false, Color.Purple), null, 4),
             ),
             writeFile(
                 `${themesDir}/flexoki-light-magenta-color-theme.json`,
-                JSON.stringify(getTheme(false, "Magenta"), null, 4),
+                JSON.stringify(getTheme(false, Color.Magenta), null, 4),
             ),
         ]),
     )
