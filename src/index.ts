@@ -90,6 +90,11 @@ const lightMappings: Mappings = {
     "transparent": "#FFFFFF00",
 };
 
+enum Theme {
+    Dark,
+    Light,
+}
+
 enum Color {
     Red,
     Orange,
@@ -101,7 +106,8 @@ enum Color {
     Magenta,
 }
 
-const getTheme = (dark: boolean, color: Color) => {
+const theme = (theme: Theme, color: Color) => {
+    const dark = theme === Theme.Dark;
     const mappings = dark ? darkMappings : lightMappings;
 
     let accent: string | undefined = undefined;
@@ -145,7 +151,7 @@ const getTheme = (dark: boolean, color: Color) => {
 
     return {
         $schema: "vscode://schemas/color-theme",
-        name: `Flexoki ${dark ? "Dark" : "Light"} ${Color[color]}`,
+        name: `Flexoki ${Theme[theme]} ${Color[color]}`,
         semanticHighlighting: true,
         colors: {
             "activityBar.activeBackground": mappings["bg-2"],
@@ -433,7 +439,7 @@ const getTheme = (dark: boolean, color: Color) => {
     };
 };
 
-export const getTerminalTheme = (dark: boolean) => {
+export const terminal = (dark: boolean) => {
     const mappings = dark ? darkMappings : lightMappings;
 
     return {
@@ -461,89 +467,91 @@ export const getTerminalTheme = (dark: boolean) => {
     };
 };
 
-const themesDir = resolve(dirname(import.meta.dirname), "themes");
+const build = () => {
+    const dir = {
+        themes: resolve(dirname(import.meta.dirname), "themes"),
+        terminal: resolve(dirname(import.meta.dirname), "terminal"),
+    };
 
-mkdir(themesDir, { recursive: true })
-    .then(() =>
-        Promise.all([
-            writeFile(
-                `${themesDir}/flexoki-dark-red-color-theme.json`,
-                JSON.stringify(getTheme(true, Color.Red), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-dark-orange-color-theme.json`,
-                JSON.stringify(getTheme(true, Color.Orange), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-dark-yellow-color-theme.json`,
-                JSON.stringify(getTheme(true, Color.Yellow), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-dark-green-color-theme.json`,
-                JSON.stringify(getTheme(true, Color.Green), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-dark-cyan-color-theme.json`,
-                JSON.stringify(getTheme(true, Color.Cyan), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-dark-blue-color-theme.json`,
-                JSON.stringify(getTheme(true, Color.Blue), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-dark-purple-color-theme.json`,
-                JSON.stringify(getTheme(true, Color.Purple), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-dark-magenta-color-theme.json`,
-                JSON.stringify(getTheme(true, Color.Magenta), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-light-red-color-theme.json`,
-                JSON.stringify(getTheme(false, Color.Red), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-light-orange-color-theme.json`,
-                JSON.stringify(getTheme(false, Color.Orange), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-light-yellow-color-theme.json`,
-                JSON.stringify(getTheme(false, Color.Yellow), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-light-green-color-theme.json`,
-                JSON.stringify(getTheme(false, Color.Green), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-light-cyan-color-theme.json`,
-                JSON.stringify(getTheme(false, Color.Cyan), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-light-blue-color-theme.json`,
-                JSON.stringify(getTheme(false, Color.Blue), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-light-purple-color-theme.json`,
-                JSON.stringify(getTheme(false, Color.Purple), null, 4),
-            ),
-            writeFile(
-                `${themesDir}/flexoki-light-magenta-color-theme.json`,
-                JSON.stringify(getTheme(false, Color.Magenta), null, 4),
-            ),
-        ]),
-    )
-    .catch(() => process.exit(1));
+    mkdir(dir.themes, { recursive: true })
+        .then(() =>
+            Promise.all([
+                writeFile(
+                    `${dir.themes}/flexoki-dark-red-color-theme.json`,
+                    JSON.stringify(theme(Theme.Dark, Color.Red), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-dark-orange-color-theme.json`,
+                    JSON.stringify(theme(Theme.Dark, Color.Orange), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-dark-yellow-color-theme.json`,
+                    JSON.stringify(theme(Theme.Dark, Color.Yellow), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-dark-green-color-theme.json`,
+                    JSON.stringify(theme(Theme.Dark, Color.Green), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-dark-cyan-color-theme.json`,
+                    JSON.stringify(theme(Theme.Dark, Color.Cyan), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-dark-blue-color-theme.json`,
+                    JSON.stringify(theme(Theme.Dark, Color.Blue), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-dark-purple-color-theme.json`,
+                    JSON.stringify(theme(Theme.Dark, Color.Purple), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-dark-magenta-color-theme.json`,
+                    JSON.stringify(theme(Theme.Dark, Color.Magenta), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-light-red-color-theme.json`,
+                    JSON.stringify(theme(Theme.Light, Color.Red), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-light-orange-color-theme.json`,
+                    JSON.stringify(theme(Theme.Light, Color.Orange), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-light-yellow-color-theme.json`,
+                    JSON.stringify(theme(Theme.Light, Color.Yellow), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-light-green-color-theme.json`,
+                    JSON.stringify(theme(Theme.Light, Color.Green), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-light-cyan-color-theme.json`,
+                    JSON.stringify(theme(Theme.Light, Color.Cyan), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-light-blue-color-theme.json`,
+                    JSON.stringify(theme(Theme.Light, Color.Blue), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-light-purple-color-theme.json`,
+                    JSON.stringify(theme(Theme.Light, Color.Purple), null, 4),
+                ),
+                writeFile(
+                    `${dir.themes}/flexoki-light-magenta-color-theme.json`,
+                    JSON.stringify(theme(Theme.Light, Color.Magenta), null, 4),
+                ),
+            ]),
+        )
+        .catch(() => process.exit(1));
 
-const terminalDir = resolve(dirname(import.meta.dirname), "terminal");
+    mkdir(dir.terminal, { recursive: true })
+        .then(() =>
+            Promise.all([
+                writeFile(`${dir.terminal}/dark.json`, JSON.stringify(terminal(true), null, 4)),
+                writeFile(`${dir.terminal}/light.json`, JSON.stringify(terminal(false), null, 4)),
+            ]),
+        )
+        .catch(() => process.exit(1));
+};
 
-mkdir(terminalDir, { recursive: true })
-    .then(() =>
-        Promise.all([
-            writeFile(`${terminalDir}/dark.json`, JSON.stringify(getTerminalTheme(true), null, 4)),
-            writeFile(
-                `${terminalDir}/light.json`,
-                JSON.stringify(getTerminalTheme(false), null, 4),
-            ),
-        ]),
-    )
-    .catch(() => process.exit(1));
+build();
