@@ -140,14 +140,24 @@
         "widget.border": "#E6E4D9",
         "editorBracketMatch.background": "#FFFFFF00",
         "editorBracketMatch.border": "#100F0F",
-        "editorActiveLineNumber.foreground": "#AF3029",
+        "editorActiveLineNumber.foreground": "#100F0F",
         "editorBracketHighlight.foreground1": "#AD8301",
         "editorBracketHighlight.foreground2": "#A02F6F",
         "editorBracketHighlight.foreground3": "#205EA6",
         "editorBracketHighlight.foreground4": "#BC5215",
         "editorBracketHighlight.foreground5": "#5E409D",
         "editorBracketHighlight.foreground6": "#66800B",
-        "editorBracketHighlight.unexpectedBracket.foreground": "#AF3029"
+        "editorBracketHighlight.unexpectedBracket.foreground": "#AF3029",
+        "gitDecoration.addedResourceForeground": "#66800B",
+        "gitDecoration.conflictingResourceForeground": "#AF3029",
+        "gitDecoration.deletedResourceForeground": "#BC5215",
+        "gitDecoration.ignoredResourceForeground": "#6F6E69",
+        "gitDecoration.modifiedResourceForeground": "#AD8301",
+        "gitDecoration.renamedResourceForeground": "#66800B",
+        "gitDecoration.stageDeletedResourceForeground": "#BC5215",
+        "gitDecoration.stageModifiedResourceForeground": "#AD8301",
+        "gitDecoration.submoduleResourceForeground": "#205EA6",
+        "gitDecoration.untrackedResourceForeground": "#66800B"
     },
     "tokenColors": [
         {
