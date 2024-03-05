@@ -119,7 +119,7 @@
     },
     "scripts": {
         "check": "tsc",
-        "dev": "tsc && esbuild src/main.ts --bundle --outdir=build --platform=node --format=esm --packages=external && node build/main.js",
+        "dev": "tsc && esbuild src/watch.ts --bundle --outdir=build --platform=node --format=esm --packages=external && node build/watch.js",
         "build": "tsc && esbuild src/build.ts --bundle --outdir=build --platform=node --format=esm --packages=external && node build/build.js",
         "vsce": "vsce publish"
     },

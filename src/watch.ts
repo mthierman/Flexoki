@@ -1,8 +1,7 @@
 import * as esbuild from "esbuild";
 import { exec } from "node:child_process";
 import { dirname, join, resolve } from "node:path";
-import * as process from "node:process";
-import { stdin, stdout } from "node:process";
+import { exit, stdin, stdout } from "node:process";
 import * as readline from "node:readline";
 
 const paths = () => {
@@ -21,7 +20,7 @@ const paths = () => {
     };
 };
 
-export default async ({
+const watch = async ({
     build = paths().build,
     input = paths().input,
     output = paths().output,
@@ -59,6 +58,8 @@ export default async ({
 
     cli.on("close", () => {
         ctx.dispose();
-        process.exit();
+        exit();
     });
 };
+
+watch();
