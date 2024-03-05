@@ -286,6 +286,16 @@ export const theme = (theme: Theme, color: Color) => {
             "titleBar.inactiveBackground": dark ? mappings["ui"] : mappings["bg"],
             "titleBar.inactiveForeground": mappings["tx-3"],
             "widget.border": mappings["ui"],
+            "editorBracketMatch.background": mappings["transparent"],
+            "editorBracketMatch.border": mappings["tx"],
+            "editorActiveLineNumber.foreground": accent,
+            "editorBracketHighlight.foreground1": mappings["ye"],
+            "editorBracketHighlight.foreground2": mappings["ma"],
+            "editorBracketHighlight.foreground3": mappings["bl"],
+            "editorBracketHighlight.foreground4": mappings["or"],
+            "editorBracketHighlight.foreground5": mappings["pu"],
+            "editorBracketHighlight.foreground6": mappings["gr"],
+            "editorBracketHighlight.unexpectedBracket.foreground": mappings["re"],
         },
         tokenColors: [
             {

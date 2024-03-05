@@ -137,7 +137,17 @@
         "titleBar.border": "#F2F0E5",
         "titleBar.inactiveBackground": "#FFFCF0",
         "titleBar.inactiveForeground": "#B7B5AC",
-        "widget.border": "#E6E4D9"
+        "widget.border": "#E6E4D9",
+        "editorBracketMatch.background": "#FFFFFF00",
+        "editorBracketMatch.border": "#100F0F",
+        "editorActiveLineNumber.foreground": "#24837B",
+        "editorBracketHighlight.foreground1": "#AD8301",
+        "editorBracketHighlight.foreground2": "#A02F6F",
+        "editorBracketHighlight.foreground3": "#205EA6",
+        "editorBracketHighlight.foreground4": "#BC5215",
+        "editorBracketHighlight.foreground5": "#5E409D",
+        "editorBracketHighlight.foreground6": "#66800B",
+        "editorBracketHighlight.unexpectedBracket.foreground": "#AF3029"
     },
     "tokenColors": [
         {
