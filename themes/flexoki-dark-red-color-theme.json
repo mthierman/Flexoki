@@ -305,7 +305,7 @@
         }
     ],
     "semanticTokenColors": {
-        "newOperator": "#AF3029",
+        "newOperator": "#879A39",
         "stringLiteral": "#3AA99F",
         "customLiteral": "#CECDC3",
         "numberLiteral": "#8B7EC8"

@@ -435,7 +435,7 @@ export const theme = (theme: Theme, color: Color) => {
             },
         ],
         semanticTokenColors: {
-            newOperator: accent,
+            newOperator: mappings["gr"],
             stringLiteral: mappings["cy"],
             customLiteral: mappings["tx"],
             numberLiteral: mappings["pu"],
