@@ -219,7 +219,7 @@ export const theme = (theme: Theme, color: Color) => {
             "menu.separatorBackground": mappings["ui-2"],
             "menubar.selectionBackground": mappings["ui-2"],
             "menubar.selectionBorder": mappings["transparent"],
-            "menubar.selectionForeground": mappings["tx"],
+            "menubar.selectionForeground": accent,
             "panel.background": mappings["bg"],
             "panel.border": dark ? mappings["ui"] : mappings["bg-2"],
             "panelInput.border": mappings["ui"],
