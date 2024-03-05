@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { Color, Theme, terminal, theme } from "./themes/flexoki";
 
-export const build = () => {
+const build = () => {
     const dir = {
         themes: resolve(dirname(import.meta.dirname), "themes"),
         terminal: resolve(dirname(import.meta.dirname), "terminal"),

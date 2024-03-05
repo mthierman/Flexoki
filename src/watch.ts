@@ -21,8 +21,6 @@ const paths = () => {
     };
 };
 
-const cli = readline.createInterface(stdin, stdout);
-
 export default async ({
     build = paths().build,
     input = paths().input,
@@ -56,6 +54,8 @@ export default async ({
     });
 
     await ctx.watch();
+
+    const cli = readline.createInterface(stdin, stdout);
 
     cli.on("close", () => {
         ctx.dispose();
