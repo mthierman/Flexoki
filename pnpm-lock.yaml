@@ -8,9 +8,6 @@ devDependencies:
   '@types/node':
     specifier: ^20.11.24
     version: 20.11.24
-  '@types/vscode':
-    specifier: ^1.87.0
-    version: 1.87.0
   '@vscode/vsce':
     specifier: ^2.24.0
     version: 2.24.0
@@ -237,10 +234,6 @@ packages:
     resolution: {integrity: sha512-Kza43ewS3xoLgCEpQrsT+xRo/EJej1y0kVYGiLFE1NEODXGzTfwiC6tXTLMQskn1X4/Rjlh0MQUvx9W+L9long==}
     dependencies:
       undici-types: 5.26.5
-    dev: true
-
-  /@types/vscode@1.87.0:
-    resolution: {integrity: sha512-y3yYJV2esWr8LNjp3VNbSMWG7Y43jC8pCldG8YwiHGAQbsymkkMMt0aDT1xZIOFM2eFcNiUc+dJMx1+Z0UT8fg==}
     dev: true
 
   /@vscode/vsce@2.24.0:

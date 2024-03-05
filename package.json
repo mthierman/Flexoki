@@ -125,7 +125,6 @@
     },
     "devDependencies": {
         "@types/node": "^20.11.24",
-        "@types/vscode": "^1.87.0",
         "@vscode/vsce": "^2.24.0",
         "esbuild": "^0.20.1",
         "prettier": "^3.2.5",
