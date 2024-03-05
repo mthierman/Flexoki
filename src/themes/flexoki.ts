@@ -190,7 +190,7 @@ export const theme = (theme: Theme, color: Color) => {
             "editorCursor.foreground": accent,
             "editorGroup.border": dark ? mappings["ui"] : mappings["bg-2"],
             "editorGroupHeader.border": mappings["transparent"],
-            "editorGroupHeader.tabsBackground": dark ? mappings["ui"] : mappings["bg"],
+            "editorGroupHeader.tabsBackground": mappings["ui"],
             "editorGroupHeader.tabsBorder": mappings["transparent"],
             "editorHoverWidget.background": mappings["bg"],
             "editorHoverWidget.border": mappings["ui"],
