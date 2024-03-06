@@ -124,10 +124,10 @@
         "vsce": "vsce publish"
     },
     "devDependencies": {
-        "@types/node": "^20.11.24",
+        "@types/node": "^20.11.25",
         "@vscode/vsce": "^2.24.0",
         "esbuild": "^0.20.1",
         "prettier": "^3.2.5",
-        "typescript": "^5.3.3"
+        "typescript": "^5.4.2"
     }
 }
