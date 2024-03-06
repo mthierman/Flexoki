@@ -1,30 +1,14 @@
 import * as esbuild from "esbuild";
-import { exec } from "node:child_process";
+import { fork } from "node:child_process";
 import { dirname, join, resolve } from "node:path";
 import { exit, stdin, stdout } from "node:process";
-import * as readline from "node:readline";
+import * as readline from "node:readline/promises";
 
-const paths = () => {
+export default async (script: string) => {
     const root = dirname(import.meta.dirname);
-    const src = resolve(root, "src");
-    const build = resolve(root, "build");
-    const input = join(src, "build.ts");
-    const output = join(build, "build.js");
+    const scripts = resolve(root, "scripts");
+    const outdir = resolve(root, "build");
 
-    return {
-        root,
-        src,
-        build,
-        input,
-        output,
-    };
-};
-
-const watch = async ({
-    build = paths().build,
-    input = paths().input,
-    output = paths().output,
-}: WatchParams = {}) => {
     const plugin: esbuild.Plugin = {
         name: "exec",
         setup(build) {
@@ -36,15 +20,15 @@ const watch = async ({
                     console.log(await esbuild.analyzeMetafile(result.metafile));
                 }
 
-                exec(`node ${output}`);
+                fork(join(outdir, `${script}.js`));
             });
         },
     };
 
     const ctx = await esbuild.context({
-        entryPoints: [input],
+        entryPoints: [join(scripts, `${script}.ts`)],
         bundle: true,
-        outdir: build,
+        outdir: outdir,
         platform: "node",
         format: "esm",
         packages: "external",
@@ -52,14 +36,15 @@ const watch = async ({
         metafile: true,
     });
 
+    console.clear();
+
     await ctx.watch();
 
     const cli = readline.createInterface(stdin, stdout);
 
-    cli.on("close", () => {
+    await cli.on("close", () => {
+        console.log("Exiting...");
         ctx.dispose();
         exit();
     });
 };
-
-watch();

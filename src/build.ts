@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { Color, Theme, terminal, theme } from "./themes/flexoki";
 
-const build = () => {
+export default () => {
     const dir = {
         themes: resolve(dirname(import.meta.dirname), "themes"),
         terminal: resolve(dirname(import.meta.dirname), "terminal"),
@@ -88,5 +88,3 @@ const build = () => {
         )
         .catch(() => process.exit(1));
 };
-
-build();

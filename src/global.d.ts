@@ -59,10 +59,4 @@ export declare global {
         "ma2": string;
         "transparent": string;
     }
-
-    interface WatchParams {
-        build?: string;
-        input?: string;
-        output?: string;
-    }
 }
