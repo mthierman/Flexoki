@@ -976,7 +976,7 @@ export const theme = (theme: Theme, color: Color) => {
                     "entity.other",
                     "entity.other.attribute-name",
                     "entity.other.inherited-class",
-                    "markup.heading",
+                    "punctuation.definition.heading",
                 ],
                 settings: {
                     foreground: mappings["or"],
