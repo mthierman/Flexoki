@@ -191,6 +191,64 @@
     "tokenColors": [
         {
             "scope": [
+                "strong",
+                "markup.bold",
+                "markup.heading"
+            ],
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": [
+                "emphasis, markup.italic"
+            ],
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": [
+                "markup.underline"
+            ],
+            "settings": {
+                "fontStyle": "underline"
+            }
+        },
+        {
+            "scope": [
+                "markup.strikethrough"
+            ],
+            "settings": {
+                "fontStyle": "strikethrough"
+            }
+        },
+        {
+            "scope": [
+                "markup.inserted"
+            ],
+            "settings": {
+                "foreground": "#879A39"
+            }
+        },
+        {
+            "scope": [
+                "markup.deleted"
+            ],
+            "settings": {
+                "foreground": "#D14D41"
+            }
+        },
+        {
+            "scope": [
+                "markup.changed"
+            ],
+            "settings": {
+                "foreground": "#D0A215"
+            }
+        },
+        {
+            "scope": [
                 "comment",
                 "comment.block",
                 "comment.block.documentation",
@@ -207,8 +265,7 @@
                 "constant.character.escape",
                 "constant.other",
                 "constant.regexp",
-                "constant.rgb-value",
-                "support.constant"
+                "constant.rgb-value"
             ],
             "settings": {
                 "foreground": "#D0A215"
@@ -217,9 +274,9 @@
         {
             "scope": [
                 "constant.numeric",
+                "constant.numeric.integer",
                 "constant.numeric.float",
                 "constant.numeric.hex",
-                "constant.numeric.integer",
                 "constant.numeric.octal"
             ],
             "settings": {
@@ -240,8 +297,7 @@
                 "entity.other",
                 "entity.other.attribute-name",
                 "entity.other.inherited-class",
-                "markup.heading",
-                "support.function"
+                "punctuation.definition.heading"
             ],
             "settings": {
                 "foreground": "#DA702C"
@@ -271,10 +327,10 @@
         {
             "scope": [
                 "keyword.operator",
-                "keyword.operator.arithmetic",
+                "keyword.operator.new",
                 "keyword.operator.assignment",
-                "keyword.operator.logical",
-                "keyword.operator.new"
+                "keyword.operator.arithmetic",
+                "keyword.operator.logical"
             ],
             "settings": {
                 "foreground": "#878580"
@@ -292,8 +348,8 @@
                 "meta.return-type",
                 "meta.selector",
                 "meta.tag",
-                "meta.type",
-                "meta.type.annotation"
+                "meta.type.annotation",
+                "meta.type"
             ],
             "settings": {
                 "foreground": "#CE5D97"
@@ -301,7 +357,7 @@
         },
         {
             "scope": [
-                "punctuation.definition.tag",
+                "punctuation",
                 "punctuation.definition.string.begin",
                 "punctuation.definition.string.end",
                 "punctuation.separator",
@@ -327,16 +383,31 @@
                 "string",
                 "string.interpolated",
                 "string.other",
-                "string.regexp",
                 "string.quoted",
                 "string.quoted.double",
                 "string.quoted.other",
                 "string.quoted.single",
                 "string.quoted.triple",
+                "string.regexp",
                 "string.unquoted"
             ],
             "settings": {
                 "foreground": "#3AA99F"
+            }
+        },
+        {
+            "scope": [
+                "support",
+                "support.class",
+                "support.constant",
+                "support.function",
+                "support.other",
+                "support.type",
+                "support.type.property-name",
+                "support.variable"
+            ],
+            "settings": {
+                "foreground": "#D0A215"
             }
         },
         {
