@@ -924,6 +924,13 @@ export const theme = (theme: Theme, color: Color) => {
             // "window.inactiveBorder": test,
         },
         tokenColors: [
+            { scope: ["strong", "markup.bold", "markup.heading"], settings: { fontStyle: "bold" } },
+            { scope: ["emphasis, markup.italic"], settings: { fontStyle: "italic" } },
+            { scope: ["markup.underline"], settings: { fontStyle: "underline" } },
+            { scope: ["markup.strikethrough"], settings: { fontStyle: "strikethrough" } },
+            { scope: ["markup.inserted"], settings: { foreground: mappings.gr } },
+            { scope: ["markup.deleted"], settings: { foreground: mappings.re } },
+            { scope: ["markup.changed"], settings: { foreground: mappings.ye } },
             {
                 scope: ["comment", "comment.block", "comment.block.documentation", "comment.line"],
                 settings: {
@@ -938,7 +945,6 @@ export const theme = (theme: Theme, color: Color) => {
                     "constant.other",
                     "constant.regexp",
                     "constant.rgb-value",
-                    "support.constant",
                 ],
                 settings: {
                     foreground: mappings["ye"],
@@ -947,9 +953,9 @@ export const theme = (theme: Theme, color: Color) => {
             {
                 scope: [
                     "constant.numeric",
+                    "constant.numeric.integer",
                     "constant.numeric.float",
                     "constant.numeric.hex",
-                    "constant.numeric.integer",
                     "constant.numeric.octal",
                 ],
                 settings: {
@@ -971,7 +977,6 @@ export const theme = (theme: Theme, color: Color) => {
                     "entity.other.attribute-name",
                     "entity.other.inherited-class",
                     "markup.heading",
-                    "support.function",
                 ],
                 settings: {
                     foreground: mappings["or"],
@@ -992,10 +997,10 @@ export const theme = (theme: Theme, color: Color) => {
             {
                 scope: [
                     "keyword.operator",
-                    "keyword.operator.arithmetic",
-                    "keyword.operator.assignment",
-                    "keyword.operator.logical",
                     "keyword.operator.new",
+                    "keyword.operator.assignment",
+                    "keyword.operator.arithmetic",
+                    "keyword.operator.logical",
                 ],
                 settings: {
                     foreground: mappings["tx-2"],
@@ -1013,8 +1018,8 @@ export const theme = (theme: Theme, color: Color) => {
                     "meta.return-type",
                     "meta.selector",
                     "meta.tag",
-                    "meta.type",
                     "meta.type.annotation",
+                    "meta.type",
                 ],
                 settings: {
                     foreground: mappings["ma"],
@@ -1022,7 +1027,7 @@ export const theme = (theme: Theme, color: Color) => {
             },
             {
                 scope: [
-                    "punctuation.definition.tag",
+                    "punctuation",
                     "punctuation.definition.string.begin",
                     "punctuation.definition.string.end",
                     "punctuation.separator",
@@ -1044,16 +1049,31 @@ export const theme = (theme: Theme, color: Color) => {
                     "string",
                     "string.interpolated",
                     "string.other",
-                    "string.regexp",
                     "string.quoted",
                     "string.quoted.double",
                     "string.quoted.other",
                     "string.quoted.single",
                     "string.quoted.triple",
+                    "string.regexp",
                     "string.unquoted",
                 ],
                 settings: {
                     foreground: mappings["cy"],
+                },
+            },
+            {
+                scope: [
+                    "support",
+                    "support.class",
+                    "support.constant",
+                    "support.function",
+                    "support.other",
+                    "support.type",
+                    "support.type.property-name",
+                    "support.variable",
+                ],
+                settings: {
+                    foreground: mappings["ye"],
                 },
             },
             {
