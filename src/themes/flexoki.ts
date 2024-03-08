@@ -1027,7 +1027,6 @@ export const theme = (theme: Theme, color: Color) => {
             },
             {
                 scope: [
-                    "punctuation",
                     "punctuation.definition.string.begin",
                     "punctuation.definition.string.end",
                     "punctuation.separator",
