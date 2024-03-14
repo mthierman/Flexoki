@@ -1,7 +1,8 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { Color, Theme, theme } from "./config";
+import { Color, Theme } from "./config";
 import generateTerminal from "./generateTerminal";
+import generateTheme from "./generateTheme";
 
 export default () => {
     const dir = {
@@ -14,67 +15,67 @@ export default () => {
             Promise.all([
                 writeFile(
                     `${dir.themes}/flexoki-dark-red-color-theme.json`,
-                    JSON.stringify(theme(Theme.Dark, Color.Red), null, 4),
+                    JSON.stringify(generateTheme(Theme.Dark, Color.Red), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-dark-orange-color-theme.json`,
-                    JSON.stringify(theme(Theme.Dark, Color.Orange), null, 4),
+                    JSON.stringify(generateTheme(Theme.Dark, Color.Orange), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-dark-yellow-color-theme.json`,
-                    JSON.stringify(theme(Theme.Dark, Color.Yellow), null, 4),
+                    JSON.stringify(generateTheme(Theme.Dark, Color.Yellow), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-dark-green-color-theme.json`,
-                    JSON.stringify(theme(Theme.Dark, Color.Green), null, 4),
+                    JSON.stringify(generateTheme(Theme.Dark, Color.Green), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-dark-cyan-color-theme.json`,
-                    JSON.stringify(theme(Theme.Dark, Color.Cyan), null, 4),
+                    JSON.stringify(generateTheme(Theme.Dark, Color.Cyan), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-dark-blue-color-theme.json`,
-                    JSON.stringify(theme(Theme.Dark, Color.Blue), null, 4),
+                    JSON.stringify(generateTheme(Theme.Dark, Color.Blue), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-dark-purple-color-theme.json`,
-                    JSON.stringify(theme(Theme.Dark, Color.Purple), null, 4),
+                    JSON.stringify(generateTheme(Theme.Dark, Color.Purple), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-dark-magenta-color-theme.json`,
-                    JSON.stringify(theme(Theme.Dark, Color.Magenta), null, 4),
+                    JSON.stringify(generateTheme(Theme.Dark, Color.Magenta), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-light-red-color-theme.json`,
-                    JSON.stringify(theme(Theme.Light, Color.Red), null, 4),
+                    JSON.stringify(generateTheme(Theme.Light, Color.Red), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-light-orange-color-theme.json`,
-                    JSON.stringify(theme(Theme.Light, Color.Orange), null, 4),
+                    JSON.stringify(generateTheme(Theme.Light, Color.Orange), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-light-yellow-color-theme.json`,
-                    JSON.stringify(theme(Theme.Light, Color.Yellow), null, 4),
+                    JSON.stringify(generateTheme(Theme.Light, Color.Yellow), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-light-green-color-theme.json`,
-                    JSON.stringify(theme(Theme.Light, Color.Green), null, 4),
+                    JSON.stringify(generateTheme(Theme.Light, Color.Green), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-light-cyan-color-theme.json`,
-                    JSON.stringify(theme(Theme.Light, Color.Cyan), null, 4),
+                    JSON.stringify(generateTheme(Theme.Light, Color.Cyan), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-light-blue-color-theme.json`,
-                    JSON.stringify(theme(Theme.Light, Color.Blue), null, 4),
+                    JSON.stringify(generateTheme(Theme.Light, Color.Blue), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-light-purple-color-theme.json`,
-                    JSON.stringify(theme(Theme.Light, Color.Purple), null, 4),
+                    JSON.stringify(generateTheme(Theme.Light, Color.Purple), null, 4),
                 ),
                 writeFile(
                     `${dir.themes}/flexoki-light-magenta-color-theme.json`,
-                    JSON.stringify(theme(Theme.Light, Color.Magenta), null, 4),
+                    JSON.stringify(generateTheme(Theme.Light, Color.Magenta), null, 4),
                 ),
             ]),
         )
