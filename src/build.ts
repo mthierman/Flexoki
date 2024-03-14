@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { Color, Theme, terminal, theme } from "./config";
+import { Color, Theme, theme } from "./config";
+import generateTerminal from "./generateTerminal";
 
 export default () => {
     const dir = {
@@ -82,8 +83,14 @@ export default () => {
     mkdir(dir.terminal, { recursive: true })
         .then(() =>
             Promise.all([
-                writeFile(`${dir.terminal}/dark.json`, JSON.stringify(terminal(true), null, 4)),
-                writeFile(`${dir.terminal}/light.json`, JSON.stringify(terminal(false), null, 4)),
+                writeFile(
+                    `${dir.terminal}/dark.json`,
+                    JSON.stringify(generateTerminal(true), null, 4),
+                ),
+                writeFile(
+                    `${dir.terminal}/light.json`,
+                    JSON.stringify(generateTerminal(false), null, 4),
+                ),
             ]),
         )
         .catch(() => process.exit(1));

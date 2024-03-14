@@ -75,7 +75,7 @@ export interface Mappings {
     "transparent": string;
 }
 
-const tones: Tones = {
+export const tones: Tones = {
     "black": "#100F0F",
     "base-950": "#1C1B1A",
     "base-900": "#282726",
@@ -108,7 +108,7 @@ const tones: Tones = {
     "magenta-400": "#CE5D97",
 };
 
-const darkMappings: Mappings = {
+export const darkMappings: Mappings = {
     "bg": tones["black"],
     "bg-2": tones["base-950"],
     "ui": tones["base-900"],
@@ -136,7 +136,7 @@ const darkMappings: Mappings = {
     "transparent": "#00000000",
 };
 
-const lightMappings: Mappings = {
+export const lightMappings: Mappings = {
     "bg": tones["paper"],
     "bg-2": tones["base-50"],
     "ui": tones["base-100"],
@@ -1156,33 +1156,5 @@ export const theme = (theme: Theme, color: Color) => {
             customLiteral: mappings["tx"],
             numberLiteral: mappings["pu"],
         },
-    };
-};
-
-export const terminal = (dark: boolean) => {
-    const mappings = dark ? darkMappings : lightMappings;
-
-    return {
-        background: mappings["bg"],
-        black: tones["base-950"],
-        blue: mappings["bl2"],
-        brightBlack: tones["base-900"],
-        brightBlue: mappings["bl"],
-        brightCyan: mappings["cy"],
-        brightGreen: mappings["gr"],
-        brightPurple: mappings["ma"],
-        brightRed: mappings["re"],
-        brightWhite: tones["base-50"],
-        brightYellow: mappings["ye"],
-        cursorColor: mappings["tx"],
-        cyan: mappings["cy2"],
-        foreground: mappings["tx"],
-        green: mappings["gr2"],
-        name: `Flexoki ${dark ? "Dark" : "Light"}`,
-        purple: mappings["ma2"],
-        red: mappings["re2"],
-        selectionBackground: mappings["bl2"],
-        white: tones["base-100"],
-        yellow: mappings["ye2"],
     };
 };
