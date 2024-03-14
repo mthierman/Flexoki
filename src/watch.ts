@@ -14,7 +14,7 @@ export default async (script: string) => {
         setup(build) {
             build.onEnd(async (result) => {
                 const date = new Date();
-                console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+                console.log(`\n  ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
 
                 if (result.metafile) {
                     console.log(await esbuild.analyzeMetafile(result.metafile));
@@ -36,7 +36,7 @@ export default async (script: string) => {
         metafile: true,
     });
 
-    console.clear();
+    // console.clear();
 
     await ctx.watch();
 

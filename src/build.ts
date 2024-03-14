@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { Color, Theme, terminal, theme } from "./themes/flexoki";
+import { Color, Theme, terminal, theme } from "./config";
 
 export default () => {
     const dir = {
