@@ -27,81 +27,113 @@
         "themes": [
             {
                 "label": "%darkRed%",
+                "mode": "Dark",
+                "accent": "Red",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-red-color-theme.json"
             },
             {
                 "label": "%darkOrange%",
+                "mode": "Dark",
+                "accent": "Orange",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-orange-color-theme.json"
             },
             {
                 "label": "%darkYellow%",
+                "mode": "Dark",
+                "accent": "Yellow",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-yellow-color-theme.json"
             },
             {
                 "label": "%darkGreen%",
+                "mode": "Dark",
+                "accent": "Green",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-green-color-theme.json"
             },
             {
                 "label": "%darkCyan%",
+                "mode": "Dark",
+                "accent": "Cyan",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-cyan-color-theme.json"
             },
             {
                 "label": "%darkBlue%",
+                "mode": "Dark",
+                "accent": "Blue",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-blue-color-theme.json"
             },
             {
                 "label": "%darkPurple%",
+                "mode": "Dark",
+                "accent": "Purple",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-purple-color-theme.json"
             },
             {
                 "label": "%darkMagenta%",
+                "mode": "Dark",
+                "accent": "Magenta",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-magenta-color-theme.json"
             },
             {
                 "label": "%lightRed%",
+                "mode": "Light",
+                "accent": "Red",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-red-color-theme.json"
             },
             {
                 "label": "%lightOrange%",
+                "mode": "Light",
+                "accent": "Orange",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-orange-color-theme.json"
             },
             {
                 "label": "%lightYellow%",
+                "mode": "Light",
+                "accent": "Yellow",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-yellow-color-theme.json"
             },
             {
                 "label": "%lightGreen%",
+                "mode": "Light",
+                "accent": "Green",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-green-color-theme.json"
             },
             {
                 "label": "%lightCyan%",
+                "mode": "Light",
+                "accent": "Cyan",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-cyan-color-theme.json"
             },
             {
                 "label": "%lightBlue%",
+                "mode": "Light",
+                "accent": "Blue",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-blue-color-theme.json"
             },
             {
                 "label": "%lightPurple%",
+                "mode": "Light",
+                "accent": "Purple",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-purple-color-theme.json"
             },
             {
                 "label": "%lightMagenta%",
+                "mode": "Light",
+                "accent": "Magenta",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-magenta-color-theme.json"
             }
