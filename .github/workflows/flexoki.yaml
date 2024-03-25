@@ -1,0 +1,58 @@
+name: Flexoki
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 5
+          submodules: true
+          path: flexoki
+
+      - name: Checkout website
+        uses: actions/checkout@v4
+        with:
+          repository: mthierman/mthierman.com
+          token: ${{ secrets.WEBSITE }}
+          path: mthierman.com
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: latest
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "*"
+          check-latest: true
+          cache: "pnpm"
+          cache-dependency-path: airglow/pnpm-lock.yaml
+
+      - name: Install node_modules
+        run: |
+          Set-Location ${{ github.workspace }}\airglow
+          pnpm install --frozen-lockfile
+
+      - name: Update website
+        run: |
+          Set-Location ${{ github.workspace }}\mthierman.com
+          Copy-Item "${{ github.workspace }}\airglow\build\notes\version" -Destination "${{ github.workspace }}\mthierman.com\src\includes\flexoki\version"
+          Get-Date -Format "dd/MM/yyyy HH:mm:ss" > "${{ github.workspace }}\mthierman.com\src\includes\flexoki\date"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A
+          git commit -m 'Update Flexoki'
+          git push
