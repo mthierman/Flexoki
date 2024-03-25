@@ -39,17 +39,17 @@ jobs:
           node-version: "*"
           check-latest: true
           cache: "pnpm"
-          cache-dependency-path: airglow/pnpm-lock.yaml
+          cache-dependency-path: flexoki/pnpm-lock.yaml
 
       - name: Install node_modules
         run: |
-          Set-Location ${{ github.workspace }}\airglow
+          Set-Location ${{ github.workspace }}\flexoki
           pnpm install --frozen-lockfile
 
       - name: Update website
         run: |
           Set-Location ${{ github.workspace }}\mthierman.com
-          Copy-Item "${{ github.workspace }}\airglow\build\notes\version" -Destination "${{ github.workspace }}\mthierman.com\src\includes\flexoki\version"
+          "v" + ((Get-Content ${{ github.workspace }}\flexoki\package.json | ConvertFrom-Json).version) > "${{ github.workspace }}\mthierman.com\src\includes\flexoki\version"
           Get-Date -Format "dd/MM/yyyy HH:mm:ss" > "${{ github.workspace }}\mthierman.com\src\includes\flexoki\date"
           git config user.name github-actions
           git config user.email github-actions@github.com
