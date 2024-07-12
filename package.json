@@ -152,6 +152,7 @@
     "scripts": {
         "build": "tsc && node --no-warnings=ExperimentalWarning modules/flexoki.js",
         "watch": "tsx scripts/watch.ts",
+        "clean": "tsx scripts/clean.ts",
         "vsce": "vsce publish"
     },
     "devDependencies": {
