@@ -49,7 +49,7 @@
         "editorWidget.background": "#202020",
         "errorForeground": "#f85149",
         "focusBorder": "#d0a215",
-        "foreground": "#cccccc",
+        "foreground": "#100f0f",
         "icon.foreground": "#cccccc",
         "input.background": "#313131",
         "input.border": "#3c3c3c",
