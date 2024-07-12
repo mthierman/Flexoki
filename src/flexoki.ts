@@ -179,12 +179,12 @@ export function colorsToHex(colors: Record<string, Color | string>) {
     return colors;
 }
 
-// export function makeHexTheme(colorTheme: ColorTheme) {
-//     Object.entries(colorTheme).forEach(([key, value]: [string, Color | string]) => {
-//         colorTheme[key as keyof ColorTheme] = hex(value as Color);
-//     });
-//     return colorTheme;
-// }
+export function makeTheme(colorTheme: ColorTheme) {
+    Object.entries(colorTheme).forEach(([key, value]: [string, Color | string]) => {
+        colorTheme[key as keyof ColorTheme] = hex(value as Color);
+    });
+    return colorTheme;
+}
 
 export function makeMapping(colorTheme: ColorTheme): Mapping {
     return {
@@ -224,14 +224,14 @@ export function makeMapping(colorTheme: ColorTheme): Mapping {
 export const generateTerminal = (theme: Theme) => {
     const base = colorsToHex(baseTones) as typeof baseTones;
 
-    const mappings = {
-        dark: makeMapping(colorsToHex(dark) as ColorTheme),
-        light: makeMapping(colorsToHex(light) as ColorTheme),
+    const themes = {
+        dark: makeTheme(dark),
+        light: makeTheme(light),
     };
 
-    const themes = {
-        dark: colorsToHex(dark) as ColorTheme,
-        light: colorsToHex(light) as ColorTheme,
+    const mappings = {
+        dark: makeMapping(themes.dark),
+        light: makeMapping(themes.light),
     };
 
     const mapping = theme === "Dark" ? mappings.dark : mappings.light;
@@ -295,14 +295,14 @@ export const generateTheme = (theme: Theme, accentColor: AccentColor) => {
     const base = colorsToHex(baseTones) as typeof baseTones;
     const accent = hex(makeAccentColor(theme, accentColor));
 
-    const mappings = {
-        dark: makeMapping(colorsToHex(dark) as ColorTheme),
-        light: makeMapping(colorsToHex(light) as ColorTheme),
+    const themes = {
+        dark: makeTheme(dark),
+        light: makeTheme(light),
     };
 
-    const themes = {
-        dark: colorsToHex(dark) as ColorTheme,
-        light: colorsToHex(light) as ColorTheme,
+    const mappings = {
+        dark: makeMapping(themes.dark),
+        light: makeMapping(themes.light),
     };
 
     const mapping = theme === "Dark" ? mappings.dark : mappings.light;
