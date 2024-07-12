@@ -223,7 +223,6 @@ export function makeMapping(colorTheme: ColorTheme): Mapping {
 
 export const generateTerminal = (theme: Theme) => {
     const base = colorsToHex(baseTones) as typeof baseTones;
-    const accent = colorsToHex(accentColors) as typeof accentColors;
 
     const mappings = {
         dark: makeMapping(colorsToHex(dark) as ColorTheme),
@@ -240,25 +239,25 @@ export const generateTerminal = (theme: Theme) => {
 
     return {
         background: mapping["ui"]["main-background"],
-        black: hex(baseTones["base-950"]),
+        black: base["base-950"],
         blue: colorTheme["bl2"],
-        brightBlack: hex(baseTones["base-900"]),
+        brightBlack: base["base-900"],
         brightBlue: colorTheme["bl"],
         brightCyan: colorTheme["cy"],
         brightGreen: colorTheme["gr"],
         brightPurple: colorTheme["ma"],
         brightRed: colorTheme["re"],
-        brightWhite: hex(baseTones["base-50"]),
+        brightWhite: base["base-50"],
         brightYellow: colorTheme["ye"],
         cursorColor: mapping["ui"]["primary-text"],
         cyan: colorTheme["cy2"],
         foreground: mapping["ui"]["primary-text"],
         green: colorTheme["gr2"],
-        name: `Flexoki ${dark ? "Dark" : "Light"}`,
+        name: `Flexoki ${theme}`,
         purple: colorTheme["ma2"],
         red: colorTheme["re2"],
         selectionBackground: mapping["ui"]["secondary-background"],
-        white: hex(baseTones["base-100"]),
+        white: base["base-100"],
         yellow: colorTheme["ye2"],
     };
 };
@@ -294,7 +293,7 @@ export const makeAccentColor = (theme: Theme, accentColor: AccentColor) => {
 
 export const generateTheme = (theme: Theme, accentColor: AccentColor) => {
     const base = colorsToHex(baseTones) as typeof baseTones;
-    const accent = colorsToHex(accentColors) as typeof accentColors;
+    const accent = hex(makeAccentColor(theme, accentColor));
 
     const mappings = {
         dark: makeMapping(colorsToHex(dark) as ColorTheme),
@@ -751,4 +750,16 @@ await Promise.all([
         JSON.stringify(generateTheme("Light", "Magenta"), null, 4),
     ),
 ]);
+await mkdir(outdir.terminal, { recursive: true });
+await Promise.all([
+    writeFile(
+        resolve(outdir.terminal, "dark.json"),
+        JSON.stringify(generateTerminal("Dark"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.terminal, "light.json"),
+        JSON.stringify(generateTerminal("Light"), null, 4),
+    ),
+]);
+
 await rm(resolve(resolve(import.meta.dirname), "flexoki.js"));
