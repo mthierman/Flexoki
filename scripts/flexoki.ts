@@ -356,7 +356,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "errorForeground": "#f85149",
             "focusBorder": accentColor,
             "foreground": ui["primary-text"],
-            "icon.foreground": "#cccccc",
+            "icon.foreground": ui["muted-text"],
             "input.background": "#313131",
             "input.border": "#3c3c3c",
             "input.foreground": "#cccccc",
