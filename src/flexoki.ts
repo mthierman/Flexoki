@@ -15,7 +15,6 @@ export type AccentColor =
     | "Magenta";
 
 export interface ColorTheme {
-    [index: string]: Color | string;
     "bg": Color | string;
     "bg-2": Color | string;
     "ui": Color | string;
@@ -45,7 +44,6 @@ export interface ColorTheme {
 
 export interface Mapping {
     ui: {
-        [index: string]: Color | string;
         "main-background": Color | string;
         "secondary-background": Color | string;
         "borders": Color | string;
@@ -61,7 +59,6 @@ export interface Mapping {
         "active-states": Color | string;
     };
     syntax: {
-        [index: string]: Color | string;
         "comments": Color | string;
         "punctuation": Color | string;
         "operators": Color | string;
@@ -176,7 +173,7 @@ export function hex(color: Color) {
 
 export function hexTheme(colorTheme: ColorTheme) {
     Object.entries(colorTheme).forEach(([key, value]: [string, Color | string]) => {
-        colorTheme[key] = hex(value as Color);
+        colorTheme[key as keyof ColorTheme] = hex(value as Color);
     });
     return colorTheme;
 }
