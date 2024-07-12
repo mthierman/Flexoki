@@ -150,7 +150,9 @@
         "url": "https://github.com/mthierman/Flexoki.git"
     },
     "scripts": {
+        "dev": "tsc -w",
         "build": "tsc && node --no-warnings=ExperimentalWarning src/flexoki.js",
+        "watch": "node --watch --no-warnings=ExperimentalWarning src/flexoki.js",
         "vsce": "vsce publish"
     },
     "devDependencies": {
