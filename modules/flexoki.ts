@@ -762,4 +762,4 @@ await Promise.all([
     ),
 ]);
 
-// await rm(resolve(resolve(import.meta.dirname), "flexoki.js"));
+await rm(resolve(resolve(import.meta.dirname), "flexoki.js"));
