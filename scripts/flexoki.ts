@@ -302,6 +302,8 @@ const generateTheme = (mode: Mode, accent: Accent) => {
     const { ui, syntax } = mode === "Dark" ? mappings.dark : mappings.light;
     const theme = mode === "Dark" ? themes.dark : themes.light;
 
+    const test = "#FF00FF";
+
     return {
         $schema: "vscode://schemas/color-theme",
         name: `Flexoki ${mode} ${accent}`,
@@ -333,7 +335,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "dropdown.border": "#3c3c3c",
             "dropdown.foreground": "#cccccc",
             "dropdown.listBackground": "#1f1f1f",
-            "editor.background": "#1f1f1f",
+            "editor.background": ui["main-background"],
             "editor.findMatchBackground": "#9e6a03",
             "editor.foreground": "#cccccc",
             "editor.inactiveSelectionBackground": "#3a3d41",
@@ -392,15 +394,15 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "settings.dropdownBorder": "#3c3c3c",
             "settings.headerForeground": "#ffffff",
             "settings.modifiedItemIndicator": "#bb800966",
-            "sideBar.background": "#181818",
+            "sideBar.background": ui["secondary-background"],
             "sideBar.border": "#2b2b2b",
             "sideBar.foreground": "#cccccc",
             "sideBarSectionHeader.background": "#181818",
             "sideBarSectionHeader.border": "#2b2b2b",
             "sideBarSectionHeader.foreground": "#cccccc",
             "sideBarTitle.foreground": "#cccccc",
-            "statusBar.background": "#181818",
-            "statusBar.border": "#2b2b2b",
+            "statusBar.background": ui["secondary-background"],
+            "statusBar.border": ui["secondary-background"],
             "statusBar.debuggingBackground": "#0078d4",
             "statusBar.debuggingForeground": "#ffffff",
             "statusBar.focusBorder": "#0078d4",
@@ -436,7 +438,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "textPreformat.background": "#3c3c3c",
             "textPreformat.foreground": "#d0d0d0",
             "textSeparator.foreground": "#21262d",
-            "titleBar.activeBackground": "#181818",
+            "titleBar.activeBackground": ui["secondary-background"],
             "titleBar.activeForeground": "#cccccc",
             "titleBar.border": "#2b2b2b",
             "titleBar.inactiveBackground": "#1f1f1f",
