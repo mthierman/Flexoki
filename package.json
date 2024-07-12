@@ -8,8 +8,8 @@
         "vscode": "*"
     },
     "license": "MIT",
-    "displayName": "%display%",
-    "description": "%description%",
+    "displayName": "Flexoki Theme",
+    "description": "Flexoki light & dark themes",
     "categories": [
         "Themes"
     ],
@@ -26,112 +26,112 @@
     "contributes": {
         "themes": [
             {
-                "label": "%darkRed%",
+                "label": "Flexoki Dark Red",
                 "mode": "Dark",
                 "accent": "Red",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-red-color-theme.json"
             },
             {
-                "label": "%darkOrange%",
+                "label": "Flexoki Dark Orange",
                 "mode": "Dark",
                 "accent": "Orange",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-orange-color-theme.json"
             },
             {
-                "label": "%darkYellow%",
+                "label": "Flexoki Dark Yellow",
                 "mode": "Dark",
                 "accent": "Yellow",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-yellow-color-theme.json"
             },
             {
-                "label": "%darkGreen%",
+                "label": "Flexoki Dark Green",
                 "mode": "Dark",
                 "accent": "Green",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-green-color-theme.json"
             },
             {
-                "label": "%darkCyan%",
+                "label": "Flexoki Dark Cyan",
                 "mode": "Dark",
                 "accent": "Cyan",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-cyan-color-theme.json"
             },
             {
-                "label": "%darkBlue%",
+                "label": "Flexoki Dark Blue",
                 "mode": "Dark",
                 "accent": "Blue",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-blue-color-theme.json"
             },
             {
-                "label": "%darkPurple%",
+                "label": "Flexoki Dark Purple",
                 "mode": "Dark",
                 "accent": "Purple",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-purple-color-theme.json"
             },
             {
-                "label": "%darkMagenta%",
+                "label": "Flexoki Dark Magenta",
                 "mode": "Dark",
                 "accent": "Magenta",
                 "uiTheme": "vs-dark",
                 "path": "./themes/flexoki-dark-magenta-color-theme.json"
             },
             {
-                "label": "%lightRed%",
+                "label": "Flexoki Light Red",
                 "mode": "Light",
                 "accent": "Red",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-red-color-theme.json"
             },
             {
-                "label": "%lightOrange%",
+                "label": "Flexoki Light Orange",
                 "mode": "Light",
                 "accent": "Orange",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-orange-color-theme.json"
             },
             {
-                "label": "%lightYellow%",
+                "label": "Flexoki Light Yellow",
                 "mode": "Light",
                 "accent": "Yellow",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-yellow-color-theme.json"
             },
             {
-                "label": "%lightGreen%",
+                "label": "Flexoki Light Green",
                 "mode": "Light",
                 "accent": "Green",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-green-color-theme.json"
             },
             {
-                "label": "%lightCyan%",
+                "label": "Flexoki Light Cyan",
                 "mode": "Light",
                 "accent": "Cyan",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-cyan-color-theme.json"
             },
             {
-                "label": "%lightBlue%",
+                "label": "Flexoki Light Blue",
                 "mode": "Light",
                 "accent": "Blue",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-blue-color-theme.json"
             },
             {
-                "label": "%lightPurple%",
+                "label": "Flexoki Light Purple",
                 "mode": "Light",
                 "accent": "Purple",
                 "uiTheme": "vs",
                 "path": "./themes/flexoki-light-purple-color-theme.json"
             },
             {
-                "label": "%lightMagenta%",
+                "label": "Flexoki Light Magenta",
                 "mode": "Light",
                 "accent": "Magenta",
                 "uiTheme": "vs",
