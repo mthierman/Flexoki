@@ -642,9 +642,9 @@
     ],
     "semanticHighlighting": true,
     "semanticTokenColors": {
-        "newOperator": "#C586C0",
-        "stringLiteral": "#ce9178",
-        "customLiteral": "#DCDCAA",
-        "numberLiteral": "#b5cea8"
+        "newOperator": "#878580",
+        "stringLiteral": "#3aa99f",
+        "customLiteral": "#3aa99f",
+        "numberLiteral": "#8b7ec8"
     }
 }

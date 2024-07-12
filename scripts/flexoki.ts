@@ -837,10 +837,10 @@ const generateTheme = (mode: Mode, accent: Accent) => {
         ],
         semanticHighlighting: true,
         semanticTokenColors: {
-            newOperator: "#C586C0",
-            stringLiteral: "#ce9178",
-            customLiteral: "#DCDCAA",
-            numberLiteral: "#b5cea8",
+            newOperator: syntax["operators"],
+            stringLiteral: syntax["strings"],
+            customLiteral: syntax["strings"],
+            numberLiteral: syntax["numbers"],
         },
     };
 };
