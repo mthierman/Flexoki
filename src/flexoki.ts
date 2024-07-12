@@ -15,6 +15,7 @@ export type AccentColor =
     | "Magenta";
 
 export interface ColorTheme {
+    [key: string]: Color | string;
     "bg": Color | string;
     "bg-2": Color | string;
     "ui": Color | string;
@@ -171,12 +172,19 @@ export function hex(color: Color) {
     return color.toString({ format: "hex" });
 }
 
-export function hexTheme(colorTheme: ColorTheme) {
-    Object.entries(colorTheme).forEach(([key, value]: [string, Color | string]) => {
-        colorTheme[key as keyof ColorTheme] = hex(value as Color);
+export function colorsToHex(colors: Record<string, Color | string>) {
+    Object.entries(colors).forEach(([key, value]: [string, Color | string]) => {
+        colors[key] = hex(value as Color);
     });
-    return colorTheme;
+    return colors;
 }
+
+// export function makeHexTheme(colorTheme: ColorTheme) {
+//     Object.entries(colorTheme).forEach(([key, value]: [string, Color | string]) => {
+//         colorTheme[key as keyof ColorTheme] = hex(value as Color);
+//     });
+//     return colorTheme;
+// }
 
 export function makeMapping(colorTheme: ColorTheme): Mapping {
     return {
@@ -214,8 +222,21 @@ export function makeMapping(colorTheme: ColorTheme): Mapping {
 }
 
 export const generateTerminal = (theme: Theme) => {
-    const mapping = theme === "Dark" ? makeMapping(hexTheme(dark)) : makeMapping(hexTheme(light));
-    const colorTheme = theme === "Dark" ? hexTheme(dark) : hexTheme(light);
+    const base = colorsToHex(baseTones) as typeof baseTones;
+    const accent = colorsToHex(accentColors) as typeof accentColors;
+
+    const mappings = {
+        dark: makeMapping(colorsToHex(dark) as ColorTheme),
+        light: makeMapping(colorsToHex(light) as ColorTheme),
+    };
+
+    const themes = {
+        dark: colorsToHex(dark) as ColorTheme,
+        light: colorsToHex(light) as ColorTheme,
+    };
+
+    const mapping = theme === "Dark" ? mappings.dark : mappings.light;
+    const colorTheme = theme === "Dark" ? themes.dark : themes.light;
 
     return {
         background: mapping["ui"]["main-background"],
@@ -272,9 +293,21 @@ export const makeAccentColor = (theme: Theme, accentColor: AccentColor) => {
 };
 
 export const generateTheme = (theme: Theme, accentColor: AccentColor) => {
-    const mapping = theme === "Dark" ? makeMapping(hexTheme(dark)) : makeMapping(hexTheme(light));
-    const colorTheme = theme === "Dark" ? hexTheme(dark) : hexTheme(light);
-    const accent = hex(makeAccentColor(theme, accentColor));
+    const base = colorsToHex(baseTones) as typeof baseTones;
+    const accent = colorsToHex(accentColors) as typeof accentColors;
+
+    const mappings = {
+        dark: makeMapping(colorsToHex(dark) as ColorTheme),
+        light: makeMapping(colorsToHex(light) as ColorTheme),
+    };
+
+    const themes = {
+        dark: colorsToHex(dark) as ColorTheme,
+        light: colorsToHex(light) as ColorTheme,
+    };
+
+    const mapping = theme === "Dark" ? mappings.dark : mappings.light;
+    const colorTheme = theme === "Dark" ? themes.dark : themes.light;
 
     return {
         $schema: "vscode://schemas/color-theme",
