@@ -2,19 +2,11 @@ import Color from "colorjs.io";
 import { mkdir, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-export type Theme = "Dark" | "Light";
+type Theme = "Dark" | "Light";
 
-export type AccentColor =
-    | "Red"
-    | "Orange"
-    | "Yellow"
-    | "Green"
-    | "Cyan"
-    | "Blue"
-    | "Purple"
-    | "Magenta";
+type AccentColor = "Red" | "Orange" | "Yellow" | "Green" | "Cyan" | "Blue" | "Purple" | "Magenta";
 
-export interface ColorTheme {
+interface ColorTheme {
     [key: string]: Color | string;
     "bg": Color | string;
     "bg-2": Color | string;
@@ -43,7 +35,7 @@ export interface ColorTheme {
     "transparent": Color | string;
 }
 
-export interface Mapping {
+interface Mapping {
     ui: {
         "main-background": Color | string;
         "secondary-background": Color | string;
@@ -76,7 +68,7 @@ export interface Mapping {
     };
 }
 
-export const baseTones = {
+const baseTones = {
     "black": new Color("#100F0F"),
     "base-950": new Color("#1C1B1A"),
     "base-900": new Color("#282726"),
@@ -93,7 +85,7 @@ export const baseTones = {
     "paper": new Color("#FFFCF0"),
 };
 
-export const accentColors = {
+const accentColors = {
     "red-600": new Color("#AF3029"),
     "orange-600": new Color("#BC5215"),
     "yellow-600": new Color("#AD8301"),
@@ -112,7 +104,7 @@ export const accentColors = {
     "magenta-400": new Color("#CE5D97"),
 };
 
-export const dark: ColorTheme = {
+const dark: ColorTheme = {
     "bg": baseTones["black"],
     "bg-2": baseTones["base-950"],
     "ui": baseTones["base-900"],
@@ -140,7 +132,7 @@ export const dark: ColorTheme = {
     "transparent": new Color("#00000000"),
 };
 
-export const light: ColorTheme = {
+const light: ColorTheme = {
     "bg": baseTones["paper"],
     "bg-2": baseTones["base-50"],
     "ui": baseTones["base-100"],
@@ -168,25 +160,25 @@ export const light: ColorTheme = {
     "transparent": new Color("#FFFFFF00"),
 };
 
-export function colorToHex(color: Color) {
+function colorToHex(color: Color) {
     return color.toString({ format: "hex" });
 }
 
-export function colorsToHex(colors: Record<string, Color | string>) {
+function colorsToHex(colors: Record<string, Color | string>) {
     Object.entries(colors).forEach(([key, value]: [string, Color | string]) => {
         colors[key] = colorToHex(value as Color);
     });
     return colors;
 }
 
-export function makeTheme(colorTheme: ColorTheme) {
+function makeTheme(colorTheme: ColorTheme) {
     Object.entries(colorTheme).forEach(([key, value]: [string, Color | string]) => {
         colorTheme[key as keyof ColorTheme] = colorToHex(value as Color);
     });
     return colorTheme;
 }
 
-export function makeMapping(colorTheme: ColorTheme): Mapping {
+function makeMapping(colorTheme: ColorTheme): Mapping {
     return {
         ui: {
             "main-background": colorTheme["bg"],
@@ -221,7 +213,7 @@ export function makeMapping(colorTheme: ColorTheme): Mapping {
     };
 }
 
-export const makeAccentColor = (theme: Theme, accentColor: AccentColor) => {
+const makeAccentColor = (theme: Theme, accentColor: AccentColor) => {
     switch (accentColor) {
         case "Red": {
             return theme === "Dark" ? accentColors["red-400"] : accentColors["red-600"];
@@ -250,7 +242,7 @@ export const makeAccentColor = (theme: Theme, accentColor: AccentColor) => {
     }
 };
 
-export const generateTerminal = (theme: Theme) => {
+const generateTerminal = (theme: Theme) => {
     const base = colorsToHex(baseTones) as typeof baseTones;
 
     const themes = {
@@ -291,7 +283,7 @@ export const generateTerminal = (theme: Theme) => {
     };
 };
 
-export const generateTheme = (theme: Theme, accentColor: AccentColor) => {
+const generateTheme = (theme: Theme, accentColor: AccentColor) => {
     const base = colorsToHex(baseTones) as typeof baseTones;
     const accent = colorToHex(makeAccentColor(theme, accentColor));
 
@@ -683,87 +675,86 @@ const outdir = {
     terminal: resolve(import.meta.dirname, "..", "terminal"),
 };
 
-async function main() {
-    await mkdir(outdir.themes, { recursive: true });
-    await Promise.all([
-        writeFile(
-            resolve(outdir.themes, "flexoki-dark-red-color-theme.json"),
-            JSON.stringify(generateTheme("Dark", "Red"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-dark-orange-color-theme.json"),
-            JSON.stringify(generateTheme("Dark", "Orange"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-dark-yellow-color-theme.json"),
-            JSON.stringify(generateTheme("Dark", "Yellow"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-dark-green-color-theme.json"),
-            JSON.stringify(generateTheme("Dark", "Green"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-dark-cyan-color-theme.json"),
-            JSON.stringify(generateTheme("Dark", "Cyan"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-dark-blue-color-theme.json"),
-            JSON.stringify(generateTheme("Dark", "Blue"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-dark-purple-color-theme.json"),
-            JSON.stringify(generateTheme("Dark", "Purple"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-dark-magenta-color-theme.json"),
-            JSON.stringify(generateTheme("Dark", "Magenta"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-light-red-color-theme.json"),
-            JSON.stringify(generateTheme("Light", "Red"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-light-orange-color-theme.json"),
-            JSON.stringify(generateTheme("Light", "Orange"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-light-yellow-color-theme.json"),
-            JSON.stringify(generateTheme("Light", "Yellow"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-light-green-color-theme.json"),
-            JSON.stringify(generateTheme("Light", "Green"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-light-cyan-color-theme.json"),
-            JSON.stringify(generateTheme("Light", "Cyan"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-light-blue-color-theme.json"),
-            JSON.stringify(generateTheme("Light", "Blue"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-light-purple-color-theme.json"),
-            JSON.stringify(generateTheme("Light", "Purple"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.themes, "flexoki-light-magenta-color-theme.json"),
-            JSON.stringify(generateTheme("Light", "Magenta"), null, 4),
-        ),
-    ]);
-    await mkdir(outdir.terminal, { recursive: true });
-    await Promise.all([
-        writeFile(
-            resolve(outdir.terminal, "dark.json"),
-            JSON.stringify(generateTerminal("Dark"), null, 4),
-        ),
-        writeFile(
-            resolve(outdir.terminal, "light.json"),
-            JSON.stringify(generateTerminal("Light"), null, 4),
-        ),
-    ]);
+await mkdir(outdir.themes, { recursive: true });
 
-    await rm(resolve(import.meta.dirname, "flexoki.js"));
-}
+await Promise.all([
+    writeFile(
+        resolve(outdir.themes, "flexoki-dark-red-color-theme.json"),
+        JSON.stringify(generateTheme("Dark", "Red"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-dark-orange-color-theme.json"),
+        JSON.stringify(generateTheme("Dark", "Orange"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-dark-yellow-color-theme.json"),
+        JSON.stringify(generateTheme("Dark", "Yellow"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-dark-green-color-theme.json"),
+        JSON.stringify(generateTheme("Dark", "Green"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-dark-cyan-color-theme.json"),
+        JSON.stringify(generateTheme("Dark", "Cyan"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-dark-blue-color-theme.json"),
+        JSON.stringify(generateTheme("Dark", "Blue"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-dark-purple-color-theme.json"),
+        JSON.stringify(generateTheme("Dark", "Purple"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-dark-magenta-color-theme.json"),
+        JSON.stringify(generateTheme("Dark", "Magenta"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-light-red-color-theme.json"),
+        JSON.stringify(generateTheme("Light", "Red"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-light-orange-color-theme.json"),
+        JSON.stringify(generateTheme("Light", "Orange"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-light-yellow-color-theme.json"),
+        JSON.stringify(generateTheme("Light", "Yellow"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-light-green-color-theme.json"),
+        JSON.stringify(generateTheme("Light", "Green"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-light-cyan-color-theme.json"),
+        JSON.stringify(generateTheme("Light", "Cyan"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-light-blue-color-theme.json"),
+        JSON.stringify(generateTheme("Light", "Blue"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-light-purple-color-theme.json"),
+        JSON.stringify(generateTheme("Light", "Purple"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.themes, "flexoki-light-magenta-color-theme.json"),
+        JSON.stringify(generateTheme("Light", "Magenta"), null, 4),
+    ),
+]);
 
-main();
+await mkdir(outdir.terminal, { recursive: true });
+
+await Promise.all([
+    writeFile(
+        resolve(outdir.terminal, "dark.json"),
+        JSON.stringify(generateTerminal("Dark"), null, 4),
+    ),
+    writeFile(
+        resolve(outdir.terminal, "light.json"),
+        JSON.stringify(generateTerminal("Light"), null, 4),
+    ),
+]);
+
+await rm(resolve(import.meta.dirname, "flexoki.js"));

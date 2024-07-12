@@ -8,5 +8,5 @@
         "strict": true,
         "skipLibCheck": true
     },
-    "include": ["modules"]
+    "files": ["scripts/flexoki.ts"]
 }

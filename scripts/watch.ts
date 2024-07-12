@@ -13,7 +13,7 @@ cli.on("close", () => {
 
 exec(`pnpm build`);
 
-const watcher = watch(resolve(import.meta.dirname, "..", "modules", "flexoki.ts"), {
+const watcher = watch(resolve(import.meta.dirname, "..", "scripts", "flexoki.ts"), {
     persistent: true,
     recursive: true,
 });
