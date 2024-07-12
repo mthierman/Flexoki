@@ -151,8 +151,8 @@
     },
     "scripts": {
         "dev": "tsc -w",
-        "build": "tsc && node --no-warnings=ExperimentalWarning src/flexoki.js",
-        "watch": "node --watch --no-warnings=ExperimentalWarning src/flexoki.js",
+        "build": "tsc && node --no-warnings=ExperimentalWarning modules/flexoki.js",
+        "watch": "node --watch --no-warnings=ExperimentalWarning modules/flexoki.js",
         "vsce": "vsce publish"
     },
     "devDependencies": {
