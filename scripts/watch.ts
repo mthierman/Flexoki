@@ -7,7 +7,7 @@ import { createInterface } from "node:readline/promises";
 const cli = createInterface(stdin, stdout);
 
 let watching = true;
-const watcher = watch(resolve(import.meta.dirname, "..", "modules"), {
+const watcher = watch(resolve(import.meta.dirname, "..", "modules", "flexoki.ts"), {
     persistent: true,
     recursive: true,
 });
@@ -21,7 +21,10 @@ async function run() {
         for await (const event of watcher) {
             if (!watching) {
                 build();
-                console.log("files changed!");
+                console.clear();
+                console.log(
+                    `Rebuild at ${new Date().toLocaleTimeString("en-US", { hour12: false })}`,
+                );
             }
 
             watching = true;
@@ -31,6 +34,7 @@ async function run() {
             }, 100);
         }
     } catch (error) {
+        console.log(error);
         if (error instanceof Error) {
             console.error(error.message);
         }
@@ -49,5 +53,3 @@ async function main() {
 }
 
 main();
-
-console.log(resolve(import.meta.dirname, "src"));
