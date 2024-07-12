@@ -655,7 +655,7 @@ const outdir = {
 };
 
 const writeThemes = async () => {
-    Promise.all([
+    return Promise.all([
         writeFile(
             resolve(outdir.themes, "flexoki-dark-red-color-theme.json"),
             JSON.stringify(generateTheme("Dark", "Red"), null, 4),
