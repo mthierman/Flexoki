@@ -179,9 +179,6 @@ export function hexTheme(colorTheme: ColorTheme) {
     return colorTheme;
 }
 
-console.log(hexTheme(dark));
-console.log(hexTheme(light));
-
 export function makeMapping(colorTheme: ColorTheme): Mapping {
     return {
         ui: {
