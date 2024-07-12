@@ -150,9 +150,7 @@
         "url": "https://github.com/mthierman/Flexoki.git"
     },
     "scripts": {
-        "dev": "tsc -w",
         "build": "tsc && node --no-warnings=ExperimentalWarning modules/flexoki.js",
-        "node-watch": "node --watch --no-warnings=ExperimentalWarning modules/flexoki.js",
         "watch": "tsx scripts/watch.ts",
         "vsce": "vsce publish"
     },
@@ -162,6 +160,7 @@
         "colorjs.io": "^0.5.2",
         "esbuild": "^0.23.0",
         "prettier": "^3.3.2",
+        "tsx": "^4.16.2",
         "typescript": "^5.5.3"
     }
 }
