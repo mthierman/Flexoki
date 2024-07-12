@@ -150,9 +150,7 @@
         "url": "https://github.com/mthierman/Flexoki.git"
     },
     "scripts": {
-        "check": "tsc",
-        "dev": "tsc && esbuild scripts/dev.ts --bundle --outdir=build --platform=node --format=esm --packages=external && node build/dev.js",
-        "build": "tsc && esbuild scripts/build.ts --bundle --outdir=build --platform=node --format=esm --packages=external && node build/build.js",
+        "build": "tsc && node --no-warnings=ExperimentalWarning src/flexoki.js",
         "vsce": "vsce publish"
     },
     "devDependencies": {
