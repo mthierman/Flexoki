@@ -325,6 +325,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "button.secondaryBackground": test,
             "button.secondaryForeground": test,
             "button.secondaryHoverBackground": test,
+            "button.separator": ui["active-borders"],
             "chat.slashCommandBackground": "#34414b",
             "chat.slashCommandForeground": "#40a6ff",
             "checkbox.background": "#313131",
