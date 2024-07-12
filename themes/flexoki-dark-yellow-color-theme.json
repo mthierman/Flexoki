@@ -144,6 +144,8 @@
         "terminal.ansiRed": "#af3029",
         "terminal.ansiWhite": "#e6e4d9",
         "terminal.ansiYellow": "#ad8301",
+        "terminalCursor.background": "#100f0f",
+        "terminalCursor.foreground": "#cecdc3",
         "textBlockQuote.background": "#2b2b2b",
         "textBlockQuote.border": "#616161",
         "textCodeBlock.background": "#2b2b2b",

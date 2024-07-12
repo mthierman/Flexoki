@@ -467,8 +467,8 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             //"terminalOverviewRuler.cursorForeground": "#a0a0a0cc",
             //"terminalOverviewRuler.findMatchForeground": "#d186167e",
             //"terminalStickyScrollHover.background": "#2a2d2e",
-            //"terminalCursor.background": null,
-            //"terminalCursor.foreground": null,
+            "terminalCursor.background": terminal.background,
+            "terminalCursor.foreground": terminal.foreground,
             //"terminalStickyScroll.background": null,
             //"terminalStickyScroll.border": null,
 
