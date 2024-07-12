@@ -168,20 +168,20 @@ export const light: ColorTheme = {
     "transparent": new Color("#FFFFFF00"),
 };
 
-export function hex(color: Color) {
+export function colorToHex(color: Color) {
     return color.toString({ format: "hex" });
 }
 
 export function colorsToHex(colors: Record<string, Color | string>) {
     Object.entries(colors).forEach(([key, value]: [string, Color | string]) => {
-        colors[key] = hex(value as Color);
+        colors[key] = colorToHex(value as Color);
     });
     return colors;
 }
 
 export function makeTheme(colorTheme: ColorTheme) {
     Object.entries(colorTheme).forEach(([key, value]: [string, Color | string]) => {
-        colorTheme[key as keyof ColorTheme] = hex(value as Color);
+        colorTheme[key as keyof ColorTheme] = colorToHex(value as Color);
     });
     return colorTheme;
 }
@@ -293,7 +293,7 @@ export const makeAccentColor = (theme: Theme, accentColor: AccentColor) => {
 
 export const generateTheme = (theme: Theme, accentColor: AccentColor) => {
     const base = colorsToHex(baseTones) as typeof baseTones;
-    const accent = hex(makeAccentColor(theme, accentColor));
+    const accent = colorToHex(makeAccentColor(theme, accentColor));
 
     const themes = {
         dark: makeTheme(dark),
@@ -468,21 +468,21 @@ export const generateTheme = (theme: Theme, accentColor: AccentColor) => {
             "tab.border": mapping["ui"]["borders"],
             "tab.hoverBackground": mapping["ui"]["main-background"],
             "tab.inactiveBackground": mapping["ui"]["secondary-background"],
-            "terminal.ansiBlack": hex(baseTones["base-950"]),
+            "terminal.ansiBlack": base["base-950"],
             "terminal.ansiBlue": colorTheme["bl2"],
-            "terminal.ansiBrightBlack": hex(baseTones["base-900"]),
+            "terminal.ansiBrightBlack": base["base-900"],
             "terminal.ansiBrightBlue": colorTheme["bl"],
             "terminal.ansiBrightCyan": colorTheme["cy"],
             "terminal.ansiBrightGreen": colorTheme["gr"],
             "terminal.ansiBrightMagenta": colorTheme["ma"],
             "terminal.ansiBrightRed": colorTheme["re"],
-            "terminal.ansiBrightWhite": hex(baseTones["base-50"]),
+            "terminal.ansiBrightWhite": base["base-50"],
             "terminal.ansiBrightYellow": colorTheme["ye"],
             "terminal.ansiCyan": colorTheme["cy2"],
             "terminal.ansiGreen": colorTheme["gr2"],
             "terminal.ansiMagenta": colorTheme["ma2"],
             "terminal.ansiRed": colorTheme["re2"],
-            "terminal.ansiWhite": hex(baseTones["base-100"]),
+            "terminal.ansiWhite": base["base-100"],
             "terminal.ansiYellow": colorTheme["ye2"],
             "terminal.background": mapping["ui"]["main-background"],
             "terminal.border": mapping["ui"]["borders"],
