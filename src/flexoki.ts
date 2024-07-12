@@ -1,102 +1,119 @@
+import Color from "colorjs.io";
+
+const hex = (color: Color) => {
+    return color.toString({ format: "hex" });
+};
+
 export type Theme = "Dark" | "Light";
 
-export type Color = "Red" | "Orange" | "Yellow" | "Green" | "Cyan" | "Blue" | "Purple" | "Magenta";
+export type AccentColor =
+    | "Red"
+    | "Orange"
+    | "Yellow"
+    | "Green"
+    | "Cyan"
+    | "Blue"
+    | "Purple"
+    | "Magenta";
 
 export interface ColorTheme {
-    "bg": string;
-    "bg-2": string;
-    "ui": string;
-    "ui-2": string;
-    "ui-3": string;
-    "tx-3": string;
-    "tx-2": string;
-    "tx": string;
-    "re": string;
-    "re2": string;
-    "or": string;
-    "or2": string;
-    "ye": string;
-    "ye2": string;
-    "gr": string;
-    "gr2": string;
-    "cy": string;
-    "cy2": string;
-    "bl": string;
-    "bl2": string;
-    "pu": string;
-    "pu2": string;
-    "ma": string;
-    "ma2": string;
-    "transparent": string;
+    [index: string]: Color | string;
+    "bg": Color | string;
+    "bg-2": Color | string;
+    "ui": Color | string;
+    "ui-2": Color | string;
+    "ui-3": Color | string;
+    "tx-3": Color | string;
+    "tx-2": Color | string;
+    "tx": Color | string;
+    "re": Color | string;
+    "re2": Color | string;
+    "or": Color | string;
+    "or2": Color | string;
+    "ye": Color | string;
+    "ye2": Color | string;
+    "gr": Color | string;
+    "gr2": Color | string;
+    "cy": Color | string;
+    "cy2": Color | string;
+    "bl": Color | string;
+    "bl2": Color | string;
+    "pu": Color | string;
+    "pu2": Color | string;
+    "ma": Color | string;
+    "ma2": Color | string;
+    "transparent": Color | string;
 }
 
 export interface Mapping {
     ui: {
-        "main-background": string;
-        "secondary-background": string;
-        "borders": string;
-        "hovered-borders": string;
-        "active-borders": string;
-        "faint-text": string;
-        "muted-text": string;
-        "primary-text": string;
-        "error-text": string;
-        "warning-text": string;
-        "success-text": string;
-        "links": string;
-        "active-states": string;
+        [index: string]: Color | string;
+        "main-background": Color | string;
+        "secondary-background": Color | string;
+        "borders": Color | string;
+        "hovered-borders": Color | string;
+        "active-borders": Color | string;
+        "faint-text": Color | string;
+        "muted-text": Color | string;
+        "primary-text": Color | string;
+        "error-text": Color | string;
+        "warning-text": Color | string;
+        "success-text": Color | string;
+        "links": Color | string;
+        "active-states": Color | string;
     };
     syntax: {
-        "comments": string;
-        "punctuation": string;
-        "operators": string;
-        "invalid": string;
-        "imports": string;
-        "functions": string;
-        "constants": string;
-        "keywords": string;
-        "strings": string;
-        "variables": string;
-        "attributes": string;
-        "numbers": string;
-        "language-features": string;
+        [index: string]: Color | string;
+        "comments": Color | string;
+        "punctuation": Color | string;
+        "operators": Color | string;
+        "invalid": Color | string;
+        "imports": Color | string;
+        "functions": Color | string;
+        "constants": Color | string;
+        "keywords": Color | string;
+        "strings": Color | string;
+        "variables": Color | string;
+        "attributes": Color | string;
+        "numbers": Color | string;
+        "language-features": Color | string;
     };
 }
 
 export const baseTone = {
-    "black": "#100F0F",
-    "base-950": "#1C1B1A",
-    "base-900": "#282726",
-    "base-850": "#343331",
-    "base-800": "#403E3C",
-    "base-700": "#575653",
-    "base-600": "#6F6E69",
-    "base-500": "#878580",
-    "base-300": "#B7B5AC",
-    "base-200": "#CECDC3",
-    "base-150": "#DAD8CE",
-    "base-100": "#E6E4D9",
-    "base-50": "#F2F0E5",
-    "paper": "#FFFCF0",
+    "black": new Color("#100F0F"),
+    "base-950": new Color("#1C1B1A"),
+    "base-900": new Color("#282726"),
+    "base-850": new Color("#343331"),
+    "base-800": new Color("#403E3C"),
+    "base-700": new Color("#575653"),
+    "base-600": new Color("#6F6E69"),
+    "base-500": new Color("#878580"),
+    "base-300": new Color("#B7B5AC"),
+    "base-200": new Color("#CECDC3"),
+    "base-150": new Color("#DAD8CE"),
+    "base-100": new Color("#E6E4D9"),
+    "base-50": new Color("#F2F0E5"),
+    "paper": new Color("#FFFCF0"),
 };
 
 export const accentColor = {
-    "red-600": "#AF3029",
-    "orange-600": "#BC5215",
-    "yellow-600": "#AD8301",
-    "green-600": "#66800B",
-    "cyan-600": "#24837B",
-    "blue-600": "#205EA6",
-    "purple-600": "#5E409D",
-    "magenta-600": "#A02F6F",
-    "red-400": "#D14D41",
-    "orange-400": "#DA702C",
-    "yellow-400": "#D0A215",
-    "green-400": "#879A39",
-    "cyan-400": "#3AA99F",
-    "blue-400": "#4385BE",
-    "purple-400": "#8B7EC8",
-    "magenta-400": "#CE5D97",
+    "red-600": new Color("#AF3029"),
+    "orange-600": new Color("#BC5215"),
+    "yellow-600": new Color("#AD8301"),
+    "green-600": new Color("#66800B"),
+    "cyan-600": new Color("#24837B"),
+    "blue-600": new Color("#205EA6"),
+    "purple-600": new Color("#5E409D"),
+    "magenta-600": new Color("#A02F6F"),
+    "red-400": new Color("#D14D41"),
+    "orange-400": new Color("#DA702C"),
+    "yellow-400": new Color("#D0A215"),
+    "green-400": new Color("#879A39"),
+    "cyan-400": new Color("#3AA99F"),
+    "blue-400": new Color("#4385BE"),
+    "purple-400": new Color("#8B7EC8"),
+    "magenta-400": new Color("#CE5D97"),
 };
 
 export const dark: ColorTheme = {
@@ -124,7 +141,7 @@ export const dark: ColorTheme = {
     "pu2": accentColor["purple-600"],
     "ma": accentColor["magenta-400"],
     "ma2": accentColor["magenta-600"],
-    "transparent": "#00000000",
+    "transparent": new Color("#00000000"),
 };
 
 export const light: ColorTheme = {
@@ -152,8 +169,18 @@ export const light: ColorTheme = {
     "pu2": accentColor["purple-400"],
     "ma": accentColor["magenta-600"],
     "ma2": accentColor["magenta-400"],
-    "transparent": "#FFFFFF00",
+    "transparent": new Color("#FFFFFF00"),
 };
+
+export function hexTheme(colorTheme: ColorTheme) {
+    Object.entries(colorTheme).forEach(([key, value]: [string, Color | string]) => {
+        colorTheme[key] = hex(value as Color);
+    });
+    return colorTheme;
+}
+
+console.log(hexTheme(dark));
+console.log(hexTheme(light));
 
 export function makeMapping(colorTheme: ColorTheme): Mapping {
     return {

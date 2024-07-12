@@ -158,6 +158,7 @@
     "devDependencies": {
         "@types/node": "^20.14.10",
         "@vscode/vsce": "^2.30.0",
+        "colorjs.io": "^0.5.2",
         "esbuild": "^0.23.0",
         "prettier": "^3.3.2",
         "typescript": "^5.5.3"
