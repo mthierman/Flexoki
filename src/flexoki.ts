@@ -213,3 +213,35 @@ export function makeMapping(colorTheme: ColorTheme): Mapping {
         },
     };
 }
+
+const generateTerminal = (theme: Theme) => {
+    const mapping = theme === "Dark" ? makeMapping(hexTheme(dark)) : makeMapping(hexTheme(light));
+    const colorTheme = theme === "Dark" ? hexTheme(dark) : hexTheme(light);
+
+    return {
+        background: mapping["ui"]["main-background"],
+        black: hex(baseTone["base-950"]),
+        blue: colorTheme["bl2"],
+        brightBlack: hex(baseTone["base-900"]),
+        brightBlue: colorTheme["bl"],
+        brightCyan: colorTheme["cy"],
+        brightGreen: colorTheme["gr"],
+        brightPurple: colorTheme["ma"],
+        brightRed: colorTheme["re"],
+        brightWhite: hex(baseTone["base-50"]),
+        brightYellow: colorTheme["ye"],
+        cursorColor: mapping["ui"]["primary-text"],
+        cyan: colorTheme["cy2"],
+        foreground: mapping["ui"]["primary-text"],
+        green: colorTheme["gr2"],
+        name: `Flexoki ${dark ? "Dark" : "Light"}`,
+        purple: colorTheme["ma2"],
+        red: colorTheme["re2"],
+        selectionBackground: mapping["ui"]["secondary-background"],
+        white: hex(baseTone["base-100"]),
+        yellow: colorTheme["ye2"],
+    };
+};
+
+console.log(generateTerminal("Dark"));
+console.log(generateTerminal("Light"));
