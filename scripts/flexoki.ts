@@ -354,7 +354,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "editorOverviewRuler.border": "#010409",
             "editorWidget.background": "#202020",
             "errorForeground": "#f85149",
-            "focusBorder": "#0078d4",
+            "focusBorder": accentColor,
             "foreground": "#cccccc",
             "icon.foreground": "#cccccc",
             "input.background": "#313131",
