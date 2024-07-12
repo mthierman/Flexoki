@@ -292,22 +292,15 @@ const generateTerminal = (mode: Mode) => {
     return terminal;
 };
 
-const generateTheme = (theme: Theme, accentColor: AccentColor) => {
+const generateTheme = (mode: Mode, accent: Accent) => {
+    const accentColor = colorToHex(makeAccentColor(mode, accent));
+
+    const themes = makeThemes();
+    const mappings = makeMappings();
+
     const base = colorsToHex(baseTones) as typeof baseTones;
-    const accent = colorToHex(makeAccentColor(theme, accentColor));
-
-    const themes = {
-        dark: colorsToHex(dark) as ColorTheme,
-        light: colorsToHex(light) as ColorTheme,
-    };
-
-    const mappings = {
-        dark: makeMapping(themes.dark),
-        light: makeMapping(themes.light),
-    };
-
-    const mapping = theme === "Dark" ? mappings.dark : mappings.light;
-    const colorTheme = theme === "Dark" ? themes.dark : themes.light;
+    const { ui, syntax } = mode === "Dark" ? mappings.dark : mappings.light;
+    const theme = mode === "Dark" ? themes.dark : themes.light;
 
     return {
         $schema: "vscode://schemas/color-theme",
