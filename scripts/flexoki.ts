@@ -265,7 +265,7 @@ const generateTerminal = (mode: Mode) => {
     const { ui, syntax } = mode === "Dark" ? mappings.dark : mappings.light;
     const theme = mode === "Dark" ? themes.dark : themes.light;
 
-    const terminal = {
+    return {
         background: ui["main-background"],
         black: base["base-950"],
         blue: theme["bl2"],
@@ -284,12 +284,10 @@ const generateTerminal = (mode: Mode) => {
         name: `Flexoki ${mode}`,
         purple: theme["ma2"],
         red: theme["re2"],
-        selectionBackground: ui["secondary-background"],
+        selectionBackground: ui["active-borders"],
         white: base["base-100"],
         yellow: theme["ye2"],
     };
-
-    return terminal;
 };
 
 const generateTheme = (mode: Mode, accent: Accent) => {
@@ -301,6 +299,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
     const base = colorsToHex(baseTones) as typeof baseTones;
     const { ui, syntax } = mode === "Dark" ? mappings.dark : mappings.light;
     const theme = mode === "Dark" ? themes.dark : themes.light;
+    const terminal = generateTerminal(mode);
 
     const test = "#FF00FF";
 
@@ -428,9 +427,51 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "tab.unfocusedActiveBorder": ui["main-background"],
             "tab.unfocusedActiveBorderTop": accentColor,
             "tab.unfocusedHoverBackground": ui["hovered-borders"],
-            "terminal.foreground": "#cccccc",
-            "terminal.inactiveSelectionBackground": "#3a3d41",
-            "terminal.tab.activeBorder": "#0078d4",
+
+            "terminal.foreground": terminal.foreground,
+            "terminal.selectionBackground": terminal.selectionBackground,
+            "terminal.inactiveSelectionBackground": ui["hovered-borders"],
+            "terminal.tab.activeBorder": accentColor,
+
+            "terminal.background": terminal.background,
+            // "terminal.findMatchBorder": null,
+            // "terminal.findMatchHighlightBorder": null,
+            // "terminal.selectionForeground": null,
+            "terminal.border": ui["borders"],
+            // "terminal.dropBackground": null,
+            // "terminal.findMatchBackground": null,
+            // "terminal.findMatchHighlightBackground": null,
+            // "terminal.hoverHighlightBackground": null,
+            // "terminal.initialHintForeground": null,
+
+            "terminal.ansiBlack": terminal.black,
+            "terminal.ansiBlue": terminal.blue,
+            "terminal.ansiBrightBlack": terminal.brightBlack,
+            "terminal.ansiBrightBlue": terminal.brightBlue,
+            "terminal.ansiBrightCyan": terminal.brightCyan,
+            "terminal.ansiBrightGreen": terminal.brightGreen,
+            "terminal.ansiBrightMagenta": terminal.brightPurple,
+            "terminal.ansiBrightRed": terminal.brightRed,
+            "terminal.ansiBrightWhite": terminal.brightWhite,
+            "terminal.ansiBrightYellow": terminal.brightYellow,
+            "terminal.ansiCyan": terminal.cyan,
+            "terminal.ansiGreen": terminal.green,
+            "terminal.ansiMagenta": terminal.purple,
+            "terminal.ansiRed": terminal.red,
+            "terminal.ansiWhite": terminal.white,
+            "terminal.ansiYellow": terminal.yellow,
+
+            //"terminalCommandDecoration.defaultBackground": "#ffffff40",
+            //"terminalCommandDecoration.errorBackground": "#f14c4c",
+            //"terminalCommandDecoration.successBackground": "#1b81a8",
+            //"terminalOverviewRuler.cursorForeground": "#a0a0a0cc",
+            //"terminalOverviewRuler.findMatchForeground": "#d186167e",
+            //"terminalStickyScrollHover.background": "#2a2d2e",
+            //"terminalCursor.background": null,
+            //"terminalCursor.foreground": null,
+            //"terminalStickyScroll.background": null,
+            //"terminalStickyScroll.border": null,
+
             "textBlockQuote.background": "#2b2b2b",
             "textBlockQuote.border": "#616161",
             "textCodeBlock.background": "#2b2b2b",
