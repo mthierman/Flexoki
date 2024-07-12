@@ -275,7 +275,7 @@ export const makeAccentColor = (theme: Theme, accentColor: AccentColor) => {
 export const generateTheme = (theme: Theme, accentColor: AccentColor) => {
     const mapping = theme === "Dark" ? makeMapping(hexTheme(dark)) : makeMapping(hexTheme(light));
     const colorTheme = theme === "Dark" ? hexTheme(dark) : hexTheme(light);
-    const accent = makeAccentColor(theme, accentColor);
+    const accent = hex(makeAccentColor(theme, accentColor));
 
     return {
         $schema: "vscode://schemas/color-theme",
@@ -647,5 +647,8 @@ export const generateTheme = (theme: Theme, accentColor: AccentColor) => {
     };
 };
 
-console.log(generateTerminal("Dark"));
-console.log(generateTerminal("Light"));
+// console.log(generateTerminal("Dark"));
+// console.log(generateTerminal("Light"));
+
+console.log(generateTheme("Dark", "Blue"));
+// console.log(generateTheme("Light", "Blue"));
