@@ -215,28 +215,28 @@ function mapColorTheme(theme: Theme): Mapping {
 const makeAccentColor = (mode: Mode, accent: Accent) => {
     switch (accent) {
         case "Red": {
-            return mode === "Dark" ? accentColors["red-400"] : accentColors["red-600"];
+            return mode === "Dark" ? accentColors["red-600"] : accentColors["red-400"];
         }
         case "Orange": {
-            return mode === "Dark" ? accentColors["orange-400"] : accentColors["orange-600"];
+            return mode === "Dark" ? accentColors["orange-600"] : accentColors["orange-400"];
         }
         case "Yellow": {
-            return mode === "Dark" ? accentColors["yellow-400"] : accentColors["yellow-600"];
+            return mode === "Dark" ? accentColors["yellow-600"] : accentColors["yellow-400"];
         }
         case "Green": {
-            return mode === "Dark" ? accentColors["green-400"] : accentColors["green-600"];
+            return mode === "Dark" ? accentColors["green-600"] : accentColors["green-400"];
         }
         case "Cyan": {
-            return mode === "Dark" ? accentColors["cyan-400"] : accentColors["cyan-600"];
+            return mode === "Dark" ? accentColors["cyan-600"] : accentColors["cyan-400"];
         }
         case "Blue": {
-            return mode === "Dark" ? accentColors["blue-400"] : accentColors["blue-600"];
+            return mode === "Dark" ? accentColors["blue-600"] : accentColors["blue-400"];
         }
         case "Purple": {
-            return mode === "Dark" ? accentColors["purple-400"] : accentColors["purple-600"];
+            return mode === "Dark" ? accentColors["purple-600"] : accentColors["purple-400"];
         }
         case "Magenta": {
-            return mode === "Dark" ? accentColors["magenta-400"] : accentColors["magenta-600"];
+            return mode === "Dark" ? accentColors["magenta-600"] : accentColors["magenta-400"];
         }
     }
 };
@@ -321,7 +321,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "button.background": ui["borders"],
             "button.border": ui["active-borders"],
             "button.foreground": ui["primary-text"],
-            "button.hoverBackground": ui["hovered-borders"],
+            "button.hoverBackground": accentColor,
             "button.secondaryBackground": test,
             "button.secondaryForeground": test,
             "button.secondaryHoverBackground": test,
