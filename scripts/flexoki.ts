@@ -2,11 +2,11 @@ import Color from "colorjs.io";
 import { mkdir, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-type Theme = "Dark" | "Light";
+type Mode = "Dark" | "Light";
 
-type AccentColor = "Red" | "Orange" | "Yellow" | "Green" | "Cyan" | "Blue" | "Purple" | "Magenta";
+type Accent = "Red" | "Orange" | "Yellow" | "Green" | "Cyan" | "Blue" | "Purple" | "Magenta";
 
-interface ColorTheme {
+interface Theme {
     [key: string]: Color | string;
     "bg": Color | string;
     "bg-2": Color | string;
@@ -35,37 +35,43 @@ interface ColorTheme {
     "transparent": Color | string;
 }
 
+interface UI {
+    [key: string]: Color | string;
+    "main-background": Color | string;
+    "secondary-background": Color | string;
+    "borders": Color | string;
+    "hovered-borders": Color | string;
+    "active-borders": Color | string;
+    "faint-text": Color | string;
+    "muted-text": Color | string;
+    "primary-text": Color | string;
+    "error-text": Color | string;
+    "warning-text": Color | string;
+    "success-text": Color | string;
+    "links": Color | string;
+    "active-states": Color | string;
+}
+
+interface Syntax {
+    [key: string]: Color | string;
+    "comments": Color | string;
+    "punctuation": Color | string;
+    "operators": Color | string;
+    "invalid": Color | string;
+    "imports": Color | string;
+    "functions": Color | string;
+    "constants": Color | string;
+    "keywords": Color | string;
+    "strings": Color | string;
+    "variables": Color | string;
+    "attributes": Color | string;
+    "numbers": Color | string;
+    "language-features": Color | string;
+}
+
 interface Mapping {
-    ui: {
-        "main-background": Color | string;
-        "secondary-background": Color | string;
-        "borders": Color | string;
-        "hovered-borders": Color | string;
-        "active-borders": Color | string;
-        "faint-text": Color | string;
-        "muted-text": Color | string;
-        "primary-text": Color | string;
-        "error-text": Color | string;
-        "warning-text": Color | string;
-        "success-text": Color | string;
-        "links": Color | string;
-        "active-states": Color | string;
-    };
-    syntax: {
-        "comments": Color | string;
-        "punctuation": Color | string;
-        "operators": Color | string;
-        "invalid": Color | string;
-        "imports": Color | string;
-        "functions": Color | string;
-        "constants": Color | string;
-        "keywords": Color | string;
-        "strings": Color | string;
-        "variables": Color | string;
-        "attributes": Color | string;
-        "numbers": Color | string;
-        "language-features": Color | string;
-    };
+    ui: UI;
+    syntax: Syntax;
 }
 
 const baseTones = {
@@ -104,7 +110,7 @@ const accentColors = {
     "magenta-400": new Color("#CE5D97"),
 };
 
-const dark: ColorTheme = {
+const darkTheme: Theme = {
     "bg": baseTones["black"],
     "bg-2": baseTones["base-950"],
     "ui": baseTones["base-900"],
@@ -132,7 +138,7 @@ const dark: ColorTheme = {
     "transparent": new Color("#00000000"),
 };
 
-const light: ColorTheme = {
+const lightTheme: Theme = {
     "bg": baseTones["paper"],
     "bg-2": baseTones["base-50"],
     "ui": baseTones["base-100"],
@@ -171,116 +177,119 @@ function colorsToHex(colors: Record<string, Color | string>) {
     return colors;
 }
 
-function makeTheme(colorTheme: ColorTheme) {
-    Object.entries(colorTheme).forEach(([key, value]: [string, Color | string]) => {
-        colorTheme[key as keyof ColorTheme] = colorToHex(value as Color);
-    });
-    return colorTheme;
-}
-
-function makeMapping(colorTheme: ColorTheme): Mapping {
+function mapColorTheme(theme: Theme): Mapping {
     return {
         ui: {
-            "main-background": colorTheme["bg"],
-            "secondary-background": colorTheme["bg-2"],
-            "borders": colorTheme["ui"],
-            "hovered-borders": colorTheme["ui-2"],
-            "active-borders": colorTheme["ui-3"],
-            "faint-text": colorTheme["tx-3"],
-            "muted-text": colorTheme["tx-2"],
-            "primary-text": colorTheme["tx"],
-            "error-text": colorTheme["re"],
-            "warning-text": colorTheme["or"],
-            "success-text": colorTheme["gr"],
-            "links": colorTheme["cy"],
-            "active-states": colorTheme["cy"],
+            "main-background": theme["bg"],
+            "secondary-background": theme["bg-2"],
+            "borders": theme["ui"],
+            "hovered-borders": theme["ui-2"],
+            "active-borders": theme["ui-3"],
+            "faint-text": theme["tx-3"],
+            "muted-text": theme["tx-2"],
+            "primary-text": theme["tx"],
+            "error-text": theme["re"],
+            "warning-text": theme["or"],
+            "success-text": theme["gr"],
+            "links": theme["cy"],
+            "active-states": theme["cy"],
         },
         syntax: {
-            "comments": colorTheme["tx-3"],
-            "punctuation": colorTheme["tx-2"],
-            "operators": colorTheme["tx-2"],
-            "invalid": colorTheme["re"],
-            "imports": colorTheme["re"],
-            "functions": colorTheme["or"],
-            "constants": colorTheme["ye"],
-            "keywords": colorTheme["gr"],
-            "strings": colorTheme["cy"],
-            "variables": colorTheme["bl"],
-            "attributes": colorTheme["bl"],
-            "numbers": colorTheme["pu"],
-            "language-features": colorTheme["ma"],
+            "comments": theme["tx-3"],
+            "punctuation": theme["tx-2"],
+            "operators": theme["tx-2"],
+            "invalid": theme["re"],
+            "imports": theme["re"],
+            "functions": theme["or"],
+            "constants": theme["ye"],
+            "keywords": theme["gr"],
+            "strings": theme["cy"],
+            "variables": theme["bl"],
+            "attributes": theme["bl"],
+            "numbers": theme["pu"],
+            "language-features": theme["ma"],
         },
     };
 }
 
-const makeAccentColor = (theme: Theme, accentColor: AccentColor) => {
-    switch (accentColor) {
+const makeAccentColor = (mode: Mode, accent: Accent) => {
+    switch (accent) {
         case "Red": {
-            return theme === "Dark" ? accentColors["red-400"] : accentColors["red-600"];
+            return mode === "Dark" ? accentColors["red-400"] : accentColors["red-600"];
         }
         case "Orange": {
-            return theme === "Dark" ? accentColors["orange-400"] : accentColors["orange-600"];
+            return mode === "Dark" ? accentColors["orange-400"] : accentColors["orange-600"];
         }
         case "Yellow": {
-            return theme === "Dark" ? accentColors["yellow-400"] : accentColors["yellow-600"];
+            return mode === "Dark" ? accentColors["yellow-400"] : accentColors["yellow-600"];
         }
         case "Green": {
-            return theme === "Dark" ? accentColors["green-400"] : accentColors["green-600"];
+            return mode === "Dark" ? accentColors["green-400"] : accentColors["green-600"];
         }
         case "Cyan": {
-            return theme === "Dark" ? accentColors["cyan-400"] : accentColors["cyan-600"];
+            return mode === "Dark" ? accentColors["cyan-400"] : accentColors["cyan-600"];
         }
         case "Blue": {
-            return theme === "Dark" ? accentColors["blue-400"] : accentColors["blue-600"];
+            return mode === "Dark" ? accentColors["blue-400"] : accentColors["blue-600"];
         }
         case "Purple": {
-            return theme === "Dark" ? accentColors["purple-400"] : accentColors["purple-600"];
+            return mode === "Dark" ? accentColors["purple-400"] : accentColors["purple-600"];
         }
         case "Magenta": {
-            return theme === "Dark" ? accentColors["magenta-400"] : accentColors["magenta-600"];
+            return mode === "Dark" ? accentColors["magenta-400"] : accentColors["magenta-600"];
         }
     }
 };
 
-const generateTerminal = (theme: Theme) => {
-    const base = colorsToHex(baseTones) as typeof baseTones;
-
-    const themes = {
-        dark: makeTheme(dark),
-        light: makeTheme(light),
+const makeThemes = () => {
+    return {
+        dark: colorsToHex(darkTheme) as Theme,
+        light: colorsToHex(lightTheme) as Theme,
     };
+};
 
-    const mappings = {
-        dark: makeMapping(themes.dark),
-        light: makeMapping(themes.light),
-    };
-
-    const mapping = theme === "Dark" ? mappings.dark : mappings.light;
-    const colorTheme = theme === "Dark" ? themes.dark : themes.light;
+const makeMappings = () => {
+    const { dark, light } = makeThemes();
 
     return {
-        background: mapping["ui"]["main-background"],
-        black: base["base-950"],
-        blue: colorTheme["bl2"],
-        brightBlack: base["base-900"],
-        brightBlue: colorTheme["bl"],
-        brightCyan: colorTheme["cy"],
-        brightGreen: colorTheme["gr"],
-        brightPurple: colorTheme["ma"],
-        brightRed: colorTheme["re"],
-        brightWhite: base["base-50"],
-        brightYellow: colorTheme["ye"],
-        cursorColor: mapping["ui"]["primary-text"],
-        cyan: colorTheme["cy2"],
-        foreground: mapping["ui"]["primary-text"],
-        green: colorTheme["gr2"],
-        name: `Flexoki ${theme}`,
-        purple: colorTheme["ma2"],
-        red: colorTheme["re2"],
-        selectionBackground: mapping["ui"]["secondary-background"],
-        white: base["base-100"],
-        yellow: colorTheme["ye2"],
+        dark: mapColorTheme(dark),
+        light: mapColorTheme(light),
     };
+};
+
+const generateTerminal = (mode: Mode) => {
+    const themes = makeThemes();
+    const mappings = makeMappings();
+
+    const base = colorsToHex(baseTones) as typeof baseTones;
+    const { ui, syntax } = mode === "Dark" ? mappings.dark : mappings.light;
+    const theme = mode === "Dark" ? themes.dark : themes.light;
+
+    const terminal = {
+        background: ui["main-background"],
+        black: base["base-950"],
+        blue: theme["bl2"],
+        brightBlack: base["base-900"],
+        brightBlue: theme["bl"],
+        brightCyan: theme["cy"],
+        brightGreen: theme["gr"],
+        brightPurple: theme["ma"],
+        brightRed: theme["re"],
+        brightWhite: base["base-50"],
+        brightYellow: theme["ye"],
+        cursorColor: ui["primary-text"],
+        cyan: theme["cy2"],
+        foreground: ui["primary-text"],
+        green: theme["gr2"],
+        name: `Flexoki ${mode}`,
+        purple: theme["ma2"],
+        red: theme["re2"],
+        selectionBackground: ui["secondary-background"],
+        white: base["base-100"],
+        yellow: theme["ye2"],
+    };
+
+    return terminal;
 };
 
 const generateTheme = (theme: Theme, accentColor: AccentColor) => {
@@ -288,8 +297,8 @@ const generateTheme = (theme: Theme, accentColor: AccentColor) => {
     const accent = colorToHex(makeAccentColor(theme, accentColor));
 
     const themes = {
-        dark: makeTheme(dark),
-        light: makeTheme(light),
+        dark: colorsToHex(dark) as ColorTheme,
+        light: colorsToHex(light) as ColorTheme,
     };
 
     const mappings = {
