@@ -21,7 +21,7 @@ const watcher = watch(resolve(import.meta.dirname, "..", "modules", "flexoki.ts"
 let watching = true;
 
 try {
-    for await (const _event of watcher) {
+    for await (const _ of watcher) {
         if (!watching) {
             exec(`pnpm build`);
             console.clear();
