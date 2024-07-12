@@ -23,7 +23,7 @@ async function run() {
                 build();
                 console.clear();
                 console.log(
-                    `Rebuild at ${new Date().toLocaleTimeString("en-US", { hour12: false })}`,
+                    `Rebuilding... ${new Date().toLocaleTimeString("en-US", { hour12: false })}`,
                 );
             }
 
@@ -31,7 +31,7 @@ async function run() {
 
             setTimeout(() => {
                 watching = false;
-            }, 100);
+            }, 50);
         }
     } catch (error) {
         console.log(error);
