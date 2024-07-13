@@ -261,10 +261,10 @@ const makeMappings = () => {
 };
 
 const generateTerminal = (mode: Mode) => {
+    const base = colorsToHex(baseTones) as typeof baseTones;
     const themes = makeThemes();
     const mappings = makeMappings();
 
-    const base = colorsToHex(baseTones) as typeof baseTones;
     const { ui, syntax } = mode === "Dark" ? mappings.dark : mappings.light;
     const theme = mode === "Dark" ? themes.dark : themes.light;
 
