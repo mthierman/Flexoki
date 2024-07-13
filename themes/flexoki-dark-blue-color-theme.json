@@ -84,7 +84,7 @@
         "terminal.foreground": "#cecdc3",
         "terminal.inactiveSelectionBackground": "#343331",
         "terminal.selectionBackground": "#403e3c",
-        "terminal.tab.activeBorder": "#205ea6",
+        "terminal.tab.activeBorder": "#3aa99f",
         "terminalCursor.background": "#100f0f",
         "terminalCursor.foreground": "#cecdc3",
         "titleBar.activeBackground": "#1c1b1a",

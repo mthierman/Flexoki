@@ -392,7 +392,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "terminal.foreground": terminal["foreground"],
             "terminal.inactiveSelectionBackground": ui["hovered-borders"],
             "terminal.selectionBackground": terminal["selectionBackground"],
-            "terminal.tab.activeBorder": accentColor,
+            "terminal.tab.activeBorder": ui["active-states"],
             "terminalCursor.background": terminal["background"],
             "terminalCursor.foreground": terminal["foreground"],
             "titleBar.activeBackground": ui["secondary-background"],
