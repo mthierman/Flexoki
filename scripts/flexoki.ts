@@ -326,7 +326,6 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "activityBarTop.inactiveForeground": ui["primary-text"],
             "activityBarTop.activeBackground": ui["secondary-background"],
             "activityBarTop.background": ui["secondary-background"],
-
             "button.background": theme["ui"],
             "button.hoverBackground": theme["ui-2"],
             "button.border": theme["ui-3"],
@@ -429,7 +428,6 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             // "editor.foreground": "#cccccc",
             // "editor.inactiveSelectionBackground": "#3a3d41",
             // "editor.selectionHighlightBackground": "#add6ff26",
-
             // "editorGutter.addedBackground": "#2ea043",
             // "editorGutter.deletedBackground": "#f85149",
             // "editorGutter.modifiedBackground": "#0078d4",
