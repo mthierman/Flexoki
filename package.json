@@ -150,8 +150,7 @@
         "url": "https://github.com/mthierman/Flexoki.git"
     },
     "scripts": {
-        "build": "tsc && node --no-warnings=ExperimentalWarning scripts/flexoki.js",
-        "flexoki": "tsx scripts/flexoki.ts",
+        "build": "tsc -b && node --no-warnings=ExperimentalWarning scripts/flexoki.js",
         "watch": "tsx scripts/watch.ts",
         "clean": "tsx scripts/clean.ts",
         "vsce": "vsce publish"
