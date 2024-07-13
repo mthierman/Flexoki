@@ -304,6 +304,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
     const terminal = generateTerminal(mode);
 
     const test = "#FF00FF";
+    const hoverBg = mode === "Dark" ? "#000000" : "#FFFFFF";
 
     return {
         $schema: "vscode://schemas/color-theme",
@@ -336,11 +337,19 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "input.border": ui["active-borders"],
             "input.foreground": ui["primary-text"],
             "input.placeholderForeground": ui["faint-text"],
+
             "menu.background": ui["main-background"],
             "menu.border": ui["borders"],
             "menu.foreground": ui["primary-text"],
-            "menu.selectionBackground": accentColor,
+            "menu.selectionBackground": theme["ui-2"],
+            "menu.selectionForeground": ui["primary-text"],
+
             "menu.separatorBackground": ui["borders"],
+            "menubar.selectionBackground": theme["ui-2"],
+            "menubar.selectionForeground": ui["primary-text"],
+            "menu.selectionBorder": null,
+            "menubar.selectionBorder": null,
+
             "sideBar.background": ui["secondary-background"],
             "sideBar.border": ui["borders"],
             "statusBar.background": ui["secondary-background"],
