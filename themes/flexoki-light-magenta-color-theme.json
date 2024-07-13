@@ -155,17 +155,18 @@
         "welcomePage.tileBackground": "#e6e4d9",
         "welcomePage.tileBorder": "#e6e4d9",
         "welcomePage.tileHoverBackground": "#dad8ce",
-        "editorWidget.background": "#f2f0e5",
+        "editorWidget.background": "#e6e4d9",
         "editorWidget.border": "#e6e4d9",
         "editorWidget.foreground": "#100f0f",
         "editorWidget.resizeBorder": "#e6e4d9",
         "widget.border": "#e6e4d9",
         "widget.shadow": "#e6e4d9",
-        "editorHoverWidget.background": "#fffcf0",
+        "editorHoverWidget.background": "#e6e4d9",
         "editorHoverWidget.border": "#e6e4d9",
         "editorHoverWidget.foreground": "#100f0f",
         "editorHoverWidget.highlightForeground": "#FF00FF",
-        "editorHoverWidget.statusBarBackground": "#FF00FF"
+        "editorHoverWidget.statusBarBackground": "#FF00FF",
+        "list.hoverBackground": "#dad8ce"
     },
     "tokenColors": [
         {
