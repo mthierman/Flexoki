@@ -1,13 +1,5 @@
 {
-    "compilerOptions": {
-        "target": "ESNext",
-        "lib": ["ESNext"],
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
-        "resolveJsonModule": true,
-        "strict": true,
-        "noEmit": true,
-        "skipLibCheck": true
-    },
+    "extends": "./tsconfig.json",
+    "compilerOptions": { "noEmit": true },
     "include": ["scripts"]
 }
