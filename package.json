@@ -150,9 +150,10 @@
         "url": "https://github.com/mthierman/Flexoki.git"
     },
     "scripts": {
-        "build": "tsc -b && node --no-warnings=ExperimentalWarning scripts/flexoki.js",
-        "watch": "tsx scripts/watch.ts",
-        "clean": "tsx scripts/clean.ts",
+        "check": "tsc --noEmit",
+        "build": "tsc -b && node --no-warnings=ExperimentalWarning build/flexoki.js",
+        "watch": "tsc -b && node --no-warnings=ExperimentalWarning build/watch.js",
+        "clean": "tsc -b && node --no-warnings=ExperimentalWarning build/clean.js",
         "vsce": "vsce publish"
     },
     "devDependencies": {
@@ -161,7 +162,6 @@
         "colorjs.io": "^0.5.2",
         "esbuild": "^0.23.0",
         "prettier": "^3.3.2",
-        "tsx": "^4.16.2",
         "typescript": "^5.5.3"
     }
 }

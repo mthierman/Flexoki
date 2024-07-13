@@ -931,5 +931,3 @@ await Promise.all([
         JSON.stringify(generateTerminal("Light"), null, 4),
     ),
 ]);
-
-await rm(resolve(import.meta.dirname, "flexoki.js"));
