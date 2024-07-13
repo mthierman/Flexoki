@@ -746,7 +746,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
     const terminal = generateTerminal(mode);
 
     const test = "#FF00FF";
-    const hoverBg = mode === "Dark" ? "#000000" : "#FFFFFF";
+    const shadow = colorToHex(baseTones["black"]).concat("40");
 
     return {
         $schema: "vscode://schemas/color-theme",
@@ -796,7 +796,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "editorGroupHeader.tabsBorder": ui["borders"],
             "editorStickyScroll.background": ui["main-background"],
             "editorStickyScroll.border": ui["borders"],
-            "editorStickyScroll.shadow": ui["borders"],
+            "editorStickyScroll.shadow": shadow,
             "editorStickyScrollHover.background": theme["transparent"],
             "focusBorder": ui["active-states"],
             "foreground": ui["primary-text"],
@@ -826,7 +826,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "panelSectionHeader.foreground": ui["primary-text"],
             "panelStickyScroll.background": ui["main-background"],
             "panelStickyScroll.border": ui["borders"],
-            "panelStickyScroll.shadow": ui["borders"],
+            "panelStickyScroll.shadow": shadow,
             "panelTitle.activeBorder": ui["active-states"],
             "panelTitle.activeForeground": ui["primary-text"],
             "panelTitle.inactiveForeground": ui["muted-text"],
@@ -911,13 +911,13 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "editorWidget.foreground": ui["primary-text"],
             "editorWidget.resizeBorder": ui["borders"],
             "widget.border": ui["borders"],
-            "widget.shadow": ui["borders"],
+            "widget.shadow": shadow,
             // "editor.hoverHighlightBackground": test,
             "editorHoverWidget.background": theme["ui"],
             "editorHoverWidget.border": ui["borders"],
             "editorHoverWidget.foreground": ui["primary-text"],
-            "editorHoverWidget.highlightForeground": test,
-            "editorHoverWidget.statusBarBackground": test,
+            "editorHoverWidget.highlightForeground": ui["primary-text"],
+            "editorHoverWidget.statusBarBackground": theme["ui-2"],
 
             // "inputOption.activeBackground": test,
             // "inputOption.activeBorder": test,
