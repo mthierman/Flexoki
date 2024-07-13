@@ -110,7 +110,22 @@
         "terminalCursor.background": "#100f0f",
         "terminalCursor.foreground": "#cecdc3",
         "titleBar.activeBackground": "#1c1b1a",
-        "titleBar.border": "#282726"
+        "titleBar.border": "#282726",
+        "panel.background": "#1c1b1a",
+        "panel.border": "#282726",
+        "panelInput.border": "#403e3c",
+        "panelTitle.activeBorder": "#3aa99f",
+        "panelTitle.activeForeground": "#cecdc3",
+        "panelTitle.inactiveForeground": "#878580",
+        "panel.dropBorder": null,
+        "panelSection.border": "#282726",
+        "panelSection.dropBackground": null,
+        "panelSectionHeader.background": "#100f0f",
+        "panelSectionHeader.border": "#282726",
+        "panelSectionHeader.foreground": "#cecdc3",
+        "panelStickyScroll.background": "#100f0f",
+        "panelStickyScroll.shadow": "#282726",
+        "panelStickyScroll.border": "#282726"
     },
     "tokenColors": [
         {

@@ -864,6 +864,25 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "titleBar.activeBackground": ui["secondary-background"],
             "titleBar.border": ui["borders"],
 
+            "panel.background": ui["secondary-background"],
+            "panel.border": ui["borders"],
+            "panelInput.border": ui["active-borders"],
+            "panelTitle.activeBorder": ui["active-states"],
+            "panelTitle.activeForeground": ui["primary-text"],
+            "panelTitle.inactiveForeground": ui["muted-text"],
+
+            "panel.dropBorder": null,
+            "panelSection.border": ui["borders"],
+            "panelSection.dropBackground": null,
+
+            "panelSectionHeader.background": ui["main-background"],
+            "panelSectionHeader.border": ui["borders"],
+            "panelSectionHeader.foreground": ui["primary-text"],
+
+            "panelStickyScroll.background": ui["main-background"],
+            "panelStickyScroll.shadow": ui["borders"],
+            "panelStickyScroll.border": ui["borders"],
+
             // "actionBar.toggledBackground": test,
             // "badge.background": "#616161",
             // "badge.foreground": "#f8f8f8",
@@ -897,12 +916,6 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             // "notifications.background": "#1f1f1f",
             // "notifications.border": "#2b2b2b",
             // "notifications.foreground": "#cccccc",
-            // "panel.background": "#181818",
-            // "panel.border": "#2b2b2b",
-            // "panelInput.border": "#2b2b2b",
-            // "panelTitle.activeBorder": "#0078d4",
-            // "panelTitle.activeForeground": "#cccccc",
-            // "panelTitle.inactiveForeground": "#9d9d9d",
             // "peekViewEditor.background": "#1f1f1f",
             // "peekViewEditor.matchHighlightBackground": "#bb800966",
             // "peekViewResult.background": "#1f1f1f",
