@@ -107,6 +107,8 @@
         "tab.activeForeground": "#cecdc3",
         "tab.border": "#282726",
         "tab.hoverBackground": "#100f0f",
+        "tab.hoverBorder": "#343331",
+        "tab.hoverForeground": "#cecdc3",
         "tab.inactiveBackground": "#0000",
         "tab.inactiveForeground": "#878580",
         "tab.lastPinnedBorder": "#FF00FF",
@@ -116,6 +118,8 @@
         "tab.unfocusedActiveBorder": "#0000",
         "tab.unfocusedActiveBorderTop": "#0000",
         "tab.unfocusedHoverBackground": "#100f0f",
+        "tab.unfocusedHoverBorder": "#343331",
+        "tab.unfocusedHoverForeground": "#cecdc3",
         "terminal.ansiBlack": "#1c1b1a",
         "terminal.ansiBlue": "#205ea6",
         "terminal.ansiBrightBlack": "#282726",
@@ -144,7 +148,13 @@
         "titleBar.activeForeground": "#cecdc3",
         "titleBar.border": "#282726",
         "titleBar.inactiveBackground": "#1c1b1a",
-        "titleBar.inactiveForeground": "#878580"
+        "titleBar.inactiveForeground": "#878580",
+        "welcomePage.background": "#100f0f",
+        "welcomePage.progress.background": "#282726",
+        "welcomePage.progress.foreground": "#403e3c",
+        "welcomePage.tileBackground": "#282726",
+        "welcomePage.tileBorder": "#282726",
+        "welcomePage.tileHoverBackground": "#343331"
     },
     "tokenColors": [
         {
