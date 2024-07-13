@@ -146,7 +146,7 @@
         "terminal.ansiRed": "#d14d41",
         "terminal.ansiWhite": "#e6e4d9",
         "terminal.ansiYellow": "#d0a215",
-        "terminal.background": "#fffcf0",
+        "terminal.background": "#f2f0e5",
         "terminal.border": "#e6e4d9",
         "terminal.foreground": "#100f0f",
         "terminal.inactiveSelectionBackground": "#dad8ce",

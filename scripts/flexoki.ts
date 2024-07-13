@@ -36,7 +36,7 @@ interface Theme {
 }
 
 interface UI {
-    [key: string]: Color | string;
+    [key: string]: Color | string | undefined;
     "main-background": Color | string;
     "secondary-background": Color | string;
     "borders": Color | string;
@@ -51,6 +51,7 @@ interface UI {
     "links": Color | string;
     "active-states": Color | string;
     "transparent": Color | string;
+    "shadow"?: Color | string;
 }
 
 interface Syntax {
@@ -1056,7 +1057,8 @@ const generateTheme = (mode: Mode, accent: Accent) => {
     const terminal = generateTerminal(mode);
 
     const test = "#FF00FF";
-    const shadow = colorToHex(baseTones["black"]).concat("40");
+    // const shadow = colorToHex(baseTones["black"]).concat("40");
+    ui["shadow"] = colorToHex(baseTones["black"]).concat("40");
 
     return {
         $schema: "vscode://schemas/color-theme",
@@ -1111,7 +1113,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "editorHoverWidget.statusBarBackground": theme["ui-2"],
             "editorStickyScroll.background": ui["main-background"],
             "editorStickyScroll.border": ui["borders"],
-            "editorStickyScroll.shadow": shadow,
+            "editorStickyScroll.shadow": ui["shadow"],
             "editorStickyScrollHover.background": theme["transparent"],
             "editorWidget.background": theme["ui"],
             "editorWidget.border": ui["borders"],
@@ -1146,7 +1148,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "panelSectionHeader.foreground": ui["primary-text"],
             "panelStickyScroll.background": ui["main-background"],
             "panelStickyScroll.border": ui["borders"],
-            "panelStickyScroll.shadow": shadow,
+            "panelStickyScroll.shadow": ui["shadow"],
             "panelTitle.activeBorder": ui["active-states"],
             "panelTitle.activeForeground": ui["primary-text"],
             "panelTitle.inactiveForeground": ui["muted-text"],
@@ -1206,7 +1208,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "terminal.ansiRed": terminal["red"],
             "terminal.ansiWhite": terminal["white"],
             "terminal.ansiYellow": terminal["yellow"],
-            "terminal.background": terminal["background"],
+            "terminal.background": ui["secondary-background"],
             "terminal.border": ui["borders"],
             "terminal.foreground": terminal["foreground"],
             "terminal.inactiveSelectionBackground": ui["hovered-borders"],
@@ -1226,7 +1228,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "welcomePage.tileBorder": ui["borders"],
             "welcomePage.tileHoverBackground": theme["ui-2"],
             "widget.border": ui["borders"],
-            "widget.shadow": shadow,
+            "widget.shadow": ui["shadow"],
         },
         tokenColors: mode === "Dark" ? darkTokenColors() : lightTokenColors(),
         semanticHighlighting: true,
