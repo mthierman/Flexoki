@@ -4,6 +4,12 @@ import { resolve } from "node:path";
 import { stdin, stdout } from "node:process";
 import { createInterface } from "node:readline/promises";
 
+function build() {
+    console.clear();
+    console.log(`Building... ${new Date().toLocaleTimeString("en-US", { hour12: false })}`);
+    exec(`pnpm build`);
+}
+
 const cli = createInterface(stdin, stdout);
 
 cli.on("close", () => {
@@ -11,7 +17,7 @@ cli.on("close", () => {
     process.exit();
 });
 
-exec(`pnpm build`);
+build();
 
 const watcher = watch(resolve(import.meta.dirname, "..", "scripts", "flexoki.ts"), {
     persistent: true,
@@ -22,11 +28,7 @@ let watching = true;
 try {
     for await (const _ of watcher) {
         if (!watching) {
-            exec(`pnpm build`);
-            console.clear();
-            console.log(
-                `Rebuilding... ${new Date().toLocaleTimeString("en-US", { hour12: false })}`,
-            );
+            build();
         }
 
         watching = true;
