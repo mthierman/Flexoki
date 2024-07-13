@@ -1160,7 +1160,7 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "sideBar.background": ui["secondary-background"],
             "sideBar.border": ui["borders"],
             "sideBar.foreground": ui["primary-text"],
-            "sideBarSectionHeader.background": ui["main-background"],
+            "sideBarSectionHeader.background": theme["ui"],
             "sideBarSectionHeader.border": ui["borders"],
             "sideBarSectionHeader.foreground": ui["primary-text"],
             "sideBarTitle.foreground": ui["primary-text"],

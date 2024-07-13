@@ -100,7 +100,7 @@
         "sideBar.background": "#1c1b1a",
         "sideBar.border": "#282726",
         "sideBar.foreground": "#cecdc3",
-        "sideBarSectionHeader.background": "#100f0f",
+        "sideBarSectionHeader.background": "#282726",
         "sideBarSectionHeader.border": "#282726",
         "sideBarSectionHeader.foreground": "#cecdc3",
         "sideBarTitle.foreground": "#cecdc3",
