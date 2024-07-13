@@ -1046,19 +1046,17 @@ const darkTokenColors = () => {
 };
 
 const generateTheme = (mode: Mode, accent: Accent) => {
+    const base = colorsToHex(baseTones) as typeof baseTones;
     const accentColor = colorToHex(makeAccentColor(mode, accent));
-
+    const terminal = generateTerminal(mode);
     const themes = makeThemes();
     const mappings = makeMappings();
 
-    const base = colorsToHex(baseTones) as typeof baseTones;
     const { ui, syntax } = mode === "Dark" ? mappings.dark : mappings.light;
+    ui["shadow"] = colorToHex(baseTones["black"]).concat("40");
     const theme = mode === "Dark" ? themes.dark : themes.light;
-    const terminal = generateTerminal(mode);
 
     const test = "#FF00FF";
-    // const shadow = colorToHex(baseTones["black"]).concat("40");
-    ui["shadow"] = colorToHex(baseTones["black"]).concat("40");
 
     return {
         $schema: "vscode://schemas/color-theme",
