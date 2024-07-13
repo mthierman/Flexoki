@@ -84,7 +84,6 @@
         "panelTitle.inactiveForeground": "#6f6e69",
         "quickInput.background": "#fffcf0",
         "quickInput.foreground": "#100f0f",
-        "quickInput.list.focusBackground": "#24837b",
         "quickInputList.focusBackground": "#dad8ce",
         "quickInputList.focusForeground": "#100f0f",
         "quickInputList.focusIconForeground": "#100f0f",

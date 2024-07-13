@@ -1152,7 +1152,8 @@ const generateTheme = (mode: Mode, accent: Accent) => {
             "panelTitle.inactiveForeground": ui["muted-text"],
             "quickInput.background": ui["main-background"],
             "quickInput.foreground": ui["primary-text"],
-            "quickInput.list.focusBackground": ui["active-states"],
+            // Use quickInputList.focusBackground instead
+            // "quickInput.list.focusBackground": ui["active-states"],
             "quickInputList.focusBackground": theme["ui-2"],
             "quickInputList.focusForeground": ui["primary-text"],
             "quickInputList.focusIconForeground": ui["primary-text"],
