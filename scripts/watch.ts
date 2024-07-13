@@ -15,7 +15,6 @@ exec(`pnpm build`);
 
 const watcher = watch(resolve(import.meta.dirname, "..", "scripts", "flexoki.ts"), {
     persistent: true,
-    recursive: true,
 });
 
 let watching = true;
