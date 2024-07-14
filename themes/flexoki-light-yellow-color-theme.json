@@ -288,25 +288,34 @@
     },
     "tokenColors": [
         {
-            "scope": "emphasis",
+            "scope": [
+                "emphasis"
+            ],
             "settings": {
                 "fontStyle": "italic"
             }
         },
         {
-            "scope": "strong",
+            "scope": [
+                "strong"
+            ],
             "settings": {
                 "fontStyle": "bold"
             }
         },
         {
-            "scope": "header",
+            "scope": [
+                "header",
+                "markup.heading"
+            ],
             "settings": {
                 "foreground": "#205ea6"
             }
         },
         {
-            "scope": "comment",
+            "scope": [
+                "comment"
+            ],
             "settings": {
                 "foreground": "#b7b5ac"
             }

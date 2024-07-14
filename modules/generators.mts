@@ -533,10 +533,10 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         },
         // tokenColors: dark ? darkTokens() : lightTokens(),
         tokenColors: [
-            { scope: "emphasis", settings: { fontStyle: "italic" } },
-            { scope: "strong", settings: { fontStyle: "bold" } },
-            { scope: "header", settings: { foreground: theme.bl } },
-            { scope: "comment", settings: { foreground: syntax.comments } },
+            { scope: ["emphasis"], settings: { fontStyle: "italic" } },
+            { scope: ["strong"], settings: { fontStyle: "bold" } },
+            { scope: ["header", "markup.heading"], settings: { foreground: theme.bl } },
+            { scope: ["comment"], settings: { foreground: syntax.comments } },
             {
                 scope: ["token.info-token"],
                 settings: {
