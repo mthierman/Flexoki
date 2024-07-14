@@ -312,31 +312,41 @@
             }
         },
         {
-            "scope": "token.info-token",
+            "scope": [
+                "token.info-token"
+            ],
             "settings": {
                 "foreground": "#205ea6"
             }
         },
         {
-            "scope": "token.warn-token",
+            "scope": [
+                "token.warn-token"
+            ],
             "settings": {
                 "foreground": "#bc5215"
             }
         },
         {
-            "scope": "token.error-token",
+            "scope": [
+                "token.error-token"
+            ],
             "settings": {
                 "foreground": "#af3029"
             }
         },
         {
-            "scope": "token.debug-token",
+            "scope": [
+                "token.debug-token"
+            ],
             "settings": {
                 "foreground": "#5e409d"
             }
         },
         {
-            "scope": "entity.name.function",
+            "scope": [
+                "entity.name.function"
+            ],
             "settings": {
                 "foreground": "#bc5215"
             }
@@ -369,11 +379,18 @@
         },
         {
             "scope": [
-                "string",
-                "meta.object"
+                "string"
             ],
             "settings": {
                 "foreground": "#24837b"
+            }
+        },
+        {
+            "scope": [
+                "meta.object"
+            ],
+            "settings": {
+                "foreground": "#ad8301"
             }
         },
         {

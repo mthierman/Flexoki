@@ -538,31 +538,31 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             { scope: "header", settings: { foreground: theme["bl"] } },
             { scope: "comment", settings: { foreground: syntax["comments"] } },
             {
-                scope: "token.info-token",
+                scope: ["token.info-token"],
                 settings: {
                     foreground: theme["bl"],
                 },
             },
             {
-                scope: "token.warn-token",
+                scope: ["token.warn-token"],
                 settings: {
                     foreground: ui["warning-text"],
                 },
             },
             {
-                scope: "token.error-token",
+                scope: ["token.error-token"],
                 settings: {
                     foreground: ui["error-text"],
                 },
             },
             {
-                scope: "token.debug-token",
+                scope: ["token.debug-token"],
                 settings: {
                     foreground: theme["pu"],
                 },
             },
             {
-                scope: "entity.name.function",
+                scope: ["entity.name.function"],
                 settings: {
                     foreground: syntax["functions"],
                 },
@@ -586,9 +586,15 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
                 },
             },
             {
-                scope: ["string", "meta.object"],
+                scope: ["string"],
                 settings: {
                     foreground: syntax["strings"],
+                },
+            },
+            {
+                scope: ["meta.object"],
+                settings: {
+                    foreground: syntax["constants"],
                 },
             },
             {
