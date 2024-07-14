@@ -1,5 +1,5 @@
 import Color from "colorjs.io";
-import { defaultDarkTokens, defaultLightTokens } from "./tokens.mjs";
+import { defaultDarkTokens, defaultLightTokens } from "./default_tokens.mjs";
 import type { Accent, AccentColors, BaseTones, Mapping, Mode, Theme } from "./types.mjs";
 import { colorToHex, colorsToHex } from "./utilities.mjs";
 
