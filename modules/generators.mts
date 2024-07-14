@@ -194,25 +194,25 @@ export const makeMappings = () => {
 };
 
 export const generateTerminal = (mode: Mode) => {
-    const base = colorsToHex(makeBaseTones()) as BaseTones;
     const themes = makeThemes();
     const mappings = makeMappings();
     const dark = mode === "Dark";
 
-    const { ui, syntax } = dark ? mappings.dark : mappings.light;
+    const baseTones = colorsToHex(makeBaseTones()) as BaseTones;
     const theme = dark ? themes.dark : themes.light;
+    const { ui, syntax } = dark ? mappings.dark : mappings.light;
 
     return {
         background: ui["main-background"],
-        black: base["base-950"],
+        black: baseTones["base-950"],
         blue: theme["bl2"],
-        brightBlack: base["base-900"],
+        brightBlack: baseTones["base-900"],
         brightBlue: theme["bl"],
         brightCyan: theme["cy"],
         brightGreen: theme["gr"],
         brightPurple: theme["ma"],
         brightRed: theme["re"],
-        brightWhite: base["base-50"],
+        brightWhite: baseTones["base-50"],
         brightYellow: theme["ye"],
         cursorColor: ui["primary-text"],
         cyan: theme["cy2"],
@@ -222,23 +222,22 @@ export const generateTerminal = (mode: Mode) => {
         purple: theme["ma2"],
         red: theme["re2"],
         selectionBackground: ui["active-borders"],
-        white: base["base-100"],
+        white: baseTones["base-100"],
         yellow: theme["ye2"],
     };
 };
 
 export const generateTheme = (mode: Mode, accent: Accent) => {
-    const base = colorsToHex(makeBaseTones()) as BaseTones;
-    const accentColor = colorToHex(makeAccentColor(mode, accent) as Color);
-
-    const terminal = generateTerminal(mode);
     const themes = makeThemes();
     const mappings = makeMappings();
     const dark = mode === "Dark";
 
-    const { ui, syntax } = dark ? mappings.dark : mappings.light;
-    ui["shadow"] = colorToHex(base["black"] as Color).concat("40");
+    const terminal = generateTerminal(mode);
+    const baseTones = colorsToHex(makeBaseTones()) as BaseTones;
+    const accentColor = colorToHex(makeAccentColor(mode, accent) as Color);
     const theme = dark ? themes.dark : themes.light;
+    const { ui, syntax } = dark ? mappings.dark : mappings.light;
+    ui["shadow"] = (baseTones["black"] as string).concat("40");
 
     const test = "#FF00FF";
 
@@ -352,7 +351,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "statusBar.background": ui["secondary-background"],
             "statusBar.border": ui["borders"],
             "statusBar.debuggingBackground": theme["cy2"],
-            "statusBar.debuggingForeground": base["paper"],
+            "statusBar.debuggingForeground": baseTones["paper"],
             "statusBar.focusBorder": ui["active-states"],
             "statusBar.foreground": ui["primary-text"],
             "statusBar.noFolderBackground": ui["secondary-background"],
