@@ -2,6 +2,12 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Light Cyan",
     "colors": {
+        "keybindingLabel.background": "#f2f0e5",
+        "keybindingLabel.border": "#e6e4d9",
+        "keybindingLabel.bottomBorder": "#e6e4d9",
+        "keybindingLabel.foreground": "#3aa99f",
+        "keybindingTable.headerBackground": "#f2f0e5",
+        "keybindingTable.rowsBackground": "#f2f0e5",
         "gitDecoration.addedResourceForeground": "#66800b",
         "gitDecoration.conflictingResourceForeground": "#a02f6f",
         "gitDecoration.deletedResourceForeground": "#af3029",

@@ -245,6 +245,13 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         $schema: "vscode://schemas/color-theme",
         name: `Flexoki ${mode} ${accent}`,
         colors: {
+            "keybindingLabel.background": ui["secondary-background"],
+            "keybindingLabel.border": ui["borders"],
+            "keybindingLabel.bottomBorder": ui["borders"],
+            "keybindingLabel.foreground": ui["accent"],
+            "keybindingTable.headerBackground": ui["secondary-background"],
+            "keybindingTable.rowsBackground": ui["secondary-background"],
+
             "gitDecoration.addedResourceForeground": theme["gr"],
             "gitDecoration.conflictingResourceForeground": theme["ma"],
             "gitDecoration.deletedResourceForeground": theme["re"],

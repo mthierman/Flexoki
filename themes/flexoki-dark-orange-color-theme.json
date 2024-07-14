@@ -2,6 +2,12 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Dark Orange",
     "colors": {
+        "keybindingLabel.background": "#1c1b1a",
+        "keybindingLabel.border": "#282726",
+        "keybindingLabel.bottomBorder": "#282726",
+        "keybindingLabel.foreground": "#bc5215",
+        "keybindingTable.headerBackground": "#1c1b1a",
+        "keybindingTable.rowsBackground": "#1c1b1a",
         "gitDecoration.addedResourceForeground": "#879a39",
         "gitDecoration.conflictingResourceForeground": "#ce5d97",
         "gitDecoration.deletedResourceForeground": "#d14d41",
