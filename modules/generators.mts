@@ -245,6 +245,17 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         $schema: "vscode://schemas/color-theme",
         name: `Flexoki ${mode} ${accent}`,
         colors: {
+            "gitDecoration.addedResourceForeground": theme["gr"],
+            "gitDecoration.conflictingResourceForeground": theme["ma"],
+            "gitDecoration.deletedResourceForeground": theme["re"],
+            "gitDecoration.ignoredResourceForeground": ui["muted-text"],
+            "gitDecoration.modifiedResourceForeground": theme["ye"],
+            "gitDecoration.renamedResourceForeground": theme["gr"],
+            "gitDecoration.stageDeletedResourceForeground": theme["re"],
+            "gitDecoration.stageModifiedResourceForeground": theme["ye"],
+            "gitDecoration.submoduleResourceForeground": theme["bl"],
+            "gitDecoration.untrackedResourceForeground": theme["gr"],
+
             "extensionBadge.remoteBackground": ui["accent"],
             "extensionBadge.remoteForeground": baseTones["paper"],
             "extensionButton.background": theme["ui"],
