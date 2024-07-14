@@ -1,0 +1,388 @@
+import Color from "colorjs.io";
+import { Accent, Mapping, Mode, Theme } from "./types.mjs";
+import { colorToHex, colorsToHex } from "./utility.mjs";
+
+export const makeBaseTones = () => {
+    return {
+        "black": new Color("#100F0F"),
+        "base-950": new Color("#1C1B1A"),
+        "base-900": new Color("#282726"),
+        "base-850": new Color("#343331"),
+        "base-800": new Color("#403E3C"),
+        "base-700": new Color("#575653"),
+        "base-600": new Color("#6F6E69"),
+        "base-500": new Color("#878580"),
+        "base-300": new Color("#B7B5AC"),
+        "base-200": new Color("#CECDC3"),
+        "base-150": new Color("#DAD8CE"),
+        "base-100": new Color("#E6E4D9"),
+        "base-50": new Color("#F2F0E5"),
+        "paper": new Color("#FFFCF0"),
+    };
+};
+
+export const makeAccentColors = () => {
+    return {
+        "red-600": new Color("#AF3029"),
+        "orange-600": new Color("#BC5215"),
+        "yellow-600": new Color("#AD8301"),
+        "green-600": new Color("#66800B"),
+        "cyan-600": new Color("#24837B"),
+        "blue-600": new Color("#205EA6"),
+        "purple-600": new Color("#5E409D"),
+        "magenta-600": new Color("#A02F6F"),
+        "red-400": new Color("#D14D41"),
+        "orange-400": new Color("#DA702C"),
+        "yellow-400": new Color("#D0A215"),
+        "green-400": new Color("#879A39"),
+        "cyan-400": new Color("#3AA99F"),
+        "blue-400": new Color("#4385BE"),
+        "purple-400": new Color("#8B7EC8"),
+        "magenta-400": new Color("#CE5D97"),
+    };
+};
+
+export const makeTheme = (mode: Mode): Theme => {
+    const baseTones = makeBaseTones();
+    const accentColors = makeAccentColors();
+
+    switch (mode) {
+        case "Dark": {
+            return {
+                "bg": baseTones["black"],
+                "bg-2": baseTones["base-950"],
+                "ui": baseTones["base-900"],
+                "ui-2": baseTones["base-850"],
+                "ui-3": baseTones["base-800"],
+                "tx-3": baseTones["base-700"],
+                "tx-2": baseTones["base-500"],
+                "tx": baseTones["base-200"],
+                "re": accentColors["red-400"],
+                "re2": accentColors["red-600"],
+                "or": accentColors["orange-400"],
+                "or2": accentColors["orange-600"],
+                "ye": accentColors["yellow-400"],
+                "ye2": accentColors["yellow-600"],
+                "gr": accentColors["green-400"],
+                "gr2": accentColors["green-600"],
+                "cy": accentColors["cyan-400"],
+                "cy2": accentColors["cyan-600"],
+                "bl": accentColors["blue-400"],
+                "bl2": accentColors["blue-600"],
+                "pu": accentColors["purple-400"],
+                "pu2": accentColors["purple-600"],
+                "ma": accentColors["magenta-400"],
+                "ma2": accentColors["magenta-600"],
+                "transparent": new Color("#00000000"),
+            };
+        }
+        case "Light": {
+            return {
+                "bg": baseTones["paper"],
+                "bg-2": baseTones["base-50"],
+                "ui": baseTones["base-100"],
+                "ui-2": baseTones["base-150"],
+                "ui-3": baseTones["base-200"],
+                "tx-3": baseTones["base-300"],
+                "tx-2": baseTones["base-600"],
+                "tx": baseTones["black"],
+                "re": accentColors["red-600"],
+                "re2": accentColors["red-400"],
+                "or": accentColors["orange-600"],
+                "or2": accentColors["orange-400"],
+                "ye": accentColors["yellow-600"],
+                "ye2": accentColors["yellow-400"],
+                "gr": accentColors["green-600"],
+                "gr2": accentColors["green-400"],
+                "cy": accentColors["cyan-600"],
+                "cy2": accentColors["cyan-400"],
+                "bl": accentColors["blue-600"],
+                "bl2": accentColors["blue-400"],
+                "pu": accentColors["purple-600"],
+                "pu2": accentColors["purple-400"],
+                "ma": accentColors["magenta-600"],
+                "ma2": accentColors["magenta-400"],
+                "transparent": new Color("#FFFFFF00"),
+            };
+        }
+    }
+};
+
+export const makeMapping = (theme: Theme): Mapping => {
+    return {
+        ui: {
+            "main-background": theme["bg"],
+            "secondary-background": theme["bg-2"],
+            "borders": theme["ui"],
+            "hovered-borders": theme["ui-2"],
+            "active-borders": theme["ui-3"],
+            "faint-text": theme["tx-3"],
+            "muted-text": theme["tx-2"],
+            "primary-text": theme["tx"],
+            "error-text": theme["re"],
+            "warning-text": theme["or"],
+            "success-text": theme["gr"],
+            "links": theme["cy"],
+            "active-states": theme["cy"],
+            "transparent": theme["transparent"],
+        },
+        syntax: {
+            "comments": theme["tx-3"],
+            "punctuation": theme["tx-2"],
+            "operators": theme["tx-2"],
+            "invalid": theme["re"],
+            "imports": theme["re"],
+            "functions": theme["or"],
+            "constants": theme["ye"],
+            "keywords": theme["gr"],
+            "strings": theme["cy"],
+            "variables": theme["bl"],
+            "attributes": theme["bl"],
+            "numbers": theme["pu"],
+            "language-features": theme["ma"],
+        },
+    };
+};
+
+export const makeAccentColor = (mode: Mode, accent: Accent) => {
+    const accentColors = makeAccentColors();
+    const dark = mode === "Dark";
+
+    switch (accent) {
+        case "Red": {
+            return dark ? accentColors["red-600"] : accentColors["red-400"];
+        }
+        case "Orange": {
+            return dark ? accentColors["orange-600"] : accentColors["orange-400"];
+        }
+        case "Yellow": {
+            return dark ? accentColors["yellow-600"] : accentColors["yellow-400"];
+        }
+        case "Green": {
+            return dark ? accentColors["green-600"] : accentColors["green-400"];
+        }
+        case "Cyan": {
+            return dark ? accentColors["cyan-600"] : accentColors["cyan-400"];
+        }
+        case "Blue": {
+            return dark ? accentColors["blue-600"] : accentColors["blue-400"];
+        }
+        case "Purple": {
+            return dark ? accentColors["purple-600"] : accentColors["purple-400"];
+        }
+        case "Magenta": {
+            return dark ? accentColors["magenta-600"] : accentColors["magenta-400"];
+        }
+    }
+};
+
+export const makeThemes = () => {
+    return {
+        dark: colorsToHex(makeTheme("Dark")) as Theme,
+        light: colorsToHex(makeTheme("Light")) as Theme,
+    };
+};
+
+export const makeMappings = () => {
+    const { dark, light } = makeThemes();
+
+    return {
+        dark: makeMapping(dark),
+        light: makeMapping(light),
+    };
+};
+
+export const generateTheme = (mode: Mode, accent: Accent) => {
+    const base = colorsToHex(baseTones) as typeof baseTones;
+    const accentColor = colorToHex(makeAccentColor(mode, accent));
+    const terminal = generateTerminal(mode);
+    const themes = makeThemes();
+    const mappings = makeMappings();
+
+    const { ui, syntax } = mode === "Dark" ? mappings.dark : mappings.light;
+    ui["shadow"] = colorToHex(baseTones["black"]).concat("40");
+    const theme = mode === "Dark" ? themes.dark : themes.light;
+
+    const test = "#FF00FF";
+
+    return {
+        $schema: "vscode://schemas/color-theme",
+        name: `Flexoki ${mode} ${accent}`,
+        colors: {
+            "activityBar.activeBackground": ui["secondary-background"],
+            "activityBar.activeBorder": ui["active-states"],
+            "activityBar.activeFocusBorder": ui["active-states"],
+            "activityBar.background": ui["secondary-background"],
+            "activityBar.border": ui["borders"],
+            // "activityBar.dropBorder": null,
+            "activityBar.foreground": ui["active-states"],
+            "activityBar.inactiveForeground": ui["primary-text"],
+            "activityBarBadge.background": ui["main-background"],
+            "activityBarBadge.foreground": ui["primary-text"],
+            "activityBarTop.activeBackground": ui["secondary-background"],
+            "activityBarTop.activeBorder": ui["active-states"],
+            "activityBarTop.background": ui["secondary-background"],
+            // "activityBarTop.dropBorder": null,
+            "activityBarTop.foreground": ui["active-states"],
+            "activityBarTop.inactiveForeground": ui["primary-text"],
+            "button.background": theme["ui"],
+            "button.border": theme["ui-3"],
+            "button.foreground": ui["primary-text"],
+            "button.hoverBackground": theme["ui-2"],
+            "button.secondaryBackground": theme["ui"],
+            "button.secondaryForeground": ui["primary-text"],
+            "button.secondaryHoverBackground": theme["ui-2"],
+            "button.separator": theme["ui-3"],
+            "commandCenter.activeBackground": theme["ui-2"],
+            "commandCenter.activeBorder": theme["ui-3"],
+            "commandCenter.activeForeground": ui["active-states"],
+            "commandCenter.background": theme["ui"],
+            "commandCenter.border": theme["ui-3"],
+            // "commandCenter.debuggingBackground": null,
+            "commandCenter.foreground": ui["primary-text"],
+            // "commandCenter.inactiveBorder": null,
+            "commandCenter.inactiveForeground": ui["muted-text"],
+            "dropdown.background": ui["secondary-background"],
+            "dropdown.border": ui["active-borders"],
+            "dropdown.foreground": ui["primary-text"],
+            "dropdown.listBackground": ui["secondary-background"],
+            "editor.background": ui["main-background"],
+            "editorGroup.border": ui["borders"],
+            "editorGroupHeader.border": ui["borders"],
+            "editorGroupHeader.tabsBackground": ui["secondary-background"],
+            "editorGroupHeader.tabsBorder": ui["borders"],
+            "editorHoverWidget.background": theme["ui"],
+            "editorHoverWidget.border": ui["borders"],
+            "editorHoverWidget.foreground": ui["primary-text"],
+            "editorHoverWidget.highlightForeground": ui["primary-text"],
+            "editorHoverWidget.statusBarBackground": theme["ui-2"],
+            "editorStickyScroll.background": ui["main-background"],
+            "editorStickyScroll.border": ui["borders"],
+            "editorStickyScroll.shadow": ui["shadow"],
+            "editorStickyScrollHover.background": theme["transparent"],
+            "editorWidget.background": theme["ui"],
+            "editorWidget.border": ui["borders"],
+            "editorWidget.foreground": ui["primary-text"],
+            "editorWidget.resizeBorder": ui["borders"],
+            "focusBorder": ui["active-states"],
+            "foreground": ui["primary-text"],
+            "icon.foreground": ui["muted-text"],
+            "input.background": ui["secondary-background"],
+            "input.border": ui["active-borders"],
+            "input.foreground": ui["primary-text"],
+            "input.placeholderForeground": ui["faint-text"],
+            "list.hoverBackground": theme["ui-2"],
+            "menu.background": ui["main-background"],
+            "menu.border": ui["borders"],
+            "menu.foreground": ui["primary-text"],
+            "menu.selectionBackground": theme["ui-2"],
+            // "menu.selectionBorder": null,
+            "menu.selectionForeground": ui["primary-text"],
+            "menu.separatorBackground": ui["borders"],
+            "menubar.selectionBackground": theme["ui-2"],
+            // "menubar.selectionBorder": null,
+            "menubar.selectionForeground": ui["primary-text"],
+            "panel.background": ui["secondary-background"],
+            "panel.border": ui["borders"],
+            // "panel.dropBorder": null,
+            "panelInput.border": ui["active-borders"],
+            "panelSection.border": ui["borders"],
+            // "panelSection.dropBackground": null,
+            "panelSectionHeader.background": ui["main-background"],
+            "panelSectionHeader.border": ui["borders"],
+            "panelSectionHeader.foreground": ui["primary-text"],
+            "panelStickyScroll.background": ui["main-background"],
+            "panelStickyScroll.border": ui["borders"],
+            "panelStickyScroll.shadow": ui["shadow"],
+            "panelTitle.activeBorder": ui["active-states"],
+            "panelTitle.activeForeground": ui["primary-text"],
+            "panelTitle.inactiveForeground": ui["muted-text"],
+            "quickInput.background": ui["main-background"],
+            "quickInput.foreground": ui["primary-text"],
+            // Use quickInputList.focusBackground instead
+            // "quickInput.list.focusBackground": ui["active-states"],
+            "quickInputList.focusBackground": theme["ui-2"],
+            "quickInputList.focusForeground": ui["primary-text"],
+            "quickInputList.focusIconForeground": ui["primary-text"],
+            "quickInputTitle.background": test,
+            "sideBar.background": ui["secondary-background"],
+            "sideBar.border": ui["borders"],
+            "sideBar.foreground": ui["primary-text"],
+            "sideBarSectionHeader.background": theme["ui"],
+            "sideBarSectionHeader.border": ui["borders"],
+            "sideBarSectionHeader.foreground": ui["primary-text"],
+            "sideBarTitle.foreground": ui["primary-text"],
+            "statusBar.background": ui["secondary-background"],
+            "statusBar.border": ui["borders"],
+            "statusBar.debuggingBackground": theme["cy2"],
+            "statusBar.debuggingForeground": base["paper"],
+            "statusBar.focusBorder": ui["active-states"],
+            "statusBar.foreground": ui["primary-text"],
+            "statusBar.noFolderBackground": ui["secondary-background"],
+            "tab.activeBackground": ui["main-background"],
+            "tab.activeBorder": ui["transparent"],
+            "tab.activeBorderTop": ui["active-states"],
+            "tab.activeForeground": ui["primary-text"],
+            "tab.border": ui["borders"],
+            "tab.hoverBackground": ui["main-background"],
+            "tab.hoverBorder": ui["hovered-borders"],
+            "tab.hoverForeground": ui["primary-text"],
+            "tab.inactiveBackground": ui["transparent"],
+            "tab.inactiveForeground": ui["muted-text"],
+            "tab.lastPinnedBorder": test,
+            "tab.selectedBackground": ui["main-background"],
+            "tab.selectedBorderTop": ui["transparent"],
+            "tab.selectedForeground": ui["muted-text"],
+            "tab.unfocusedActiveBorder": ui["transparent"],
+            "tab.unfocusedActiveBorderTop": ui["transparent"],
+            "tab.unfocusedHoverBackground": ui["main-background"],
+            "tab.unfocusedHoverBorder": ui["hovered-borders"],
+            "tab.unfocusedHoverForeground": ui["primary-text"],
+            "terminal.ansiBlack": terminal["black"],
+            "terminal.ansiBlue": terminal["blue"],
+            "terminal.ansiBrightBlack": terminal["brightBlack"],
+            "terminal.ansiBrightBlue": terminal["brightBlue"],
+            "terminal.ansiBrightCyan": terminal["brightCyan"],
+            "terminal.ansiBrightGreen": terminal["brightGreen"],
+            "terminal.ansiBrightMagenta": terminal["brightPurple"],
+            "terminal.ansiBrightRed": terminal["brightRed"],
+            "terminal.ansiBrightWhite": terminal["brightWhite"],
+            "terminal.ansiBrightYellow": terminal["brightYellow"],
+            "terminal.ansiCyan": terminal["cyan"],
+            "terminal.ansiGreen": terminal["green"],
+            "terminal.ansiMagenta": terminal["purple"],
+            "terminal.ansiRed": terminal["red"],
+            "terminal.ansiWhite": terminal["white"],
+            "terminal.ansiYellow": terminal["yellow"],
+            "terminal.background": ui["secondary-background"],
+            "terminal.border": ui["borders"],
+            "terminal.foreground": terminal["foreground"],
+            "terminal.inactiveSelectionBackground": ui["hovered-borders"],
+            "terminal.selectionBackground": terminal["selectionBackground"],
+            "terminal.tab.activeBorder": ui["active-states"],
+            "terminalCursor.background": terminal["background"],
+            "terminalCursor.foreground": terminal["foreground"],
+            "titleBar.activeBackground": ui["secondary-background"],
+            "titleBar.activeForeground": ui["primary-text"],
+            "titleBar.border": ui["borders"],
+            "titleBar.inactiveBackground": ui["secondary-background"],
+            "titleBar.inactiveForeground": ui["muted-text"],
+            "welcomePage.background": ui["main-background"],
+            "welcomePage.progress.background": theme["ui"],
+            "welcomePage.progress.foreground": theme["ui-3"],
+            "welcomePage.tileBackground": theme["ui"],
+            "welcomePage.tileBorder": ui["borders"],
+            "welcomePage.tileHoverBackground": theme["ui-2"],
+            "widget.border": ui["borders"],
+            "widget.shadow": ui["shadow"],
+        },
+        tokenColors: mode === "Dark" ? darkTokenColors() : lightTokenColors(),
+        semanticHighlighting: true,
+        // semanticTokenColors: {
+        //     newOperator: syntax["operators"],
+        //     stringLiteral: syntax["strings"],
+        //     customLiteral: syntax["strings"],
+        //     numberLiteral: syntax["numbers"],
+        // },
+    };
+};
