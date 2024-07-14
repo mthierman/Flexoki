@@ -245,6 +245,11 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         $schema: "vscode://schemas/color-theme",
         name: `Flexoki ${mode} ${accent}`,
         colors: {
+            "scrollbar.shadow": ui["shadow"],
+            "scrollbarSlider.activeBackground": ui["accent"].concat("40"),
+            "scrollbarSlider.background": ui["accent"].concat("26"),
+            "scrollbarSlider.hoverBackground": ui["accent"].concat("33"),
+
             "activityBar.activeBackground": ui["secondary-background"],
             "activityBar.activeBorder": ui["accent"],
             "activityBar.activeFocusBorder": ui["accent"],

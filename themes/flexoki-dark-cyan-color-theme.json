@@ -2,6 +2,10 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Dark Cyan",
     "colors": {
+        "scrollbar.shadow": "#100f0f40",
+        "scrollbarSlider.activeBackground": "#24837b40",
+        "scrollbarSlider.background": "#24837b26",
+        "scrollbarSlider.hoverBackground": "#24837b33",
         "activityBar.activeBackground": "#1c1b1a",
         "activityBar.activeBorder": "#24837b",
         "activityBar.activeFocusBorder": "#24837b",
