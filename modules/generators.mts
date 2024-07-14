@@ -245,6 +245,11 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         $schema: "vscode://schemas/color-theme",
         name: `Flexoki ${mode} ${accent}`,
         colors: {
+            "listFilterWidget.background": theme["ui"],
+            "listFilterWidget.noMatchesOutline": ui["transparent"],
+            "listFilterWidget.outline": ui["borders"],
+            "listFilterWidget.shadow": ui["shadow"],
+
             "list.activeSelectionBackground": ui["accent"].concat("33"),
             "list.activeSelectionForeground": ui["primary-text"],
             "list.activeSelectionIconForeground": ui["primary-text"],

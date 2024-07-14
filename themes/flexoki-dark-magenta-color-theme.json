@@ -2,6 +2,10 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Dark Magenta",
     "colors": {
+        "listFilterWidget.background": "#282726",
+        "listFilterWidget.noMatchesOutline": "#0000",
+        "listFilterWidget.outline": "#282726",
+        "listFilterWidget.shadow": "#100f0f40",
         "list.activeSelectionBackground": "#a02f6f33",
         "list.activeSelectionForeground": "#cecdc3",
         "list.activeSelectionIconForeground": "#cecdc3",

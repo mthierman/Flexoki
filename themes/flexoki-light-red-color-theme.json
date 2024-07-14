@@ -2,6 +2,10 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Light Red",
     "colors": {
+        "listFilterWidget.background": "#e6e4d9",
+        "listFilterWidget.noMatchesOutline": "#fff0",
+        "listFilterWidget.outline": "#e6e4d9",
+        "listFilterWidget.shadow": "#100f0f40",
         "list.activeSelectionBackground": "#d14d4133",
         "list.activeSelectionForeground": "#100f0f",
         "list.activeSelectionIconForeground": "#100f0f",
