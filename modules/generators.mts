@@ -250,7 +250,6 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "breadcrumb.focusForeground": ui["primary-text"],
             "breadcrumb.foreground": ui["muted-text"],
             "breadcrumbPicker.background": ui["main-background"],
-
             "activityBar.activeBackground": ui["secondary-background"],
             "activityBar.activeBorder": ui["accent"],
             "activityBar.activeFocusBorder": ui["accent"],
@@ -280,6 +279,13 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "button.secondaryForeground": ui["primary-text"],
             "button.secondaryHoverBackground": theme["ui-2"],
             "button.separator": theme["ui-3"],
+
+            "checkbox.background": theme["ui"],
+            "checkbox.border": theme["ui-3"],
+            "checkbox.foreground": ui["primary-text"],
+            "checkbox.selectBackground": ui["accent"],
+            "checkbox.selectBorder": ui["accent"],
+
             "commandCenter.activeBackground": theme["ui-2"],
             "commandCenter.activeBorder": theme["ui-3"],
             "commandCenter.activeForeground": ui["primary-text"],
