@@ -6,41 +6,41 @@ import { colorToHex, colorsToHex } from "./utilities.mjs";
 
 export const makeBaseTones = (): BaseTones => {
     return {
-        "black": new Color("#100F0F"),
-        "base-950": new Color("#1C1B1A"),
-        "base-900": new Color("#282726"),
-        "base-850": new Color("#343331"),
-        "base-800": new Color("#403E3C"),
-        "base-700": new Color("#575653"),
-        "base-600": new Color("#6F6E69"),
-        "base-500": new Color("#878580"),
-        "base-300": new Color("#B7B5AC"),
-        "base-200": new Color("#CECDC3"),
-        "base-150": new Color("#DAD8CE"),
-        "base-100": new Color("#E6E4D9"),
-        "base-50": new Color("#F2F0E5"),
-        "paper": new Color("#FFFCF0"),
+        black: new Color("#100F0F"),
+        base_950: new Color("#1C1B1A"),
+        base_900: new Color("#282726"),
+        base_850: new Color("#343331"),
+        base_800: new Color("#403E3C"),
+        base_700: new Color("#575653"),
+        base_600: new Color("#6F6E69"),
+        base_500: new Color("#878580"),
+        base_300: new Color("#B7B5AC"),
+        base_200: new Color("#CECDC3"),
+        base_150: new Color("#DAD8CE"),
+        base_100: new Color("#E6E4D9"),
+        base_50: new Color("#F2F0E5"),
+        paper: new Color("#FFFCF0"),
     };
 };
 
 export const makeAccentColors = (): AccentColors => {
     return {
-        "red-600": new Color("#AF3029"),
-        "orange-600": new Color("#BC5215"),
-        "yellow-600": new Color("#AD8301"),
-        "green-600": new Color("#66800B"),
-        "cyan-600": new Color("#24837B"),
-        "blue-600": new Color("#205EA6"),
-        "purple-600": new Color("#5E409D"),
-        "magenta-600": new Color("#A02F6F"),
-        "red-400": new Color("#D14D41"),
-        "orange-400": new Color("#DA702C"),
-        "yellow-400": new Color("#D0A215"),
-        "green-400": new Color("#879A39"),
-        "cyan-400": new Color("#3AA99F"),
-        "blue-400": new Color("#4385BE"),
-        "purple-400": new Color("#8B7EC8"),
-        "magenta-400": new Color("#CE5D97"),
+        red_600: new Color("#AF3029"),
+        orange_600: new Color("#BC5215"),
+        yellow_600: new Color("#AD8301"),
+        green_600: new Color("#66800B"),
+        cyan_600: new Color("#24837B"),
+        blue_600: new Color("#205EA6"),
+        purple_600: new Color("#5E409D"),
+        magenta_600: new Color("#A02F6F"),
+        red_400: new Color("#D14D41"),
+        orange_400: new Color("#DA702C"),
+        yellow_400: new Color("#D0A215"),
+        green_400: new Color("#879A39"),
+        cyan_400: new Color("#3AA99F"),
+        blue_400: new Color("#4385BE"),
+        purple_400: new Color("#8B7EC8"),
+        magenta_400: new Color("#CE5D97"),
     };
 };
 
@@ -51,60 +51,60 @@ export const makeTheme = (mode: Mode): Theme => {
     switch (mode) {
         case "Dark": {
             return {
-                "bg": baseTones["black"],
-                "bg-2": baseTones["base-950"],
-                "ui": baseTones["base-900"],
-                "ui-2": baseTones["base-850"],
-                "ui-3": baseTones["base-800"],
-                "tx-3": baseTones["base-700"],
-                "tx-2": baseTones["base-500"],
-                "tx": baseTones["base-200"],
-                "re": accentColors["red-400"],
-                "re2": accentColors["red-600"],
-                "or": accentColors["orange-400"],
-                "or2": accentColors["orange-600"],
-                "ye": accentColors["yellow-400"],
-                "ye2": accentColors["yellow-600"],
-                "gr": accentColors["green-400"],
-                "gr2": accentColors["green-600"],
-                "cy": accentColors["cyan-400"],
-                "cy2": accentColors["cyan-600"],
-                "bl": accentColors["blue-400"],
-                "bl2": accentColors["blue-600"],
-                "pu": accentColors["purple-400"],
-                "pu2": accentColors["purple-600"],
-                "ma": accentColors["magenta-400"],
-                "ma2": accentColors["magenta-600"],
-                "transparent": new Color("#00000000"),
+                bg: baseTones.black,
+                bg2: baseTones.base_950,
+                ui: baseTones.base_900,
+                ui2: baseTones.base_850,
+                ui3: baseTones.base_800,
+                tx3: baseTones.base_700,
+                tx2: baseTones.base_500,
+                tx: baseTones.base_200,
+                re: accentColors.red_400,
+                re2: accentColors.red_600,
+                or: accentColors.orange_400,
+                or2: accentColors.orange_600,
+                ye: accentColors.yellow_400,
+                ye2: accentColors.yellow_600,
+                gr: accentColors.green_400,
+                gr2: accentColors.green_600,
+                cy: accentColors.cyan_400,
+                cy2: accentColors.cyan_600,
+                bl: accentColors.blue_400,
+                bl2: accentColors.blue_600,
+                pu: accentColors.purple_400,
+                pu2: accentColors.purple_600,
+                ma: accentColors.magenta_400,
+                ma2: accentColors.magenta_600,
+                transparent: new Color("#00000000"),
             };
         }
         case "Light": {
             return {
-                "bg": baseTones["paper"],
-                "bg-2": baseTones["base-50"],
-                "ui": baseTones["base-100"],
-                "ui-2": baseTones["base-150"],
-                "ui-3": baseTones["base-200"],
-                "tx-3": baseTones["base-300"],
-                "tx-2": baseTones["base-600"],
-                "tx": baseTones["black"],
-                "re": accentColors["red-600"],
-                "re2": accentColors["red-400"],
-                "or": accentColors["orange-600"],
-                "or2": accentColors["orange-400"],
-                "ye": accentColors["yellow-600"],
-                "ye2": accentColors["yellow-400"],
-                "gr": accentColors["green-600"],
-                "gr2": accentColors["green-400"],
-                "cy": accentColors["cyan-600"],
-                "cy2": accentColors["cyan-400"],
-                "bl": accentColors["blue-600"],
-                "bl2": accentColors["blue-400"],
-                "pu": accentColors["purple-600"],
-                "pu2": accentColors["purple-400"],
-                "ma": accentColors["magenta-600"],
-                "ma2": accentColors["magenta-400"],
-                "transparent": new Color("#FFFFFF00"),
+                bg: baseTones.paper,
+                bg2: baseTones.base_50,
+                ui: baseTones.base_100,
+                ui2: baseTones.base_150,
+                ui3: baseTones.base_200,
+                tx3: baseTones.base_300,
+                tx2: baseTones.base_600,
+                tx: baseTones.black,
+                re: accentColors.red_600,
+                re2: accentColors.red_400,
+                or: accentColors.orange_600,
+                or2: accentColors.orange_400,
+                ye: accentColors.yellow_600,
+                ye2: accentColors.yellow_400,
+                gr: accentColors.green_600,
+                gr2: accentColors.green_400,
+                cy: accentColors.cyan_600,
+                cy2: accentColors.cyan_400,
+                bl: accentColors.blue_600,
+                bl2: accentColors.blue_400,
+                pu: accentColors.purple_600,
+                pu2: accentColors.purple_400,
+                ma: accentColors.magenta_600,
+                ma2: accentColors.magenta_400,
+                transparent: new Color("#FFFFFF00"),
             };
         }
     }
@@ -113,35 +113,35 @@ export const makeTheme = (mode: Mode): Theme => {
 export const makeMapping = (theme: Theme): Mapping => {
     return {
         ui: {
-            "main-background": theme["bg"],
-            "secondary-background": theme["bg-2"],
-            "borders": theme["ui"],
-            "hovered-borders": theme["ui-2"],
-            "active-borders": theme["ui-3"],
-            "faint-text": theme["tx-3"],
-            "muted-text": theme["tx-2"],
-            "primary-text": theme["tx"],
-            "error-text": theme["re"],
-            "warning-text": theme["or"],
-            "success-text": theme["gr"],
-            "links": theme["cy"],
-            "active-states": theme["cy"],
-            "transparent": theme["transparent"],
+            main_background: theme.bg,
+            secondary_background: theme.bg2,
+            borders: theme.ui,
+            hovered_borders: theme.ui2,
+            active_borders: theme.ui3,
+            faint_text: theme.tx3,
+            muted_text: theme.tx2,
+            primary_text: theme.tx,
+            error_text: theme.re,
+            warning_text: theme.or,
+            success_text: theme.gr,
+            links: theme.cy,
+            active_states: theme.cy,
+            transparent: theme.transparent,
         },
         syntax: {
-            "comments": theme["tx-3"],
-            "punctuation": theme["tx-2"],
-            "operators": theme["tx-2"],
-            "invalid": theme["re"],
-            "imports": theme["re"],
-            "functions": theme["or"],
-            "constants": theme["ye"],
-            "keywords": theme["gr"],
-            "strings": theme["cy"],
-            "variables": theme["bl"],
-            "attributes": theme["bl"],
-            "numbers": theme["pu"],
-            "language-features": theme["ma"],
+            comments: theme.tx3,
+            punctuation: theme.tx2,
+            operators: theme.tx2,
+            invalid: theme.re,
+            imports: theme.re,
+            functions: theme.or,
+            constants: theme.ye,
+            keywords: theme.gr,
+            strings: theme.cy,
+            variables: theme.bl,
+            attributes: theme.bl,
+            numbers: theme.pu,
+            language_features: theme.ma,
         },
     };
 };
@@ -152,28 +152,28 @@ export const makeAccentColor = (mode: Mode, accent: Accent) => {
 
     switch (accent) {
         case "Red": {
-            return dark ? accentColors["red-600"] : accentColors["red-400"];
+            return dark ? accentColors.red_600 : accentColors.red_400;
         }
         case "Orange": {
-            return dark ? accentColors["orange-600"] : accentColors["orange-400"];
+            return dark ? accentColors.orange_600 : accentColors.orange_400;
         }
         case "Yellow": {
-            return dark ? accentColors["yellow-600"] : accentColors["yellow-400"];
+            return dark ? accentColors.yellow_600 : accentColors.yellow_400;
         }
         case "Green": {
-            return dark ? accentColors["green-600"] : accentColors["green-400"];
+            return dark ? accentColors.green_600 : accentColors.green_400;
         }
         case "Cyan": {
-            return dark ? accentColors["cyan-600"] : accentColors["cyan-400"];
+            return dark ? accentColors.cyan_600 : accentColors.cyan_400;
         }
         case "Blue": {
-            return dark ? accentColors["blue-600"] : accentColors["blue-400"];
+            return dark ? accentColors.blue_600 : accentColors.blue_400;
         }
         case "Purple": {
-            return dark ? accentColors["purple-600"] : accentColors["purple-400"];
+            return dark ? accentColors.purple_600 : accentColors.purple_400;
         }
         case "Magenta": {
-            return dark ? accentColors["magenta-600"] : accentColors["magenta-400"];
+            return dark ? accentColors.magenta_600 : accentColors.magenta_400;
         }
     }
 };
