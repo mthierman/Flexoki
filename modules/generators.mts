@@ -265,6 +265,10 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "badge.background": ui["accent"],
             "badge.foreground": baseTones["paper"],
 
+            "banner.background": theme["ui"],
+            "banner.foreground": ui["primary-text"],
+            "banner.iconForeground": ui["primary-text"],
+
             "button.background": theme["ui"],
             "button.border": theme["ui-3"],
             "button.foreground": ui["primary-text"],
