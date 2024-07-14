@@ -2,6 +2,11 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Dark Orange",
     "colors": {
+        "breadcrumb.activeSelectionForeground": "#bc5215",
+        "breadcrumb.background": "#100f0f",
+        "breadcrumb.focusForeground": "#cecdc3",
+        "breadcrumb.foreground": "#878580",
+        "breadcrumbPicker.background": "#100f0f",
         "activityBar.activeBackground": "#1c1b1a",
         "activityBar.activeBorder": "#bc5215",
         "activityBar.activeFocusBorder": "#bc5215",

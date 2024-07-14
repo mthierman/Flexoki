@@ -245,6 +245,12 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         $schema: "vscode://schemas/color-theme",
         name: `Flexoki ${mode} ${accent}`,
         colors: {
+            "breadcrumb.activeSelectionForeground": ui["accent"],
+            "breadcrumb.background": ui["main-background"],
+            "breadcrumb.focusForeground": ui["primary-text"],
+            "breadcrumb.foreground": ui["muted-text"],
+            "breadcrumbPicker.background": ui["main-background"],
+
             "activityBar.activeBackground": ui["secondary-background"],
             "activityBar.activeBorder": ui["accent"],
             "activityBar.activeFocusBorder": ui["accent"],

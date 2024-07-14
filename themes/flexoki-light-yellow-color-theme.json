@@ -2,6 +2,11 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Light Yellow",
     "colors": {
+        "breadcrumb.activeSelectionForeground": "#d0a215",
+        "breadcrumb.background": "#fffcf0",
+        "breadcrumb.focusForeground": "#100f0f",
+        "breadcrumb.foreground": "#6f6e69",
+        "breadcrumbPicker.background": "#fffcf0",
         "activityBar.activeBackground": "#f2f0e5",
         "activityBar.activeBorder": "#d0a215",
         "activityBar.activeFocusBorder": "#d0a215",

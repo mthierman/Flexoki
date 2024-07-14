@@ -2,6 +2,11 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Dark Blue",
     "colors": {
+        "breadcrumb.activeSelectionForeground": "#205ea6",
+        "breadcrumb.background": "#100f0f",
+        "breadcrumb.focusForeground": "#cecdc3",
+        "breadcrumb.foreground": "#878580",
+        "breadcrumbPicker.background": "#100f0f",
         "activityBar.activeBackground": "#1c1b1a",
         "activityBar.activeBorder": "#205ea6",
         "activityBar.activeFocusBorder": "#205ea6",
