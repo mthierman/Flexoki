@@ -336,5 +336,11 @@
             }
         }
     ],
-    "semanticHighlighting": true
+    "semanticHighlighting": true,
+    "semanticTokenColors": {
+        "newOperator": "#6f6e69",
+        "stringLiteral": "#24837b",
+        "customLiteral": "#24837b",
+        "numberLiteral": "#5e409d"
+    }
 }

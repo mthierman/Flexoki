@@ -562,18 +562,12 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
                 },
             },
         ],
-        // tokenColors: [
-        //     { scope: "emphasis", settings: { fontStyle: "italic" } },
-        //     { scope: "strong", settings: { fontStyle: "bold" } },
-        //     { scope: "header", settings: { foreground: test } },
-        //     { scope: "comment", settings: { foreground: syntax["comments"] } },
-        // ],
         semanticHighlighting: true,
-        // semanticTokenColors: {
-        //     newOperator: syntax["operators"],
-        //     stringLiteral: syntax["strings"],
-        //     customLiteral: syntax["strings"],
-        //     numberLiteral: syntax["numbers"],
-        // },
+        semanticTokenColors: {
+            newOperator: syntax["operators"],
+            stringLiteral: syntax["strings"],
+            customLiteral: syntax["strings"],
+            numberLiteral: syntax["numbers"],
+        },
     };
 };
