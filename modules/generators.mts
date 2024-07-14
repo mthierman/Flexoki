@@ -568,27 +568,21 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
                 },
             },
             {
-                scope: "entity.name.type",
-                settings: {
-                    foreground: theme["re"],
-                },
-            },
-            {
                 scope: ["keyword", "entity.name.keyword"],
                 settings: {
                     foreground: syntax["keywords"],
                 },
             },
             {
-                scope: ["storage.type"],
+                scope: ["entity.name.type", "storage.type"],
                 settings: {
-                    foreground: theme["re"],
+                    foreground: theme["pu"],
                 },
             },
             {
                 scope: ["storage.modifier"],
                 settings: {
-                    foreground: theme["re"],
+                    foreground: theme["pu"],
                 },
             },
             {
@@ -598,9 +592,39 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
                 },
             },
             {
+                scope: ["meta.block.namespace"],
+                settings: {
+                    foreground: syntax["keywords"],
+                },
+            },
+            {
                 scope: ["variable"],
                 settings: {
                     foreground: syntax["variables"],
+                },
+            },
+            {
+                scope: ["constant"],
+                settings: {
+                    foreground: syntax["constants"],
+                },
+            },
+            {
+                scope: ["constant.numeric"],
+                settings: {
+                    foreground: syntax["numbers"],
+                },
+            },
+            {
+                scope: ["constant.character"],
+                settings: {
+                    foreground: syntax["strings"],
+                },
+            },
+            {
+                scope: ["constant.language"],
+                settings: {
+                    foreground: syntax["language-features"],
                 },
             },
             {
