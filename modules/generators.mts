@@ -531,13 +531,49 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "widget.border": ui["borders"],
             "widget.shadow": ui["shadow"],
         },
-        tokenColors: dark ? darkTokens() : lightTokens(),
+        // tokenColors: dark ? darkTokens() : lightTokens(),
+        tokenColors: [
+            { scope: "emphasis", settings: { fontStyle: "italic" } },
+            { scope: "strong", settings: { fontStyle: "bold" } },
+            { scope: "header", settings: { foreground: theme["bl"] } },
+            { scope: "comment", settings: { foreground: syntax["comments"] } },
+            {
+                scope: "token.info-token",
+                settings: {
+                    foreground: theme["bl"],
+                },
+            },
+            {
+                scope: "token.warn-token",
+                settings: {
+                    foreground: ui["warning-text"],
+                },
+            },
+            {
+                scope: "token.error-token",
+                settings: {
+                    foreground: ui["error-text"],
+                },
+            },
+            {
+                scope: "token.debug-token",
+                settings: {
+                    foreground: theme["pu"],
+                },
+            },
+        ],
+        // tokenColors: [
+        //     { scope: "emphasis", settings: { fontStyle: "italic" } },
+        //     { scope: "strong", settings: { fontStyle: "bold" } },
+        //     { scope: "header", settings: { foreground: test } },
+        //     { scope: "comment", settings: { foreground: syntax["comments"] } },
+        // ],
         semanticHighlighting: true,
-        semanticTokenColors: {
-            newOperator: syntax["operators"],
-            stringLiteral: syntax["strings"],
-            customLiteral: syntax["strings"],
-            numberLiteral: syntax["numbers"],
-        },
+        // semanticTokenColors: {
+        //     newOperator: syntax["operators"],
+        //     stringLiteral: syntax["strings"],
+        //     customLiteral: syntax["strings"],
+        //     numberLiteral: syntax["numbers"],
+        // },
     };
 };
