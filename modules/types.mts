@@ -88,6 +88,7 @@ export interface UI {
     "active-states": Color | string;
     "transparent": Color | string;
     "shadow"?: Color | string;
+    "accent"?: Color | string;
 }
 
 export interface Syntax {
