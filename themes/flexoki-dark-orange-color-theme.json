@@ -334,6 +334,68 @@
             "settings": {
                 "foreground": "#8b7ec8"
             }
+        },
+        {
+            "scope": "entity.name.function",
+            "settings": {
+                "foreground": "#da702c"
+            }
+        },
+        {
+            "scope": "entity.name.type",
+            "settings": {
+                "foreground": "#d14d41"
+            }
+        },
+        {
+            "scope": [
+                "keyword",
+                "entity.name.keyword"
+            ],
+            "settings": {
+                "foreground": "#879a39"
+            }
+        },
+        {
+            "scope": [
+                "storage.type"
+            ],
+            "settings": {
+                "foreground": "#d14d41"
+            }
+        },
+        {
+            "scope": [
+                "storage.modifier"
+            ],
+            "settings": {
+                "foreground": "#d14d41"
+            }
+        },
+        {
+            "scope": [
+                "string",
+                "meta.object"
+            ],
+            "settings": {
+                "foreground": "#3aa99f"
+            }
+        },
+        {
+            "scope": [
+                "variable"
+            ],
+            "settings": {
+                "foreground": "#4385be"
+            }
+        },
+        {
+            "scope": [
+                "invalid"
+            ],
+            "settings": {
+                "foreground": "#d14d41"
+            }
         }
     ],
     "semanticHighlighting": true,

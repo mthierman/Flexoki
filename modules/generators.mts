@@ -561,6 +561,54 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
                     foreground: theme["pu"],
                 },
             },
+            {
+                scope: "entity.name.function",
+                settings: {
+                    foreground: syntax["functions"],
+                },
+            },
+            {
+                scope: "entity.name.type",
+                settings: {
+                    foreground: theme["re"],
+                },
+            },
+            {
+                scope: ["keyword", "entity.name.keyword"],
+                settings: {
+                    foreground: syntax["keywords"],
+                },
+            },
+            {
+                scope: ["storage.type"],
+                settings: {
+                    foreground: theme["re"],
+                },
+            },
+            {
+                scope: ["storage.modifier"],
+                settings: {
+                    foreground: theme["re"],
+                },
+            },
+            {
+                scope: ["string", "meta.object"],
+                settings: {
+                    foreground: syntax["strings"],
+                },
+            },
+            {
+                scope: ["variable"],
+                settings: {
+                    foreground: syntax["variables"],
+                },
+            },
+            {
+                scope: ["invalid"],
+                settings: {
+                    foreground: syntax["invalid"],
+                },
+            },
         ],
         semanticHighlighting: true,
         semanticTokenColors: {
