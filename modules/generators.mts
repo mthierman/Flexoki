@@ -1,5 +1,6 @@
 import Color from "colorjs.io";
 import { defaultDarkTokens, defaultLightTokens } from "./default_tokens.mjs";
+import { darkTokens, lightTokens } from "./tokens.mjs";
 import type { Accent, AccentColors, BaseTones, Mapping, Mode, Theme } from "./types.mjs";
 import { colorToHex, colorsToHex } from "./utilities.mjs";
 
@@ -530,7 +531,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "widget.border": ui["borders"],
             "widget.shadow": ui["shadow"],
         },
-        tokenColors: dark ? defaultDarkTokens() : defaultLightTokens(),
+        tokenColors: dark ? darkTokens() : lightTokens(),
         semanticHighlighting: true,
         semanticTokenColors: {
             newOperator: syntax["operators"],

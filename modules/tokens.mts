@@ -1,4 +1,4 @@
-export const defaultLightTokens = () => {
+export const lightTokens = () => {
     const vs = [
         {
             scope: [
@@ -392,7 +392,7 @@ export const defaultLightTokens = () => {
     return vs.concat(plus);
 };
 
-export const defaultDarkTokens = () => {
+export const darkTokens = () => {
     const vs = [
         {
             scope: [
