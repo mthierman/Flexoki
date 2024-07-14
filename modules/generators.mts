@@ -1,8 +1,9 @@
 import Color from "colorjs.io";
-import { Accent, Mapping, Mode, Theme } from "./types.mjs";
+import { defaultDarkTokens, defaultLightTokens } from "./tokens.mjs";
+import type { Accent, AccentColors, BaseTones, Mapping, Mode, Theme } from "./types.mjs";
 import { colorToHex, colorsToHex } from "./utility.mjs";
 
-export const makeBaseTones = () => {
+export const makeBaseTones = (): BaseTones => {
     return {
         "black": new Color("#100F0F"),
         "base-950": new Color("#1C1B1A"),
@@ -21,7 +22,7 @@ export const makeBaseTones = () => {
     };
 };
 
-export const makeAccentColors = () => {
+export const makeAccentColors = (): AccentColors => {
     return {
         "red-600": new Color("#AF3029"),
         "orange-600": new Color("#BC5215"),
@@ -192,16 +193,52 @@ export const makeMappings = () => {
     };
 };
 
+export const generateTerminal = (mode: Mode) => {
+    const base = colorsToHex(makeBaseTones()) as BaseTones;
+    const themes = makeThemes();
+    const mappings = makeMappings();
+    const dark = mode === "Dark";
+
+    const { ui, syntax } = dark ? mappings.dark : mappings.light;
+    const theme = dark ? themes.dark : themes.light;
+
+    return {
+        background: ui["main-background"],
+        black: base["base-950"],
+        blue: theme["bl2"],
+        brightBlack: base["base-900"],
+        brightBlue: theme["bl"],
+        brightCyan: theme["cy"],
+        brightGreen: theme["gr"],
+        brightPurple: theme["ma"],
+        brightRed: theme["re"],
+        brightWhite: base["base-50"],
+        brightYellow: theme["ye"],
+        cursorColor: ui["primary-text"],
+        cyan: theme["cy2"],
+        foreground: ui["primary-text"],
+        green: theme["gr2"],
+        name: `Flexoki ${mode}`,
+        purple: theme["ma2"],
+        red: theme["re2"],
+        selectionBackground: ui["active-borders"],
+        white: base["base-100"],
+        yellow: theme["ye2"],
+    };
+};
+
 export const generateTheme = (mode: Mode, accent: Accent) => {
-    const base = colorsToHex(baseTones) as typeof baseTones;
-    const accentColor = colorToHex(makeAccentColor(mode, accent));
+    const base = colorsToHex(makeBaseTones()) as BaseTones;
+    const accentColor = colorToHex(makeAccentColor(mode, accent) as Color);
+
     const terminal = generateTerminal(mode);
     const themes = makeThemes();
     const mappings = makeMappings();
+    const dark = mode === "Dark";
 
-    const { ui, syntax } = mode === "Dark" ? mappings.dark : mappings.light;
-    ui["shadow"] = colorToHex(baseTones["black"]).concat("40");
-    const theme = mode === "Dark" ? themes.dark : themes.light;
+    const { ui, syntax } = dark ? mappings.dark : mappings.light;
+    ui["shadow"] = colorToHex(base["black"] as Color).concat("40");
+    const theme = dark ? themes.dark : themes.light;
 
     const test = "#FF00FF";
 
@@ -376,7 +413,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "widget.border": ui["borders"],
             "widget.shadow": ui["shadow"],
         },
-        tokenColors: mode === "Dark" ? darkTokenColors() : lightTokenColors(),
+        tokenColors: dark ? defaultDarkTokens() : defaultLightTokens(),
         semanticHighlighting: true,
         // semanticTokenColors: {
         //     newOperator: syntax["operators"],

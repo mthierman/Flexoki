@@ -4,6 +4,44 @@ export type Mode = "Dark" | "Light";
 
 export type Accent = "Red" | "Orange" | "Yellow" | "Green" | "Cyan" | "Blue" | "Purple" | "Magenta";
 
+export type BaseTones = {
+    [key: string]: Color | string;
+    "black": Color | string;
+    "base-950": Color | string;
+    "base-900": Color | string;
+    "base-850": Color | string;
+    "base-800": Color | string;
+    "base-700": Color | string;
+    "base-600": Color | string;
+    "base-500": Color | string;
+    "base-300": Color | string;
+    "base-200": Color | string;
+    "base-150": Color | string;
+    "base-100": Color | string;
+    "base-50": Color | string;
+    "paper": Color | string;
+};
+
+export type AccentColors = {
+    [key: string]: Color | string;
+    "red-600": Color | string;
+    "orange-600": Color | string;
+    "yellow-600": Color | string;
+    "green-600": Color | string;
+    "cyan-600": Color | string;
+    "blue-600": Color | string;
+    "purple-600": Color | string;
+    "magenta-600": Color | string;
+    "red-400": Color | string;
+    "orange-400": Color | string;
+    "yellow-400": Color | string;
+    "green-400": Color | string;
+    "cyan-400": Color | string;
+    "blue-400": Color | string;
+    "purple-400": Color | string;
+    "magenta-400": Color | string;
+};
+
 export interface Theme {
     [key: string]: Color | string;
     "bg": Color | string;
