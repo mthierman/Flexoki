@@ -237,7 +237,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
     const baseTones = colorsToHex(makeBaseTones()) as BaseTones;
     const theme = dark ? themes.dark : themes.light;
     const { ui, syntax } = dark ? mappings.dark : mappings.light;
-    ui["shadow"] = (baseTones["black"] as string).concat("40");
+    ui["shadow"] = (baseTones.black as string).concat("40");
     ui["accent"] = colorToHex(makeAccentColor(mode, accent) as Color);
 
     const test = "#FF00FF";
@@ -642,10 +642,10 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         ],
         semanticHighlighting: true,
         semanticTokenColors: {
-            newOperator: syntax["operators"],
-            stringLiteral: syntax["strings"],
-            customLiteral: syntax["strings"],
-            numberLiteral: syntax["numbers"],
+            newOperator: syntax.operators,
+            stringLiteral: syntax.strings,
+            customLiteral: syntax.strings,
+            numberLiteral: syntax.numbers,
         },
     };
 };
