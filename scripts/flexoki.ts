@@ -1,9 +1,6 @@
-import Color from "colorjs.io";
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { makeMapping, makeTheme } from "../modules/generators.mjs";
-import { defaultDarkTokens, defaultLightTokens } from "../modules/tokens.mjs";
-import type { Accent, Mapping, Mode, Syntax, Theme, UI } from "../modules/types.mjs";
+import { generateTerminal, generateTheme } from "../modules/generators.mjs";
 
 const outdir = {
     themes: resolve(import.meta.dirname, "..", "themes"),
