@@ -4,9 +4,13 @@ import { resolve } from "node:path";
 import { stdin, stdout } from "node:process";
 import { createInterface } from "node:readline/promises";
 
+const watchFolder = resolve(import.meta.dirname, "..", "..", "modules");
+
 function build() {
     console.clear();
-    console.log(`Building... ${new Date().toLocaleTimeString("en-US", { hour12: false })}`);
+    console.log(
+        `Watching ${watchFolder}... ${new Date().toLocaleTimeString("en-US", { hour12: false })}`,
+    );
     exec(`pnpm build`);
 }
 
@@ -19,8 +23,9 @@ cli.on("close", () => {
 
 build();
 
-const watcher = watch(resolve(import.meta.dirname, "..", "scripts", "flexoki.ts"), {
+const watcher = watch(watchFolder, {
     persistent: true,
+    recursive: true,
 });
 
 let watching = true;

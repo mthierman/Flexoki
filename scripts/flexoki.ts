@@ -3,8 +3,8 @@ import { resolve } from "node:path";
 import { generateTerminal, generateTheme } from "../modules/generators.mjs";
 
 const outdir = {
-    themes: resolve(import.meta.dirname, "..", "themes"),
-    terminal: resolve(import.meta.dirname, "..", "terminal"),
+    themes: resolve(import.meta.dirname, "..", "..", "themes"),
+    terminal: resolve(import.meta.dirname, "..", "..", "terminal"),
 };
 
 await mkdir(outdir.themes, { recursive: true });

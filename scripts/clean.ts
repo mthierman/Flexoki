@@ -3,8 +3,8 @@ import { rm } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const outdir = {
-    themes: resolve(import.meta.dirname, "..", "themes"),
-    terminal: resolve(import.meta.dirname, "..", "terminal"),
+    themes: resolve(import.meta.dirname, "..", "..", "themes"),
+    terminal: resolve(import.meta.dirname, "..", "..", "terminal"),
 };
 
 Object.values(outdir).forEach(async (dir) => {
