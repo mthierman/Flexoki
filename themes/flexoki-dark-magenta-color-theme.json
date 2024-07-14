@@ -2,6 +2,12 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Dark Magenta",
     "colors": {
+        "editorInlayHint.background": "#a02f6f0D",
+        "editorInlayHint.foreground": "#575653",
+        "editorInlayHint.parameterBackground": "#a02f6f0D",
+        "editorInlayHint.parameterForeground": "#575653",
+        "editorInlayHint.typeBackground": "#a02f6f0D",
+        "editorInlayHint.typeForeground": "#575653",
         "debugConsole.errorForeground": "#d14d41",
         "debugConsole.infoForeground": "#cecdc3",
         "debugConsole.sourceForeground": "#cecdc3",

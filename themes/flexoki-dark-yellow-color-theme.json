@@ -2,6 +2,12 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Dark Yellow",
     "colors": {
+        "editorInlayHint.background": "#ad83010D",
+        "editorInlayHint.foreground": "#575653",
+        "editorInlayHint.parameterBackground": "#ad83010D",
+        "editorInlayHint.parameterForeground": "#575653",
+        "editorInlayHint.typeBackground": "#ad83010D",
+        "editorInlayHint.typeForeground": "#575653",
         "debugConsole.errorForeground": "#d14d41",
         "debugConsole.infoForeground": "#cecdc3",
         "debugConsole.sourceForeground": "#cecdc3",

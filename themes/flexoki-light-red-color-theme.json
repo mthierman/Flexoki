@@ -2,6 +2,12 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Light Red",
     "colors": {
+        "editorInlayHint.background": "#d14d410D",
+        "editorInlayHint.foreground": "#b7b5ac",
+        "editorInlayHint.parameterBackground": "#d14d410D",
+        "editorInlayHint.parameterForeground": "#b7b5ac",
+        "editorInlayHint.typeBackground": "#d14d410D",
+        "editorInlayHint.typeForeground": "#b7b5ac",
         "debugConsole.errorForeground": "#af3029",
         "debugConsole.infoForeground": "#100f0f",
         "debugConsole.sourceForeground": "#100f0f",

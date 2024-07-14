@@ -245,13 +245,19 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         $schema: "vscode://schemas/color-theme",
         name: `Flexoki ${mode} ${accent}`,
         colors: {
+            "editorInlayHint.background": ui["accent"].concat("0D"),
+            "editorInlayHint.foreground": ui["faint-text"],
+            "editorInlayHint.parameterBackground": ui["accent"].concat("0D"),
+            "editorInlayHint.parameterForeground": ui["faint-text"],
+            "editorInlayHint.typeBackground": ui["accent"].concat("0D"),
+            "editorInlayHint.typeForeground": ui["faint-text"],
+
             "debugConsole.errorForeground": ui["error-text"],
             "debugConsole.infoForeground": ui["primary-text"],
             "debugConsole.sourceForeground": ui["primary-text"],
             "debugConsole.warningForeground": ui["warning-text"],
             "debugConsoleInputIcon.foreground": ui["primary-text"],
 
-            // "editorActiveLineNumber.foreground": ui["accent"],
             "editorLineNumber.activeForeground": ui["primary-text"],
             "editorLineNumber.dimmedForeground": ui["faint-text"],
             "editorLineNumber.foreground": ui["muted-text"],
