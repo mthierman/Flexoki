@@ -245,6 +245,17 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         $schema: "vscode://schemas/color-theme",
         name: `Flexoki ${mode} ${accent}`,
         colors: {
+            "debugConsole.errorForeground": ui["error-text"],
+            "debugConsole.infoForeground": ui["primary-text"],
+            "debugConsole.sourceForeground": ui["primary-text"],
+            "debugConsole.warningForeground": ui["warning-text"],
+            "debugConsoleInputIcon.foreground": ui["primary-text"],
+
+            // "editorActiveLineNumber.foreground": ui["accent"],
+            "editorLineNumber.activeForeground": ui["primary-text"],
+            "editorLineNumber.dimmedForeground": ui["faint-text"],
+            "editorLineNumber.foreground": ui["muted-text"],
+
             "activityBar.activeBackground": ui["secondary-background"],
             "activityBar.activeBorder": ui["accent"],
             "activityBar.activeFocusBorder": ui["accent"],
@@ -298,7 +309,6 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "dropdown.foreground": ui["primary-text"],
             "dropdown.listBackground": ui["secondary-background"],
             "editor.background": ui["main-background"],
-            "editorActiveLineNumber.foreground": ui["primary-text"],
             "editorBracketHighlight.foreground1": theme["or"],
             "editorBracketHighlight.foreground2": theme["ye"],
             "editorBracketHighlight.foreground3": theme["cy"],
@@ -451,11 +461,11 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         },
         tokenColors: dark ? defaultDarkTokens() : defaultLightTokens(),
         semanticHighlighting: true,
-        // semanticTokenColors: {
-        //     newOperator: syntax["operators"],
-        //     stringLiteral: syntax["strings"],
-        //     customLiteral: syntax["strings"],
-        //     numberLiteral: syntax["numbers"],
-        // },
+        semanticTokenColors: {
+            newOperator: syntax["operators"],
+            stringLiteral: syntax["strings"],
+            customLiteral: syntax["strings"],
+            numberLiteral: syntax["numbers"],
+        },
     };
 };

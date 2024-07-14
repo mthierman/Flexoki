@@ -2,6 +2,14 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Light Cyan",
     "colors": {
+        "debugConsole.errorForeground": "#af3029",
+        "debugConsole.infoForeground": "#100f0f",
+        "debugConsole.sourceForeground": "#100f0f",
+        "debugConsole.warningForeground": "#bc5215",
+        "debugConsoleInputIcon.foreground": "#100f0f",
+        "editorLineNumber.activeForeground": "#100f0f",
+        "editorLineNumber.dimmedForeground": "#b7b5ac",
+        "editorLineNumber.foreground": "#6f6e69",
         "activityBar.activeBackground": "#f2f0e5",
         "activityBar.activeBorder": "#3aa99f",
         "activityBar.activeFocusBorder": "#3aa99f",
@@ -55,7 +63,6 @@
         "dropdown.foreground": "#100f0f",
         "dropdown.listBackground": "#f2f0e5",
         "editor.background": "#fffcf0",
-        "editorActiveLineNumber.foreground": "#100f0f",
         "editorBracketHighlight.foreground1": "#bc5215",
         "editorBracketHighlight.foreground2": "#ad8301",
         "editorBracketHighlight.foreground3": "#24837b",
@@ -787,5 +794,11 @@
             }
         }
     ],
-    "semanticHighlighting": true
+    "semanticHighlighting": true,
+    "semanticTokenColors": {
+        "newOperator": "#6f6e69",
+        "stringLiteral": "#24837b",
+        "customLiteral": "#24837b",
+        "numberLiteral": "#5e409d"
+    }
 }
