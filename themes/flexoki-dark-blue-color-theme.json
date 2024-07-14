@@ -2,6 +2,10 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Dark Blue",
     "colors": {
+        "minimap.background": "#0000",
+        "minimapSlider.activeBackground": "#205ea640",
+        "minimapSlider.background": "#205ea626",
+        "minimapSlider.hoverBackground": "#205ea633",
         "listFilterWidget.background": "#282726",
         "listFilterWidget.noMatchesOutline": "#0000",
         "listFilterWidget.outline": "#282726",
