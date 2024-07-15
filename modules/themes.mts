@@ -234,6 +234,12 @@ export const makeTheme = (mode: Mode, accentColor: AccentColor) => {
                     ...theme,
                 },
                 mapping: {
+                    baseTones: {
+                        ...baseTones,
+                    },
+                    accentColors: {
+                        ...accentColors,
+                    },
                     ui: {
                         ...ui,
                         accent: accent,
@@ -272,6 +278,12 @@ export const makeTheme = (mode: Mode, accentColor: AccentColor) => {
                     ...theme,
                 },
                 mapping: {
+                    baseTones: {
+                        ...baseTones,
+                    },
+                    accentColors: {
+                        ...accentColors,
+                    },
                     ui: {
                         ...ui,
                         accent: accent,

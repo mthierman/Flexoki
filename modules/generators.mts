@@ -1,4 +1,4 @@
-import { baseTones, makeTheme } from "./themes.mjs";
+import { makeTheme } from "./themes.mjs";
 import type { AccentColor, Mode } from "./types.mjs";
 import { hex } from "./utilities.mjs";
 
@@ -13,7 +13,8 @@ export const generateTerminal = (mode: Mode) => {
 
 export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
     const createdTheme = makeTheme(mode, accentColor);
-    const { syntax, terminal, ui, theme } = {
+    const { baseTones, syntax, terminal, ui, theme } = {
+        baseTones: hex(createdTheme.mapping.baseTones),
         syntax: hex(createdTheme.mapping.syntax),
         terminal: hex(createdTheme.mapping.terminal),
         ui: hex(createdTheme.mapping.ui),
@@ -435,5 +436,5 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
         },
     };
 
-    return JSON.stringify(generatedTheme, Object.keys(generatedTheme).sort(), 4);
+    return JSON.stringify(generatedTheme, null, 4);
 };
