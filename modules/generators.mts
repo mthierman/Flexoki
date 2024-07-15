@@ -1,8 +1,6 @@
 import Color from "colorjs.io";
-import { defaultDarkTokens, defaultLightTokens } from "./tokens_default.mjs";
-import { darkTokens, lightTokens } from "./tokens.mjs";
 import type { Accent, AccentColors, BaseTones, Mode, Syntax, Theme, UI } from "./types.mjs";
-import { colorToHex, colorsToHex } from "./utilities.mjs";
+import { colorToHex } from "./utilities.mjs";
 
 export const makeBaseTones = (): BaseTones => {
     return {
