@@ -9,7 +9,7 @@ import type {
     Theme,
     UI,
 } from "./types.mjs";
-import { colorsToHex, colorToHex } from "./utilities.mjs";
+import { colorsToHex } from "./utilities.mjs";
 
 export const makeBaseTones = (): BaseTones => {
     return {
@@ -53,60 +53,71 @@ export const makeAccentColors = (): AccentColors => {
 
 export const makeAccentColor = (mode: Mode, accent: Accent) => {
     const accentColors = makeAccentColors();
-    const dark = mode === "Dark";
 
-    let accentColor: Color | string;
-
-    switch (accent) {
-        case "Red":
-            {
-                accentColor = dark ? accentColors.red_600 : accentColors.red_400;
+    switch (mode) {
+        case "Dark": {
+            switch (accent) {
+                case "Red": {
+                    return accentColors.red_600;
+                }
+                case "Orange": {
+                    return accentColors.orange_600;
+                }
+                case "Yellow": {
+                    return accentColors.yellow_600;
+                }
+                case "Green": {
+                    return accentColors.green_600;
+                }
+                case "Cyan": {
+                    return accentColors.cyan_600;
+                }
+                case "Blue": {
+                    return accentColors.blue_600;
+                }
+                case "Purple": {
+                    return accentColors.purple_600;
+                }
+                case "Magenta": {
+                    return accentColors.magenta_600;
+                }
             }
-            break;
-        case "Orange":
-            {
-                accentColor = dark ? accentColors.orange_600 : accentColors.orange_400;
+        }
+        case "Light": {
+            switch (accent) {
+                case "Red": {
+                    return accentColors.red_400;
+                }
+                case "Orange": {
+                    return accentColors.orange_400;
+                }
+                case "Yellow": {
+                    return accentColors.yellow_400;
+                }
+                case "Green": {
+                    return accentColors.green_400;
+                }
+                case "Cyan": {
+                    return accentColors.cyan_400;
+                }
+                case "Blue": {
+                    return accentColors.blue_400;
+                }
+                case "Purple": {
+                    return accentColors.purple_400;
+                }
+                case "Magenta": {
+                    return accentColors.magenta_400;
+                }
             }
-            break;
-        case "Yellow":
-            {
-                accentColor = dark ? accentColors.yellow_600 : accentColors.yellow_400;
-            }
-            break;
-        case "Green":
-            {
-                accentColor = dark ? accentColors.green_600 : accentColors.green_400;
-            }
-            break;
-        case "Cyan":
-            {
-                accentColor = dark ? accentColors.cyan_600 : accentColors.cyan_400;
-            }
-            break;
-        case "Blue":
-            {
-                accentColor = dark ? accentColors.blue_600 : accentColors.blue_400;
-            }
-            break;
-        case "Purple":
-            {
-                accentColor = dark ? accentColors.purple_600 : accentColors.purple_400;
-            }
-            break;
-        case "Magenta":
-            {
-                accentColor = dark ? accentColors.magenta_600 : accentColors.magenta_400;
-            }
-            break;
+        }
     }
-
-    return new Color(accentColor);
 };
 
 export const makeTheme = (mode: Mode, accent: Accent): Theme => {
     const baseTones = makeBaseTones();
     const accentColors = makeAccentColors();
-    const accentColor = makeAccentColor(mode, accent);
+    const accentColor = makeAccentColor(mode, accent) as Color;
 
     switch (mode) {
         case "Dark": {
