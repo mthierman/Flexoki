@@ -372,7 +372,8 @@
         {
             "scope": [
                 "entity.name.type",
-                "storage.type"
+                "storage.type",
+                "support.type"
             ],
             "settings": {
                 "foreground": "#8b7ec8"

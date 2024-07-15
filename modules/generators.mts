@@ -574,7 +574,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
                 },
             },
             {
-                scope: ["entity.name.type", "storage.type"],
+                scope: ["entity.name.type", "storage.type", "support.type"],
                 settings: {
                     foreground: theme.pu,
                 },
