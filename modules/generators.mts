@@ -264,9 +264,11 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         [accentColor.r, accentColor.g, accentColor.b],
         0.25,
     ).toString({ format: "hex" });
-    const inlayBg = new Color("sRGB", [accentColor.r, accentColor.g, accentColor.b], 0.5).toString({
-        format: "hex",
-    });
+    const inlayBg = new Color("sRGB", [accentColor.r, accentColor.g, accentColor.b], 0.05).toString(
+        {
+            format: "hex",
+        },
+    );
     const test = "#FF00FF";
 
     return {
