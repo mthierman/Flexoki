@@ -296,7 +296,7 @@
         "editor.wordHighlightStrongBackground": "#a02f6f40",
         "editor.wordHighlightStrongBorder": "#a02f6f",
         "editor.wordHighlightTextBackground": "#a02f6f26",
-        "editor.wordHighlightTextBorder": "#FF00FF"
+        "editor.wordHighlightTextBorder": "#a02f6f"
     },
     "tokenColors": [
         {
