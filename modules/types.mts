@@ -69,6 +69,7 @@ export interface Theme {
     ma: Color | string;
     ma2: Color | string;
     transparent: Color | string;
+    shadow: Color | string;
 }
 
 export interface UI {
@@ -106,9 +107,4 @@ export interface Syntax {
     attributes: Color | string;
     numbers: Color | string;
     language_features: Color | string;
-}
-
-export interface Mapping {
-    ui: UI;
-    syntax: Syntax;
 }

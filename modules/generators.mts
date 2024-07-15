@@ -1,7 +1,7 @@
 import Color from "colorjs.io";
 import { defaultDarkTokens, defaultLightTokens } from "./default_tokens.mjs";
 import { darkTokens, lightTokens } from "./tokens.mjs";
-import type { Accent, AccentColors, BaseTones, Mapping, Mode, Theme } from "./types.mjs";
+import type { Accent, AccentColors, BaseTones, Mode, Syntax, Theme, UI } from "./types.mjs";
 import { colorToHex, colorsToHex } from "./utilities.mjs";
 
 export const makeBaseTones = (): BaseTones => {
@@ -75,7 +75,8 @@ export const makeTheme = (mode: Mode): Theme => {
                 pu2: accentColors.purple_600,
                 ma: accentColors.magenta_400,
                 ma2: accentColors.magenta_600,
-                transparent: new Color("#00000000"),
+                transparent: new Color("sRGB", [0, 0, 0], 0),
+                shadow: new Color("sRGB", [0, 0, 0], 0.25),
             };
         }
         case "Light": {
@@ -104,45 +105,48 @@ export const makeTheme = (mode: Mode): Theme => {
                 pu2: accentColors.purple_400,
                 ma: accentColors.magenta_600,
                 ma2: accentColors.magenta_400,
-                transparent: new Color("#FFFFFF00"),
+                transparent: new Color("sRGB", [255, 255, 255], 0),
+                shadow: new Color("sRGB", [0, 0, 0], 0.25),
             };
         }
     }
 };
 
-export const makeMapping = (theme: Theme): Mapping => {
+export const makeUI = (theme: Theme): UI => {
     return {
-        ui: {
-            main_background: theme.bg,
-            secondary_background: theme.bg2,
-            borders: theme.ui,
-            hovered_borders: theme.ui2,
-            active_borders: theme.ui3,
-            faint_text: theme.tx3,
-            muted_text: theme.tx2,
-            primary_text: theme.tx,
-            error_text: theme.re,
-            warning_text: theme.or,
-            success_text: theme.gr,
-            links: theme.cy,
-            active_states: theme.cy,
-            transparent: theme.transparent,
-        },
-        syntax: {
-            comments: theme.tx3,
-            punctuation: theme.tx2,
-            operators: theme.tx2,
-            invalid: theme.re,
-            imports: theme.re,
-            functions: theme.or,
-            constants: theme.ye,
-            keywords: theme.gr,
-            strings: theme.cy,
-            variables: theme.bl,
-            attributes: theme.bl,
-            numbers: theme.pu,
-            language_features: theme.ma,
-        },
+        main_background: theme.bg,
+        secondary_background: theme.bg2,
+        borders: theme.ui,
+        hovered_borders: theme.ui2,
+        active_borders: theme.ui3,
+        faint_text: theme.tx3,
+        muted_text: theme.tx2,
+        primary_text: theme.tx,
+        error_text: theme.re,
+        warning_text: theme.or,
+        success_text: theme.gr,
+        links: theme.cy,
+        active_states: theme.cy,
+        transparent: theme.transparent,
+        shadow: theme.shadow,
+    };
+};
+
+export const makeSyntax = (theme: Theme): Syntax => {
+    return {
+        comments: theme.tx3,
+        punctuation: theme.tx2,
+        operators: theme.tx2,
+        invalid: theme.re,
+        imports: theme.re,
+        functions: theme.or,
+        constants: theme.ye,
+        keywords: theme.gr,
+        strings: theme.cy,
+        variables: theme.bl,
+        attributes: theme.bl,
+        numbers: theme.pu,
+        language_features: theme.ma,
     };
 };
 
@@ -178,42 +182,22 @@ export const makeAccentColor = (mode: Mode, accent: Accent) => {
     }
 };
 
-export const makeThemes = () => {
-    return {
-        dark: colorsToHex(makeTheme("Dark")) as Theme,
-        light: colorsToHex(makeTheme("Light")) as Theme,
-    };
-};
-
-export const makeMappings = () => {
-    const { dark, light } = makeThemes();
-
-    return {
-        dark: makeMapping(dark),
-        light: makeMapping(light),
-    };
-};
-
 export const generateTerminal = (mode: Mode) => {
-    const themes = makeThemes();
-    const mappings = makeMappings();
-    const dark = mode === "Dark";
-
-    const baseTones = colorsToHex(makeBaseTones()) as BaseTones;
-    const theme = dark ? themes.dark : themes.light;
-    const { ui, syntax } = dark ? mappings.dark : mappings.light;
+    const baseTones = makeBaseTones();
+    const theme = makeTheme(mode);
+    const ui = makeUI(theme);
 
     return {
         background: ui.main_background,
-        black: baseTones.base_950,
+        black: baseTones.black,
         blue: theme.bl2,
-        brightBlack: baseTones.base_900,
+        brightBlack: baseTones.base_800,
         brightBlue: theme.bl,
         brightCyan: theme.cy,
         brightGreen: theme.gr,
         brightPurple: theme.ma,
         brightRed: theme.re,
-        brightWhite: baseTones.base_50,
+        brightWhite: baseTones.paper,
         brightYellow: theme.ye,
         cursorColor: ui.primary_text,
         cyan: theme.cy2,
@@ -223,23 +207,19 @@ export const generateTerminal = (mode: Mode) => {
         purple: theme.ma2,
         red: theme.re2,
         selectionBackground: ui.active_borders,
-        white: baseTones.base_100,
+        white: baseTones.base_200,
         yellow: theme.ye2,
     };
 };
 
 export const generateTheme = (mode: Mode, accent: Accent) => {
-    const themes = makeThemes();
-    const mappings = makeMappings();
-    const dark = mode === "Dark";
-
+    const baseTones = makeBaseTones();
+    const theme = makeTheme(mode);
+    const ui = makeUI(theme);
+    const syntax = makeSyntax(theme);
     const terminal = generateTerminal(mode);
-    const baseTones = colorsToHex(makeBaseTones()) as BaseTones;
-    const theme = dark ? themes.dark : themes.light;
-    const { ui, syntax } = dark ? mappings.dark : mappings.light;
-    ui.shadow = (baseTones.black as string).concat("40");
-    ui.accent = colorToHex(makeAccentColor(mode, accent) as Color);
 
+    ui.accent = colorToHex(makeAccentColor(mode, accent) as Color);
     const test = "#FF00FF";
 
     return {
