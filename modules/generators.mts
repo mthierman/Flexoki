@@ -604,6 +604,12 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
                 },
             },
             {
+                scope: ["punctuation"],
+                settings: {
+                    foreground: syntax.punctuation,
+                },
+            },
+            {
                 scope: ["variable"],
                 settings: {
                     foreground: syntax.variables,
@@ -646,6 +652,8 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             stringLiteral: syntax.strings,
             customLiteral: syntax.strings,
             numberLiteral: syntax.numbers,
+            namespace: syntax.punctuation,
+            type: theme.pu,
         },
     };
 };

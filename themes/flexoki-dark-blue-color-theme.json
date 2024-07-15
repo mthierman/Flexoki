@@ -412,6 +412,14 @@
         },
         {
             "scope": [
+                "punctuation"
+            ],
+            "settings": {
+                "foreground": "#878580"
+            }
+        },
+        {
+            "scope": [
                 "variable"
             ],
             "settings": {
@@ -464,6 +472,8 @@
         "newOperator": "#878580",
         "stringLiteral": "#3aa99f",
         "customLiteral": "#3aa99f",
-        "numberLiteral": "#8b7ec8"
+        "numberLiteral": "#8b7ec8",
+        "namespace": "#878580",
+        "type": "#8b7ec8"
     }
 }
