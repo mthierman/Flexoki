@@ -2,14 +2,14 @@ import { baseTones, makeTheme } from "./themes.mjs";
 import type { AccentColor, Mode } from "./types.mjs";
 import { colorsToHex } from "./utilities.mjs";
 
-export const generateTerminal(mode: Mode, accentColor: AccentColor) => {
-    const theme = makeTheme(mode, accentColor);
-
-    const converted = colorsToHex(theme.mapping.terminal);
-}
+export const generateTerminal = (mode: Mode, accentColor: AccentColor) => {
+    const { mapping } = makeTheme(mode, accentColor);
+    const terminal = mapping.terminal;
+    const converted = colorsToHex(terminal) as Record<keyof typeof terminal, string>;
+};
 
 // export const generateTheme = (mode: Mode, accent: Accent) => {
-//     const baseTones = colorsToHex(makeBaseTones()) as BaseTones;
+// const baseTones = colorsToHex(makeBaseTones()) as typeof;
 //     const theme = colorsToHex(makeTheme(mode, accent)) as Theme;
 //     const ui = colorsToHex(makeUI(theme)) as UI;
 //     const syntax = colorsToHex(makeSyntax(theme)) as Syntax;

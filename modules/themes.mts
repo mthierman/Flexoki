@@ -91,9 +91,9 @@ export const lightTheme = {
     ma2: accentColors.magenta_400,
 };
 
-type Theme = typeof lightTheme | typeof darkTheme;
+export type Theme = typeof lightTheme | typeof darkTheme;
 
-const makeUI = (theme: Theme) => {
+export const makeUI = (theme: Theme) => {
     return {
         main_background: theme.bg,
         secondary_background: theme.bg2,
@@ -111,7 +111,7 @@ const makeUI = (theme: Theme) => {
     };
 };
 
-const makeSyntax = (theme: Theme) => {
+export const makeSyntax = (theme: Theme) => {
     return {
         comments: theme.tx3,
         punctuation: theme.tx2,
@@ -129,7 +129,7 @@ const makeSyntax = (theme: Theme) => {
     };
 };
 
-const makeAccentColor = (mode: Mode, accentColor: AccentColor) => {
+export const makeAccentColor = (mode: Mode, accentColor: AccentColor) => {
     switch (mode) {
         case "Dark": {
             switch (accentColor) {
@@ -190,7 +190,30 @@ const makeAccentColor = (mode: Mode, accentColor: AccentColor) => {
     }
 };
 
-export const makeTerminal = (mode: Mode) => {
+type Terminal = {
+    background: Color;
+    black: Color;
+    blue: Color;
+    brightBlack: Color;
+    brightBlue: Color;
+    brightCyan: Color;
+    brightGreen: Color;
+    brightPurple: Color;
+    brightRed: Color;
+    brightWhite: Color;
+    brightYellow: Color;
+    cursorColor: Color;
+    cyan: Color;
+    foreground: Color;
+    green: Color;
+    purple: Color;
+    red: Color;
+    selectionBackground: Color;
+    white: Color;
+    yellow: Color;
+};
+
+export const makeTerminal = (mode: Mode): Terminal => {
     const theme = mode === "Dark" ? darkTheme : lightTheme;
     const ui = makeUI(theme);
 
@@ -210,7 +233,7 @@ export const makeTerminal = (mode: Mode) => {
         cyan: theme.cy2,
         foreground: ui.primary_text,
         green: theme.gr2,
-        name: `Flexoki ${mode}`,
+        // name: `Flexoki ${mode}`,
         purple: theme.ma2,
         red: theme.re2,
         selectionBackground: ui.active_borders,
