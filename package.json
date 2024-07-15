@@ -151,7 +151,7 @@
     },
     "scripts": {
         "check": "tsc --noEmit",
-        "build": "tsc -b && node --no-warnings=ExperimentalWarning build/scripts/flexoki.js",
+        "build": "tsc -b && node --no-warnings=ExperimentalWarning build/scripts/build.js",
         "watch": "tsc -b && node --no-warnings=ExperimentalWarning build/scripts/watch.js",
         "clean": "tsc -b && node --no-warnings=ExperimentalWarning build/scripts/clean.js",
         "vsce": "vsce publish"
