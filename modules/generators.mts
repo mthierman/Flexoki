@@ -2,10 +2,14 @@ import { makeTheme } from "./themes.mjs";
 import type { AccentColor, Mode } from "./types.mjs";
 import { hex } from "./utilities.mjs";
 
-export const generateTerminal = (mode: Mode) => {
+export const generateTerminal = (mode: Mode, accentColor: AccentColor = "Blue") => {
+    const createdTheme = makeTheme(mode, accentColor);
+
+    const { terminal } = { terminal: hex(createdTheme.mapping.terminal) };
+
     const generatedTerminal = {
         name: `Flexoki ${mode}`,
-        ...hex(makeTheme(mode, "Blue").mapping.terminal),
+        ...terminal,
     };
 
     return JSON.stringify(generatedTerminal, Object.keys(generatedTerminal).sort(), 4);
@@ -13,6 +17,7 @@ export const generateTerminal = (mode: Mode) => {
 
 export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
     const createdTheme = makeTheme(mode, accentColor);
+
     const { baseTones, syntax, terminal, ui, theme } = {
         baseTones: hex(createdTheme.mapping.baseTones),
         syntax: hex(createdTheme.mapping.syntax),
@@ -20,6 +25,7 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
         ui: hex(createdTheme.mapping.ui),
         theme: hex(createdTheme.theme),
     };
+
     const test = "#FF00FF";
 
     const generatedTheme = {
