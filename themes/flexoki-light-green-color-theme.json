@@ -288,7 +288,15 @@
         "outputView.background": "#f2f0e5",
         "selection.background": "#879a3940",
         "editor.selectionBackground": "#879a3940",
-        "editor.selectionForeground": "#100f0f"
+        "editor.selectionForeground": "#100f0f",
+        "editor.selectionHighlightBackground": "#879a3926",
+        "editor.selectionHighlightBorder": "#879a3926",
+        "editor.wordHighlightBackground": "#879a3926",
+        "editor.wordHighlightBorder": "#879a39",
+        "editor.wordHighlightStrongBackground": "#879a3940",
+        "editor.wordHighlightStrongBorder": "#879a39",
+        "editor.wordHighlightTextBackground": "#879a3926",
+        "editor.wordHighlightTextBorder": "#FF00FF"
     },
     "tokenColors": [
         {
