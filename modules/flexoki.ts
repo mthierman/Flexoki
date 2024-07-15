@@ -1,5 +1,5 @@
 import Color from "colorjs.io";
-
+import type { Mode } from "./types.mjs";
 class Hex {
     constructor() {}
 
@@ -267,13 +267,36 @@ class Syntax extends Hex {
     language_features;
 }
 
-const flexoki = new Flexoki();
-const light = new LightTheme(flexoki);
-const theme = new DarkTheme(flexoki);
-const { ui, syntax } = { ui: new UI(theme), syntax: new Syntax(theme) };
+type Theme = {
+    flexoki: Flexoki;
+    theme: DarkTheme | LightTheme;
+    ui: UI;
+    syntax: Syntax;
+};
 
-console.log(flexoki.hex());
-// console.log(light.hex());
-// console.log(dark.hex());
-// console.log(darkUi.hex());
-// console.log(darkSyntax.hex());
+function makeTheme(mode: Mode): Theme {
+    const flexoki = new Flexoki();
+    switch (mode) {
+        case "Dark": {
+            const theme = new DarkTheme(flexoki);
+            return {
+                flexoki: flexoki,
+                theme: theme,
+                ui: new UI(theme),
+                syntax: new Syntax(theme),
+            };
+        }
+        case "Light": {
+            const theme = new LightTheme(flexoki);
+            return {
+                flexoki: flexoki,
+                theme: theme,
+                ui: new UI(theme),
+                syntax: new Syntax(theme),
+            };
+        }
+    }
+}
+
+const theme = makeTheme("Dark");
+console.log(theme.flexoki.hex());
