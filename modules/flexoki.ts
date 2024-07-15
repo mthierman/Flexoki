@@ -268,11 +268,9 @@ class Syntax extends Hex {
 }
 
 const flexoki = new Flexoki();
-flexoki.black.alpha = 0.33;
-// const light = new LightTheme(flexoki);
-// const dark = new DarkTheme(flexoki);
-// const darkUi = new UI(dark);
-// const darkSyntax = new Syntax(dark);
+const light = new LightTheme(flexoki);
+const theme = new DarkTheme(flexoki);
+const { ui, syntax } = { ui: new UI(theme), syntax: new Syntax(theme) };
 
 console.log(flexoki.hex());
 // console.log(light.hex());
