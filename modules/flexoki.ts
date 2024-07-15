@@ -243,8 +243,44 @@ class UI {
     active_states: Color | string;
     transparent: Color | string;
     shadow: Color | string;
-    // accent: Color | string;
     hex: UI;
+}
+
+class Syntax {
+    constructor(theme: DarkTheme | LightTheme) {
+        this.comments = theme.tx3;
+        this.punctuation = theme.tx2;
+        this.operators = theme.tx2;
+        this.invalid = theme.re;
+        this.imports = theme.re;
+        this.functions = theme.or;
+        this.constants = theme.ye;
+        this.keywords = theme.gr;
+        this.strings = theme.cy;
+        this.variables = theme.bl;
+        this.attributes = theme.bl;
+        this.numbers = theme.pu;
+        this.language_features = theme.ma;
+        this.hex = { ...this };
+        Object.entries(this).forEach(([key, value]) => {
+            this.hex[key as keyof Syntax] = value.toString({ format: "hex" });
+        });
+    }
+
+    comments: Color | string;
+    punctuation: Color | string;
+    operators: Color | string;
+    invalid: Color | string;
+    imports: Color | string;
+    functions: Color | string;
+    constants: Color | string;
+    keywords: Color | string;
+    strings: Color | string;
+    variables: Color | string;
+    attributes: Color | string;
+    numbers: Color | string;
+    language_features: Color | string;
+    hex: Syntax;
 }
 
 const flex = new Flexoki();
