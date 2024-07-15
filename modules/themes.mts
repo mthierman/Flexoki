@@ -232,16 +232,24 @@ export const makeTheme = (mode: Mode, accentColor: AccentColor) => {
             return {
                 theme: {
                     ...theme,
-                    accent: accent,
-                    transparent: new Color("sRGB", [0, 0, 0], 0),
-                    transparent_bg: new Color("sRGB", [accent.r, accent.g, accent.b], 0.15),
-                    transparent_bg_hover: new Color("sRGB", [accent.r, accent.g, accent.b], 0.2),
-                    transparent_bg_active: new Color("sRGB", [accent.r, accent.g, accent.b], 0.25),
-                    shadow: new Color("sRGB", [0, 0, 0], 0.5),
                 },
                 mapping: {
                     ui: {
                         ...ui,
+                        accent: accent,
+                        transparent: new Color("sRGB", [0, 0, 0], 0),
+                        transparent_bg: new Color("sRGB", [accent.r, accent.g, accent.b], 0.15),
+                        transparent_bg_hover: new Color(
+                            "sRGB",
+                            [accent.r, accent.g, accent.b],
+                            0.2,
+                        ),
+                        transparent_bg_active: new Color(
+                            "sRGB",
+                            [accent.r, accent.g, accent.b],
+                            0.25,
+                        ),
+                        shadow: new Color("sRGB", [0, 0, 0], 0.5),
                     },
                     syntax: {
                         ...syntax,
@@ -262,16 +270,24 @@ export const makeTheme = (mode: Mode, accentColor: AccentColor) => {
             return {
                 theme: {
                     ...theme,
-                    accent: accent,
-                    transparent: new Color("sRGB", [255, 255, 255], 0),
-                    transparent_bg: new Color("sRGB", [accent.r, accent.g, accent.b], 0.15),
-                    transparent_bg_hover: new Color("sRGB", [accent.r, accent.g, accent.b], 0.2),
-                    transparent_bg_active: new Color("sRGB", [accent.r, accent.g, accent.b], 0.25),
-                    shadow: new Color("sRGB", [0.75, 0.75, 0.75], 0.5),
                 },
                 mapping: {
                     ui: {
                         ...ui,
+                        accent: accent,
+                        transparent: new Color("sRGB", [255, 255, 255], 0),
+                        transparent_bg: new Color("sRGB", [accent.r, accent.g, accent.b], 0.15),
+                        transparent_bg_hover: new Color(
+                            "sRGB",
+                            [accent.r, accent.g, accent.b],
+                            0.2,
+                        ),
+                        transparent_bg_active: new Color(
+                            "sRGB",
+                            [accent.r, accent.g, accent.b],
+                            0.25,
+                        ),
+                        shadow: new Color("sRGB", [0.75, 0.75, 0.75], 0.5),
                     },
                     syntax: {
                         ...syntax,
