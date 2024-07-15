@@ -267,8 +267,8 @@
         "terminal.border": "#282726",
         "terminal.dropBackground": "#24837b33",
         "terminal.foreground": "#cecdc3",
-        "terminal.inactiveSelectionBackground": "#343331",
-        "terminal.selectionBackground": "#403e3c",
+        "terminal.inactiveSelectionBackground": "#24837b26",
+        "terminal.selectionBackground": "#24837b40",
         "terminal.tab.activeBorder": "#24837b",
         "terminalCursor.background": "#100f0f",
         "terminalCursor.foreground": "#cecdc3",
@@ -284,7 +284,8 @@
         "welcomePage.tileBorder": "#282726",
         "welcomePage.tileHoverBackground": "#343331",
         "widget.border": "#282726",
-        "widget.shadow": "#00000080"
+        "widget.shadow": "#00000080",
+        "outputView.background": "#1c1b1a"
     },
     "tokenColors": [
         {

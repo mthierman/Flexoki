@@ -297,8 +297,8 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
             "terminal.border": ui.borders,
             "terminal.dropBackground": ui.transparent_bg_hover,
             "terminal.foreground": terminal.foreground,
-            "terminal.inactiveSelectionBackground": ui.hovered_borders,
-            "terminal.selectionBackground": terminal.selectionBackground,
+            "terminal.inactiveSelectionBackground": ui.transparent_bg,
+            "terminal.selectionBackground": ui.transparent_bg_active,
             "terminal.tab.activeBorder": ui.accent,
             "terminalCursor.background": terminal.background,
             "terminalCursor.foreground": terminal.foreground,
@@ -315,6 +315,7 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
             "welcomePage.tileHoverBackground": theme.ui2,
             "widget.border": ui.borders,
             "widget.shadow": ui.shadow,
+            "outputView.background": ui.secondary_background,
         },
         // tokenColors: dark ? darkTokens() : lightTokens(),
         tokenColors: [
