@@ -316,6 +316,7 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
             "widget.border": ui.borders,
             "widget.shadow": ui.shadow,
             "outputView.background": ui.secondary_background,
+            "selection.background": ui.transparent_bg_active,
         },
         // tokenColors: dark ? darkTokens() : lightTokens(),
         tokenColors: [

@@ -285,7 +285,8 @@
         "welcomePage.tileHoverBackground": "#343331",
         "widget.border": "#282726",
         "widget.shadow": "#00000080",
-        "outputView.background": "#1c1b1a"
+        "outputView.background": "#1c1b1a",
+        "selection.background": "#66800b40"
     },
     "tokenColors": [
         {
