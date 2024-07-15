@@ -291,6 +291,7 @@
         "editor.selectionForeground": "#cecdc3",
         "editor.selectionHighlightBackground": "#24837b26",
         "editor.selectionHighlightBorder": "#24837b26",
+        "editor.inactiveSelectionBackground": "#24837b26",
         "editor.wordHighlightBackground": "#24837b26",
         "editor.wordHighlightBorder": "#24837b",
         "editor.wordHighlightStrongBackground": "#24837b40",
@@ -298,6 +299,188 @@
         "editor.wordHighlightTextBackground": "#24837b26",
         "editor.wordHighlightTextBorder": "#24837b"
     },
+    "tokenColors": [
+        {
+            "scope": [
+                "emphasis"
+            ],
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": [
+                "strong"
+            ],
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": [
+                "header",
+                "markup.heading"
+            ],
+            "settings": {
+                "foreground": "#4385be"
+            }
+        },
+        {
+            "scope": [
+                "comment"
+            ],
+            "settings": {
+                "foreground": "#575653"
+            }
+        },
+        {
+            "scope": [
+                "token.info-token"
+            ],
+            "settings": {
+                "foreground": "#4385be"
+            }
+        },
+        {
+            "scope": [
+                "token.warn-token"
+            ],
+            "settings": {
+                "foreground": "#da702c"
+            }
+        },
+        {
+            "scope": [
+                "token.error-token"
+            ],
+            "settings": {
+                "foreground": "#d14d41"
+            }
+        },
+        {
+            "scope": [
+                "token.debug-token"
+            ],
+            "settings": {
+                "foreground": "#8b7ec8"
+            }
+        },
+        {
+            "scope": [
+                "entity.name.function"
+            ],
+            "settings": {
+                "foreground": "#da702c"
+            }
+        },
+        {
+            "scope": [
+                "keyword",
+                "entity.name.keyword"
+            ],
+            "settings": {
+                "foreground": "#879a39"
+            }
+        },
+        {
+            "scope": [
+                "entity.name.type",
+                "storage.type",
+                "support.type"
+            ],
+            "settings": {
+                "foreground": "#8b7ec8"
+            }
+        },
+        {
+            "scope": [
+                "storage.modifier"
+            ],
+            "settings": {
+                "foreground": "#8b7ec8"
+            }
+        },
+        {
+            "scope": [
+                "string"
+            ],
+            "settings": {
+                "foreground": "#3aa99f"
+            }
+        },
+        {
+            "scope": [
+                "meta.object"
+            ],
+            "settings": {
+                "foreground": "#d0a215"
+            }
+        },
+        {
+            "scope": [
+                "meta.block.namespace"
+            ],
+            "settings": {
+                "foreground": "#879a39"
+            }
+        },
+        {
+            "scope": [
+                "punctuation"
+            ],
+            "settings": {
+                "foreground": "#878580"
+            }
+        },
+        {
+            "scope": [
+                "variable"
+            ],
+            "settings": {
+                "foreground": "#4385be"
+            }
+        },
+        {
+            "scope": [
+                "constant"
+            ],
+            "settings": {
+                "foreground": "#d0a215"
+            }
+        },
+        {
+            "scope": [
+                "constant.numeric"
+            ],
+            "settings": {
+                "foreground": "#8b7ec8"
+            }
+        },
+        {
+            "scope": [
+                "constant.character"
+            ],
+            "settings": {
+                "foreground": "#3aa99f"
+            }
+        },
+        {
+            "scope": [
+                "constant.language"
+            ],
+            "settings": {
+                "foreground": "#ce5d97"
+            }
+        },
+        {
+            "scope": [
+                "invalid"
+            ],
+            "settings": {
+                "foreground": "#d14d41"
+            }
+        }
+    ],
     "semanticHighlighting": true,
     "semanticTokenColors": {
         "namespace": {
