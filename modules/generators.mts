@@ -164,30 +164,46 @@ export const makeAccentColor = (mode: Mode, accent: Accent) => {
     let accentColor: Color | string;
 
     switch (accent) {
-        case "Red": {
-            accentColor = dark ? accentColors.red_600 : accentColors.red_400;
-        }
-        case "Orange": {
-            accentColor = dark ? accentColors.orange_600 : accentColors.orange_400;
-        }
-        case "Yellow": {
-            accentColor = dark ? accentColors.yellow_600 : accentColors.yellow_400;
-        }
-        case "Green": {
-            accentColor = dark ? accentColors.green_600 : accentColors.green_400;
-        }
-        case "Cyan": {
-            accentColor = dark ? accentColors.cyan_600 : accentColors.cyan_400;
-        }
-        case "Blue": {
-            accentColor = dark ? accentColors.blue_600 : accentColors.blue_400;
-        }
-        case "Purple": {
-            accentColor = dark ? accentColors.purple_600 : accentColors.purple_400;
-        }
-        case "Magenta": {
-            accentColor = dark ? accentColors.magenta_600 : accentColors.magenta_400;
-        }
+        case "Red":
+            {
+                accentColor = dark ? accentColors.red_600 : accentColors.red_400;
+            }
+            break;
+        case "Orange":
+            {
+                accentColor = dark ? accentColors.orange_600 : accentColors.orange_400;
+            }
+            break;
+        case "Yellow":
+            {
+                accentColor = dark ? accentColors.yellow_600 : accentColors.yellow_400;
+            }
+            break;
+        case "Green":
+            {
+                accentColor = dark ? accentColors.green_600 : accentColors.green_400;
+            }
+            break;
+        case "Cyan":
+            {
+                accentColor = dark ? accentColors.cyan_600 : accentColors.cyan_400;
+            }
+            break;
+        case "Blue":
+            {
+                accentColor = dark ? accentColors.blue_600 : accentColors.blue_400;
+            }
+            break;
+        case "Purple":
+            {
+                accentColor = dark ? accentColors.purple_600 : accentColors.purple_400;
+            }
+            break;
+        case "Magenta":
+            {
+                accentColor = dark ? accentColors.magenta_600 : accentColors.magenta_400;
+            }
+            break;
     }
 
     return new Color(accentColor);
