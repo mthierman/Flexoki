@@ -1,15 +1,9 @@
 import Color from "colorjs.io";
 
-export const colorToHex = (color: Color) => {
-    return color.toString({ format: "hex" });
-};
-
-export const colorsToHex = <T extends Record<string, Color>>(
-    colors: T,
-): { [K in keyof T]: string } => {
+export const hex = <T extends Record<string, Color>>(colors: T): { [K in keyof T]: string } => {
     let newObj: Partial<{ [K in keyof T]: string }> = {};
     Object.entries(colors).forEach(([key, value]) => {
-        newObj[key as keyof T] = colorToHex(value as Color);
+        newObj[key as keyof T] = value.toString({ format: "hex" });
     });
     return newObj as { [K in keyof T]: string };
 };
