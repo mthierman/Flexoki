@@ -192,7 +192,7 @@ const makeAccentColor = (mode: Mode, accentColor: AccentColor) => {
 
 export const makeTerminal = (mode: Mode) => {
     const theme = mode === "Dark" ? darkTheme : lightTheme;
-    const ui = mode === "Dark" ? makeUI(darkTheme) : makeUI(lightTheme);
+    const ui = makeUI(theme);
 
     return {
         background: ui.main_background,
@@ -231,6 +231,15 @@ export const makeTheme = (mode: Mode, accentColor: AccentColor) => {
                 terminal: makeTerminal(mode),
             };
             return {
+                theme: {
+                    ...theme,
+                    accent: accent,
+                    transparent: new Color("sRGB", [0, 0, 0], 0),
+                    transparent_bg: new Color("sRGB", [accent.r, accent.g, accent.b], 0.15),
+                    transparent_bg_hover: new Color("sRGB", [accent.r, accent.g, accent.b], 0.2),
+                    transparent_bg_active: new Color("sRGB", [accent.r, accent.g, accent.b], 0.25),
+                    shadow: new Color("sRGB", [0, 0, 0], 0.5),
+                },
                 mapping: {
                     ui: {
                         ...ui,
@@ -241,15 +250,6 @@ export const makeTheme = (mode: Mode, accentColor: AccentColor) => {
                     terminal: {
                         ...terminal,
                     },
-                },
-                theme: {
-                    ...theme,
-                    accent: accent,
-                    transparent: new Color("sRGB", [0, 0, 0], 0),
-                    transparent_bg: new Color("sRGB", [accent.r, accent.g, accent.b], 0.15),
-                    transparent_bg_hover: new Color("sRGB", [accent.r, accent.g, accent.b], 0.2),
-                    transparent_bg_active: new Color("sRGB", [accent.r, accent.g, accent.b], 0.25),
-                    shadow: new Color("sRGB", [0, 0, 0], 0.5),
                 },
             };
         }
@@ -261,6 +261,15 @@ export const makeTheme = (mode: Mode, accentColor: AccentColor) => {
                 terminal: makeTerminal(mode),
             };
             return {
+                theme: {
+                    ...theme,
+                    accent: accent,
+                    transparent: new Color("sRGB", [255, 255, 255], 0),
+                    transparent_bg: new Color("sRGB", [accent.r, accent.g, accent.b], 0.15),
+                    transparent_bg_hover: new Color("sRGB", [accent.r, accent.g, accent.b], 0.2),
+                    transparent_bg_active: new Color("sRGB", [accent.r, accent.g, accent.b], 0.25),
+                    shadow: new Color("sRGB", [0.75, 0.75, 0.75], 0.5),
+                },
                 mapping: {
                     ui: {
                         ...ui,
@@ -271,15 +280,6 @@ export const makeTheme = (mode: Mode, accentColor: AccentColor) => {
                     terminal: {
                         ...terminal,
                     },
-                },
-                theme: {
-                    ...theme,
-                    accent: accent,
-                    transparent: new Color("sRGB", [255, 255, 255], 0),
-                    transparent_bg: new Color("sRGB", [accent.r, accent.g, accent.b], 0.15),
-                    transparent_bg_hover: new Color("sRGB", [accent.r, accent.g, accent.b], 0.2),
-                    transparent_bg_active: new Color("sRGB", [accent.r, accent.g, accent.b], 0.25),
-                    shadow: new Color("sRGB", [0.75, 0.75, 0.75], 0.5),
                 },
             };
         }

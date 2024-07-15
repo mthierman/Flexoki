@@ -2,7 +2,11 @@ import { baseTones, makeTheme } from "./themes.mjs";
 import type { AccentColor, Mode } from "./types.mjs";
 import { colorsToHex } from "./utilities.mjs";
 
+export const generateTerminal(mode: Mode, accentColor: AccentColor) => {
+    const theme = makeTheme(mode, accentColor);
 
+    const converted = colorsToHex(theme.mapping.terminal);
+}
 
 // export const generateTheme = (mode: Mode, accent: Accent) => {
 //     const baseTones = colorsToHex(makeBaseTones()) as BaseTones;
