@@ -32,17 +32,17 @@ let watching = true;
 
 try {
     for await (const _ of watcher) {
-        // if (!watching) {
-        //     build();
-        // }
+        if (!watching) {
+            build();
+        }
 
         build();
 
-        // watching = true;
+        watching = true;
 
-        // setTimeout(() => {
-        //     watching = false;
-        // }, 50);
+        setTimeout(() => {
+            watching = false;
+        }, 10);
     }
 } catch (error) {
     console.log(error);
