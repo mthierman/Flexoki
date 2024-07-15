@@ -51,112 +51,6 @@ export const makeAccentColors = (): AccentColors => {
     };
 };
 
-export const makeTheme = (mode: Mode): Theme => {
-    const baseTones = makeBaseTones();
-    const accentColors = makeAccentColors();
-
-    switch (mode) {
-        case "Dark": {
-            return {
-                bg: baseTones.black,
-                bg2: baseTones.base_950,
-                ui: baseTones.base_900,
-                ui2: baseTones.base_850,
-                ui3: baseTones.base_800,
-                tx3: baseTones.base_700,
-                tx2: baseTones.base_500,
-                tx: baseTones.base_200,
-                re: accentColors.red_400,
-                re2: accentColors.red_600,
-                or: accentColors.orange_400,
-                or2: accentColors.orange_600,
-                ye: accentColors.yellow_400,
-                ye2: accentColors.yellow_600,
-                gr: accentColors.green_400,
-                gr2: accentColors.green_600,
-                cy: accentColors.cyan_400,
-                cy2: accentColors.cyan_600,
-                bl: accentColors.blue_400,
-                bl2: accentColors.blue_600,
-                pu: accentColors.purple_400,
-                pu2: accentColors.purple_600,
-                ma: accentColors.magenta_400,
-                ma2: accentColors.magenta_600,
-                transparent: new Color("sRGB", [0, 0, 0], 0),
-                shadow: new Color("sRGB", [0, 0, 0], 0.25),
-            };
-        }
-        case "Light": {
-            return {
-                bg: baseTones.paper,
-                bg2: baseTones.base_50,
-                ui: baseTones.base_100,
-                ui2: baseTones.base_150,
-                ui3: baseTones.base_200,
-                tx3: baseTones.base_300,
-                tx2: baseTones.base_600,
-                tx: baseTones.black,
-                re: accentColors.red_600,
-                re2: accentColors.red_400,
-                or: accentColors.orange_600,
-                or2: accentColors.orange_400,
-                ye: accentColors.yellow_600,
-                ye2: accentColors.yellow_400,
-                gr: accentColors.green_600,
-                gr2: accentColors.green_400,
-                cy: accentColors.cyan_600,
-                cy2: accentColors.cyan_400,
-                bl: accentColors.blue_600,
-                bl2: accentColors.blue_400,
-                pu: accentColors.purple_600,
-                pu2: accentColors.purple_400,
-                ma: accentColors.magenta_600,
-                ma2: accentColors.magenta_400,
-                transparent: new Color("sRGB", [255, 255, 255], 0),
-                shadow: new Color("sRGB", [0, 0, 0], 0.25),
-            };
-        }
-    }
-};
-
-export const makeUI = (theme: Theme): UI => {
-    return {
-        main_background: theme.bg,
-        secondary_background: theme.bg2,
-        borders: theme.ui,
-        hovered_borders: theme.ui2,
-        active_borders: theme.ui3,
-        faint_text: theme.tx3,
-        muted_text: theme.tx2,
-        primary_text: theme.tx,
-        error_text: theme.re,
-        warning_text: theme.or,
-        success_text: theme.gr,
-        links: theme.cy,
-        active_states: theme.cy,
-        transparent: theme.transparent,
-        shadow: theme.shadow,
-    };
-};
-
-export const makeSyntax = (theme: Theme): Syntax => {
-    return {
-        comments: theme.tx3,
-        punctuation: theme.tx2,
-        operators: theme.tx2,
-        invalid: theme.re,
-        imports: theme.re,
-        functions: theme.or,
-        constants: theme.ye,
-        keywords: theme.gr,
-        strings: theme.cy,
-        variables: theme.bl,
-        attributes: theme.bl,
-        numbers: theme.pu,
-        language_features: theme.ma,
-    };
-};
-
 export const makeAccentColor = (mode: Mode, accent: Accent) => {
     const accentColors = makeAccentColors();
     const dark = mode === "Dark";
@@ -209,9 +103,152 @@ export const makeAccentColor = (mode: Mode, accent: Accent) => {
     return new Color(accentColor);
 };
 
-export const generateTerminal = (mode: Mode): Terminal => {
+export const makeTheme = (mode: Mode, accent: Accent): Theme => {
+    const baseTones = makeBaseTones();
+    const accentColors = makeAccentColors();
+    const accentColor = makeAccentColor(mode, accent);
+
+    switch (mode) {
+        case "Dark": {
+            return {
+                bg: baseTones.black,
+                bg2: baseTones.base_950,
+                ui: baseTones.base_900,
+                ui2: baseTones.base_850,
+                ui3: baseTones.base_800,
+                tx3: baseTones.base_700,
+                tx2: baseTones.base_500,
+                tx: baseTones.base_200,
+                re: accentColors.red_400,
+                re2: accentColors.red_600,
+                or: accentColors.orange_400,
+                or2: accentColors.orange_600,
+                ye: accentColors.yellow_400,
+                ye2: accentColors.yellow_600,
+                gr: accentColors.green_400,
+                gr2: accentColors.green_600,
+                cy: accentColors.cyan_400,
+                cy2: accentColors.cyan_600,
+                bl: accentColors.blue_400,
+                bl2: accentColors.blue_600,
+                pu: accentColors.purple_400,
+                pu2: accentColors.purple_600,
+                ma: accentColors.magenta_400,
+                ma2: accentColors.magenta_600,
+                accent: accentColor,
+                transparent: new Color("sRGB", [0, 0, 0], 0),
+                transparent_bg: new Color(
+                    "sRGB",
+                    [accentColor.r, accentColor.g, accentColor.b],
+                    0.15,
+                ),
+                transparent_bg_hover: new Color(
+                    "sRGB",
+                    [accentColor.r, accentColor.g, accentColor.b],
+                    0.2,
+                ),
+                transparent_bg_active: new Color(
+                    "sRGB",
+                    [accentColor.r, accentColor.g, accentColor.b],
+                    0.25,
+                ),
+                shadow: new Color("sRGB", [0, 0, 0], 0.25),
+            };
+        }
+        case "Light": {
+            return {
+                bg: baseTones.paper,
+                bg2: baseTones.base_50,
+                ui: baseTones.base_100,
+                ui2: baseTones.base_150,
+                ui3: baseTones.base_200,
+                tx3: baseTones.base_300,
+                tx2: baseTones.base_600,
+                tx: baseTones.black,
+                re: accentColors.red_600,
+                re2: accentColors.red_400,
+                or: accentColors.orange_600,
+                or2: accentColors.orange_400,
+                ye: accentColors.yellow_600,
+                ye2: accentColors.yellow_400,
+                gr: accentColors.green_600,
+                gr2: accentColors.green_400,
+                cy: accentColors.cyan_600,
+                cy2: accentColors.cyan_400,
+                bl: accentColors.blue_600,
+                bl2: accentColors.blue_400,
+                pu: accentColors.purple_600,
+                pu2: accentColors.purple_400,
+                ma: accentColors.magenta_600,
+                ma2: accentColors.magenta_400,
+                accent: accentColor,
+                transparent: new Color("sRGB", [255, 255, 255], 0),
+                transparent_bg: new Color(
+                    "sRGB",
+                    [accentColor.r, accentColor.g, accentColor.b],
+                    0.15,
+                ),
+                transparent_bg_hover: new Color(
+                    "sRGB",
+                    [accentColor.r, accentColor.g, accentColor.b],
+                    0.2,
+                ),
+                transparent_bg_active: new Color(
+                    "sRGB",
+                    [accentColor.r, accentColor.g, accentColor.b],
+                    0.25,
+                ),
+                shadow: new Color("sRGB", [0, 0, 0], 0.25),
+            };
+        }
+    }
+};
+
+export const makeUI = (theme: Theme): UI => {
+    return {
+        main_background: theme.bg,
+        secondary_background: theme.bg2,
+        borders: theme.ui,
+        hovered_borders: theme.ui2,
+        active_borders: theme.ui3,
+        faint_text: theme.tx3,
+        muted_text: theme.tx2,
+        primary_text: theme.tx,
+        error_text: theme.re,
+        warning_text: theme.or,
+        success_text: theme.gr,
+        links: theme.cy,
+        active_states: theme.cy,
+        accent: theme.accent,
+        transparent: theme.transparent,
+        transparent_bg: theme.transparent_bg,
+        transparent_bg_hover: theme.transparent_bg_hover,
+        transparent_bg_active: theme.transparent_bg_active,
+        shadow: theme.shadow,
+    };
+};
+
+export const makeSyntax = (theme: Theme): Syntax => {
+    return {
+        comments: theme.tx3,
+        punctuation: theme.tx2,
+        operators: theme.tx2,
+        invalid: theme.re,
+        imports: theme.re,
+        functions: theme.or,
+        constants: theme.ye,
+        keywords: theme.gr,
+        strings: theme.cy,
+        variables: theme.bl,
+        attributes: theme.bl,
+        numbers: theme.pu,
+        language_features: theme.ma,
+    };
+};
+
+export const generateTerminal = (mode: Mode, accent: Accent = "Blue"): Terminal => {
     const baseTones = colorsToHex(makeBaseTones()) as BaseTones;
-    const theme = colorsToHex(makeTheme(mode)) as Theme;
+    const theme = colorsToHex(makeTheme(mode, accent)) as Theme;
     const ui = colorsToHex(makeUI(theme)) as UI;
 
     return {
@@ -241,30 +278,10 @@ export const generateTerminal = (mode: Mode): Terminal => {
 
 export const generateTheme = (mode: Mode, accent: Accent) => {
     const baseTones = colorsToHex(makeBaseTones()) as BaseTones;
-    const theme = colorsToHex(makeTheme(mode)) as Theme;
+    const theme = colorsToHex(makeTheme(mode, accent)) as Theme;
     const ui = colorsToHex(makeUI(theme)) as UI;
     const syntax = colorsToHex(makeSyntax(theme)) as Syntax;
     const terminal = colorsToHex(generateTerminal(mode)) as Terminal;
-
-    const accentColor = makeAccentColor(mode, accent);
-
-    ui.accent = colorToHex(accentColor);
-
-    const transparentBg = new Color(
-        "sRGB",
-        [accentColor.r, accentColor.g, accentColor.b],
-        0.15,
-    ).toString({ format: "hex" });
-    const transparentBgHover = new Color(
-        "sRGB",
-        [accentColor.r, accentColor.g, accentColor.b],
-        0.2,
-    ).toString({ format: "hex" });
-    const transparentBgActive = new Color(
-        "sRGB",
-        [accentColor.r, accentColor.g, accentColor.b],
-        0.25,
-    ).toString({ format: "hex" });
 
     const test = "#FF00FF";
 
@@ -273,9 +290,9 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         name: `Flexoki ${mode} ${accent}`,
         colors: {
             "scrollbar.shadow": ui.shadow,
-            "scrollbarSlider.activeBackground": transparentBgActive,
-            "scrollbarSlider.background": transparentBg,
-            "scrollbarSlider.hoverBackground": transparentBgHover,
+            "scrollbarSlider.activeBackground": ui.transparent_bg_active,
+            "scrollbarSlider.background": ui.transparent_bg,
+            "scrollbarSlider.hoverBackground": ui.transparent_bg_hover,
 
             "activityBar.activeBackground": ui.secondary_background,
             "activityBar.activeBorder": ui.accent,
@@ -321,7 +338,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "commandCenter.activeForeground": ui.primary_text,
             "commandCenter.background": theme.ui,
             "commandCenter.border": theme.ui3,
-            "commandCenter.debuggingBackground": transparentBgActive,
+            "commandCenter.debuggingBackground": ui.transparent_bg_active,
             "commandCenter.foreground": ui.muted_text,
             "commandCenter.inactiveBorder": theme.ui3,
             "commandCenter.inactiveForeground": ui.faint_text,
@@ -359,7 +376,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "editorCursor.background": ui.main_background,
             "editorCursor.foreground": ui.primary_text,
             "editorGroup.border": ui.borders,
-            "editorGroup.dropBackground": transparentBgHover,
+            "editorGroup.dropBackground": ui.transparent_bg_hover,
             "editorGroupHeader.border": ui.borders,
             "editorGroupHeader.tabsBackground": ui.secondary_background,
             "editorGroupHeader.tabsBorder": ui.borders,
@@ -368,11 +385,11 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "editorHoverWidget.foreground": ui.primary_text,
             "editorHoverWidget.highlightForeground": ui.primary_text,
             "editorHoverWidget.statusBarBackground": theme.ui2,
-            "editorInlayHint.background": transparentBg,
+            "editorInlayHint.background": ui.transparent_bg,
             "editorInlayHint.foreground": ui.muted_text,
-            "editorInlayHint.parameterBackground": transparentBg,
+            "editorInlayHint.parameterBackground": ui.transparent_bg,
             "editorInlayHint.parameterForeground": ui.muted_text,
-            "editorInlayHint.typeBackground": transparentBg,
+            "editorInlayHint.typeBackground": ui.transparent_bg,
             "editorInlayHint.typeForeground": ui.muted_text,
             "editorLineNumber.activeForeground": ui.primary_text,
             "editorLineNumber.dimmedForeground": ui.faint_text,
@@ -421,26 +438,26 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "keybindingLabel.foreground": ui.accent,
             "keybindingTable.headerBackground": ui.secondary_background,
             "keybindingTable.rowsBackground": ui.secondary_background,
-            "list.activeSelectionBackground": transparentBgHover,
+            "list.activeSelectionBackground": ui.transparent_bg_hover,
             "list.activeSelectionForeground": ui.primary_text,
             "list.activeSelectionIconForeground": ui.primary_text,
             "list.deemphasizedForeground": ui.muted_text,
-            "list.dropBackground": transparentBgHover,
-            "list.dropBetweenBackground": transparentBgHover,
+            "list.dropBackground": ui.transparent_bg_hover,
+            "list.dropBetweenBackground": ui.transparent_bg_hover,
             "list.errorForeground": ui.error_text,
             "list.filterMatchBackground": ui.accent,
             "list.filterMatchBorder": ui.transparent,
             "list.focusAndSelectionOutline": ui.accent,
-            "list.focusBackground": transparentBgHover,
+            "list.focusBackground": ui.transparent_bg_hover,
             "list.focusForeground": ui.primary_text,
             "list.focusHighlightForeground": ui.primary_text,
             "list.focusOutline": ui.transparent,
             "list.highlightForeground": ui.primary_text,
-            "list.hoverBackground": transparentBgHover,
+            "list.hoverBackground": ui.transparent_bg_hover,
             "list.hoverForeground": ui.primary_text,
-            "list.inactiveFocusBackground": transparentBgHover,
+            "list.inactiveFocusBackground": ui.transparent_bg_hover,
             "list.inactiveFocusOutline": ui.transparent,
-            "list.inactiveSelectionBackground": transparentBg,
+            "list.inactiveSelectionBackground": ui.transparent_bg,
             "list.inactiveSelectionForeground": ui.primary_text,
             "list.inactiveSelectionIconForeground": ui.primary_text,
             "list.invalidItemForeground": ui.error_text,
@@ -460,15 +477,15 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "menubar.selectionBorder": ui.transparent,
             "menubar.selectionForeground": ui.primary_text,
             "minimap.background": ui.transparent,
-            "minimapSlider.activeBackground": transparentBgActive,
-            "minimapSlider.background": transparentBg,
-            "minimapSlider.hoverBackground": transparentBgHover,
+            "minimapSlider.activeBackground": ui.transparent_bg_active,
+            "minimapSlider.background": ui.transparent_bg,
+            "minimapSlider.hoverBackground": ui.transparent_bg_hover,
             "panel.background": ui.secondary_background,
             "panel.border": ui.borders,
             "panel.dropBorder": ui.accent,
             "panelInput.border": ui.active_borders,
             "panelSection.border": ui.borders,
-            "panelSection.dropBackground": transparentBgHover,
+            "panelSection.dropBackground": ui.transparent_bg_hover,
             "panelSectionHeader.background": ui.main_background,
             "panelSectionHeader.border": ui.borders,
             "panelSectionHeader.foreground": ui.primary_text,
@@ -486,7 +503,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "quickInputTitle.background": test,
             "sideBar.background": ui.secondary_background,
             "sideBar.border": ui.borders,
-            "sideBar.dropBackground": transparentBgHover,
+            "sideBar.dropBackground": ui.transparent_bg_hover,
             "sideBar.foreground": ui.primary_text,
             "sideBarSectionHeader.background": theme.ui,
             "sideBarSectionHeader.border": ui.borders,
@@ -536,7 +553,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "terminal.ansiYellow": terminal.yellow,
             "terminal.background": ui.secondary_background,
             "terminal.border": ui.borders,
-            "terminal.dropBackground": transparentBgHover,
+            "terminal.dropBackground": ui.transparent_bg_hover,
             "terminal.foreground": terminal.foreground,
             "terminal.inactiveSelectionBackground": ui.hovered_borders,
             "terminal.selectionBackground": terminal.selectionBackground,

@@ -68,7 +68,11 @@ export interface Theme {
     pu2: Color | string;
     ma: Color | string;
     ma2: Color | string;
+    accent: Color | string;
     transparent: Color | string;
+    transparent_bg: Color | string;
+    transparent_bg_hover: Color | string;
+    transparent_bg_active: Color | string;
     shadow: Color | string;
 }
 
@@ -87,7 +91,11 @@ export interface UI {
     success_text: Color | string;
     links: Color | string;
     active_states: Color | string;
+    accent: Color | string;
     transparent: Color | string;
+    transparent_bg: Color | string;
+    transparent_bg_hover: Color | string;
+    transparent_bg_active: Color | string;
     shadow: Color | string;
 }
 
