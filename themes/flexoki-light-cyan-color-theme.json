@@ -286,7 +286,9 @@
         "widget.border": "#e6e4d9",
         "widget.shadow": "#bfbfbf80",
         "outputView.background": "#f2f0e5",
-        "selection.background": "#3aa99f40"
+        "selection.background": "#3aa99f40",
+        "editor.selectionBackground": "#3aa99f40",
+        "editor.selectionForeground": "#100f0f"
     },
     "tokenColors": [
         {

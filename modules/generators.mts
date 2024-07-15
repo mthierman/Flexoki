@@ -317,6 +317,8 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
             "widget.shadow": ui.shadow,
             "outputView.background": ui.secondary_background,
             "selection.background": ui.transparent_bg_active,
+            "editor.selectionBackground": ui.transparent_bg_active,
+            "editor.selectionForeground": ui.primary_text,
         },
         // tokenColors: dark ? darkTokens() : lightTokens(),
         tokenColors: [
