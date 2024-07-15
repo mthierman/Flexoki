@@ -32,15 +32,19 @@ class Flexoki {
         this.blue_400 = new Color("#4385BE");
         this.purple_400 = new Color("#8B7EC8");
         this.magenta_400 = new Color("#CE5D97");
+        this.hex = { ...this };
+        Object.entries(this).forEach(([key, value]) => {
+            this.hex[key as keyof Flexoki] = value.toString({ format: "hex" });
+        });
     }
 
-    hex() {
-        let obj: Flexoki = Object.assign({}, this);
-        Object.entries(this).forEach(([key, value]) => {
-            obj[key as keyof Flexoki] = value.toString({ format: "hex" });
-        });
-        return obj;
-    }
+    // hex() {
+    //     let obj: Flexoki = Object.assign({}, this);
+    //     Object.entries(this).forEach(([key, value]) => {
+    //         obj[key as keyof Flexoki] = value.toString({ format: "hex" });
+    //     });
+    //     return obj;
+    // }
 
     black: Color | string;
     base_950: Color | string;
@@ -72,9 +76,12 @@ class Flexoki {
     blue_400: Color | string;
     purple_400: Color | string;
     magenta_400: Color | string;
+    hex: Flexoki;
 }
 
 const flex = new Flexoki();
 // console.log(flex);
 // console.log(flex.hex());
-console.log(flex.hex().black);
+// console.log(flex.hex().black);
+console.log(flex.magenta_400);
+console.log(flex.hex.magenta_400);
