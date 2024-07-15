@@ -26,6 +26,8 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
         theme: hex(createdTheme.theme),
     };
 
+    const test2 = baseTones.paper;
+
     const test = "#FF00FF";
 
     const generatedTheme = {
