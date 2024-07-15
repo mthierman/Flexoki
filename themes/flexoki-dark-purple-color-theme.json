@@ -2,7 +2,7 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Dark Purple",
     "colors": {
-        "scrollbar.shadow": "#00000040",
+        "scrollbar.shadow": "#00000080",
         "scrollbarSlider.activeBackground": "#5e409d40",
         "scrollbarSlider.background": "#5e409d26",
         "scrollbarSlider.hoverBackground": "#5e409d33",
@@ -108,7 +108,7 @@
         "editorLineNumber.foreground": "#878580",
         "editorStickyScroll.background": "#100f0f",
         "editorStickyScroll.border": "#282726",
-        "editorStickyScroll.shadow": "#00000040",
+        "editorStickyScroll.shadow": "#00000080",
         "editorStickyScrollHover.background": "#0000",
         "editorWidget.background": "#282726",
         "editorWidget.border": "#282726",
@@ -177,7 +177,7 @@
         "listFilterWidget.background": "#282726",
         "listFilterWidget.noMatchesOutline": "#0000",
         "listFilterWidget.outline": "#282726",
-        "listFilterWidget.shadow": "#00000040",
+        "listFilterWidget.shadow": "#00000080",
         "menu.background": "#100f0f",
         "menu.border": "#282726",
         "menu.foreground": "#cecdc3",
@@ -203,7 +203,7 @@
         "panelSectionHeader.foreground": "#cecdc3",
         "panelStickyScroll.background": "#100f0f",
         "panelStickyScroll.border": "#282726",
-        "panelStickyScroll.shadow": "#00000040",
+        "panelStickyScroll.shadow": "#00000080",
         "panelTitle.activeBorder": "#5e409d",
         "panelTitle.activeForeground": "#cecdc3",
         "panelTitle.inactiveForeground": "#878580",
@@ -284,7 +284,7 @@
         "welcomePage.tileBorder": "#282726",
         "welcomePage.tileHoverBackground": "#343331",
         "widget.border": "#282726",
-        "widget.shadow": "#00000040"
+        "widget.shadow": "#00000080"
     },
     "tokenColors": [
         {

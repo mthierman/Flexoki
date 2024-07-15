@@ -152,7 +152,7 @@ export const makeTheme = (mode: Mode, accent: Accent): Theme => {
                     [accentColor.r, accentColor.g, accentColor.b],
                     0.25,
                 ),
-                shadow: new Color("sRGB", [0, 0, 0], 0.25),
+                shadow: new Color("sRGB", [0, 0, 0], 0.5),
             };
         }
         case "Light": {
@@ -198,7 +198,7 @@ export const makeTheme = (mode: Mode, accent: Accent): Theme => {
                     [accentColor.r, accentColor.g, accentColor.b],
                     0.25,
                 ),
-                shadow: new Color("sRGB", [0, 0, 0], 0.25),
+                shadow: new Color("sRGB", [0.75, 0.75, 0.75], 0.5),
             };
         }
     }
