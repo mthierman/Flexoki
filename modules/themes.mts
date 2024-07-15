@@ -190,30 +190,7 @@ export const makeAccentColor = (mode: Mode, accentColor: AccentColor) => {
     }
 };
 
-type Terminal = {
-    background: Color;
-    black: Color;
-    blue: Color;
-    brightBlack: Color;
-    brightBlue: Color;
-    brightCyan: Color;
-    brightGreen: Color;
-    brightPurple: Color;
-    brightRed: Color;
-    brightWhite: Color;
-    brightYellow: Color;
-    cursorColor: Color;
-    cyan: Color;
-    foreground: Color;
-    green: Color;
-    purple: Color;
-    red: Color;
-    selectionBackground: Color;
-    white: Color;
-    yellow: Color;
-};
-
-export const makeTerminal = (mode: Mode): Terminal => {
+export const makeTerminal = (mode: Mode) => {
     const theme = mode === "Dark" ? darkTheme : lightTheme;
     const ui = makeUI(theme);
 
@@ -233,7 +210,6 @@ export const makeTerminal = (mode: Mode): Terminal => {
         cyan: theme.cy2,
         foreground: ui.primary_text,
         green: theme.gr2,
-        // name: `Flexoki ${mode}`,
         purple: theme.ma2,
         red: theme.re2,
         selectionBackground: ui.active_borders,
