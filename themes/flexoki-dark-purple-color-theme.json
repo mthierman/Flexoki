@@ -298,195 +298,76 @@
         "editor.wordHighlightTextBackground": "#5e409d26",
         "editor.wordHighlightTextBorder": "#5e409d"
     },
-    "tokenColors": [
-        {
-            "scope": [
-                "emphasis"
-            ],
-            "settings": {
-                "fontStyle": "italic"
-            }
-        },
-        {
-            "scope": [
-                "strong"
-            ],
-            "settings": {
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "scope": [
-                "header",
-                "markup.heading"
-            ],
-            "settings": {
-                "foreground": "#4385be"
-            }
-        },
-        {
-            "scope": [
-                "comment"
-            ],
-            "settings": {
-                "foreground": "#575653"
-            }
-        },
-        {
-            "scope": [
-                "token.info-token"
-            ],
-            "settings": {
-                "foreground": "#4385be"
-            }
-        },
-        {
-            "scope": [
-                "token.warn-token"
-            ],
-            "settings": {
-                "foreground": "#da702c"
-            }
-        },
-        {
-            "scope": [
-                "token.error-token"
-            ],
-            "settings": {
-                "foreground": "#d14d41"
-            }
-        },
-        {
-            "scope": [
-                "token.debug-token"
-            ],
-            "settings": {
-                "foreground": "#8b7ec8"
-            }
-        },
-        {
-            "scope": [
-                "entity.name.function"
-            ],
-            "settings": {
-                "foreground": "#da702c"
-            }
-        },
-        {
-            "scope": [
-                "keyword",
-                "entity.name.keyword"
-            ],
-            "settings": {
-                "foreground": "#879a39"
-            }
-        },
-        {
-            "scope": [
-                "entity.name.type",
-                "storage.type",
-                "support.type"
-            ],
-            "settings": {
-                "foreground": "#8b7ec8"
-            }
-        },
-        {
-            "scope": [
-                "storage.modifier"
-            ],
-            "settings": {
-                "foreground": "#8b7ec8"
-            }
-        },
-        {
-            "scope": [
-                "string"
-            ],
-            "settings": {
-                "foreground": "#3aa99f"
-            }
-        },
-        {
-            "scope": [
-                "meta.object"
-            ],
-            "settings": {
-                "foreground": "#d0a215"
-            }
-        },
-        {
-            "scope": [
-                "meta.block.namespace"
-            ],
-            "settings": {
-                "foreground": "#879a39"
-            }
-        },
-        {
-            "scope": [
-                "punctuation"
-            ],
-            "settings": {
-                "foreground": "#878580"
-            }
-        },
-        {
-            "scope": [
-                "variable"
-            ],
-            "settings": {
-                "foreground": "#4385be"
-            }
-        },
-        {
-            "scope": [
-                "constant"
-            ],
-            "settings": {
-                "foreground": "#d0a215"
-            }
-        },
-        {
-            "scope": [
-                "constant.numeric"
-            ],
-            "settings": {
-                "foreground": "#8b7ec8"
-            }
-        },
-        {
-            "scope": [
-                "constant.character"
-            ],
-            "settings": {
-                "foreground": "#3aa99f"
-            }
-        },
-        {
-            "scope": [
-                "constant.language"
-            ],
-            "settings": {
-                "foreground": "#ce5d97"
-            }
-        },
-        {
-            "scope": [
-                "invalid"
-            ],
-            "settings": {
-                "foreground": "#d14d41"
-            }
-        }
-    ],
     "semanticHighlighting": true,
     "semanticTokenColors": {
-        "newOperator": "#878580",
-        "stringLiteral": "#3aa99f",
-        "customLiteral": "#3aa99f",
-        "numberLiteral": "#8b7ec8",
-        "namespace": "#878580",
-        "type": "#8b7ec8"
+        "namespace": {
+            "foreground": "#878580"
+        },
+        "class": {
+            "foreground": "#8b7ec8"
+        },
+        "enum": {
+            "foreground": "#d0a215"
+        },
+        "interface": {
+            "foreground": "#8b7ec8"
+        },
+        "struct": {
+            "foreground": "#8b7ec8"
+        },
+        "typeParameter": {
+            "foreground": "#8b7ec8"
+        },
+        "type": {
+            "foreground": "#8b7ec8"
+        },
+        "parameter": {
+            "foreground": "#4385be"
+        },
+        "variable": {
+            "foreground": "#4385be"
+        },
+        "property": {
+            "foreground": "#4385be"
+        },
+        "enumMember": {
+            "foreground": "#4385be"
+        },
+        "decorator": {
+            "foreground": "#878580"
+        },
+        "event": {
+            "foreground": "#da702c"
+        },
+        "function": {
+            "foreground": "#da702c"
+        },
+        "method": {
+            "foreground": "#da702c"
+        },
+        "macro": {
+            "foreground": "#ce5d97"
+        },
+        "label": {
+            "foreground": "#ce5d97"
+        },
+        "comment": {
+            "foreground": "#575653"
+        },
+        "string": {
+            "foreground": "#3aa99f"
+        },
+        "keyword": {
+            "foreground": "#879a39"
+        },
+        "number": {
+            "foreground": "#8b7ec8"
+        },
+        "regexp": {
+            "foreground": "#3aa99f"
+        },
+        "operator": {
+            "foreground": "#878580"
+        }
     }
 }

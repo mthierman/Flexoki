@@ -330,128 +330,145 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
             "editor.wordHighlightTextBorder": ui.accent,
         },
         // tokenColors: dark ? darkTokens() : lightTokens(),
-        tokenColors: [
-            { scope: ["emphasis"], settings: { fontStyle: "italic" } },
-            { scope: ["strong"], settings: { fontStyle: "bold" } },
-            { scope: ["header", "markup.heading"], settings: { foreground: theme.bl } },
-            { scope: ["comment"], settings: { foreground: syntax.comments } },
-            {
-                scope: ["token.info-token"],
-                settings: {
-                    foreground: theme.bl,
-                },
-            },
-            {
-                scope: ["token.warn-token"],
-                settings: {
-                    foreground: ui.warning_text,
-                },
-            },
-            {
-                scope: ["token.error-token"],
-                settings: {
-                    foreground: ui.error_text,
-                },
-            },
-            {
-                scope: ["token.debug-token"],
-                settings: {
-                    foreground: theme.pu,
-                },
-            },
-            {
-                scope: ["entity.name.function"],
-                settings: {
-                    foreground: syntax.functions,
-                },
-            },
-            {
-                scope: ["keyword", "entity.name.keyword"],
-                settings: {
-                    foreground: syntax.keywords,
-                },
-            },
-            {
-                scope: ["entity.name.type", "storage.type", "support.type"],
-                settings: {
-                    foreground: theme.pu,
-                },
-            },
-            {
-                scope: ["storage.modifier"],
-                settings: {
-                    foreground: theme.pu,
-                },
-            },
-            {
-                scope: ["string"],
-                settings: {
-                    foreground: syntax.strings,
-                },
-            },
-            {
-                scope: ["meta.object"],
-                settings: {
-                    foreground: syntax.constants,
-                },
-            },
-            {
-                scope: ["meta.block.namespace"],
-                settings: {
-                    foreground: syntax.keywords,
-                },
-            },
-            {
-                scope: ["punctuation"],
-                settings: {
-                    foreground: syntax.punctuation,
-                },
-            },
-            {
-                scope: ["variable"],
-                settings: {
-                    foreground: syntax.variables,
-                },
-            },
-            {
-                scope: ["constant"],
-                settings: {
-                    foreground: syntax.constants,
-                },
-            },
-            {
-                scope: ["constant.numeric"],
-                settings: {
-                    foreground: syntax.numbers,
-                },
-            },
-            {
-                scope: ["constant.character"],
-                settings: {
-                    foreground: syntax.strings,
-                },
-            },
-            {
-                scope: ["constant.language"],
-                settings: {
-                    foreground: syntax.language_features,
-                },
-            },
-            {
-                scope: ["invalid"],
-                settings: {
-                    foreground: syntax.invalid,
-                },
-            },
-        ],
+        // tokenColors: [
+        //     { scope: ["emphasis"], settings: { fontStyle: "italic" } },
+        //     { scope: ["strong"], settings: { fontStyle: "bold" } },
+        //     { scope: ["header", "markup.heading"], settings: { foreground: theme.bl } },
+        //     { scope: ["comment"], settings: { foreground: syntax.comments } },
+        //     {
+        //         scope: ["token.info-token"],
+        //         settings: {
+        //             foreground: theme.bl,
+        //         },
+        //     },
+        //     {
+        //         scope: ["token.warn-token"],
+        //         settings: {
+        //             foreground: ui.warning_text,
+        //         },
+        //     },
+        //     {
+        //         scope: ["token.error-token"],
+        //         settings: {
+        //             foreground: ui.error_text,
+        //         },
+        //     },
+        //     {
+        //         scope: ["token.debug-token"],
+        //         settings: {
+        //             foreground: theme.pu,
+        //         },
+        //     },
+        //     {
+        //         scope: ["entity.name.function"],
+        //         settings: {
+        //             foreground: syntax.functions,
+        //         },
+        //     },
+        //     {
+        //         scope: ["keyword", "entity.name.keyword"],
+        //         settings: {
+        //             foreground: syntax.keywords,
+        //         },
+        //     },
+        //     {
+        //         scope: ["entity.name.type", "storage.type", "support.type"],
+        //         settings: {
+        //             foreground: theme.pu,
+        //         },
+        //     },
+        //     {
+        //         scope: ["storage.modifier"],
+        //         settings: {
+        //             foreground: theme.pu,
+        //         },
+        //     },
+        //     {
+        //         scope: ["string"],
+        //         settings: {
+        //             foreground: syntax.strings,
+        //         },
+        //     },
+        //     {
+        //         scope: ["meta.object"],
+        //         settings: {
+        //             foreground: syntax.constants,
+        //         },
+        //     },
+        //     {
+        //         scope: ["meta.block.namespace"],
+        //         settings: {
+        //             foreground: syntax.keywords,
+        //         },
+        //     },
+        //     {
+        //         scope: ["punctuation"],
+        //         settings: {
+        //             foreground: syntax.punctuation,
+        //         },
+        //     },
+        //     {
+        //         scope: ["variable"],
+        //         settings: {
+        //             foreground: syntax.variables,
+        //         },
+        //     },
+        //     {
+        //         scope: ["constant"],
+        //         settings: {
+        //             foreground: syntax.constants,
+        //         },
+        //     },
+        //     {
+        //         scope: ["constant.numeric"],
+        //         settings: {
+        //             foreground: syntax.numbers,
+        //         },
+        //     },
+        //     {
+        //         scope: ["constant.character"],
+        //         settings: {
+        //             foreground: syntax.strings,
+        //         },
+        //     },
+        //     {
+        //         scope: ["constant.language"],
+        //         settings: {
+        //             foreground: syntax.language_features,
+        //         },
+        //     },
+        //     {
+        //         scope: ["invalid"],
+        //         settings: {
+        //             foreground: syntax.invalid,
+        //         },
+        //     },
+        // ],
         semanticHighlighting: true,
         semanticTokenColors: {
-            newOperator: syntax.operators,
-            stringLiteral: syntax.strings,
-            customLiteral: syntax.strings,
-            numberLiteral: syntax.numbers,
-            namespace: syntax.punctuation,
-            type: theme.pu,
+            namespace: { foreground: syntax.punctuation },
+            class: { foreground: theme.pu },
+            enum: { foreground: syntax.constants },
+            interface: { foreground: theme.pu },
+            struct: { foreground: theme.pu },
+            typeParameter: { foreground: theme.pu },
+            type: { foreground: theme.pu },
+            parameter: { foreground: syntax.variables },
+            variable: { foreground: syntax.variables },
+            property: { foreground: syntax.attributes },
+            enumMember: { foreground: syntax.attributes },
+            decorator: { foreground: syntax.operators },
+            event: { foreground: syntax.functions },
+            function: { foreground: syntax.functions },
+            method: { foreground: syntax.functions },
+            macro: { foreground: syntax.language_features },
+            label: { foreground: syntax.language_features },
+            comment: { foreground: syntax.comments },
+            string: { foreground: syntax.strings },
+            keyword: { foreground: syntax.keywords },
+            number: { foreground: syntax.numbers },
+            regexp: { foreground: syntax.strings },
+            operator: { foreground: syntax.operators },
         },
     };
 
