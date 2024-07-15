@@ -79,6 +79,174 @@ class Flexoki {
     hex: Flexoki;
 }
 
+class LightTheme {
+    constructor(flexoki: Flexoki) {
+        this.bg = flexoki.paper;
+        this.bg2 = flexoki.base_50;
+        this.ui = flexoki.base_100;
+        this.ui2 = flexoki.base_150;
+        this.ui3 = flexoki.base_200;
+        this.tx3 = flexoki.base_300;
+        this.tx2 = flexoki.base_600;
+        this.tx = flexoki.black;
+        this.re = flexoki.red_600;
+        this.or = flexoki.orange_600;
+        this.ye = flexoki.yellow_600;
+        this.gr = flexoki.green_600;
+        this.cy = flexoki.cyan_600;
+        this.bl = flexoki.blue_600;
+        this.pu = flexoki.purple_600;
+        this.ma = flexoki.magenta_600;
+        this.re2 = flexoki.red_400;
+        this.or2 = flexoki.orange_400;
+        this.ye2 = flexoki.yellow_400;
+        this.gr2 = flexoki.green_400;
+        this.cy2 = flexoki.cyan_400;
+        this.bl2 = flexoki.blue_400;
+        this.pu2 = flexoki.purple_400;
+        this.ma2 = flexoki.magenta_400;
+        this.transparent = new Color("#FFFFFF00");
+        this.shadow = new Color("#00000040");
+        this.hex = { ...this };
+        Object.entries(this).forEach(([key, value]) => {
+            this.hex[key as keyof LightTheme] = value.toString({ format: "hex" });
+        });
+    }
+
+    bg: Color | string;
+    bg2: Color | string;
+    ui: Color | string;
+    ui2: Color | string;
+    ui3: Color | string;
+    tx3: Color | string;
+    tx2: Color | string;
+    tx: Color | string;
+    re: Color | string;
+    or: Color | string;
+    ye: Color | string;
+    gr: Color | string;
+    cy: Color | string;
+    bl: Color | string;
+    pu: Color | string;
+    ma: Color | string;
+    re2: Color | string;
+    or2: Color | string;
+    ye2: Color | string;
+    gr2: Color | string;
+    cy2: Color | string;
+    bl2: Color | string;
+    pu2: Color | string;
+    ma2: Color | string;
+    transparent: Color | string;
+    shadow: Color | string;
+    hex: LightTheme;
+}
+
+class DarkTheme {
+    constructor(flexoki: Flexoki) {
+        this.bg = flexoki.paper;
+        this.bg2 = flexoki.base_50;
+        this.ui = flexoki.base_100;
+        this.ui2 = flexoki.base_150;
+        this.ui3 = flexoki.base_200;
+        this.tx3 = flexoki.base_300;
+        this.tx2 = flexoki.base_600;
+        this.tx = flexoki.black;
+        this.re = flexoki.red_600;
+        this.or = flexoki.orange_600;
+        this.ye = flexoki.yellow_600;
+        this.gr = flexoki.green_600;
+        this.cy = flexoki.cyan_600;
+        this.bl = flexoki.blue_600;
+        this.pu = flexoki.purple_600;
+        this.ma = flexoki.magenta_600;
+        this.re2 = flexoki.red_400;
+        this.or2 = flexoki.orange_400;
+        this.ye2 = flexoki.yellow_400;
+        this.gr2 = flexoki.green_400;
+        this.cy2 = flexoki.cyan_400;
+        this.bl2 = flexoki.blue_400;
+        this.pu2 = flexoki.purple_400;
+        this.ma2 = flexoki.magenta_400;
+        this.transparent = new Color("#FFFFFF00");
+        this.shadow = new Color("#00000040");
+        this.hex = { ...this };
+        Object.entries(this).forEach(([key, value]) => {
+            this.hex[key as keyof DarkTheme] = value.toString({ format: "hex" });
+        });
+    }
+
+    bg: Color | string;
+    bg2: Color | string;
+    ui: Color | string;
+    ui2: Color | string;
+    ui3: Color | string;
+    tx3: Color | string;
+    tx2: Color | string;
+    tx: Color | string;
+    re: Color | string;
+    or: Color | string;
+    ye: Color | string;
+    gr: Color | string;
+    cy: Color | string;
+    bl: Color | string;
+    pu: Color | string;
+    ma: Color | string;
+    re2: Color | string;
+    or2: Color | string;
+    ye2: Color | string;
+    gr2: Color | string;
+    cy2: Color | string;
+    bl2: Color | string;
+    pu2: Color | string;
+    ma2: Color | string;
+    transparent: Color | string;
+    shadow: Color | string;
+    hex: DarkTheme;
+}
+
+class UI {
+    constructor(theme: DarkTheme | LightTheme) {
+        this.main_background = theme.bg;
+        this.secondary_background = theme.bg2;
+        this.borders = theme.ui;
+        this.hovered_borders = theme.ui2;
+        this.active_borders = theme.ui3;
+        this.faint_text = theme.tx3;
+        this.muted_text = theme.tx2;
+        this.primary_text = theme.tx;
+        this.error_text = theme.re;
+        this.warning_text = theme.or;
+        this.success_text = theme.gr;
+        this.links = theme.cy;
+        this.active_states = theme.cy;
+        this.transparent = theme.transparent;
+        this.shadow = theme.shadow;
+        this.hex = { ...this };
+        Object.entries(this).forEach(([key, value]) => {
+            this.hex[key as keyof UI] = value.toString({ format: "hex" });
+        });
+    }
+
+    main_background: Color | string;
+    secondary_background: Color | string;
+    borders: Color | string;
+    hovered_borders: Color | string;
+    active_borders: Color | string;
+    faint_text: Color | string;
+    muted_text: Color | string;
+    primary_text: Color | string;
+    error_text: Color | string;
+    warning_text: Color | string;
+    success_text: Color | string;
+    links: Color | string;
+    active_states: Color | string;
+    transparent: Color | string;
+    shadow: Color | string;
+    // accent: Color | string;
+    hex: UI;
+}
+
 const flex = new Flexoki();
 // console.log(flex);
 // console.log(flex.hex());
