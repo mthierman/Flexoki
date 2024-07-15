@@ -1,5 +1,14 @@
 import Color from "colorjs.io";
-import type { Accent, AccentColors, BaseTones, Mode, Syntax, Theme, UI } from "./types.mjs";
+import type {
+    Accent,
+    AccentColors,
+    BaseTones,
+    Mode,
+    Syntax,
+    Terminal,
+    Theme,
+    UI,
+} from "./types.mjs";
 import { colorToHex } from "./utilities.mjs";
 
 export const makeBaseTones = (): BaseTones => {
@@ -152,35 +161,39 @@ export const makeAccentColor = (mode: Mode, accent: Accent) => {
     const accentColors = makeAccentColors();
     const dark = mode === "Dark";
 
+    let accentColor: Color | string;
+
     switch (accent) {
         case "Red": {
-            return dark ? accentColors.red_600 : accentColors.red_400;
+            accentColor = dark ? accentColors.red_600 : accentColors.red_400;
         }
         case "Orange": {
-            return dark ? accentColors.orange_600 : accentColors.orange_400;
+            accentColor = dark ? accentColors.orange_600 : accentColors.orange_400;
         }
         case "Yellow": {
-            return dark ? accentColors.yellow_600 : accentColors.yellow_400;
+            accentColor = dark ? accentColors.yellow_600 : accentColors.yellow_400;
         }
         case "Green": {
-            return dark ? accentColors.green_600 : accentColors.green_400;
+            accentColor = dark ? accentColors.green_600 : accentColors.green_400;
         }
         case "Cyan": {
-            return dark ? accentColors.cyan_600 : accentColors.cyan_400;
+            accentColor = dark ? accentColors.cyan_600 : accentColors.cyan_400;
         }
         case "Blue": {
-            return dark ? accentColors.blue_600 : accentColors.blue_400;
+            accentColor = dark ? accentColors.blue_600 : accentColors.blue_400;
         }
         case "Purple": {
-            return dark ? accentColors.purple_600 : accentColors.purple_400;
+            accentColor = dark ? accentColors.purple_600 : accentColors.purple_400;
         }
         case "Magenta": {
-            return dark ? accentColors.magenta_600 : accentColors.magenta_400;
+            accentColor = dark ? accentColors.magenta_600 : accentColors.magenta_400;
         }
     }
+
+    return new Color(accentColor);
 };
 
-export const generateTerminal = (mode: Mode) => {
+export const generateTerminal = (mode: Mode): Terminal => {
     const baseTones = makeBaseTones();
     const theme = makeTheme(mode);
     const ui = makeUI(theme);
@@ -217,7 +230,30 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
     const syntax = makeSyntax(theme);
     const terminal = generateTerminal(mode);
 
-    ui.accent = colorToHex(makeAccentColor(mode, accent) as Color);
+    const accentColor = makeAccentColor(mode, accent);
+
+    ui.accent = colorToHex(accentColor);
+    // 40 = 25%
+    // 33 = 20%
+    // 26 = 15%
+    const transparentBg = new Color(
+        "sRGB",
+        [accentColor.r, accentColor.g, accentColor.b],
+        0.15,
+    ).toString({ format: "hex" });
+    const transparentBgHover = new Color(
+        "sRGB",
+        [accentColor.r, accentColor.g, accentColor.b],
+        0.2,
+    ).toString({ format: "hex" });
+    const transparentBgActive = new Color(
+        "sRGB",
+        [accentColor.r, accentColor.g, accentColor.b],
+        0.25,
+    ).toString({ format: "hex" });
+    const inlayBg = new Color("sRGB", [accentColor.r, accentColor.g, accentColor.b], 0.5).toString({
+        format: "hex",
+    });
     const test = "#FF00FF";
 
     return {
@@ -225,9 +261,9 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         name: `Flexoki ${mode} ${accent}`,
         colors: {
             "scrollbar.shadow": ui.shadow,
-            "scrollbarSlider.activeBackground": ui.accent.concat("40"),
-            "scrollbarSlider.background": ui.accent.concat("26"),
-            "scrollbarSlider.hoverBackground": ui.accent.concat("33"),
+            "scrollbarSlider.activeBackground": transparentBgActive,
+            "scrollbarSlider.background": transparentBg,
+            "scrollbarSlider.hoverBackground": transparentBgHover,
 
             "activityBar.activeBackground": ui.secondary_background,
             "activityBar.activeBorder": ui.accent,
@@ -273,7 +309,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "commandCenter.activeForeground": ui.primary_text,
             "commandCenter.background": theme.ui,
             "commandCenter.border": theme.ui3,
-            "commandCenter.debuggingBackground": ui.accent.concat("40"),
+            "commandCenter.debuggingBackground": transparentBgActive,
             "commandCenter.foreground": ui.muted_text,
             "commandCenter.inactiveBorder": theme.ui3,
             "commandCenter.inactiveForeground": ui.faint_text,
@@ -311,7 +347,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "editorCursor.background": ui.main_background,
             "editorCursor.foreground": ui.primary_text,
             "editorGroup.border": ui.borders,
-            "editorGroup.dropBackground": ui.accent.concat("33"),
+            "editorGroup.dropBackground": transparentBgHover,
             "editorGroupHeader.border": ui.borders,
             "editorGroupHeader.tabsBackground": ui.secondary_background,
             "editorGroupHeader.tabsBorder": ui.borders,
@@ -320,11 +356,11 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "editorHoverWidget.foreground": ui.primary_text,
             "editorHoverWidget.highlightForeground": ui.primary_text,
             "editorHoverWidget.statusBarBackground": theme.ui2,
-            "editorInlayHint.background": ui.accent.concat("0D"),
+            "editorInlayHint.background": inlayBg,
             "editorInlayHint.foreground": ui.muted_text,
-            "editorInlayHint.parameterBackground": ui.accent.concat("0D"),
+            "editorInlayHint.parameterBackground": inlayBg,
             "editorInlayHint.parameterForeground": ui.muted_text,
-            "editorInlayHint.typeBackground": ui.accent.concat("0D"),
+            "editorInlayHint.typeBackground": inlayBg,
             "editorInlayHint.typeForeground": ui.muted_text,
             "editorLineNumber.activeForeground": ui.primary_text,
             "editorLineNumber.dimmedForeground": ui.faint_text,
@@ -373,26 +409,26 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "keybindingLabel.foreground": ui.accent,
             "keybindingTable.headerBackground": ui.secondary_background,
             "keybindingTable.rowsBackground": ui.secondary_background,
-            "list.activeSelectionBackground": ui.accent.concat("33"),
+            "list.activeSelectionBackground": transparentBgHover,
             "list.activeSelectionForeground": ui.primary_text,
             "list.activeSelectionIconForeground": ui.primary_text,
             "list.deemphasizedForeground": ui.muted_text,
-            "list.dropBackground": ui.accent.concat("33"),
-            "list.dropBetweenBackground": ui.accent.concat("33"),
+            "list.dropBackground": transparentBgHover,
+            "list.dropBetweenBackground": transparentBgHover,
             "list.errorForeground": ui.error_text,
             "list.filterMatchBackground": ui.accent,
             "list.filterMatchBorder": ui.transparent,
             "list.focusAndSelectionOutline": ui.accent,
-            "list.focusBackground": ui.accent.concat("33"),
+            "list.focusBackground": transparentBgHover,
             "list.focusForeground": ui.primary_text,
             "list.focusHighlightForeground": ui.primary_text,
             "list.focusOutline": ui.transparent,
             "list.highlightForeground": ui.primary_text,
-            "list.hoverBackground": ui.accent.concat("33"),
+            "list.hoverBackground": transparentBgHover,
             "list.hoverForeground": ui.primary_text,
-            "list.inactiveFocusBackground": ui.accent.concat("33"),
+            "list.inactiveFocusBackground": transparentBgHover,
             "list.inactiveFocusOutline": ui.transparent,
-            "list.inactiveSelectionBackground": ui.accent.concat("26"),
+            "list.inactiveSelectionBackground": transparentBg,
             "list.inactiveSelectionForeground": ui.primary_text,
             "list.inactiveSelectionIconForeground": ui.primary_text,
             "list.invalidItemForeground": ui.error_text,
@@ -412,15 +448,15 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "menubar.selectionBorder": ui.transparent,
             "menubar.selectionForeground": ui.primary_text,
             "minimap.background": ui.transparent,
-            "minimapSlider.activeBackground": ui.accent.concat("40"),
-            "minimapSlider.background": ui.accent.concat("26"),
-            "minimapSlider.hoverBackground": ui.accent.concat("33"),
+            "minimapSlider.activeBackground": transparentBgActive,
+            "minimapSlider.background": transparentBg,
+            "minimapSlider.hoverBackground": transparentBgHover,
             "panel.background": ui.secondary_background,
             "panel.border": ui.borders,
             "panel.dropBorder": ui.accent,
             "panelInput.border": ui.active_borders,
             "panelSection.border": ui.borders,
-            "panelSection.dropBackground": ui.accent.concat("33"),
+            "panelSection.dropBackground": transparentBgHover,
             "panelSectionHeader.background": ui.main_background,
             "panelSectionHeader.border": ui.borders,
             "panelSectionHeader.foreground": ui.primary_text,
@@ -438,7 +474,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "quickInputTitle.background": test,
             "sideBar.background": ui.secondary_background,
             "sideBar.border": ui.borders,
-            "sideBar.dropBackground": ui.accent.concat("33"),
+            "sideBar.dropBackground": transparentBgHover,
             "sideBar.foreground": ui.primary_text,
             "sideBarSectionHeader.background": theme.ui,
             "sideBarSectionHeader.border": ui.borders,
@@ -488,7 +524,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "terminal.ansiYellow": terminal.yellow,
             "terminal.background": ui.secondary_background,
             "terminal.border": ui.borders,
-            "terminal.dropBackground": ui.accent.concat("33"),
+            "terminal.dropBackground": transparentBgHover,
             "terminal.foreground": terminal.foreground,
             "terminal.inactiveSelectionBackground": ui.hovered_borders,
             "terminal.selectionBackground": terminal.selectionBackground,

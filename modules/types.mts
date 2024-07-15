@@ -108,3 +108,28 @@ export interface Syntax {
     numbers: Color | string;
     language_features: Color | string;
 }
+
+export interface Terminal {
+    [key: string]: Color | string;
+    background: Color | string;
+    black: Color | string;
+    blue: Color | string;
+    brightBlack: Color | string;
+    brightBlue: Color | string;
+    brightCyan: Color | string;
+    brightGreen: Color | string;
+    brightPurple: Color | string;
+    brightRed: Color | string;
+    brightWhite: Color | string;
+    brightYellow: Color | string;
+    cursorColor: Color | string;
+    cyan: Color | string;
+    foreground: Color | string;
+    green: Color | string;
+    name: string;
+    purple: Color | string;
+    red: Color | string;
+    selectionBackground: Color | string;
+    white: Color | string;
+    yellow: Color | string;
+}
