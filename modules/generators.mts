@@ -9,7 +9,7 @@ import type {
     Theme,
     UI,
 } from "./types.mjs";
-import { colorToHex } from "./utilities.mjs";
+import { colorsToHex, colorToHex } from "./utilities.mjs";
 
 export const makeBaseTones = (): BaseTones => {
     return {
@@ -194,9 +194,9 @@ export const makeAccentColor = (mode: Mode, accent: Accent) => {
 };
 
 export const generateTerminal = (mode: Mode): Terminal => {
-    const baseTones = makeBaseTones();
-    const theme = makeTheme(mode);
-    const ui = makeUI(theme);
+    const baseTones = colorsToHex(makeBaseTones()) as BaseTones;
+    const theme = colorsToHex(makeTheme(mode)) as Theme;
+    const ui = colorsToHex(makeUI(theme)) as UI;
 
     return {
         background: ui.main_background,
@@ -224,18 +224,15 @@ export const generateTerminal = (mode: Mode): Terminal => {
 };
 
 export const generateTheme = (mode: Mode, accent: Accent) => {
-    const baseTones = makeBaseTones();
-    const theme = makeTheme(mode);
-    const ui = makeUI(theme);
-    const syntax = makeSyntax(theme);
-    const terminal = generateTerminal(mode);
+    const baseTones = colorsToHex(makeBaseTones()) as BaseTones;
+    const theme = colorsToHex(makeTheme(mode)) as Theme;
+    const ui = colorsToHex(makeUI(theme)) as UI;
+    const syntax = colorsToHex(makeSyntax(theme)) as Syntax;
+    const terminal = colorsToHex(generateTerminal(mode)) as Terminal;
 
     const accentColor = makeAccentColor(mode, accent);
 
     ui.accent = colorToHex(accentColor);
-    // 40 = 25%
-    // 33 = 20%
-    // 26 = 15%
     const transparentBg = new Color(
         "sRGB",
         [accentColor.r, accentColor.g, accentColor.b],

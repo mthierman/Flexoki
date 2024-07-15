@@ -73,7 +73,7 @@ export interface Theme {
 }
 
 export interface UI {
-    [key: string]: Color | string | undefined;
+    [key: string]: Color | string;
     main_background: Color | string;
     secondary_background: Color | string;
     borders: Color | string;
@@ -88,8 +88,7 @@ export interface UI {
     links: Color | string;
     active_states: Color | string;
     transparent: Color | string;
-    shadow?: Color | string;
-    accent?: Color | string;
+    shadow: Color | string;
 }
 
 export interface Syntax {
