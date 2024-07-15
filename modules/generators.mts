@@ -5,7 +5,7 @@ import { colorsToHex } from "./utilities.mjs";
 export const generateTerminal = (mode: Mode, accentColor: AccentColor) => {
     const { mapping } = makeTheme(mode, accentColor);
     const terminal = mapping.terminal;
-    const converted = colorsToHex(terminal) as Record<keyof typeof terminal, string>;
+    const converted = colorsToHex(terminal);
 };
 
 // export const generateTheme = (mode: Mode, accent: Accent) => {
