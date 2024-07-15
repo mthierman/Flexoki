@@ -249,6 +249,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
     const accentColor = makeAccentColor(mode, accent);
 
     ui.accent = colorToHex(accentColor);
+
     const transparentBg = new Color(
         "sRGB",
         [accentColor.r, accentColor.g, accentColor.b],
@@ -264,11 +265,7 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
         [accentColor.r, accentColor.g, accentColor.b],
         0.25,
     ).toString({ format: "hex" });
-    const inlayBg = new Color("sRGB", [accentColor.r, accentColor.g, accentColor.b], 0.05).toString(
-        {
-            format: "hex",
-        },
-    );
+
     const test = "#FF00FF";
 
     return {
@@ -371,11 +368,11 @@ export const generateTheme = (mode: Mode, accent: Accent) => {
             "editorHoverWidget.foreground": ui.primary_text,
             "editorHoverWidget.highlightForeground": ui.primary_text,
             "editorHoverWidget.statusBarBackground": theme.ui2,
-            "editorInlayHint.background": inlayBg,
+            "editorInlayHint.background": transparentBg,
             "editorInlayHint.foreground": ui.muted_text,
-            "editorInlayHint.parameterBackground": inlayBg,
+            "editorInlayHint.parameterBackground": transparentBg,
             "editorInlayHint.parameterForeground": ui.muted_text,
-            "editorInlayHint.typeBackground": inlayBg,
+            "editorInlayHint.typeBackground": transparentBg,
             "editorInlayHint.typeForeground": ui.muted_text,
             "editorLineNumber.activeForeground": ui.primary_text,
             "editorLineNumber.dimmedForeground": ui.faint_text,
