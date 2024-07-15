@@ -47,36 +47,36 @@ class Flexoki extends Hex {
         this.magenta_400 = new Color("#CE5D97");
     }
 
-    black: Color | string;
-    base_950: Color | string;
-    base_900: Color | string;
-    base_850: Color | string;
-    base_800: Color | string;
-    base_700: Color | string;
-    base_600: Color | string;
-    base_500: Color | string;
-    base_300: Color | string;
-    base_200: Color | string;
-    base_150: Color | string;
-    base_100: Color | string;
-    base_50: Color | string;
-    paper: Color | string;
-    red_600: Color | string;
-    orange_600: Color | string;
-    yellow_600: Color | string;
-    green_600: Color | string;
-    cyan_600: Color | string;
-    blue_600: Color | string;
-    purple_600: Color | string;
-    magenta_600: Color | string;
-    red_400: Color | string;
-    orange_400: Color | string;
-    yellow_400: Color | string;
-    green_400: Color | string;
-    cyan_400: Color | string;
-    blue_400: Color | string;
-    purple_400: Color | string;
-    magenta_400: Color | string;
+    black;
+    base_950;
+    base_900;
+    base_850;
+    base_800;
+    base_700;
+    base_600;
+    base_500;
+    base_300;
+    base_200;
+    base_150;
+    base_100;
+    base_50;
+    paper;
+    red_600;
+    orange_600;
+    yellow_600;
+    green_600;
+    cyan_600;
+    blue_600;
+    purple_600;
+    magenta_600;
+    red_400;
+    orange_400;
+    yellow_400;
+    green_400;
+    cyan_400;
+    blue_400;
+    purple_400;
+    magenta_400;
 }
 
 class LightTheme extends Hex {
@@ -106,36 +106,36 @@ class LightTheme extends Hex {
         this.bl2 = flexoki.blue_400;
         this.pu2 = flexoki.purple_400;
         this.ma2 = flexoki.magenta_400;
-        this.transparent = new Color("#FFFFFF00");
-        this.shadow = new Color("#00000040");
+        this.transparent = new Color("sRGB", [255, 255, 255], 0);
+        this.shadow = new Color("sRGB", [0, 0, 0], 0.25);
     }
 
-    bg: Color | string;
-    bg2: Color | string;
-    ui: Color | string;
-    ui2: Color | string;
-    ui3: Color | string;
-    tx3: Color | string;
-    tx2: Color | string;
-    tx: Color | string;
-    re: Color | string;
-    or: Color | string;
-    ye: Color | string;
-    gr: Color | string;
-    cy: Color | string;
-    bl: Color | string;
-    pu: Color | string;
-    ma: Color | string;
-    re2: Color | string;
-    or2: Color | string;
-    ye2: Color | string;
-    gr2: Color | string;
-    cy2: Color | string;
-    bl2: Color | string;
-    pu2: Color | string;
-    ma2: Color | string;
-    transparent: Color | string;
-    shadow: Color | string;
+    bg;
+    bg2;
+    ui;
+    ui2;
+    ui3;
+    tx3;
+    tx2;
+    tx;
+    re;
+    or;
+    ye;
+    gr;
+    cy;
+    bl;
+    pu;
+    ma;
+    re2;
+    or2;
+    ye2;
+    gr2;
+    cy2;
+    bl2;
+    pu2;
+    ma2;
+    transparent;
+    shadow;
 }
 
 class DarkTheme extends Hex {
@@ -165,36 +165,36 @@ class DarkTheme extends Hex {
         this.bl2 = flexoki.blue_600;
         this.pu2 = flexoki.purple_600;
         this.ma2 = flexoki.magenta_600;
-        this.transparent = new Color("#00000000");
-        this.shadow = new Color("#00000040");
+        this.transparent = new Color("sRGB", [0, 0, 0], 0);
+        this.shadow = new Color("sRGB", [0, 0, 0], 0.25);
     }
 
-    bg: Color | string;
-    bg2: Color | string;
-    ui: Color | string;
-    ui2: Color | string;
-    ui3: Color | string;
-    tx3: Color | string;
-    tx2: Color | string;
-    tx: Color | string;
-    re: Color | string;
-    or: Color | string;
-    ye: Color | string;
-    gr: Color | string;
-    cy: Color | string;
-    bl: Color | string;
-    pu: Color | string;
-    ma: Color | string;
-    re2: Color | string;
-    or2: Color | string;
-    ye2: Color | string;
-    gr2: Color | string;
-    cy2: Color | string;
-    bl2: Color | string;
-    pu2: Color | string;
-    ma2: Color | string;
-    transparent: Color | string;
-    shadow: Color | string;
+    bg;
+    bg2;
+    ui;
+    ui2;
+    ui3;
+    tx3;
+    tx2;
+    tx;
+    re;
+    or;
+    ye;
+    gr;
+    cy;
+    bl;
+    pu;
+    ma;
+    re2;
+    or2;
+    ye2;
+    gr2;
+    cy2;
+    bl2;
+    pu2;
+    ma2;
+    transparent;
+    shadow;
 }
 
 class UI extends Hex {
@@ -217,21 +217,21 @@ class UI extends Hex {
         this.shadow = theme.shadow;
     }
 
-    main_background: Color | string;
-    secondary_background: Color | string;
-    borders: Color | string;
-    hovered_borders: Color | string;
-    active_borders: Color | string;
-    faint_text: Color | string;
-    muted_text: Color | string;
-    primary_text: Color | string;
-    error_text: Color | string;
-    warning_text: Color | string;
-    success_text: Color | string;
-    links: Color | string;
-    active_states: Color | string;
-    transparent: Color | string;
-    shadow: Color | string;
+    main_background;
+    secondary_background;
+    borders;
+    hovered_borders;
+    active_borders;
+    faint_text;
+    muted_text;
+    primary_text;
+    error_text;
+    warning_text;
+    success_text;
+    links;
+    active_states;
+    transparent;
+    shadow;
 }
 
 class Syntax extends Hex {
@@ -252,25 +252,30 @@ class Syntax extends Hex {
         this.language_features = theme.ma;
     }
 
-    comments: Color | string;
-    punctuation: Color | string;
-    operators: Color | string;
-    invalid: Color | string;
-    imports: Color | string;
-    functions: Color | string;
-    constants: Color | string;
-    keywords: Color | string;
-    strings: Color | string;
-    variables: Color | string;
-    attributes: Color | string;
-    numbers: Color | string;
-    language_features: Color | string;
+    comments;
+    punctuation;
+    operators;
+    invalid;
+    imports;
+    functions;
+    constants;
+    keywords;
+    strings;
+    variables;
+    attributes;
+    numbers;
+    language_features;
 }
 
 const flexoki = new Flexoki();
-const light = new LightTheme(flexoki);
-const dark = new DarkTheme(flexoki);
+flexoki.black.alpha = 0.33;
+// const light = new LightTheme(flexoki);
+// const dark = new DarkTheme(flexoki);
+// const darkUi = new UI(dark);
+// const darkSyntax = new Syntax(dark);
 
-// console.log(flexoki.hex());
-console.log(light.hex());
+console.log(flexoki.hex());
+// console.log(light.hex());
 // console.log(dark.hex());
+// console.log(darkUi.hex());
+// console.log(darkSyntax.hex());
