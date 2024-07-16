@@ -32,7 +32,7 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
     const test = "#FF00FF";
 
     let colors: WorkbenchColors = {
-        "activityBar.activeBackground": theme.ui,
+        "activityBar.activeBackground": ui.transparent,
         "activityBar.activeBorder": ui.accent,
         "activityBar.activeFocusBorder": ui.accent,
         "activityBar.background": theme.ui,
@@ -42,7 +42,7 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
         "activityBar.inactiveForeground": ui.primary_text,
         "activityBarBadge.background": ui.accent,
         "activityBarBadge.foreground": baseTones.paper,
-        "activityBarTop.activeBackground": theme.ui,
+        "activityBarTop.activeBackground": ui.transparent,
         "activityBarTop.activeBorder": ui.accent,
         "activityBarTop.background": theme.ui,
         "activityBarTop.dropBorder": ui.accent,

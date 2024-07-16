@@ -2,7 +2,7 @@
     "$schema": "vscode://schemas/color-theme",
     "name": "Flexoki Light Orange",
     "colors": {
-        "activityBar.activeBackground": "#e6e4d9",
+        "activityBar.activeBackground": "#fff0",
         "activityBar.activeBorder": "#da702c",
         "activityBar.activeFocusBorder": "#da702c",
         "activityBar.background": "#e6e4d9",
@@ -12,7 +12,7 @@
         "activityBar.inactiveForeground": "#100f0f",
         "activityBarBadge.background": "#da702c",
         "activityBarBadge.foreground": "#fffcf0",
-        "activityBarTop.activeBackground": "#e6e4d9",
+        "activityBarTop.activeBackground": "#fff0",
         "activityBarTop.activeBorder": "#da702c",
         "activityBarTop.background": "#e6e4d9",
         "activityBarTop.dropBorder": "#da702c",
