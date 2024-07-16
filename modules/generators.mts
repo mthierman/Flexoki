@@ -1,14 +1,14 @@
 import workbenchColors from "../schema/workbench_colors.json" with { type: "json" };
 import { makeTheme } from "./themes.mjs";
 import type { AccentColor, Mode } from "./types.mjs";
-import { hex } from "./utilities.mjs";
+import { colorsToHex } from "./utilities.mjs";
 
 type WorkbenchColors = Partial<Record<keyof typeof workbenchColors.properties, string>>;
 
 export const generateTerminal = (mode: Mode, accentColor: AccentColor = "Blue") => {
     const createdTheme = makeTheme(mode, accentColor);
 
-    const { terminal } = { terminal: hex(createdTheme.mapping.terminal) };
+    const { terminal } = { terminal: colorsToHex(createdTheme.mapping.terminal) };
 
     const generatedTerminal = {
         name: `Flexoki ${mode}`,
@@ -22,11 +22,11 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
     const createdTheme = makeTheme(mode, accentColor);
 
     const { baseTones, syntax, terminal, ui, theme } = {
-        baseTones: hex(createdTheme.mapping.baseTones),
-        syntax: hex(createdTheme.mapping.syntax),
-        terminal: hex(createdTheme.mapping.terminal),
-        ui: hex(createdTheme.mapping.ui),
-        theme: hex(createdTheme.theme),
+        baseTones: colorsToHex(createdTheme.mapping.baseTones),
+        syntax: colorsToHex(createdTheme.mapping.syntax),
+        terminal: colorsToHex(createdTheme.mapping.terminal),
+        ui: colorsToHex(createdTheme.mapping.ui),
+        theme: colorsToHex(createdTheme.theme),
     };
 
     const test = "#FF00FF";
