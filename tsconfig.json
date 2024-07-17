@@ -1,14 +1,8 @@
 {
-    "compilerOptions": {
-        "target": "ESNext",
-        "lib": ["ESNext"],
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
-        "resolveJsonModule": true,
-        "strict": true,
-        "skipLibCheck": true,
-        "rootDir": ".",
-        "outDir": "build"
-    },
-    "include": ["modules", "scripts"]
+    "files": [],
+    "include": [],
+    "references": [
+        { "path": "./modules" },
+        { "path": "./scripts" }
+    ]
 }
