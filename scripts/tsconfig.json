@@ -1,5 +1,6 @@
 {
     "extends": "../tsconfig.base.json",
-    "include": ["**/*", "../schema/*.json", "../modules/*.mts"],
+    "include": ["**/*"],
+    "references": [{ "path": "../modules" }],
     "compilerOptions": {}
 }
