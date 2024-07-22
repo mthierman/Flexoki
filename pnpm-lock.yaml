@@ -25,7 +25,7 @@ importers:
         version: 5.5.3
       vscode-extensions:
         specifier: github:mthierman/vscode-extensions
-        version: https://codeload.github.com/mthierman/vscode-extensions/tar.gz/0a31050594cbd88e4dfcaf764ed809f66988f164
+        version: https://codeload.github.com/mthierman/vscode-extensions/tar.gz/244b8645e3fe388b5e1f529ca315d55146760b45
 
 packages:
 
@@ -748,8 +748,8 @@ packages:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
 
-  vscode-extensions@https://codeload.github.com/mthierman/vscode-extensions/tar.gz/0a31050594cbd88e4dfcaf764ed809f66988f164:
-    resolution: {tarball: https://codeload.github.com/mthierman/vscode-extensions/tar.gz/0a31050594cbd88e4dfcaf764ed809f66988f164}
+  vscode-extensions@https://codeload.github.com/mthierman/vscode-extensions/tar.gz/244b8645e3fe388b5e1f529ca315d55146760b45:
+    resolution: {tarball: https://codeload.github.com/mthierman/vscode-extensions/tar.gz/244b8645e3fe388b5e1f529ca315d55146760b45}
     version: 0.0.0
     hasBin: true
 
@@ -1614,7 +1614,7 @@ snapshots:
 
   uuid@8.3.2: {}
 
-  vscode-extensions@https://codeload.github.com/mthierman/vscode-extensions/tar.gz/0a31050594cbd88e4dfcaf764ed809f66988f164: {}
+  vscode-extensions@https://codeload.github.com/mthierman/vscode-extensions/tar.gz/244b8645e3fe388b5e1f529ca315d55146760b45: {}
 
   which@2.0.2:
     dependencies:
