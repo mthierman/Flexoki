@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { generateTerminal, generateTheme } from "../modules/generators.mjs";
+import { generateTerminal, generateTheme } from "../modules/generator.mjs";
 
 const outdir = {
     themes: resolve(import.meta.dirname, "..", "..", "themes"),

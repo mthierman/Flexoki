@@ -1,6 +1,6 @@
 import workbenchColors from "../schema/workbench_colors.json" with { type: "json" };
-import type { AccentColor, Mode } from "./themes.mjs";
-import { colorsToHex, makeTheme } from "./themes.mjs";
+import type { AccentColor, Mode } from "./theme.mjs";
+import { colorsToHex, makeTheme } from "./theme.mjs";
 
 type WorkbenchColors = Partial<Record<keyof typeof workbenchColors.properties, string>>;
 
