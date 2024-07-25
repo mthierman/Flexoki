@@ -1,5 +1,4 @@
 {
     "files": [],
-    "include": [],
     "references": [{ "path": "./modules" }, { "path": "./scripts" }]
 }

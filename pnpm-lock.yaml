@@ -23,9 +23,6 @@ importers:
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
-      vscode-extensions:
-        specifier: github:mthierman/vscode-extensions
-        version: https://codeload.github.com/mthierman/vscode-extensions/tar.gz/02e4b9ffd0407abb759396c29ee682e966aeced1
 
 packages:
 
@@ -746,11 +743,6 @@ packages:
 
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
-    hasBin: true
-
-  vscode-extensions@https://codeload.github.com/mthierman/vscode-extensions/tar.gz/02e4b9ffd0407abb759396c29ee682e966aeced1:
-    resolution: {tarball: https://codeload.github.com/mthierman/vscode-extensions/tar.gz/02e4b9ffd0407abb759396c29ee682e966aeced1}
-    version: 0.0.0
     hasBin: true
 
   which@2.0.2:
@@ -1613,8 +1605,6 @@ snapshots:
     optional: true
 
   uuid@8.3.2: {}
-
-  vscode-extensions@https://codeload.github.com/mthierman/vscode-extensions/tar.gz/02e4b9ffd0407abb759396c29ee682e966aeced1: {}
 
   which@2.0.2:
     dependencies:
