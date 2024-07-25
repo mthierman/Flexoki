@@ -150,10 +150,9 @@
         "url": "https://github.com/mthierman/Flexoki.git"
     },
     "scripts": {
-        "check": "tsc --noEmit",
-        "build": "tsc -b && node --no-warnings=ExperimentalWarning build/scripts/build.js",
-        "watch": "tsc -b && node --no-warnings=ExperimentalWarning build/scripts/watch.js",
-        "clean": "tsc -b && node --no-warnings=ExperimentalWarning build/scripts/clean.js",
+        "build": "tsc -b && node build/scripts/build.js",
+        "watch": "tsc -b && node build/scripts/watch.js",
+        "clean": "tsc -b && node build/scripts/clean.js",
         "vsce": "vsce publish"
     },
     "devDependencies": {
