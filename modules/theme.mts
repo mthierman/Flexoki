@@ -161,56 +161,62 @@ export const makeAccentColor = (mode: Mode, accentColor: AccentColor) => {
         case "Dark": {
             switch (accentColor) {
                 case "Red": {
-                    return accentColors.red_600;
+                    return { primary: accentColors.red_400, secondary: accentColors.red_600 };
                 }
                 case "Orange": {
-                    return accentColors.orange_600;
+                    return { primary: accentColors.orange_400, secondary: accentColors.orange_600 };
                 }
                 case "Yellow": {
-                    return accentColors.yellow_600;
+                    return { primary: accentColors.yellow_400, secondary: accentColors.yellow_600 };
                 }
                 case "Green": {
-                    return accentColors.green_600;
+                    return { primary: accentColors.green_400, secondary: accentColors.green_600 };
                 }
                 case "Cyan": {
-                    return accentColors.cyan_600;
+                    return { primary: accentColors.cyan_400, secondary: accentColors.cyan_600 };
                 }
                 case "Blue": {
-                    return accentColors.blue_600;
+                    return { primary: accentColors.blue_400, secondary: accentColors.blue_600 };
                 }
                 case "Purple": {
-                    return accentColors.purple_600;
+                    return { primary: accentColors.purple_400, secondary: accentColors.purple_600 };
                 }
                 case "Magenta": {
-                    return accentColors.magenta_600;
+                    return {
+                        primary: accentColors.magenta_400,
+                        secondary: accentColors.magenta_600,
+                    };
                 }
             }
         }
         case "Light": {
             switch (accentColor) {
                 case "Red": {
-                    return accentColors.red_400;
+                    return { primary: accentColors.red_600, secondary: accentColors.red_400 };
                 }
                 case "Orange": {
-                    return accentColors.orange_400;
+                    return { primary: accentColors.orange_600, secondary: accentColors.orange_400 };
                 }
                 case "Yellow": {
-                    return accentColors.yellow_400;
+                    return { primary: accentColors.yellow_600, secondary: accentColors.yellow_400 };
                 }
                 case "Green": {
-                    return accentColors.green_400;
+                    return { primary: accentColors.green_600, secondary: accentColors.green_400 };
                 }
                 case "Cyan": {
-                    return accentColors.cyan_400;
+                    return { primary: accentColors.cyan_600, secondary: accentColors.cyan_400 };
                 }
                 case "Blue": {
-                    return accentColors.blue_400;
+                    return { primary: accentColors.blue_600, secondary: accentColors.blue_400 };
                 }
                 case "Purple": {
-                    return accentColors.purple_400;
+                    return { primary: accentColors.purple_600, secondary: accentColors.purple_400 };
                 }
                 case "Magenta": {
-                    return accentColors.magenta_400;
+                    return {
+                        primary: accentColors.magenta_600,
+                        secondary: accentColors.magenta_400,
+                    };
                 }
             }
         }
@@ -269,17 +275,22 @@ export const makeTheme = (mode: Mode, accentColor: AccentColor) => {
                     },
                     ui: {
                         ...ui,
-                        accent: accent,
+                        accent: accent.primary,
+                        accentSecondary: accent.secondary,
                         transparent: new Color("sRGB", [0, 0, 0], 0),
-                        transparent_bg: new Color("sRGB", [accent.r, accent.g, accent.b], 0.15),
+                        transparent_bg: new Color(
+                            "sRGB",
+                            [accent.primary.r, accent.primary.g, accent.primary.b],
+                            0.15,
+                        ),
                         transparent_bg_hover: new Color(
                             "sRGB",
-                            [accent.r, accent.g, accent.b],
+                            [accent.primary.r, accent.primary.g, accent.primary.b],
                             0.2,
                         ),
                         transparent_bg_active: new Color(
                             "sRGB",
-                            [accent.r, accent.g, accent.b],
+                            [accent.primary.r, accent.primary.g, accent.primary.b],
                             0.25,
                         ),
                         shadow: new Color("sRGB", [0, 0, 0], 0.5),
@@ -313,17 +324,22 @@ export const makeTheme = (mode: Mode, accentColor: AccentColor) => {
                     },
                     ui: {
                         ...ui,
-                        accent: accent,
+                        accent: accent.primary,
+                        accentSecondary: accent.secondary,
                         transparent: new Color("sRGB", [255, 255, 255], 0),
-                        transparent_bg: new Color("sRGB", [accent.r, accent.g, accent.b], 0.15),
+                        transparent_bg: new Color(
+                            "sRGB",
+                            [accent.primary.r, accent.primary.g, accent.primary.b],
+                            0.15,
+                        ),
                         transparent_bg_hover: new Color(
                             "sRGB",
-                            [accent.r, accent.g, accent.b],
+                            [accent.primary.r, accent.primary.g, accent.primary.b],
                             0.2,
                         ),
                         transparent_bg_active: new Color(
                             "sRGB",
-                            [accent.r, accent.g, accent.b],
+                            [accent.primary.r, accent.primary.g, accent.primary.b],
                             0.25,
                         ),
                         shadow: new Color("sRGB", [0.75, 0.75, 0.75], 0.5),
