@@ -237,7 +237,7 @@ export const generateTheme = (mode: Mode, accentColor: AccentColor) => {
         "quickInputList.focusBackground": theme.ui2,
         "quickInputList.focusForeground": ui.primary_text,
         "quickInputList.focusIconForeground": ui.primary_text,
-        "quickInputTitle.background": test,
+        "quickInputTitle.background": ui.main_background,
         "scrollbar.shadow": ui.shadow,
         "scrollbarSlider.activeBackground": ui.transparent_bg_active,
         "scrollbarSlider.background": ui.transparent_bg,

@@ -208,7 +208,7 @@
         "quickInputList.focusBackground": "#343331",
         "quickInputList.focusForeground": "#cecdc3",
         "quickInputList.focusIconForeground": "#cecdc3",
-        "quickInputTitle.background": "#FF00FF",
+        "quickInputTitle.background": "#100f0f",
         "scrollbar.shadow": "#00000080",
         "scrollbarSlider.activeBackground": "#d0a21540",
         "scrollbarSlider.background": "#d0a21526",
