@@ -156,10 +156,10 @@
         "vsce": "vsce publish"
     },
     "devDependencies": {
-        "@types/node": "^20.14.12",
-        "@vscode/vsce": "^2.31.1",
+        "@types/node": "^22.10.2",
+        "@vscode/vsce": "^3.2.1",
         "colorjs.io": "^0.5.2",
-        "prettier": "^3.3.3",
-        "typescript": "^5.5.4"
+        "prettier": "^3.4.2",
+        "typescript": "^5.7.2"
     }
 }
